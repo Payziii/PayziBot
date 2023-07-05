@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, Collection, ActivityType } = require("discord.js");
+const { Client, GatewayIntentBits, Collection, ActivityType, Partials } = require("discord.js");
 const { Player, QueryType } = require("discord-player");
 const { SpotifyExtractor, SoundCloudExtractor } = require('@discord-player/extractor');
 const fs = require("node:fs");
@@ -15,7 +15,12 @@ const client = new Client({
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.MessageContent,
         GatewayIntentBits.GuildPresences,
+        GatewayIntentBits.GuildMessageReactions,
     ],
+  partials: [
+    Partials.Reaction,
+    Partials.Message,
+  ],
     presence: {
         status: "online",
         activities: [{name: "/help | PayziBot", type: ActivityType.Competing}],
@@ -106,6 +111,11 @@ client.on("ready", async () => {
     }
 });
 
+client.on("messageReactionAdd", async (react, user) => {
+    if (react.message.partial) await react.message.fetch()
+    if (react.partial) await react.fetch()
+    console.log(react.count)
+})
 client.on("messageCreate", async (message) => {
     let msg = message.content;
     if (message.author.bot) return;
@@ -141,4 +151,4 @@ client.on("messageCreate", async (message) => {
 	cmd.run(client, message, args, player);
 });
 
-client.login("NTc2NDQyMzUxNDI2MjA3NzQ0.GeV65R.R0P6_sBW9WwFTwL0K3qN1K9I49phKdtUpD6qXA");
+client.login("NzMyODY3OTY1MDUzMDQyNjkw.G5HoqK.H6g0KAXwGossSDMnzPZh0ByiNzifYAOdB7MgO8");
