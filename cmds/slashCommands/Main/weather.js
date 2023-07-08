@@ -14,7 +14,8 @@ module.exports = {
     async execute(interaction, guild) {
         let city = interaction.options.getString('город');
         await interaction.deferReply();
-        weather.find({search: city, degreeType: "C", lang: "ru-ru"}, function (err, result) {
+        let degrees = guild.settings.other.weather.degree;
+        weather.find({search: city, degreeType: degrees, lang: "ru-ru"}, function (err, result) {
             if(err) return interaction.reply(`⚠ Ошибка: ${err}`);
             if(result === undefined || result.length === 0) {
             interaction.reply(`<:no:1107254682100957224> | Такого города не найдено`);
@@ -27,7 +28,7 @@ module.exports = {
   .addFields(
     {
       name: "Температура",
-      value: `Сейчас: **${cur.temperature}°C**\nПо ощущениям: **${cur.feelslike}°C**`,
+      value: `Сейчас: **${cur.temperature}°${degrees}**\nПо ощущениям: **${cur.feelslike}°${degrees}**`,
       inline: true
     },
     {
