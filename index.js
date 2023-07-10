@@ -151,4 +151,6 @@ client.on("messageCreate", async (message) => {
 	cmd.run(client, message, args, player);
 });
 
-client.login("NzMyODY3OTY1MDUzMDQyNjkw.G5HoqK.H6g0KAXwGossSDMnzPZh0ByiNzifYAOdB7MgO8");
+client.login("NTc2NDQyMzUxNDI2MjA3NzQ0.GeV65R.R0P6_sBW9WwFTwL0K3qN1K9I49phKdtUpD6qXA");
+// NzMyODY3OTY1MDUzMDQyNjkw.G5HoqK.H6g0KAXwGossSDMnzPZh0ByiNzifYAOdB7MgO8 - PB23
+// NTc2NDQyMzUxNDI2MjA3NzQ0.GeV65R.R0P6_sBW9WwFTwL0K3qN1K9I49phKdtUpD6qXA - PB
