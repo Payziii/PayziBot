@@ -1,4 +1,4 @@
-const {SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder} = require("discord.js");
+const {SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder, PermissionFlagsBits} = require("discord.js");
 const Guild = require('../../../database/guild.js');
 const EmbedFunc = require('../../../func/config/embeds.js');
 
