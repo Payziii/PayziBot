@@ -5,7 +5,8 @@ const EmbedFunc = require('../../../func/config/embeds.js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('config')
-        .setDescription('Конфигурация сервера'),
+        .setDescription('Конфигурация сервера')
+        .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild),
     async execute(interaction, guild) {
         let embed = EmbedFunc.general(guild)
         const weather_degrees = new ButtonBuilder()
