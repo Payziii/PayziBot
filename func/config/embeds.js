@@ -3,7 +3,7 @@ const {EmbedBuilder} = require("discord.js");
 function general(guild) {
     const embed = new EmbedBuilder()
   .setTitle("Конфигурация бота")
-  .setDescription("Здесь можно настроить различные компоненты бота индивидуально под ваш сервер (**Временно недоступно**)")
+  .setDescription("Здесь можно настроить различные компоненты бота индивидуально под ваш сервер")
   .addFields(
     {
       name: "Основное",
