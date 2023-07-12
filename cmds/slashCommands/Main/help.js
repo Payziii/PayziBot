@@ -15,7 +15,7 @@ module.exports = {
           },
           {
             name: "Модерация",
-            value: "`ban`, `kick`, `mute`, `unmute`",
+            value: "`ban`, `kick`, `mute`, `unmute`, `channel`, `config`",
           },
           {
             name: "Музыка",
