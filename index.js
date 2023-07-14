@@ -148,7 +148,7 @@ client.on("messageCreate", async (message) => {
 			cmd => cmd.help.aliases && cmd.help.aliases.includes(command)
 		);
 	if (!cmd) return;
-	cmd.run(client, message, args, player);
+	cmd.run(client, message, args, player, guild);
 });
 
 client.login("NTc2NDQyMzUxNDI2MjA3NzQ0.GeV65R.R0P6_sBW9WwFTwL0K3qN1K9I49phKdtUpD6qXA");
