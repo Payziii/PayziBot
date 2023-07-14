@@ -155,12 +155,12 @@ client.on("messageReactionRemove", async (react, user) => {
     if (!guild) return;
     if(guild.settings.starboard.channelID == '-1') return;
     if(react.count < guild.settings.starboard.reqReacts) {
+        let msg = guild.settings.starboard.data.get(react.message.id);
+        if(msg == undefined) return;
         react.message.guild.channels.cache.get(guild.settings.starboard.channelID).messages.cache.get(msg).delete()
-        .then(message => {
-            guild.settings.starboard.data.delete(react.message.id)
-            guild.save()
-        })
         .catch(e => console.log(e));
+        guild.settings.starboard.data.delete(react.message.id)
+            guild.save()
         return;
     }
     let messageAttachment = react.message.attachments.size > 0 ? Array.from(react.message.attachments.values())[0].url : null
