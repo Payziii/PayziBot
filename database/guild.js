@@ -20,6 +20,10 @@ const guild = mongoose.Schema({
             degree: {type: String, default: 'C'},
         },
         color: {type: String, default: '#255520'}
+    },
+    starboard: {
+      channelID: {type: String, default: '-1'},
+      reqReacts: { type: Number, default: 1 },
     }
   },
   premium: {type: premiumSchema, default: null}
