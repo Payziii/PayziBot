@@ -24,6 +24,7 @@ const guild = mongoose.Schema({
     starboard: {
       channelID: {type: String, default: '-1'},
       reqReacts: { type: Number, default: 1 },
+      data: {type: Map, default: []}
     }
   },
   premium: {type: premiumSchema, default: null}
