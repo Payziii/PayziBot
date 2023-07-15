@@ -12,7 +12,7 @@ module.exports = {
                 .setDescription('Город, погоду в котором надо узнать')
                 .setRequired(true)
         ),
-    async execute(interaction, guild) {
+    async execute(interaction, guild) { 
         let city = interaction.options.getString('город');
         await interaction.deferReply();
         let degrees = guild.settings.other.weather.degree;
