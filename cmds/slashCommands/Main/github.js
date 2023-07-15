@@ -12,6 +12,7 @@ module.exports = {
                 .setMaxLength(30)
         ),
     async execute(interaction, guild) {
+        await interaction.deferReply();
         let query = interaction.options.getString('ник');
 
         let bio = 'Отсутствует';
@@ -25,7 +26,7 @@ module.exports = {
         
         await require('node-fetch')(`https://api.github.com/users/${query}`).then(r => r.json()).then(r => {
     if(r.message && r.message == 'Not Found'){
-        interaction.reply(`<:no:1107254682100957224> | Ничего не найдено!`);
+        interaction.editReply(`<:no:1107254682100957224> | Ничего не найдено!`);
     }else{
         if(r.bio) bio = r.bio;
         if(r.name) name = r.name;
@@ -53,7 +54,7 @@ const embed = new EmbedBuilder()
       const row = new ActionRowBuilder()
 			.addComponents(repos_button);
 
-            const response =  await interaction.reply({ embeds: [embed], components: [row] });
+            const response =  await interaction.editReply({ embeds: [embed], components: [row] });
             const collectorFilter = i => i.user.id === interaction.user.id;
 try {
 	const confirmation = await response.awaitMessageComponent({ filter: collectorFilter, time: 60_000 });

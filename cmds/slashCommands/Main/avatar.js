@@ -11,6 +11,7 @@ module.exports = {
                 .setRequired(false)
         ),
     async execute(interaction, guild) {
+        await interaction.deferReply();
         let user = interaction.options.getUser('пользователь');
         if (user == null) {
             user = interaction.user;
@@ -34,6 +35,6 @@ module.exports = {
                 .setTitle(`${user.username}`)
                 .setColor(guild.settings.other.color)
                 .setImage(url);
-            await interaction.reply({ embeds: [embed], components: [row] });
+            await interaction.editReply({ embeds: [embed], components: [row] });
     },
 };

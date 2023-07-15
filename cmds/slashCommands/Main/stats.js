@@ -8,6 +8,7 @@ module.exports = {
         .setName('stats')
         .setDescription('Информация о боте'),
     async execute(interaction, guild) {
+      await interaction.deferReply();
         client = interaction.client;
         const uptime = time(client.uptime)
         let bremya;
@@ -45,7 +46,7 @@ module.exports = {
       const row = new ActionRowBuilder()
 			.addComponents(link_button);
 
-      const response =  await interaction.reply({ embeds: [embed], components: [row] });
+      const response =  await interaction.editReply({ embeds: [embed], components: [row] });
             const collectorFilter = i => i.user.id === interaction.user.id;
 try {
 	const confirmation = await response.awaitMessageComponent({ filter: collectorFilter, time: 60_000 });

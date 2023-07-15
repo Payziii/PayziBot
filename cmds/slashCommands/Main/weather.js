@@ -16,9 +16,9 @@ module.exports = {
         await interaction.deferReply();
         let degrees = guild.settings.other.weather.degree;
         weather.find({search: city, degreeType: degrees, lang: "ru-ru"}, function (err, result) {
-            if(err) return interaction.reply(`⚠ Ошибка: ${err}`);
+            if(err) return interaction.editReply(`<:no:1107254682100957224> | Ошибка: \`${err}\``);
             if(result === undefined || result.length === 0) {
-            interaction.reply(`<:no:1107254682100957224> | Такого города не найдено`);
+            interaction.editReply(`<:no:1107254682100957224> | Такого города не найдено`);
             return
             }
             let cur = result[0].current;

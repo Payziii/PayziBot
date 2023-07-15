@@ -17,6 +17,7 @@ module.exports = {
         .setRequired(true)
     ),
     async execute(interaction, guild) {
+        await interaction.deferReply();
         lang = interaction.options.getString('язык')
         text = interaction.options.getString('текст')
         
@@ -32,10 +33,10 @@ module.exports = {
             .setDescription(result.text)
             .setThumbnail("https://cdn.discordapp.com/attachments/695277643360239616/772322213394120714/1492616968-18-google-translate-text-language-translation_83413.png");
         
-            interaction.reply({ embeds: [embed] });
+            interaction.editReply({ embeds: [embed] });
           },
           function(error) {
-            interaction.reply(`<:no:1107254682100957224> | Ошибка: \`${error}\``);
+            interaction.editReply(`<:no:1107254682100957224> | Ошибка: \`${error}\``);
           })
     },
 };
