@@ -1,5 +1,6 @@
 const {SlashCommandBuilder, EmbedBuilder} = require("discord.js");
-const weather = require("weather-js");
+const { Gismeteo } = require('gismeteo');
+const gismeteo = new Gismeteo();
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -15,35 +16,38 @@ module.exports = {
         let city = interaction.options.getString('город');
         await interaction.deferReply();
         let degrees = guild.settings.other.weather.degree;
-        weather.find({search: city, degreeType: degrees, lang: "ru-ru"}, function (err, result) {
-            if(err) return interaction.editReply(`<:no:1107254682100957224> | Ошибка: \`${err}\``);
-            if(result === undefined || result.length === 0) {
-            interaction.editReply(`<:no:1107254682100957224> | Такого города не найдено`);
-            return
-            }
-            let cur = result[0].current;
+
+        gismeteo.getNow(city).then((cur) => {
             const embed = new EmbedBuilder()
-  .setTitle(cur.observationpoint)
-  .setDescription(`${cur.skytext}`)
+  .setTitle(city)
+  .setDescription(`${cur.summary}`)
   .addFields(
     {
       name: "Температура",
-      value: `Сейчас: **${cur.temperature}°${degrees}**\nПо ощущениям: **${cur.feelslike}°${degrees}**`,
+      value: `Сейчас: **${cur.temp}°C**\nПо ощущениям: **${cur.temp_feels}°C**`,
+      inline: true
+    },
+    {
+      name: "Геомагнитное поле",
+      value: `**${cur.geomagnetic}**`.replace(1, 'Нет заметных возмущений').replace(2, 'Небольшие возмущения').replace(3, 'Слабая геомагнитная буря').replace(4, 'Малая геомагнитная буря').replace(5, 'Умеренная геомагнитная буря').replace(6, 'Сильная геомагнитная буря').replace(7, 'Жесткий геомагнитный шторм').replace(8, 'Экстремальный шторм'),
       inline: true
     },
     {
       name: "Прочее",
-      value: `Влажность: **${cur.humidity}%**\nСкорость ветра: **${cur.windspeed}**`,
-      inline: true
+      value: `Влажность: **${cur.humidity}%**\nВетер: **${cur.wind_speed} м/с (${cur.wind_dir})**\nДавление: **${cur.pressure} мм рт. ст.**`,
+      inline: false
     },
   )
-  .setThumbnail(cur.imageUrl)
+  .setThumbnail(cur.image)
   .setColor(guild.settings.other.color)
   .setFooter({
-    text: "Сервис: Microsoft",
+    text: "Сервис: Gismeteo",
   });
 
 interaction.editReply({ embeds: [embed] });
+        })
+        .catch(e => {
+          interaction.editReply(`<:no:1107254682100957224> | Ошибка: \`${e}\``);
         })
     },
 };
