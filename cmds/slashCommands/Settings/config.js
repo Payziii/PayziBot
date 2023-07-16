@@ -28,22 +28,7 @@ try {
 	const confirmation = await response.awaitMessageComponent({ filter: collectorFilter, time: 60_000 });
 
   if (confirmation.customId === 'wea_deg') {
-		await confirmation.update({ content: 'Введите `C` или `F`', embeds: [], components: [] })
-    .then(() => {
-      interaction.channel.awaitMessages({ filter: collectorFilter2, max: 1, time: 30000, errors: ['time'] })
-        .then(collected => {
-          if(collected.first().content == 'C' || collected.first().content == 'F') {
-            guild.settings.other.weather.degree = collected.first().content;
-            guild.save()
-            interaction.followUp(`Теперь погода отображается в градусах \`${collected.first().content}\``)
-            return;
-          }
-          interaction.followUp(`Доступны лишь градусы Цельсия (\`C\`) и градусы Фаренгейта (\`F\`)`);
-        })
-        .catch(collected => {
-          interaction.followUp('Время ожидания истекло...');
-        });
-    });
+		interaction.followUp('Смена градусов в `weather` отключена');
 	} else if (confirmation.customId === 'emb_col') {
 		await confirmation.update({ content: 'Введите новый цвет...', embeds: [], components: [] })
     .then(() => {

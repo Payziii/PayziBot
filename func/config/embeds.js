@@ -7,7 +7,7 @@ function general(guild) {
   .addFields(
     {
       name: "Основное",
-      value: `Градусы в \`weather\`: **${guild.settings.other.weather.degree}**\nЦвет embed: **${guild.settings.other.color}**`,
+      value: `Цвет embed: **${guild.settings.other.color}**`,
     },
   )
   .setColor(guild.settings.other.color)
