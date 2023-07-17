@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, Collection, ActivityType, Partials, EmbedBuilder } = require('discord.js');
+const { Client, GatewayIntentBits, Collection, ActivityType, Partials, EmbedBuilder, ClientUser } = require('discord.js');
 const { Player, QueryType } = require('discord-player');
 const { SpotifyExtractor, SoundCloudExtractor } = require('@discord-player/extractor');
 const fs = require('node:fs');
@@ -116,7 +116,8 @@ client.on('messageReactionAdd', async (react, user) => {
 	if (react.partial) await react.fetch()
 	let guild = await Guild.findOne({ guildID: react.message.guild.id });
 	if (!guild) return;
-	if(react.emoji.name != guild.settings.starboard.customReact) return;
+	let customReact = guild.settings.starboard.customReact;
+	if(react.emoji.name != customReact) return;
 	if(guild.settings.starboard.channelID == '-1') return;
 	if(react.count < guild.settings.starboard.reqReacts) return;
 	let messageAttachment = react.message.attachments.size > 0 ? Array.from(react.message.attachments.values())[0].url : null
@@ -131,15 +132,23 @@ client.on('messageReactionAdd', async (react, user) => {
 	let content = react.message.content.replaceAll(' ', '')
 	if(content.length > 0) embed.setDescription(react.message.content || 'Пустая строка');
 	let msg = guild.settings.starboard.data.get(react.message.id);
+	let reactMsg;
+	if(/\p{Emoji}/u.test(customReact) == false) {
+		if(react.message.guild.emojis.cache.find(emoji => emoji.name === customReact) == undefined) return;
+		let reactId = react.message.guild.emojis.cache.find(emoji => emoji.name === customReact).id;
+		reactMsg = `<:${customReact}:${reactId}>`
+	}else{
+		reactMsg = customReact
+	}
 	if(msg == undefined) {
-		react.message.guild.channels.cache.get(guild.settings.starboard.channelID).send({content: `⭐ **${react.count}:** ${react.message.url}`, embeds: [embed] })
+			react.message.guild.channels.cache.get(guild.settings.starboard.channelID).send({content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
 			.then(message => {
 				guild.settings.starboard.data.set(react.message.id, message.id)
 				guild.save()
 			})
 			.catch(e => console.log(e));
 	}else{
-		react.message.guild.channels.cache.get(guild.settings.starboard.channelID).messages.cache.get(msg).edit({content: `⭐ **${react.count}:** ${react.message.url}`, embeds: [embed] })
+		react.message.guild.channels.cache.get(guild.settings.starboard.channelID).messages.cache.get(msg).edit({content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
 			.catch(e => console.log(e));
 	}
 
@@ -152,10 +161,19 @@ client.on('messageReactionRemove', async (react, user) => {
 	if (react.partial) await react.fetch()
 	let guild = await Guild.findOne({ guildID: react.message.guild.id });
 	if (!guild) return;
-	if(react.emoji.name != guild.settings.starboard.customReact) return;
+	let customReact = guild.settings.starboard.customReact;
+	if(react.emoji.name != customReact) return;
 	if(guild.settings.starboard.channelID == '-1') return;
 	if(react.count < guild.settings.starboard.reqReacts) {
 		let msg = guild.settings.starboard.data.get(react.message.id);
+		let reactMsg;
+	if(/\p{Emoji}/u.test(customReact) == false) {
+		if(react.message.guild.emojis.cache.find(emoji => emoji.name === customReact) == undefined) return;
+		let reactId = react.message.guild.emojis.cache.find(emoji => emoji.name === customReact).id;
+		reactMsg = `<:${customReact}:${reactId}>`
+	}else{
+		reactMsg = customReact
+	}
 		if(msg == undefined) return;
 		react.message.guild.channels.cache.get(guild.settings.starboard.channelID).messages.cache.get(msg).delete()
 			.catch(e => console.log(e));
@@ -176,14 +194,14 @@ client.on('messageReactionRemove', async (react, user) => {
 	if(content.length > 0) embed.setDescription(react.message.content || 'Пустая строка');
 	let msg = guild.settings.starboard.data.get(react.message.id);
 	if(msg == undefined) {
-		react.message.guild.channels.cache.get(guild.settings.starboard.channelID).send({content: `⭐ **${react.count}:** ${react.message.url}`, embeds: [embed] })
+		react.message.guild.channels.cache.get(guild.settings.starboard.channelID).send({content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
 			.then(message => {
 				guild.settings.starboard.data.set(react.message.id, message.id)
 				guild.save()
 			})
 			.catch(e => console.log(e));
 	}else{
-		react.message.guild.channels.cache.get(guild.settings.starboard.channelID).messages.cache.get(msg).edit({content: `⭐ **${react.count}:** ${react.message.url}`, embeds: [embed] })
+		react.message.guild.channels.cache.get(guild.settings.starboard.channelID).messages.cache.get(msg).edit({content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
 			.catch(e => console.log(e));
 	}
 
