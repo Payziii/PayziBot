@@ -27,18 +27,18 @@ module.exports = {
 			.then(collected => {
                 const embed1 = new EmbedBuilder()
   .setTitle("Угадай дистрибутив")
-  .setDescription(`Победитель:  **${collected.first().author}**\nОтвет: **${item.answers[0]}**\nИнтересный факт: **${item.fact || "Отсутствует"}**`)
+  .setDescription(`Ответ: **${item.answers[0]}**\nИнтересный факт: **${item.fact || "Отсутствует"}**`)
   .setImage(item.image)
   .setColor(guild.settings.other.color);
-				interaction.followUp({ embeds: [embed1] });
+				interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
 			})
 			.catch(collected => {
                 const embed5 = new EmbedBuilder()
                 .setTitle("Угадай дистрибутив")
-                .setDescription(`**Никто не угадал(((**\nОтвет: **${item.answers[0]}**\nИнтересный факт: **${item.fact || "Отсутствует"}**`)
+                .setDescription(`Ответ: **${item.answers[0]}**\nИнтересный факт: **${item.fact || "Отсутствует"}**`)
                 .setImage(item.image)
                 .setColor(guild.settings.other.color);
-                              interaction.followUp({ embeds: [embed5] });
+                              interaction.followUp({  content: `**Победителей нет(**`, embeds: [embed5] });
 			});
 	});
         }

@@ -114,9 +114,9 @@ client.on('ready', async () => {
 client.on('messageReactionAdd', async (react, user) => {
 	if (react.message.partial) await react.message.fetch()
 	if (react.partial) await react.fetch()
-	if(react.emoji.name != '⭐') return;
 	let guild = await Guild.findOne({ guildID: react.message.guild.id });
 	if (!guild) return;
+	if(react.emoji.name != guild.settings.starboard.customReact) return;
 	if(guild.settings.starboard.channelID == '-1') return;
 	if(react.count < guild.settings.starboard.reqReacts) return;
 	let messageAttachment = react.message.attachments.size > 0 ? Array.from(react.message.attachments.values())[0].url : null
@@ -150,9 +150,9 @@ client.on('messageReactionAdd', async (react, user) => {
 client.on('messageReactionRemove', async (react, user) => {
 	if (react.message.partial) await react.message.fetch()
 	if (react.partial) await react.fetch()
-	if(react.emoji.name != '⭐') return;
 	let guild = await Guild.findOne({ guildID: react.message.guild.id });
 	if (!guild) return;
+	if(react.emoji.name != guild.settings.starboard.customReact) return;
 	if(guild.settings.starboard.channelID == '-1') return;
 	if(react.count < guild.settings.starboard.reqReacts) {
 		let msg = guild.settings.starboard.data.get(react.message.id);

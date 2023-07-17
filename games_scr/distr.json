@@ -1,7 +1,8 @@
 [
 	{
 		"image": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Kubuntu_23.04_English.png",
-		"answers": ["kubuntu", "кубунту"]
+		"answers": ["kubuntu", "кубунту"],
+		"fact": "Интересное совпадение заключается в том, что Kubuntu означает «направленное на человечность» на языке бемба, и «бесплатный» на языке кирунди"
 	},
 	{
 		"image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Linux_Mint_21_%22Vanessa%22_%28Cinnamon%29.png",
@@ -64,10 +65,6 @@
 		"answers": ["firefox os", "firefox", "фаерфокс", "фаерфокс ос"]
 	},
 	{
-		"image": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Nokia_8110_4G.png",
-		"answers": ["kai os", "kai", "каи", "каи ос"]
-	},
-	{
 		"image": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Debian_12_Bookworm_GNOME_Desktop_English.png",
 		"answers": ["debian", "дебиан", "дебилиан"]
 	},
@@ -77,7 +74,7 @@
 	},
 	{
 		"image": "https://upload.wikimedia.org/wikipedia/commons/7/71/GNOME_2.2_on_Red_Hat_Linux_9_--_2003-02.png",
-		"answers": ["red hat linux", "ред хат", "red hat", "ред хат линукс"]
+		"answers": ["red hat linux", "ред хат", "red hat", "ред хат линукс", "rhel", "redhat"]
 	},
 	{
 		"image": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Windows10abstract.png",
@@ -96,7 +93,7 @@
 		"answers": ["windows 8.1", "виндовс 8.1"]
 	},
 	{
-		"image": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Windows_8_Start_UI.svg",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/8/86/Windows_8_pre-login.png",
 		"answers": ["windows 8", "виндовс 8"]
 	},
 	{
@@ -113,7 +110,7 @@
 	},
 	{
 		"image": "https://upload.wikimedia.org/wikipedia/ru/7/77/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82_Windows_Mobile_6.5.3.jpg",
-		"answers": ["windows mobile", "виндовс мобайл"]
+		"answers": ["windows mobile", "виндовс мобайл", "windows phone"]
 	},
 	{
 		"image": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Linpus.png",
@@ -129,7 +126,7 @@
 	},
 	{
 		"image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Lgx_yggdrasil_fall_1993.jpg",
-		"answers": ["yggdrasil linux/gnu/x"]
+		"answers": ["yggdrasil linux/gnu/x", "yggdrasil"]
 	},
 	{
 		"image": "https://upload.wikimedia.org/wikipedia/commons/1/19/Nova_Linux_Screenshot_-_desktop2.png",
@@ -182,12 +179,12 @@
 	{
 		"image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/RedStarOS-2021-04-03-16-50-57.png",
 		"answers": ["красная звезда ос", "red star os"],
-		"fact": "Северная Корея и ее верховный лидер Ким Чен Ын хотели создать дистрибутив Linux под названием Красная Звезда ОС с прикосновением, которое во многом напомнит вам Mac OS X, и это то, что северокорейский лидер является большим поклонником продуктов Apple, поскольку его видели на многочисленных фотографиях с iPhone, iPad и Mac. Это очень закрытый дистрибутив с точки зрения сетей, так что граждане, которые его используют, не могут свободно получить доступ к Интернету и с системой, так что, если вы хотите изменить эти правила фильтрации, система автоматически перезагружается, не позволяя вам вносить какие-либо изменения."
+		"fact": "Это очень закрытый дистрибутив с точки зрения сетей, так что граждане, которые его используют, не могут свободно получить доступ к Интернету и с системой, так что, если вы хотите изменить эти правила фильтрации, система автоматически перезагружается, не позволяя вам вносить какие-либо изменения"
 	},
 	{
 		"image": "https://www.linuxadictos.com/wp-content/uploads/suicide-linux.jpg.webp",
 		"answers": ["suicide linux", "суицид линукс"],
-		"fact": "Suicide Linux - довольно деликатный дистрибутив. Не подходит для новичков не из-за технической сложности, а из-за проблем, которые возникают, если вы ошиблись при выполнении команд. Если вы введете неправильную команду, она распознает ее как псевдоним «rm -rf /»"
+		"fact": "Если вы введете неправильную команду, Suicide Linux распознает её как псевдоним «rm -rf /»"
 	},
 	{
 		"image": "https://avatars.dzeninfra.ru/get-zen_doc/4491025/pub_63fd9bc5390b4539850e8e3e_63fda20be59c5a53fd15f737/scale_2400",
@@ -198,7 +195,15 @@
 		"answers": ["void linux", "воид линукс", "void", "воид"]
 	},
 	{
-		"image": "https://avatars.dzeninfra.ru/get-zen_doc/3488572/pub_63fd9bc5390b4539850e8e3e_63fdbe45021a13668448a1f2/scale_2400",
+		"image": "https://wudgleyd.ru/wp-content/uploads/d/5/4/d548604e9bd73e857892e081dbecfa81.png",
 		"answers": ["alpine linux", "alpine", "алпин линукс", "алпин"]
+	},
+	{
+		"image": "https://upload.wikimedia.org/wikipedia/ru/7/70/MacOS_Ventura_Desktop.png",
+		"answers": ["macos", "mac os", "макос", "мак ос", "mac", "мак"]
+	},
+	{
+		"image": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Guixsd-xfce-icecat-emacs.png",
+		"answers": ["guix system distribution", "guix", "гуикс"]
 	}
 ]
