@@ -3,4 +3,4 @@ module.exports = {
     color: '#255520',
     version: '0.4.0',
     owners: ['439079453650321409']
-}
+} 
