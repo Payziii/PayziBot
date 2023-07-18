@@ -4,12 +4,7 @@ const { inspect } = require('util')
 const config = require('../../config.js');
 exports.run = async (client, message, args, player, guild) => {
      let user = message.author.id;
-        if (!config.owners.includes(user)) {
-            await message.reply(
-                '<:no:1107254682100957224> | Команда доступна только разработчикам бота'
-            );
-            return;
-        }
+        if (!config.owners.includes(user)) return;
         let res;
 
         try {

@@ -11,7 +11,7 @@ module.exports = {
     if(!interaction.guild.members.me.voice.channel || queue.node.isPlaying === false) return interaction.reply('<:none:1107254345839415396> | Сейчас ничего не играет')
 
     const embed = new EmbedBuilder()
-  .setTitle("Сейчас играет...")
+  .setTitle("Что сейчас играет?")
   .setURL(queue.currentTrack.url)
   .setDescription(`Название: **${queue.currentTrack.title}**\n\n**${queue.node.createProgressBar()}**`)
   .setThumbnail(queue.currentTrack.thumbnail)

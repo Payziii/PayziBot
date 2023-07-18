@@ -38,16 +38,17 @@ module.exports = {
                 error = true;
                 msg = '<:no:1107254682100957224> | Как я заблокирую самого себя?';
                 break;
-            case '555772119980572687':
-                error = true;
-                msg = '<:no:1107254682100957224> | Я откажусь блокировать бота Xeellit и тебе советую'
-                break;
             default:
                 msg = `${user} был заблокирован. Причина: ${reason}`;
         }
         reason = interaction.user.username + ': ' + reason;
         member = await interaction.guild.members.cache.get(user.id);
-        if(error != true) { member.ban({reason: reason}) }
-        interaction.reply(msg)
+        if(error != true) {
+            member.ban({reason: reason}) 
+            .then(() => interaction.reply(msg))
+            .catch(() => interaction.reply('<:no:1107254682100957224> | Кажется я не могу заблокировать этого пользователя...'))
+        }else{
+            interaction.reply(msg)
+        }
     },
 };

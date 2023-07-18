@@ -35,8 +35,7 @@ module.exports = {
         .setTitle("Ссылки")
         .setDescription(`<:arrow:1107256361219268718> [Сервер поддержки](https://discord.gg/E7SFuVEB2Z)\n
         <:arrow:1107256361219268718> [Добавить бота](https://discord.com/api/oauth2/authorize?client_id=576442351426207744&permissions=1376939797574&scope=bot)\n
-        <:arrow:1107256361219268718> [Документация](https://payzibot.fiftygames.ru/)\n\n
-        <:arrow:1107256361219268718> [MayGPT](https://discord.com/api/oauth2/authorize?client_id=1086342381567229964&permissions=448824416320&scope=bot)`)
+        <:arrow:1107256361219268718> [Документация](https://payzibot.fiftygames.ru/)\n\n`)
         .setThumbnail("https://cdn.discordapp.com/avatars/732867965053042690/f3f976adc4cb628dd707a8f4203e1f5d.webp?size=4096")
         .setColor(guild.settings.other.color);
         const link_button = new ButtonBuilder()

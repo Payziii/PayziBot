@@ -32,18 +32,23 @@ module.exports = {
                 break;
             case interaction.user.id:
                 error = true;
-                msg = '<:no:1107254682100957224> | Не пробовал просто выйти с сервера?';
+                msg = '<:no:1107254682100957224> | Не пробовал просто выйти с сервера? Гений';
                 break;
             case bot_id:
                 error = true;
-                msg = '<:no:1107254682100957224> | Как я выйду с этого сервера?';
+                msg = '<:no:1107254682100957224> | Я не хочу выходить с этого прекрасного сервера!';
                 break;
             default:
                 msg = `${user} был кикнут с этого замечательного сервера. Причина: ${reason}`;
         }
         reason = interaction.user.username + ': ' + reason;
         member = await interaction.guild.members.cache.get(user.id);
-        if(error != true) { member.kick({reason: reason}) }
-        interaction.reply(msg)
+        if(error != true) {
+            member.kick({reason: reason}) 
+            .then(() => interaction.reply(msg))
+            .catch(() => interaction.reply('<:no:1107254682100957224> | Кажется я не могу кикнить этого пользователя...'))
+        }else{
+            interaction.reply(msg)
+        }
     },
 };

@@ -23,7 +23,7 @@ module.exports = {
         
         tr(text, lang)
         .then(function (result) {
-            if(result.text.length > 1000) return interaction.reply(`текст перевода содержит слишком много символов. Его длина равна ${result.text.length} символов. Уменьшите длину до 1000 символов!`, message);
+            if(result.text.length > 1000) return interaction.editReply(`<:no:1107254682100957224> | Текст перевода содержит слишком много символов. Его длина равна ${result.text.length} символов. Уменьшите длину до 1000 символов!`);
             let t = text;
             if(result.hasCorrectedText === true) t = result.correctedText;
 

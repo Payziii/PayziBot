@@ -32,7 +32,7 @@ module.exports = {
                 break;
             case interaction.user.id:
                 error = true;
-                msg = '<:no:1107254682100957224> | А как ты это используешь?';
+                msg = '<:no:1107254682100957224> | Я думал ты не в муте, ну ок)';
                 break;
             case bot_id:
                 error = true;
