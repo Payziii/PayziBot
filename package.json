@@ -9,12 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@discord-player/extractor": "^4.2.2",
     "@discordjs/opus": "^0.9.0",
     "@discordjs/voice": "^0.16.0",
-    "discord-player": "^6.3.0",
     "discord.js": "^14.11.0",
-    "ffmpeg-static": "^5.1.0",
     "gismeteo": "^1.0.8",
     "googletrans": "^1.0.2",
     "mongoose": "^6.0.12",
@@ -22,7 +19,6 @@
     "payzi-time": "^0.0.3",
     "pm2": "^5.3.0",
     "querystring": "^0.2.1",
-    "weather-js": "^2.0.0",
-    "ytdl-core": "^4.11.4"
+    "weather-js": "^2.0.0"
   }
 }

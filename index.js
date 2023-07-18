@@ -1,6 +1,4 @@
 const { Client, GatewayIntentBits, Collection, ActivityType, Partials, EmbedBuilder, ClientUser } = require('discord.js');
-const { Player, QueryType } = require('discord-player');
-const { SpotifyExtractor, SoundCloudExtractor } = require('@discord-player/extractor');
 const fs = require('node:fs');
 const path = require('node:path');
 const mongoose = require('mongoose');
@@ -32,24 +30,9 @@ mongoose.connect(
 	{ useNewUrlParser: true, useUnifiedTopology: true },
 );
 
-const player = new Player(client);
-player.extractors.loadDefault();
-
 client.commands = new Collection();
 client.textCommands = new Collection();
 client.textAliases = new Collection();
-
-player.events.on('playerStart', (queue, track) => {
-	queue.metadata.channel.send(`<:voice:732128155418099733> | Сейчас играет: **${track.title}**`);
-});
-
-player.events.on('disconnect', (queue) => {
-	queue.metadata.channel.send('<:Disconnect_white:1112604723523100772> | Я покинул голосовой канал');
-});
-
-player.events.on('emptyQueue', (queue) => {
-	queue.metadata.channel.send('<:Disconnect_white:1112604723523100772> | Очередь для музыки пуста, отключусь через 3 минуты');
-});
 
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
@@ -58,9 +41,9 @@ for (const file of eventFiles) {
 	const filePath = path.join(eventsPath, file);
 	const event = require(filePath);
 	if (event.once) {
-		client.once(event.name, (...args) => event.execute(...args, player, client));
+		client.once(event.name, (...args) => event.execute(...args, client));
 	} else {
-		client.on(event.name, (...args) => event.execute(...args, player, client));
+		client.on(event.name, (...args) => event.execute(...args, client));
 	}
 }
 
@@ -241,7 +224,7 @@ client.on('messageCreate', async (message) => {
 			cmd => cmd.help.aliases && cmd.help.aliases.includes(command)
 		);
 	if (!cmd) return;
-	cmd.run(client, message, args, player, guild);
+	cmd.run(client, message, args, guild);
 });
 
 client.login('NTc2NDQyMzUxNDI2MjA3NzQ0.GeV65R.R0P6_sBW9WwFTwL0K3qN1K9I49phKdtUpD6qXA');

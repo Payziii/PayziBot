@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const { inspect } = require('util')
 const config = require('../../config.js');
-exports.run = async (client, message, args, player, guild) => {
+exports.run = async (client, message, args, guild) => {
      let user = message.author.id;
         if (!config.owners.includes(user)) return;
         let res;

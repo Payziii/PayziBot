@@ -3,7 +3,7 @@ const Guild = require('../database/guild.js');
 
 module.exports = {
 	name: Events.InteractionCreate,
-	async execute(interaction, player, client) {
+	async execute(interaction, client) {
         if (!interaction.isChatInputCommand()) return;
         // DB
     let guild = await Guild.findOne({ guildID: interaction.guild.id });
@@ -25,7 +25,7 @@ module.exports = {
     if (interaction.channel === null) return interaction.reply("<:no:1107254682100957224> | Я доступен только на серверах!");
     const cmd = interaction.client.commands.get(interaction.commandName);
     try {
-        await cmd.execute(interaction, guild, player);
+        await cmd.execute(interaction, guild);
     } catch (error) {
         interaction.reply(`<:no:1107254682100957224> | Произошла ошибка!`);
         console.log(error);

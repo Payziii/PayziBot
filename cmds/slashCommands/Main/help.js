@@ -18,10 +18,6 @@ module.exports = {
             value: "`ban`, `kick`, `mute`, `unmute`, `channel`, `config`, `starboard`",
           },
           {
-            name: "Музыка",
-            value: "`play`, `nowplaying`, `stop`, `skip`, `volume`",
-          },
-          {
             name: "Игры",
             value: "`guess`",
           },
