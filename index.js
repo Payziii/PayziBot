@@ -33,6 +33,7 @@ mongoose.connect(
 client.commands = new Collection();
 client.textCommands = new Collection();
 client.textAliases = new Collection();
+client.cooldowns = new Collection();
 
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
@@ -192,20 +193,37 @@ client.on('messageCreate', async (message) => {
 
 	// DB
 	let guild = await Guild.findOne({ guildID: message.guild.id });
+	let user = await User.findOne({ userID: message.author.id })
 
 	if (!guild) {
-		await Guild.create({ guildID: message.guild.id });
+		await Guild.create({ guildID: message.guild.id }).then(() => {
 		client.channels.cache
 			.get('1124261194325299271')
 			.send(
-				`:white_check_mark: | Сервер ${message.guild.name}(${
+				`<:announcement:732128155195801641> | Сервер ${message.guild.name}(${
 					message.guild.id
 				}) успешно был добавлен в БД`
 			);
+		})
 	}
-	guild = await Guild.findOne({ guildID: message.guild.id });
 
-	if (!guild) return message.reply('1')
+	if(!user) {
+		await User.create({ userID: message.author.id }).then(() => {
+			client.channels.cache
+			.get('1124261194325299271')
+			.send(
+				`<:member:732128945365057546> | Пользователь ${message.author.username}(${
+					message.author.id
+				}) успешно был добавлен в БД`
+			);
+		})
+	}
+
+	guild = await Guild.findOne({ guildID: message.guild.id });
+	user = await User.findOne({ userID: message.author.id })
+
+	if (!guild) return;
+	if(!user) return;
 	// DB
 
 	const args = msg
@@ -218,7 +236,7 @@ client.on('messageCreate', async (message) => {
 			cmd => cmd.help.aliases && cmd.help.aliases.includes(command)
 		);
 	if (!cmd) return;
-	cmd.run(client, message, args, guild);
+	cmd.run(client, message, args, guild, user);
 });
 
 client.login('NTc2NDQyMzUxNDI2MjA3NzQ0.GeV65R.R0P6_sBW9WwFTwL0K3qN1K9I49phKdtUpD6qXA');

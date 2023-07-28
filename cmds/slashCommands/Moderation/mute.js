@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 const { bot_id } = require('../../../config.js');
 module.exports = {
+    cooldown: 3,
     data: new SlashCommandBuilder()
         .setName('mute')
         .setDescription('Выдать мут пользователю')

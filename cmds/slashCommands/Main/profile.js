@@ -4,29 +4,17 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('profile')
         .setDescription('Ваша игровая статистика'),
-    async execute(interaction, guild) {
+    async execute(interaction, guild, user) {
         const embed = new EmbedBuilder()
-        .setTitle("Список доступных команд")
-        .setDescription("Бот использует слэш-команды. Для вызова команды введите `/команда`")
+        .setTitle("Игровая статистика")
+        .setThumbnail(`https://cdn.discordapp.com/avatars/${interaction.user.id}/${interaction.user.avatar}.webp`)
         .addFields(
           {
-            name: "Основное",
-            value: "`help`, `avatar`, `userinfo`, `stats`, `translate`, `weather`, `github`",
-          },
-          {
-            name: "Модерация",
-            value: "`ban`, `kick`, `mute`, `unmute`, `channel`, `config`, `starboard`",
-          },
-          {
-            name: "Игры",
-            value: "`guess`",
+            name: "Угадано",
+            value: `Дистрибутивов: **${user.games.distr}**\nИгр: **${user.games.game}**\nГородов: **${user.games.city}**\nЛоготипов: **${user.games.logo}**`,
           },
         )
-        .setThumbnail(`https://cdn.discordapp.com/icons/${interaction.guild.id}/${interaction.guild.icon}.webp`)
         .setColor(guild.settings.other.color)
-        .setFooter({
-          text: "Команды бота PayziBot",
-        });
             await interaction.reply({ embeds: [embed] });
     },
 };

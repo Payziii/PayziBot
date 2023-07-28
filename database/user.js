@@ -13,6 +13,8 @@ const user = mongoose.Schema({
 	games: {
 		distr: { type: Number, default: 0 },
 		game: { type: Number, default: 0 },
+		city: { type: Number, default: 0 },
+		logo: { type: Number, default: 0 }
 	}
 });
 

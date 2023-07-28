@@ -3,6 +3,7 @@ const Guild = require('../../../database/guild.js');
 const EmbedFunc = require('../../../func/config/embeds.js');
 
 module.exports = {
+    cooldown: 5,
     data: new SlashCommandBuilder()
         .setName('config')
         .setDescription('Конфигурация сервера')

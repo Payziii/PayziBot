@@ -3,6 +3,7 @@ const tr = require('googletrans').default;
 const config = require('../../../config.js');
 
 module.exports = {
+    cooldown: 3,
     data: new SlashCommandBuilder()
         .setName('translate')
         .setDescription('Переводчик')

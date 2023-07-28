@@ -1,6 +1,7 @@
 const {SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder, PermissionFlagsBits, ChannelType} = require("discord.js");
 
 module.exports = {
+    cooldown: 5,
     data: new SlashCommandBuilder()
         .setName('starboard')
         .setDescription('Насройки звёздной доски')

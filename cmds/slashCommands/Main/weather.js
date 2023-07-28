@@ -3,6 +3,7 @@ const { Gismeteo } = require('gismeteo');
 const gismeteo = new Gismeteo();
 
 module.exports = {
+    cooldown: 5,
     data: new SlashCommandBuilder()
         .setName('weather')
         .setDescription('Узнать погоду')

@@ -1,6 +1,7 @@
 const {SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder} = require("discord.js");
 
 module.exports = {
+    cooldown: 5,
     data: new SlashCommandBuilder()
         .setName('github')
         .setDescription('Посмотреть пользователя на GitHub')

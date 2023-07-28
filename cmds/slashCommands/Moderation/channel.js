@@ -1,5 +1,6 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 module.exports = {
+    cooldown: 3,
     data: new SlashCommandBuilder()
         .setName('channel')
         .setDescription('Управление каналами')

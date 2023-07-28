@@ -10,10 +10,10 @@ const premiumSchema = mongoose.Schema({
 const guild = mongoose.Schema({
   guildID: String,
   settings: {
-    music: {
-        autoLeaveEnd: { type: Number, default: 180 },
-        autoLeaveEmpty: { type: Number, default: 180 },
-        volume: { type: Number, default: 100 }
+    colors: {
+      basic: {type: String, default: '#255520'},
+      error: {type: String, default: '#ff033e'},
+      correct: {type: String, default: '#008000'}
     },
     other: {
         weather: {
