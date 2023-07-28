@@ -10,6 +10,10 @@ const premiumSchema = mongoose.Schema({
 const user = mongoose.Schema({
 	userID: String,
 	premium: { type: premiumSchema, default: null },
+	games: {
+		distr: { type: Number, default: 0 },
+		game: { type: Number, default: 0 },
+	}
 });
 
 module.exports = mongoose.model('User', user);

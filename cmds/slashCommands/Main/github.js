@@ -15,6 +15,7 @@ module.exports = {
         await interaction.deferReply();
         let query = interaction.options.getString('ник');
 
+        let msg;
         let bio = 'Отсутствует';
         let name = 'Отсутствует';
         let login;
@@ -25,9 +26,7 @@ module.exports = {
         let fl;
         
         await require('node-fetch')(`https://api.github.com/users/${query}`).then(r => r.json()).then(r => {
-    if(r.message && r.message == 'Not Found'){
-        interaction.editReply(`<:no:1107254682100957224> | Ничего не найдено!`);
-    }else{
+    if(r.message && r.message == 'Not Found') return msg = true;
         if(r.bio) bio = r.bio;
         if(r.name) name = r.name;
         login = r.login;
@@ -36,8 +35,8 @@ module.exports = {
         html_url = r.html_url;
         id = r.id;
         avatar = r.avatar_url;
-    }
 })
+if(msg) return interaction.editReply(`<:no:1107254682100957224> | Ничего не найдено!`);
 const embed = new EmbedBuilder()
         .setTitle(`Пользователь ${login}`)
         .setURL(html_url)
@@ -75,7 +74,6 @@ const reps = new EmbedBuilder()
   await interaction.editReply({ embeds: [reps], components: []});
 
 } catch (e) {
-    console.log(e)
 	await interaction.editReply({ embeds: [embed], components: [] });
 }
     },

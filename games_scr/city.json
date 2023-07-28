@@ -1,0 +1,302 @@
+[
+    {
+        "image": "https://picworld.ru/wp-content/uploads/2020/10/9515156-48.jpg",
+        "answers": ["Екатеринбург", "ЕКБ"],
+        "country": "Россия",
+        "id": 1
+    },
+    {
+        "image": "https://cdn.ananasposter.ru/image/cache/catalog/poster/travel/85/9455-1000x830.jpg",
+        "answers": ["Москва", "МСК"],
+        "country": "Россия",
+        "id": 2
+    },
+    {
+        "image": "https://cdn.fishki.net/upload/post/2023/03/08/3719033/cba6e0da1738fe74ec40abecce711652.jpg",
+        "answers": ["Санкт-Петербург", "Питер", "СПБ"],
+        "country": "Россия",
+        "id": 3
+    },
+    {
+        "image": "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663231867_42-mykaleidoscope-ru-p-nochnoi-novosibirsk-instagram-44.jpg",
+        "answers": ["Новосибирск"],
+        "country": "Россия",
+        "id": 4
+    },
+    {
+        "image": "https://snob.ru/indoc/og/d4/bf/d4bff250e53d1760899ce59a4c58dab4125e9fcb32d8900135eb73c245fce079.jpg",
+        "answers": ["Норильск"],
+        "country": "Россия",
+        "id": 5
+    },
+    {
+        "image": "https://sportishka.com/uploads/posts/2022-04/1650658758_1-sportishka-com-p-nochnoi-krasnoyarsk-krasivo-foto-1.jpg",
+        "answers": ["Красноярск"],
+        "country": "Россия",
+        "id": 6
+    },
+    {
+        "image": "https://cdn.iportal.ru/preview/news/articles/075450c7b31de5dc654a8c19eed2a3a8002a45d2_3000_2247.jpeg",
+        "answers": ["Астана"],
+        "country": "Казахстан",
+        "id": 7
+    },
+    {
+        "image": "http://savebest.ru/wp-content/uploads/2015/01/%D0%B3%D0%BE%D1%80%D0%BE%D0%B4_%D0%A8%D1%82%D1%83%D1%82%D0%B3%D0%B0%D1%80%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D1%8F-city_Stuttgart_Germany-3.jpg",
+        "answers": ["Штутгарт"],
+        "country": "Германия",
+        "id": 8
+    },
+    {
+        "image": "https://funart.pro/uploads/posts/2021-04/1618665375_31-funart_pro-p-gorod-venetsiya-krasivie-mesta-foto-33.jpg",
+        "answers": ["Венеция"],
+        "country": "Италия",
+        "id": 9
+    },
+    {
+        "image": "https://traveltimes.ru/wp-content/uploads/2022/07/Tokyo_-_flickr.com_-_Pikaglace.jpg",
+        "answers": ["Токио"],
+        "country": "Япония",
+        "id": 10
+    },
+    {
+        "image": "https://corplex.ae/wp-content/uploads/2021/09/3-min.png",
+        "answers": ["Дубай"],
+        "country": "ОАЭ",
+        "id": 11
+    },
+    {
+        "image": "https://traveltimes.ru/wp-content/uploads/2021/05/5mCTSduNCm49Vt8uuoq7ku5SnWnAN44pdxXytWrd.jpeg",
+        "answers": ["Лондон"],
+        "country": "Великобритания",
+        "id": 12
+    },
+    {
+        "image": "https://kartinkin.net/uploads/posts/2022-03/1648031663_1-kartinkin-net-p-kartinki-chikago-1.jpg",
+        "answers": ["Чикаго"],
+        "country": "США",
+        "id": 13
+    },
+    {
+        "image": "https://mulino58.ru/wp-content/uploads/1/6/f/16f092a6005501192972b2da95b387f4.jpg",
+        "answers": ["Вашингтон"],
+        "country": "США",
+        "id": 14
+    },
+    {
+        "image": "https://makemytravel.ru/img/2017/06/31343.jpg",
+        "answers": ["Майами"],
+        "country": "США",
+        "id": 15
+    },
+    {
+        "image": "https://images.wallpaperscraft.ru/image/single/nochnoj_gorod_arhitektura_ogni_goroda_134937_3840x2400.jpg",
+        "answers": ["Тайбэй"],
+        "country": "Тайвань",
+        "id": 16
+    },
+    {
+        "image": "https://i.pinimg.com/736x/d0/41/e2/d041e2542cc8d5bbb765b324669306b2.jpg",
+        "answers": ["Бейрут"],
+        "country": "Ливан",
+        "id": 17
+    },
+    {
+        "image": "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663109386_37-mykaleidoscope-ru-p-baku-dostoprimechatelnosti-instagram-39.jpg",
+        "answers": ["Баку"],
+        "country": "Азербайджан",
+        "id": 18
+    },
+    {
+        "image": "https://24warez.ru/uploads/posts/2020-04/290420/530414/7.jpg",
+        "answers": ["Якутск"],
+        "country": "Россия",
+        "id": 19
+    },
+    {
+        "image": "https://media-cdn.tripadvisor.com/media/photo-c/1280x250/0c/fa/f5/f2/caption.jpg",
+        "answers": ["Саратов"],
+        "country": "Россия",
+        "id": 20
+    },
+    {
+        "image": "http://s4.fotokto.ru/photo/full/491/4911131.jpg",
+        "answers": ["Оренбург"],
+        "country": "Россия",
+        "id": 21
+    },
+    {
+        "image": "https://turproezdka.ru/wp-content/uploads/2018/05/2-kazan-1.jpg",
+        "answers": ["Казань"],
+        "country": "Россия",
+        "id": 22
+    },
+    {
+        "image": "https://avatars.dzeninfra.ru/get-zen_doc/4389079/pub_62212c317193f374782971ce_62212c4678c7ec42f51ffe3b/scale_1200",
+        "answers": ["Нижний Новгород"],
+        "country": "Россия",
+        "id": 23
+    },
+    {
+        "image": "https://cdn.fishki.net/upload/post/201402/25/1246916/ecd43ef864cf1c32e55e120a7dfb0a0d.jpg",
+        "answers": ["Челябинск"],
+        "country": "Россия",
+        "id": 24
+    },
+    {
+        "image": "https://rosspectr.ru/wp-content/uploads/3/5/a/35a727206cf31d413d6f5dc1f81a75b4.jpeg",
+        "answers": ["Самара"],
+        "country": "Россия",
+        "id": 25
+    },
+    {
+        "image": "https://bash.addnt.ru/wp-content/uploads/2016/10/ufa_20_jpg_ejw_900.jpg",
+        "answers": ["Уфа"],
+        "country": "Россия",
+        "id": 26
+    },
+    {
+        "image": "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663107489_22-mykaleidoscope-ru-p-rostov-na-donu-dostoprimechatelnosti-vkont-24.jpg",
+        "answers": ["Ростов-На-Дону", "Ростов на Дону", "Ростов"],
+        "country": "Россия",
+        "id": 27
+    },
+    {
+        "image": "https://newizv.ru/attachments/d247a5f078c462247dce156e9a3ba9af22415c4f/store/crop/0/0/670/418/1920/0/0/54fbab1f25836a44048051acb00787d02c523e7018e9e2d900e199873e0e/5030a65da73b6eee03853afb13055b139afabde86b96db936e3ab879c1d5",
+        "answers": ["Омск"],
+        "country": "Россия",
+        "id": 28
+    },
+    {
+        "image": "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663467540_7-mykaleidoscope-ru-p-krasnodar-stolitsa-krasnodarskogo-kraya-ob-7.jpg",
+        "answers": ["Краснодар"],
+        "country": "Россия",
+        "id": 29
+    },
+    {
+        "image": "https://vgltu.ru/files/international_activities/1_voronezh/9.jpg",
+        "answers": ["Воронеж"],
+        "country": "Россия",
+        "id": 30
+    },
+    {
+        "image": "https://gkd.ru/assets/i/ai/4/1/3/i/2750734.jpg",
+        "answers": ["Пермь"],
+        "country": "Россия",
+        "id": 31
+    },
+    {
+        "image": "http://tripplanet.ru/wp-content/uploads/europe/russia/volgograd/volga-river-volgograd.jpg",
+        "answers": ["Волгоград"],
+        "country": "Россия",
+        "id": 32
+    },
+    {
+        "image": "https://static.tildacdn.com/tild3961-3162-4238-b334-303639613431/stambul.jpg",
+        "answers": ["Стамбул"],
+        "country": "Турция",
+        "id": 33
+    },
+    {
+        "image": "https://i.pinimg.com/originals/e6/0c/b7/e60cb7970fe6f9778c178e0d91583d1d.jpg",
+        "answers": ["Анкара"],
+        "country": "Турция",
+        "id": 34
+    },
+    {
+        "image": "https://storage.yandexcloud.net/storage.yasno.media/nat-geo/images/2019/5/16/38b9ea56124d4bb1bed10e0846cda7ac.max-2500x1500.jpg",
+        "answers": ["Пхеньян"],
+        "country": "КНДР",
+        "id": 35
+    },
+    {
+        "image": "https://www.crowncastle.com/Site/Communities/asset_upload_file75315_32566.jpg",
+        "answers": ["Балтимор"],
+        "country": "США",
+        "id": 36
+    },
+    {
+        "image": "http://rs.time.mn/mode/32227dd0-40ce-41ce-b608-e3f70a479c38/external/time_mn.jpg",
+        "answers": ["Чойр"],
+        "country": "Монголия",
+        "id": 37
+    },
+    {
+        "image": "https://darkhanculture.ucoz.org/darkhan_sum/darkhan4-1.jpg",
+        "answers": ["Данхан"],
+        "country": "Монголия",
+        "id": 38
+    },
+    {
+        "image": "https://static.mk.ru/upload/entities/2021/12/08/08/articles/facebookPicture/67/20/66/49/641941e1938fbe80c3a1af0696207d0c.jpg",
+        "answers": ["Улан Батор"],
+        "country": "Монголия",
+        "id": 39
+    },
+    {
+        "image": "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663087369_19-mykaleidoscope-ru-p-madrid-dostoprimechatelnosti-21.jpg",
+        "answers": ["Мадрид"],
+        "country": "Испания",
+        "id": 40
+    },
+    {
+        "image": "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663416072_1-mykaleidoscope-ru-p-ispaniya-stolitsa-barselona-dostoprimechat-1.jpg",
+        "answers": ["Барселона"],
+        "country": "Испания",
+        "id": 41
+    },
+    {
+        "image": "https://kartinkin.net/pics/uploads/posts/2022-07/1657812806_55-kartinkin-net-p-palma-de-maiorka-priroda-krasivo-foto-56.jpg",
+        "answers": ["Пальма"],
+        "country": "Испания",
+        "id": 42
+    },
+    {
+        "image": "https://fikiwiki.com/uploads/posts/2022-02/1644857605_9-fikiwiki-com-p-krasivie-kartinki-rima-11.jpg",
+        "answers": ["Рим"],
+        "country": "Италия",
+        "id": 43
+    },
+    {
+        "image": "https://krot.info/uploads/posts/2021-12/1640792713_63-krot-info-p-stolitsa-italii-milan-krasivo-foto-67.jpg",
+        "answers": ["Милан"],
+        "country": "Италия",
+        "id": 44
+    },
+    {
+        "image": "https://traveltimes.ru/wp-content/uploads/2021/11/marseille-4950003_1280.jpg",
+        "answers": ["Марсель"],
+        "country": "Франция",
+        "id": 45
+    },
+    {
+        "image": "https://skyandmethod.com/wp-content/uploads/2018/01/DJI_0085_Maydan_sandm_SM.jpg",
+        "answers": ["Киев"],
+        "country": "Украина",
+        "id": 46
+    },
+    {
+        "image": "https://ikryvorizhets.com/wp-content/uploads/sites/11/2022/02/den-mista1.jpg",
+        "answers": ["Кривой рог", "Прямой рог"],
+        "country": "Украина",
+        "id": 47
+    },
+    {
+        "image": "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663350313_53-mykaleidoscope-ru-p-stolitsa-donetska-instagram-56.jpg",
+        "answers": ["Донецк"],
+        "country": "undefined",
+        "id": 48
+    },
+    {
+        "image": "https://traveltimes.ru/wp-content/uploads/2022/07/1575741265_11-19.jpg",
+        "answers": ["Цюрих"],
+        "country": "Швейцария",
+        "id": 49
+    },
+    {
+        "image": "https://onlineexpo.com/site/assets/files/21866/danpower1.1920x1080.jpg",
+        "answers": ["Выру"],
+        "country": "Эстония",
+        "id": 50
+    }
+]

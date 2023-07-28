@@ -1,0 +1,32 @@
+const {SlashCommandBuilder, EmbedBuilder} = require("discord.js");
+
+module.exports = {
+    data: new SlashCommandBuilder()
+        .setName('profile')
+        .setDescription('Ваша игровая статистика'),
+    async execute(interaction, guild) {
+        const embed = new EmbedBuilder()
+        .setTitle("Список доступных команд")
+        .setDescription("Бот использует слэш-команды. Для вызова команды введите `/команда`")
+        .addFields(
+          {
+            name: "Основное",
+            value: "`help`, `avatar`, `userinfo`, `stats`, `translate`, `weather`, `github`",
+          },
+          {
+            name: "Модерация",
+            value: "`ban`, `kick`, `mute`, `unmute`, `channel`, `config`, `starboard`",
+          },
+          {
+            name: "Игры",
+            value: "`guess`",
+          },
+        )
+        .setThumbnail(`https://cdn.discordapp.com/icons/${interaction.guild.id}/${interaction.guild.icon}.webp`)
+        .setColor(guild.settings.other.color)
+        .setFooter({
+          text: "Команды бота PayziBot",
+        });
+            await interaction.reply({ embeds: [embed] });
+    },
+};

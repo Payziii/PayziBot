@@ -27,7 +27,11 @@ module.exports = {
     try {
         await cmd.execute(interaction, guild);
     } catch (error) {
-        interaction.reply(`<:no:1107254682100957224> | Произошла ошибка!`);
+        if(interaction.deferred === false){
+            interaction.reply(`<:no:1107254682100957224> | Произошла ошибка!\n\`\`\`bash\n${error}\`\`\``);
+        }else{
+            interaction.editReply(`<:no:1107254682100957224> | Произошла ошибка!\n\`\`\`bash\n${error}\`\`\``);
+        }
         console.log(error);
     }
 	},

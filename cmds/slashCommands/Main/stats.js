@@ -26,7 +26,7 @@ module.exports = {
     },
     {
       name: "Хостинг",
-      value: `ОЗУ: \`${(process.memoryUsage().heapUsed / (1024 * 1024)).toFixed(0)} МБ\`/\`${(os.totalmem()/ (1024 * 1024)).toFixed(0)} МБ\`\nWebSocket: \`${client.ws.ping}ms\`\nCPU: \`${os.cpus()[0].model}\``,
+      value: `ОЗУ: \`${(process.memoryUsage().heapUsed / (1024 * 1024)).toFixed(0)} МБ\`/\`${(os.totalmem()/ (1024 * 1024)).toFixed(0)} МБ\`\nWebSocket: \`${client.ws.ping}ms\`\nЦПУ: \`${os.cpus()[0].model}\``,
     },
   )
   .setThumbnail("https://cdn.discordapp.com/avatars/732867965053042690/f3f976adc4cb628dd707a8f4203e1f5d.webp?size=4096")

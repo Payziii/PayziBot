@@ -1,0 +1,77 @@
+[
+    {
+        "image": "https://avatars.mds.yandex.net/i?id=dfd80a17c3370d99a5285fa9421b515e03324b5d-9229208-images-thumbs&n=13",
+        "answers": ["Пятёрочка", "Пятерочка"],
+        "id": 1
+    },
+    {
+        "image": "https://avatars.dzeninfra.ru/get-zen_doc/3489860/pub_63c53ecfbf7ffa587dd0c929_63c53ef8bf7ffa587dd0ceac/scale_1200",
+        "answers": ["ВКонтакте", "ВК", "VK"],
+        "id": 2
+    },
+    {
+        "image": "https://static.pepper.ru/threads/raw/Pc0Vd/340204_1/re/1024x1024/qt/60/340204_1.jpg",
+        "answers": ["Яндекс Плюс", "Плюс"],
+        "id": 3
+    },
+    {
+        "image": "https://assets.turbologo.ru/blog/ru/2019/12/18163124/audi-emblem.png",
+        "answers": ["Audi", "Ауди"],
+        "id": 4
+    },
+    {
+        "image": "https://pic.rutubelist.ru/user/5c/34/5c34ee4a7766551ce8014dd6734c8dbe.jpg",
+        "answers": ["Python", "Питон", "Пайтон"],
+        "id": 5
+    },
+    {
+        "image": "http://top-fon.com/uploads/posts/2023-01/1674613811_top-fon-com-p-oao-rzhd-fon-dlya-prezentatsii-179.jpg",
+        "answers": ["РЖД"],
+        "id": 6
+    },
+    {
+        "image": "https://projector-laser.ru/wp-content/uploads/2020/12/LG-Logo-1536x864.png",
+        "answers": ["LG"],
+        "id": 7
+    },
+    {
+        "image": "https://cdn-edge.kwork.ru/pics/t3/35/18869018-1649009111.jpg",
+        "answers": ["Figma", "Фигма"],
+        "id": 8
+    },
+    {
+        "image": "https://i.ytimg.com/vi/hvsXhO4jtfg/maxresdefault.jpg?9289889566",
+        "answers": ["Cinema 4D", "Cinema", "Синема 4Д", "Синема"],
+        "id": 9
+    },
+    {
+        "image": "https://marcas-logos.net/wp-content/uploads/2019/12/Telegram-logo.png",
+        "answers": ["Telegram", "Телеграм"],
+        "id": 10
+    },
+    {
+        "image": "https://www.pngall.com/wp-content/uploads/11/Kia-Logo-Transparent.png",
+        "answers": ["KIA", "КИА"],
+        "id": 11
+    },
+    {
+        "image": "https://sun6-20.userapi.com/s/v1/ig2/yh6dw419IRDm6p47GfGpe-FXbwIaHY2u_fSmqb2Xo4n3Dz5VZkJTogY07ULnYm0kNChE-e1aXEU73a6S92l_WRUl.jpg?size=1073x1073&quality=95&crop=6,0,1073,1073&ava=1",
+        "answers": ["Магнит"],
+        "id": 12
+    },
+    {
+        "image": "https://papik.pro/grafic/uploads/posts/2023-04/1681522128_papik-pro-p-logotip-diskorda-vektor-25.png",
+        "answers": ["Discord", "Дискорд"],
+        "id": 13
+    },
+    {
+        "image": "https://preview.redd.it/qevcezopawq11.png?auto=webp&s=4932c974fe98d429bb326c9cb09765a6ad463797",
+        "answers": ["Tesla", "Тесла"],
+        "id": 14
+    },
+    {
+        "image": "https://w7.pngwing.com/pngs/342/131/png-transparent-penguin-tux-design-logo-linux-penguin-animals-logo-vertebrate.png",
+        "answers": ["Linux", "Линукс"],
+        "id": 15
+    }
+]

@@ -134,9 +134,6 @@ client.on('messageReactionAdd', async (react, user) => {
 		react.message.guild.channels.cache.get(guild.settings.starboard.channelID).messages.cache.get(msg).edit({content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
 			.catch(e => console.log(e));
 	}
-
-	console.log(react.count)
-	console.log(user)
 })
 
 client.on('messageReactionRemove', async (react, user) => {
@@ -187,9 +184,6 @@ client.on('messageReactionRemove', async (react, user) => {
 		react.message.guild.channels.cache.get(guild.settings.starboard.channelID).messages.cache.get(msg).edit({content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
 			.catch(e => console.log(e));
 	}
-
-	console.log(react.count)
-	console.log(user)
 })
 
 client.on('messageCreate', async (message) => {
