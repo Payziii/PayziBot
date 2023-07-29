@@ -26,7 +26,7 @@ module.exports = {
     },
     {
       name: "Хостинг",
-      value: `ОЗУ: \`${(process.memoryUsage().heapUsed / (1024 * 1024)).toFixed(0)} МБ\`/\`${(os.totalmem()/ (1024 * 1024)).toFixed(0)} МБ\`\nWebSocket: \`${client.ws.ping}ms\`\nЦПУ: \`${os.cpus()[0].model}\``,
+      value: `ОЗУ: \`${(process.memoryUsage().heapUsed / (1024 * 1024)).toFixed(0)} МБ\`/\`${(os.totalmem()/ (1024 * 1024)).toFixed(0)} МБ\`\nWebSocket: \`${client.ws.ping}ms\`\nЦП: \`${os.cpus()[0].model}\``,
     },
   )
   .setThumbnail("https://cdn.discordapp.com/avatars/732867965053042690/f3f976adc4cb628dd707a8f4203e1f5d.webp?size=4096")
@@ -35,7 +35,8 @@ module.exports = {
         .setTitle("Ссылки")
         .setDescription(`<:arrow:1107256361219268718> [Сервер поддержки](https://discord.gg/E7SFuVEB2Z)\n
         <:arrow:1107256361219268718> [Добавить бота](https://discord.com/api/oauth2/authorize?client_id=576442351426207744&permissions=1376939797574&scope=bot)\n
-        <:arrow:1107256361219268718> [Документация](https://payzibot.fiftygames.ru/)\n\n`)
+        <:arrow:1107256361219268718> [Документация](https://payzibot.fiftygames.ru/)\n\n
+        <:arrow:1107256361219268718> [PayziBot на BotiCord](https://boticord.top/bot/576442351426207744)`)
         .setThumbnail("https://cdn.discordapp.com/avatars/732867965053042690/f3f976adc4cb628dd707a8f4203e1f5d.webp?size=4096")
         .setColor(guild.settings.other.color);
         const link_button = new ButtonBuilder()

@@ -73,5 +73,80 @@
         "image": "https://w7.pngwing.com/pngs/342/131/png-transparent-penguin-tux-design-logo-linux-penguin-animals-logo-vertebrate.png",
         "answers": ["Linux", "Линукс"],
         "id": 15
+    },
+    {
+        "image": "https://polotnos.cdnbro.com/posts/367885-ugmk-logotip-11.jpg",
+        "answers": ["УГМК"],
+        "id": 16
+    },
+    {
+        "image": "https://sun6-21.userapi.com/s/v1/ig2/mIoluRq8kiMi262G-wtqD0_gRaPTmWI8374pmu9D8fQRnCU65YwyZ_-anCXkWBuPuEN3v3pV-TGzYVuMljTuL9ZS.jpg?size=864x864&quality=95&crop=108,108,864,864&ava=1",
+        "answers": ["Ростелеком"],
+        "id": 17
+    },
+    {
+        "image": "https://sun6-21.userapi.com/impg/dVbr7DTrpmjNW-tXnsIPqT1p5zKVSNFLKxkFSQ/m92uIPqwBcM.jpg?size=1080x810&quality=96&sign=b37335ed7b744bbc7112abe3a6ed6a61&c_uniq_tag=eYqP_FP6_2J5vSuGR_fUB86jWS_QTeD_aWrK_Pqzync&type=album",
+        "answers": ["Тинькофф"],
+        "id": 18
+    },
+    {
+        "image": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8e8b4c136885039.6201c156c07cd.jpg",
+        "answers": ["Windows 11", "Виндовс 11"],
+        "id": 19
+    },
+    {
+        "image": "https://static.wixstatic.com/media/1fbfdc_a823ef6aa8434c8397b20784ccb61f9f~mv2_d_1308_1308_s_2.png/v1/fill/w_1308,h_1308,al_c,q_90/file.jpg",
+        "answers": ["HP", "ХП"],
+        "id": 20
+    },
+    {
+        "image": "https://media.sketchfab.com/models/8e3f30e0990b4516a300c508d79ab764/thumbnails/1103263ffe7f4f1abce63e89ae8bd8b4/17cda3ca5e684f60bbcd232c9bc3c9cc.jpeg",
+        "answers": ["Apple", "Эппл"],
+        "id": 21
+    },
+    {
+        "image": "https://img5.goodfon.com/wallpaper/nbig/9/26/huawei-china-logotip-fon-belyi.jpg",
+        "answers": ["Huawei", "Хуавей", "Хуавэй"],
+        "id": 22
+    },
+    {
+        "image": "https://thinkmarketingmagazine.com/wp-content/uploads/2023/03/Nokia-is-No-Longer-Connecting-People-via-Mobile-Phones-Nokia-launches-new-logo-to-reflect-change-in-direction.jpg",
+        "answers": ["Nokia", "Нокиа", "Нокия"],
+        "id": 23
+    },
+    {
+        "image": "http://f.vividscreen.info/soft/8668aa3135044ba997b1a0697005e0e3/Android-Google-Logo-2880x1920.jpg",
+        "answers": ["Android", "Андроид"],
+        "id": 24
+    },
+    {
+        "image": "https://www.desktopbackground.org/download/1024x600/2015/06/27/970755_mac-os-logo-image-galleries-imagekb-com_1024x768_h.jpg",
+        "answers": ["Mac OS", "Мак Ос", "Мак", "Mac"],
+        "id": 25
+    },
+    {
+        "image": "https://clipartcraft.com/images/lacoste-logo-wallpaper-9.png",
+        "answers": ["Lacoste", "Лакост"],
+        "id": 26
+    },
+    {
+        "image": "https://yt3.ggpht.com/a/AATXAJylxr6LNqhtuWAvrOYjmipsMjCWSGzT2xC_GQ=s900-c-k-c0xffffffff-no-rj-mo",
+        "answers": ["Renault", "Ренаулт"],
+        "id": 27
+    },
+    {
+        "image": "https://lh4.googleusercontent.com/-bb2_B2wW62Q/TW1Td-37duI/AAAAAAAAAbY/K5DLKtfAj5Y/w1200-h630-p-k-no-nu/Skoda+logo+2011.jpg",
+        "answers": ["Skoda", "Шкода", "Скода"],
+        "id": 28
+    },
+    {
+        "image": "https://yt3.googleusercontent.com/ytc/AL5GRJVqY9pBblDuktkgHQJDeHOIJXDZo9gAsLBe0_QX=s900-c-k-c0x00ffffff-no-rj",
+        "answers": ["Чижик"],
+        "id": 29
+    },
+    {
+        "image": "https://cdn.appuals.com/wp-content/uploads/2023/02/Black-Screen-after-Installing-Nvidia-Driver.jpg",
+        "answers": ["Nvidia", "Нвидиа"],
+        "id": 30
     }
 ]

@@ -21,7 +21,7 @@ const client = new Client({
 	],
 	presence: {
 		status: 'online',
-		activities: [{ name: '/help | PayziBot', type: ActivityType.Competing }],
+		activities: [{ name: '/guess | А ты угадаешь город?', type: ActivityType.Competing }],
 	},
 });
 
