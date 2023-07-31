@@ -11,7 +11,7 @@ module.exports = {
             option.setName('запрос')
             .setDescription('Опишите картинку, которую хотите получить')
             .setMaxLength(64)
-            .setRequired(true)
+            .setRequired(true) 
         ),
     async execute(interaction, guild, user, openai) {
         await interaction.deferReply();
