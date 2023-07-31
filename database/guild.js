@@ -26,6 +26,9 @@ const guild = mongoose.Schema({
       reqReacts: { type: Number, default: 1 },
       customReact: {type: String, default: '⭐'},
       data: {type: Map, default: []}
+    },
+    neuro: {
+      chatgpt: {type: Boolean, default: false}
     }
   },
   premium: {type: premiumSchema, default: null}

@@ -2,6 +2,7 @@ const { Client, GatewayIntentBits, Collection, ActivityType, Partials, EmbedBuil
 const fs = require('node:fs');
 const path = require('node:path');
 const mongoose = require('mongoose');
+const { Configuration, OpenAIApi } = require("openai");
 
 const User = require('./database/user.js');
 const Guild = require('./database/guild.js');
@@ -29,6 +30,11 @@ mongoose.connect(
 	'mongodb+srv://Mikhail:Mikhail2008@cluster0.b7l4v.mongodb.net/PayziBot?retryWrites=true&w=majority',
 	{ useNewUrlParser: true, useUnifiedTopology: true },
 );
+
+const configuration = new Configuration({
+	apiKey: "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",
+  });
+  const openai = new OpenAIApi(configuration);
 
 client.commands = new Collection();
 client.textCommands = new Collection();
@@ -225,6 +231,15 @@ client.on('messageCreate', async (message) => {
 	if (!guild) return;
 	if(!user) return;
 	// DB
+	if(message.content.startsWith('<@576442351426207744>')) {
+		if(guild.settings.neuro.chatgpt === true) {
+			const chatCompletion = await openai.createChatCompletion({
+				model: "gpt-3.5-turbo",
+				messages: [{role: "user", content: 'Ответь мне по русски на мой вопрос: ' + message.content.replace('<@576442351426207744>', '')}],
+			  });
+			  message.reply(chatCompletion.data.choices[0].message.content);
+		}
+	}
 
 	const args = msg
 		.trim()
