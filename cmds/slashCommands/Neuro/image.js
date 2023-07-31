@@ -21,6 +21,13 @@ module.exports = {
         const image = await openai.createImage({
 			prompt: text
 		})
+        const embed = new EmbedBuilder()
+  .setTitle("Генерация изображений")
+  .setDescription(`Запрос: \`\`\`${text}\`\`\``)
+  .setImage(image.data.data[0].url)
+  .setColor(guild.settings.other.color);
+
+await interaction.editReply({ embeds: [embed] });
     } catch (error) {
         if (error.response) {
           console.log(error.response.status);
@@ -29,13 +36,5 @@ module.exports = {
           console.log(error.message);
         }
       }
-
-        const embed = new EmbedBuilder()
-  .setTitle("Генерация изображений")
-  .setDescription(`Запрос: \`\`\`${text}\`\`\``)
-  .setImage(image.data.data[0].url)
-  .setColor(guild.settings.other.color);
-
-await interaction.editReply({ embeds: [embed] });
     },
 };
