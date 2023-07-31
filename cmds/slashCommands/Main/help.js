@@ -19,13 +19,17 @@ module.exports = {
           },
           {
             name: "Игры",
-            value: "`guess`",
+            value: "`guess`, `profile`",
+          },
+          {
+            name: "Нейросети",
+            value: "`image`",
           },
         )
         .setThumbnail(`https://cdn.discordapp.com/icons/${interaction.guild.id}/${interaction.guild.icon}.webp`)
         .setColor(guild.settings.other.color)
         .setFooter({
-          text: "Команды бота PayziBot",
+          text: "Желаем приятного использования!",
         });
             await interaction.reply({ embeds: [embed] });
     },

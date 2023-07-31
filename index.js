@@ -50,7 +50,7 @@ for (const file of eventFiles) {
 	if (event.once) {
 		client.once(event.name, (...args) => event.execute(...args, client));
 	} else {
-		client.on(event.name, (...args) => event.execute(...args, client));
+		client.on(event.name, (...args) => event.execute(...args, client, openai));
 	}
 }
 
@@ -235,9 +235,24 @@ client.on('messageCreate', async (message) => {
 		if(guild.settings.neuro.chatgpt === true) {
 			const chatCompletion = await openai.createChatCompletion({
 				model: "gpt-3.5-turbo",
-				messages: [{role: "user", content: 'Ответь мне по русски на мой вопрос: ' + message.content.replace('<@576442351426207744>', '')}],
+				messages: [
+					{
+						role: "system",
+						content: "Ты должен максимально точно и кратко отвечать пользователю на его вопросы. Говори всегда только на РУССКОМ языке, даже если пользователь написал вопрос на другом языке."
+					},
+					{
+						role: "user", 
+						content: message.content.replace('<@576442351426207744>', '')
+					}
+				],
 			  });
 			  message.reply(chatCompletion.data.choices[0].message.content);
+
+			// const image = await openai.createImage({
+			// 	prompt: message.content.replace('<@576442351426207744>', '')
+			// })
+
+			// message.reply(image.data.data[0].url)
 		}
 	}
 

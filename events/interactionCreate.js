@@ -4,7 +4,7 @@ const User = require('../database/user.js');
 
 module.exports = {
 	name: Events.InteractionCreate,
-	async execute(interaction, client) {
+	async execute(interaction, client, openai) {
         if (!interaction.isChatInputCommand()) return;
         // DB
     let guild = await Guild.findOne({ guildID: interaction.guild.id });
@@ -64,7 +64,7 @@ if (timestamps.has(interaction.user.id)) {
 timestamps.set(interaction.user.id, now);
 setTimeout(() => timestamps.delete(interaction.user.id), cooldownAmount);
     try {
-        await cmd.execute(interaction, guild, user);
+        await cmd.execute(interaction, guild, user, openai);
     } catch (error) {
         if(interaction.deferred === false){
             interaction.reply(`<:no:1107254682100957224> | Произошла ошибка!\n\`\`\`bash\n${error}\`\`\``);
