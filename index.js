@@ -22,7 +22,7 @@ const client = new Client({
 	],
 	presence: {
 		status: 'online',
-		activities: [{ name: '/guess | А ты угадаешь город?', type: ActivityType.Competing }],
+		activities: [{ name: '/image | Генерация изображений', type: ActivityType.Competing }],
 	},
 });
 
