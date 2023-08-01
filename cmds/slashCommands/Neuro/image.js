@@ -34,6 +34,7 @@ await interaction.editReply({ embeds: [embed] });
           console.log(error.response.data);
         } else {
           console.log(error.message);
+          interaction.editReply(`<:no:1107254682100957224> | Ошибка: \`\`\`${error.message}\`\`\``)
         }
       }
     },

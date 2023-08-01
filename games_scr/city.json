@@ -186,7 +186,7 @@
         "id": 31
     },
     {
-        "image": "https://celes.club/uploads/posts/2022-08/1661449128_59-celes-club-p-volgograd-vid-sverkhu-vkontakte-63.jpg",
+        "image": "https://www.nsb-rf.ru/wp-content/uploads/2020/03/4714ecaebbaf4a7f76cf322e68baad5a149080807_1779.jpg",
         "answers": ["Волгоград"],
         "country": "Россия",
         "id": 32
@@ -344,7 +344,7 @@
     {
         "image": "https://photocentra.ru/images/main40/407556_main.jpg",
         "answers": ["Минск"],
-        "country": "Белоруссия",
+        "country": "Беларусь",
         "id": 58
     },
     {
@@ -486,7 +486,7 @@
         "id": 81
     },
     {
-        "image": "https://findgid.ru/storage/tours/284/album/b0xdHWBLRSCtpArxfF1c.jpg",
+        "image": "https://celes.club/uploads/posts/2022-05/1651888997_36-celes-club-p-ryazan-tsentr-goroda-krasivo-foto-36.jpg",
         "answers": ["Рязань"],
         "country": "Россия",
         "id": 82
@@ -598,5 +598,305 @@
         "answers": ["Караганда"],
         "country": "Казахстан",
         "id": 100
+    },
+    {
+        "image": "http://ic.pics.livejournal.com/zdorovs/16627846/1433331/1433331_original.jpg",
+        "answers": ["Чебоксары"],
+        "country": "Россия",
+        "id": 101
+    },
+    {
+        "image": "https://ru2go.ru/images/1169.jpg",
+        "answers": ["Липецк"],
+        "country": "Россия",
+        "id": 102
+    },
+    {
+        "image": "https://baggage-expert.ru/wp-content/uploads/2023/06/photo.jpeg",
+        "answers": ["Калининград"],
+        "country": "Россия",
+        "id": 103
+    },
+    {
+        "image": "https://kartinkin.net/pics/uploads/posts/2022-08/1660046876_7-kartinkin-net-p-gorodskoi-okrug-gorod-astrakhan-dostoprime-7.jpg",
+        "answers": ["Астрахань"],
+        "country": "Россия",
+        "id": 104
+    },
+    {
+        "image": "https://locrum.ru/wp-content/uploads/2022/02/1632479452_4-mykaleidoscope-ru-p-pamyatnik-pryaniku-v-tule-krasivo-foto-4.jpg",
+        "answers": ["Тула"],
+        "country": "Россия",
+        "id": 105
+    },
+    {
+        "image": "https://proreki.ru/wp-content/uploads/2022/03/word-image-88.jpeg",
+        "answers": ["Киров"],
+        "country": "Россия",
+        "id": 106
+    },
+    {
+        "image": "https://sochistream.ru/wp-content/uploads/2018/08/winter-wallpapers-wallpaper-sochi-photoalbum-olympics-photo-images5538ad44f1bb1-1.jpg",
+        "answers": ["Сочи"],
+        "country": "Россия",
+        "id": 107
+    },
+    {
+        "image": "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663193764_50-mykaleidoscope-ru-p-kursk-dostoprimechatelnosti-goroda-krasivo-55.jpg",
+        "answers": ["Курск"],
+        "country": "Россия",
+        "id": 108
+    },
+    {
+        "image": "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663182736_26-mykaleidoscope-ru-p-ulan-ude-stolitsa-oboi-28.jpg",
+        "answers": ["Улан-Удэ", "Улан Удэ"],
+        "country": "Россия",
+        "id": 109
+    },
+    {
+        "image": "https://cdn.fishki.net/upload/post/2018/09/30/2719414/a168085b9aa44b58839e936126d89359.jpg",
+        "answers": ["Тверь"],
+        "country": "Россия",
+        "id": 110
+    },
+    {
+        "image": "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663349055_1-mykaleidoscope-ru-p-arkhitektura-magnitogorska-oboi-1.jpg",
+        "answers": ["Магнитогорск"],
+        "country": "Россия",
+        "id": 111
+    },
+    {
+        "image": "https://picworld.ru/wp-content/uploads/2020/03/surgut-2.jpg",
+        "answers": ["Сургут"],
+        "country": "Россия",
+        "id": 112
+    },
+    {
+        "image": "https://telegra.ph/file/9b4e071fac1cc40fa21ce.jpg",
+        "answers": ["Брянск"],
+        "country": "Россия",
+        "id": 113
+    },
+    {
+        "image": "https://s2.stc.all.kpcdn.net/best/msk/goroda-zolotogo-koltsa-rossii/images/tild3037-6130-4538-b938-306436393038__15.jpg",
+        "answers": ["Иваново"],
+        "country": "Россия",
+        "id": 114
+    },
+    {
+        "image": "https://sun9-61.userapi.com/0hL79gjKR-O4aGv9D0ADl2MpHT4XPguR_piQYA/ZPVj5dUZIVM.jpg",
+        "answers": ["Владимир"],
+        "country": "Россия",
+        "id": 115
+    },
+    {
+        "image": "https://celes.club/uploads/posts/2022-05/1651958670_15-celes-club-p-simferopol-tsentr-goroda-krasivo-foto-20.jpg",
+        "answers": ["Симферополь"],
+        "country": "Россия",
+        "id": 116
+    },
+    {
+        "image": "https://europeanmuseumforum.ru/wp-content/uploads/5/e/3/5e3ed298187e33005cb4b0a602265a18.jpeg",
+        "answers": ["Белгород"],
+        "country": "Россия",
+        "id": 117
+    },
+    {
+        "image": "https://kartinkin.net/pics/uploads/posts/2022-08/1660469197_28-kartinkin-net-p-fontan-na-ploshchadi-slavi-nizhnii-tagil-k-30.jpg",
+        "answers": ["Нижний Тагил"],
+        "country": "Россия",
+        "id": 118
+    },
+    {
+        "image": "https://kartinkin.net/pics/uploads/posts/2022-08/thumbs/1660059316_41-kartinkin-net-p-gorod-borisov-dostoprimechatelnosti-krasiv-41.jpg",
+        "answers": ["Калуга"],
+        "country": "Россия",
+        "id": 119
+    },
+    {
+        "image": "https://haipovo.ru/wp-content/uploads/2022/09/chita-foto-goroda-5-1600x1064.jpg",
+        "answers": ["Чита"],
+        "country": "Россия",
+        "id": 120
+    },
+    {
+        "image": "https://putevoditel-oz.ru/sites/default/files/groznii-2.jpg",
+        "answers": ["Грозный"],
+        "country": "Россия",
+        "id": 121
+    },
+    {
+        "image": "https://3pulse.com/uploads/photo/14/87/96/2017/10/20/413faaf692.jpg",
+        "answers": ["Волжский"],
+        "country": "Россия",
+        "id": 122
+    },
+    {
+        "image": "https://avto-turist5.ru/wp-content/uploads/2020/07/smol5.jpg",
+        "answers": ["Смоленск"],
+        "country": "Россия",
+        "id": 123
+    },
+    {
+        "image": "https://celes.club/uploads/posts/2022-05/1651865435_17-celes-club-p-gorod-podolsk-moskovskoi-oblasti-krasivo-f-20.jpg",
+        "answers": ["Подольск"],
+        "country": "Россия",
+        "id": 124
+    },
+    {
+        "image": "https://a.d-cd.net/VmAAAgD7--A-1920.jpg",
+        "answers": ["Саранск"],
+        "country": "Россия",
+        "id": 125
+    },
+    {
+        "image": "https://subsw.ru/wp-content/uploads/1008021ab89b831bbb75e4c3043f4a97.jpg",
+        "answers": ["Вологда"],
+        "country": "Россия",
+        "id": 126
+    },
+    {
+        "image": "https://sportishka.com/uploads/posts/2022-04/1650481086_71-sportishka-com-p-gorod-kurgan-dostoprimechatelnosti-krasivo-75.jpg",
+        "answers": ["Курган"],
+        "country": "Россия",
+        "id": 127
+    },
+    {
+        "image": "https://photopodium.com/webroot/content/big/127764.jpg",
+        "answers": ["Череповец"],
+        "country": "Россия",
+        "id": 128
+    },
+    {
+        "image": "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663153334_49-mykaleidoscope-ru-p-gorod-orel-dostoprimechatelnosti-dostoprim-49.jpg",
+        "answers": ["Орёл", "Орел"],
+        "country": "Россия",
+        "id": 129
+    },
+    {
+        "image": "https://msp29.ru/upload/iblock/bdb/bdbbfbb74ade319f720f94540380d729.jpg",
+        "answers": ["Архангельск"],
+        "country": "Россия",
+        "id": 130
+    },
+    {
+        "image": "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663414114_9-mykaleidoscope-ru-p-severnaya-osetiya-stolitsa-vladikavkaz-kra-10.jpg",
+        "answers": ["Владикавказ"],
+        "country": "Россия",
+        "id": 131
+    },
+    {
+        "image": "https://mustai.ru/uploads/images/774/e6c0bacb626fddecfb17a82b178bb15c.jpeg",
+        "answers": ["Нижневартовск"],
+        "country": "Россия",
+        "id": 132
+    },
+    {
+        "image": "https://24warez.ru/uploads/posts/081116/155616/20.jpg",
+        "answers": ["Йошкар-Ола", "Йошкар Ола", "ЙошкарОла"],
+        "country": "Россия",
+        "id": 133
+    },
+    {
+        "image": "https://europeanmuseumforum.ru/wp-content/uploads/6/6/a/66a1ed56ccf5e8e38fe444540067ec7d.jpeg",
+        "answers": ["Стерлитамак"],
+        "country": "Россия",
+        "id": 134
+    },
+    {
+        "image": "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663435732_48-mykaleidoscope-ru-p-murmansk-stolitsa-zapolyarya-vkontakte-53.jpg",
+        "answers": ["Мурманск"],
+        "country": "Россия",
+        "id": 135
+    },
+    {
+        "image": "https://sun9-7.userapi.com/c855136/v855136412/232ca8/QS8MN0KNuiw.jpg",
+        "answers": ["Кострома"],
+        "country": "Россия",
+        "id": 136
+    },
+    {
+        "image": "https://sun9-85.userapi.com/impg/T4IINm0AxllYa2ZprFui0MdqrJI4-uY_ohpOeg/lKIGApY9Eyw.jpg?size=1080x1080&quality=96&sign=30b2dd63ba5ad3a9c02621fb2a9534c0&c_uniq_tag=ugyM6k9yaGhUggva2SO9xQx7sw5y9V2yjlcu2ye_vOE&type=album",
+        "answers": ["Новороссийск"],
+        "country": "Россия",
+        "id": 137
+    },
+    {
+        "image": "https://sledcom.ru/upload/site1/geogr/vid_Tambova.jpg",
+        "answers": ["Тамбов"],
+        "country": "Россия",
+        "id": 138
+    },
+    {
+        "image": "https://avatars.dzeninfra.ru/get-zen_doc/3431006/pub_5fd4db0f0b82510af54e0a13_5fd4dba764f2df189739615d/scale_1200",
+        "answers": ["Химки"],
+        "country": "Россия",
+        "id": 139
+    },
+    {
+        "image": "https://avatars.dzeninfra.ru/get-zen_doc/230233/pub_60f5535649899c39490f664b_60f55f1e49899c394934b30a/scale_1200",
+        "answers": ["Мытищи"],
+        "country": "Россия",
+        "id": 140
+    },
+    {
+        "image": "https://sportishka.com/uploads/posts/2022-04/1650611884_7-sportishka-com-p-gorod-almati-kazakhstan-krasivo-foto-8.jpg",
+        "answers": ["Алматы"],
+        "country": "Казахстан",
+        "id": 141
+    },
+    {
+        "image": "https://kazlenta.kz/uploads/posts/2021-04/1200/1619150149_shymkent.jpg",
+        "answers": ["Шымкент"],
+        "country": "Казахстан",
+        "id": 142
+    },
+    {
+        "image": "https://sun9-57.userapi.com/impf/c637724/v637724584/3e1b6/SuY9N-5sj0w.jpg?size=950x634&quality=96&sign=7d8d710f43479a3e2dedd094dcd7359e&c_uniq_tag=DOSP2YuHejKZOnxic2ttBmETrh75LHLT6B2E79b3OuY&type=album",
+        "answers": ["Тараз"],
+        "country": "Казахстан",
+        "id": 143
+    },
+    {
+        "image": "https://kartinkin.net/pics/uploads/posts/2022-08/1660082578_5-kartinkin-net-p-dostoprimechatelnosti-goroda-ust-kamenogor-7.jpg",
+        "answers": ["Усть-Каменогорск", "Усть Каменогорск"],
+        "country": "Казахстан",
+        "id": 144
+    },
+    {
+        "image": "https://cs12.pikabu.ru/post_img/big/2020/01/09/8/1578578371125764086.jpg",
+        "answers": ["Павлодар"],
+        "country": "Казахстан",
+        "id": 145
+    },
+    {
+        "image": "https://madetrip.ru/wp-content/uploads/2022/05/atyrau-4.jpg",
+        "answers": ["Атырау"],
+        "country": "Казахстан",
+        "id": 146
+    },
+    {
+        "image": "https://fergana.media/siteapi/media/images/a574fc44-1b63-4924-8d72-203b8f1523e4.jpeg",
+        "answers": ["Семей"],
+        "country": "Казахстан",
+        "id": 147
+    },
+    {
+        "image": "https://sun9-84.userapi.com/impf/c631524/v631524631/2f6ed/ijvdfr4maIA.jpg?size=1280x872&quality=96&sign=dbfc794b584c9b51c0d9c1d7dbf80caa&c_uniq_tag=zx18SnlzvbhTTfmSFNyISGqJ-gJZ3Jz5CGqfWQkRVT0&type=album",
+        "answers": ["Кызылорда"],
+        "country": "Казахстан",
+        "id": 148
+    },
+    {
+        "image": "https://vsegda-pomnim.com/uploads/posts/2022-04/1649290698_26-vsegda-pomnim-com-p-aktau-kazakhstan-plyazh-foto-30.jpg",
+        "answers": ["Актау"],
+        "country": "Казахстан",
+        "id": 149
+    },
+    {
+        "image": "https://celes.club/uploads/posts/2022-05/1651960395_3-celes-club-p-gorod-kostanai-kazakhstan-krasivo-foto-3.jpg",
+        "answers": ["Костанай"],
+        "country": "Казахстан",
+        "id": 150
     }
 ]
