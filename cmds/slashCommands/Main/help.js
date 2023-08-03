@@ -10,7 +10,7 @@ module.exports = {
         .setDescription("Бот использует слэш-команды. Для вызова команды введите `/команда`")
         .addFields(
           {
-            name: "Основное",
+            name: "Утилиты",
             value: "`help`, `avatar`, `userinfo`, `stats`, `translate`, `weather`, `github`",
           },
           {
@@ -27,7 +27,7 @@ module.exports = {
           },
         )
         .setThumbnail(`https://cdn.discordapp.com/icons/${interaction.guild.id}/${interaction.guild.icon}.webp`)
-        .setColor(guild.settings.other.color)
+        .setColor(guild.settings.colors.basic)
         .setFooter({
           text: "Желаем приятного использования!",
         });

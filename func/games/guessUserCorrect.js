@@ -1,12 +1,5 @@
 const User = require('../../database/user.js');
 
-async function CorrectDistr(id) {
-    user = await User.findOne({ userID: id })
-    if(!user) return;
-    user.games.distr++;
-    user.save()
-}
-
 async function CorrectGame(id) {
     user = await User.findOne({ userID: id })
     if(!user) return;
@@ -29,7 +22,6 @@ async function CorrectLogo(id) {
 }
 
 module.exports = {
-    CorrectDistr,
     CorrectGame,
     CorrectCity,
     CorrectLogo

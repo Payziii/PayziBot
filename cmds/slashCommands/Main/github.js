@@ -43,7 +43,7 @@ const embed = new EmbedBuilder()
         .setURL(html_url)
         .setDescription(`Публичных репозиториев: **${repos}**\nПодписчиков: **${fl}**\nИмя: **${name}**\nБио: **${bio}**`)
         .setThumbnail(avatar)
-        .setColor(guild.settings.other.color)
+        .setColor(guild.settings.colors.basic)
         .setFooter({
             text: `ID: ${id}`,
           });
@@ -68,7 +68,7 @@ const reps = new EmbedBuilder()
   .setURL(html_url)
   .setDescription("Репозитории: **" + desc + "**")
   .setThumbnail(avatar)
-  .setColor(guild.settings.other.color)
+  .setColor(guild.settings.colors.basic)
   .setFooter({
     text: `ID: ${id}`,
   });

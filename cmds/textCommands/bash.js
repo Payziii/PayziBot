@@ -1,6 +1,3 @@
-const Discord = require('discord.js');
-const fs = require('fs');
-const config = require('../../config.js');
 exports.run = async (client, message, args) => {
               if(message.author.id === "439079453650321409") {
 try{

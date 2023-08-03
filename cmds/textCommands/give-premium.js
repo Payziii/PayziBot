@@ -1,7 +1,7 @@
 const { inspect } = require('util')
 const config = require('../../config.js');
 
-exports.run = async (client, message, args, guild, user) => {
+exports.run = async (client, message, args) => {
      let author = message.author.id;
         if (!config.owners.includes(author)) return;
         let res;
@@ -16,8 +16,8 @@ exports.run = async (client, message, args, guild, user) => {
         );
        }
        exports.help = {
-    name: ",eval",
-    aliases: [',e', ',е', ',евал'],
+    name: ",gp",
+    aliases: [',givepremium', ',give-premium'],
     info: "owner",
     usage: "[Команда]",
     perm: "Developer",

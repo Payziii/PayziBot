@@ -30,7 +30,7 @@ module.exports = {
     },
   )
   .setThumbnail("https://cdn.discordapp.com/avatars/732867965053042690/f3f976adc4cb628dd707a8f4203e1f5d.webp?size=4096")
-        .setColor(guild.settings.other.color)
+        .setColor(guild.settings.colors.basic)
         const links = new EmbedBuilder()
         .setTitle("Ссылки")
         .setDescription(`<:arrow:1107256361219268718> [Сервер поддержки](https://discord.gg/E7SFuVEB2Z)\n
@@ -38,7 +38,7 @@ module.exports = {
         <:arrow:1107256361219268718> [Документация](https://payzibot.fiftygames.ru/)\n\n
         <:arrow:1107256361219268718> [PayziBot на BotiCord](https://boticord.top/bot/576442351426207744)`)
         .setThumbnail("https://cdn.discordapp.com/avatars/732867965053042690/f3f976adc4cb628dd707a8f4203e1f5d.webp?size=4096")
-        .setColor(guild.settings.other.color);
+        .setColor(guild.settings.colors.basic);
         const link_button = new ButtonBuilder()
 			.setCustomId('link_button')
 			.setLabel('Ссылки')

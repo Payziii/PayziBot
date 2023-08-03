@@ -1,6 +1,4 @@
 const {SlashCommandBuilder, EmbedBuilder} = require("discord.js");
-const tr = require('googletrans').default;
-const config = require('../../../config.js');
 
 module.exports = {
     cooldown: 60,
@@ -25,7 +23,7 @@ module.exports = {
   .setTitle("Генерация изображений")
   .setDescription(`Запрос: \`\`\`${text}\`\`\``)
   .setImage(image.data.data[0].url)
-  .setColor(guild.settings.other.color);
+  .setColor(guild.settings.colors.basic);
 
 await interaction.editReply({ embeds: [embed] });
     } catch (error) {

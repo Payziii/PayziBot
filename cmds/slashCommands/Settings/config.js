@@ -1,5 +1,4 @@
-const {SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder, PermissionFlagsBits} = require("discord.js");
-const Guild = require('../../../database/guild.js');
+const {SlashCommandBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder, PermissionFlagsBits} = require("discord.js");
 const EmbedFunc = require('../../../func/config/embeds.js');
 
 module.exports = {
@@ -36,7 +35,7 @@ try {
       interaction.channel.awaitMessages({ filter: collectorFilter2, max: 1, time: 30000, errors: ['time'] })
         .then(collected => {
           if(/^#[0-9A-F]{6}$/i.test(collected.first().content)) {
-            guild.settings.other.color = collected.first().content;
+            guild.settings.colors.basic = collected.first().content;
             guild.save()
             interaction.followUp(`Для эмбеда установлен цвет \`${collected.first().content}\``)
             return;

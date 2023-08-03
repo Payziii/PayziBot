@@ -1,4 +1,4 @@
-const {SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder, PermissionFlagsBits, ChannelType} = require("discord.js");
+const {SlashCommandBuilder, PermissionFlagsBits, ChannelType} = require("discord.js");
 
 module.exports = {
     cooldown: 5,

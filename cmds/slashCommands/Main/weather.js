@@ -40,7 +40,7 @@ module.exports = {
     },
   )
   .setThumbnail(cur.image)
-  .setColor(guild.settings.other.color)
+  .setColor(guild.settings.colors.basic)
   .setFooter({
     text: "Сервис: Gismeteo",
   });

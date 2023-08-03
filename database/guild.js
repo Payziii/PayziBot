@@ -1,13 +1,13 @@
-const mongoose = require('mongoose');
+const { Schema, model } = require('mongoose');
 
-const premiumSchema = mongoose.Schema({
+const premiumSchema = Schema({
     status: {type: Boolean, default: false},
     userID: {type: String, default: '-1'},
     endDate: {type: Number, default: 0},
     startDate: {type: Number, default: 0}
 })
 
-const guild = mongoose.Schema({
+const guild = Schema({
   guildID: String,
   settings: {
     colors: {
@@ -34,4 +34,4 @@ const guild = mongoose.Schema({
   premium: {type: premiumSchema, default: null}
 })
 
-module.exports = mongoose.model("Guild", guild)
+module.exports = model("Guild", guild)

@@ -247,12 +247,6 @@ client.on('messageCreate', async (message) => {
 				],
 			  });
 			  message.reply(chatCompletion.data.choices[0].message.content);
-
-			// const image = await openai.createImage({
-			// 	prompt: message.content.replace('<@576442351426207744>', '')
-			// })
-
-			// message.reply(image.data.data[0].url)
 		}
 	}
 

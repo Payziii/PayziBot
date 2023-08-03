@@ -33,7 +33,7 @@ module.exports = {
 			.addComponents(png, jpeg, webp);
             const embed = new EmbedBuilder()
                 .setTitle(`${user.username}`)
-                .setColor(guild.settings.other.color)
+                .setColor(guild.settings.colors.basic)
                 .setImage(url);
             await interaction.editReply({ embeds: [embed], components: [row] });
     },

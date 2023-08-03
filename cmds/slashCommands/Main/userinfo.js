@@ -54,7 +54,7 @@ module.exports = {
         };
 
         const embed = new EmbedBuilder()
-            .setColor(guild.settings.other.color)
+            .setColor(guild.settings.colors.basic)
             .setTitle(`${status[member.presence?.status ?? "offline"]} ${user.username}`)
             .setDescription(`${activity}
             Значки: ${user.flags.toArray().map(flag => flags[flag]).filter(Boolean).join(' ')}`)

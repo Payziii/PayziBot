@@ -11,10 +11,10 @@ module.exports = {
         .addFields(
           {
             name: "Угадано",
-            value: `Дистрибутивов: **${user.games.distr}**\nИгр: **${user.games.game}**\nГородов: **${user.games.city}**\nЛоготипов: **${user.games.logo}**`,
+            value: `Игр: **${user.games.game}**\nГородов: **${user.games.city}**\nЛоготипов: **${user.games.logo}**`,
           },
         )
-        .setColor(guild.settings.other.color)
+        .setColor(guild.settings.colors.basic)
             await interaction.reply({ embeds: [embed] });
     },
 };
