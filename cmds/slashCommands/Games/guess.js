@@ -20,7 +20,7 @@ module.exports = {
 // GAMES
 // GAMES
 // GAMES
-        if (interaction.options.getSubcommand() === 'games') {
+        if (interaction.options.getSubcommand() === 'game') {
             const item = game[Math.floor(Math.random() * game.length)];
             const collectorFilter = response => {
                 return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
