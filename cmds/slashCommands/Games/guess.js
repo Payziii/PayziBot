@@ -1,5 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const give = require('../../../func/games/guessUserCorrect.js');
+const games = require('../../../func/games/guessCounting.js');
 const game = require('../../../games_scr/game.json');
 const city = require('../../../games_scr/city.json');
 const logo = require('../../../games_scr/logo.json');
@@ -27,14 +28,18 @@ module.exports = {
 // GAME
 // GAME
         if (interaction.options.getSubcommand() === 'game') {
+            let name = 'game';
             const item = game[Math.floor(Math.random() * game.length)];
             const collectorFilter = response => {
                 return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
             };
+            games.gameGiveAll(name, item.id);
+            let percent = await games.gameGetPercent(name, item.id)
             const embed = new EmbedBuilder()
   .setTitle("Угадай игру")
   .setDescription("У вас есть **30 секунд** чтобы ответить, какая игра изображена на картинке ниже")
   .setImage(item.image)
+  .setFooter({text: `Игру угадали ${percent}% пользователей`})
   .setColor(guild.settings.colors.basic);
 
             interaction.editReply({ embeds: [embed], fetchReply: true })
@@ -48,6 +53,7 @@ module.exports = {
   .setColor(guild.settings.colors.correct);
 				interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
                 give.CorrectGame(collected.first().author.id)
+                games.gameGiveVerno(name, item.id)
 			})
 			.catch(collected => {
                 const embed5 = new EmbedBuilder()
@@ -62,14 +68,18 @@ module.exports = {
 // CITY
 // CITY
         }else if (interaction.options.getSubcommand() === 'city') {
+            let name = 'city';
             const item = city[Math.floor(Math.random() * city.length)];
             const collectorFilter = response => {
                 return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
             };
+            games.gameGiveAll(name, item.id);
+            let percent = await games.gameGetPercent(name, item.id)
             const embed = new EmbedBuilder()
   .setTitle("Угадай город")
   .setDescription(`У вас есть **30 секунд** чтобы ответить, какой город изображен на фото ниже\nСтрана: **${item.country}**`)
   .setImage(item.image)
+  .setFooter({text: `Город угадали ${percent}% пользователей`})
   .setColor(guild.settings.colors.basic);
 
             interaction.editReply({ embeds: [embed], fetchReply: true })
@@ -83,6 +93,7 @@ module.exports = {
   .setColor(guild.settings.colors.correct);
 				interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
                 give.CorrectCity(collected.first().author.id)
+                games.gameGiveVerno(name, item.id)
 			})
 			.catch(collected => {
                 const embed5 = new EmbedBuilder()
@@ -97,14 +108,18 @@ module.exports = {
 // LOGO
 // LOGO
         }else if (interaction.options.getSubcommand() === 'logo') {
+            let name = 'logo';
             const item = logo[Math.floor(Math.random() * logo.length)];
             const collectorFilter = response => {
                 return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
             };
+            games.gameGiveAll(name, item.id);
+            let percent = await games.gameGetPercent(name, item.id)
             const embed = new EmbedBuilder()
   .setTitle("Угадай логотип")
   .setDescription(`У вас есть **30 секунд** чтобы ответить, чей логотип изображен на фото ниже`)
   .setImage(item.image)
+  .setFooter({text: `Логотип угадали ${percent}% пользователей`})
   .setColor(guild.settings.colors.basic);
 
             interaction.editReply({ embeds: [embed], fetchReply: true })
@@ -118,6 +133,7 @@ module.exports = {
   .setColor(guild.settings.colors.correct);
 				interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
                 give.CorrectLogo(collected.first().author.id)
+                games.gameGiveVerno(name, item.id)
 			})
 			.catch(collected => {
                 const embed5 = new EmbedBuilder()
