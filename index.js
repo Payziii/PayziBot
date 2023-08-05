@@ -2,6 +2,7 @@ const { Client, GatewayIntentBits, Collection, ActivityType, Partials, EmbedBuil
 const fs = require('node:fs');
 const path = require('node:path');
 const mongoose = require('mongoose');
+const { tokens } = require('./config.js')
 const { Configuration, OpenAIApi } = require("openai");
 
 const User = require('./database/user.js');
@@ -27,12 +28,12 @@ const client = new Client({
 });
 
 mongoose.connect(
-	'mongodb+srv://Mikhail:Mikhail2008@cluster0.b7l4v.mongodb.net/PayziBot?retryWrites=true&w=majority',
+	tokens.mongoURL,
 	{ useNewUrlParser: true, useUnifiedTopology: true },
 );
 
 const configuration = new Configuration({
-	apiKey: "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",
+	apiKey: tokens.openAI,
   });
   const openai = new OpenAIApi(configuration);
 
@@ -263,6 +264,4 @@ client.on('messageCreate', async (message) => {
 	cmd.run(client, message, args, guild, user);
 });
 
-client.login('NTc2NDQyMzUxNDI2MjA3NzQ0.GeV65R.R0P6_sBW9WwFTwL0K3qN1K9I49phKdtUpD6qXA');
-// NzMyODY3OTY1MDUzMDQyNjkw.G5HoqK.H6g0KAXwGossSDMnzPZh0ByiNzifYAOdB7MgO8 - PB 1.0.0
-// NTc2NDQyMzUxNDI2MjA3NzQ0.GeV65R.R0P6_sBW9WwFTwL0K3qN1K9I49phKdtUpD6qXA - PB
+client.login(tokens.discord.beta);

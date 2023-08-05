@@ -1,5 +1,4 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
-const { bot_id } = require('../../../config.js');
 
 module.exports = {
     cooldown: 3,
@@ -36,7 +35,7 @@ module.exports = {
                 error = true;
                 msg = '<:no:1107254682100957224> | Не пробовал просто выйти с сервера? Гений';
                 break;
-            case bot_id:
+            case bot.id:
                 error = true;
                 msg = '<:no:1107254682100957224> | Я не хочу выходить с этого прекрасного сервера!';
                 break;
