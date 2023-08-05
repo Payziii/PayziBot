@@ -2,6 +2,8 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const give = require('../../../func/games/guessUserCorrect.js');
 const game = require('../../../games_scr/game.json');
 const city = require('../../../games_scr/city.json');
+const logo = require('../../../games_scr/logo.json');
+
 module.exports = {
     cooldown: 9,
     data: new SlashCommandBuilder()
@@ -14,12 +16,16 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('game')
-                .setDescription('Угадай игру')),
+                .setDescription('Угадай игру'))
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('logo')
+                .setDescription('Угадай логотип')),
     async execute(interaction, guild) {
         await interaction.deferReply();
-// GAMES
-// GAMES
-// GAMES
+// GAME
+// GAME
+// GAME
         if (interaction.options.getSubcommand() === 'game') {
             const item = game[Math.floor(Math.random() * game.length)];
             const collectorFilter = response => {
@@ -82,6 +88,41 @@ module.exports = {
                 const embed5 = new EmbedBuilder()
                 .setTitle("Угадай город")
                 .setDescription(`Ответ: **${item.answers[0]}**\nСтрана: **${item.country}**`)
+                .setImage(item.image)
+                .setColor(guild.settings.colors.error);
+                              interaction.followUp({  content: `**Победителей нет(**`, embeds: [embed5] });
+			});
+	});
+// LOGO
+// LOGO
+// LOGO
+        }else if (interaction.options.getSubcommand() === 'logo') {
+            const item = logo[Math.floor(Math.random() * logo.length)];
+            const collectorFilter = response => {
+                return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+            };
+            const embed = new EmbedBuilder()
+  .setTitle("Угадай логотип")
+  .setDescription(`У вас есть **30 секунд** чтобы ответить, чей логотип изображен на фото ниже`)
+  .setImage(item.image)
+  .setColor(guild.settings.colors.basic);
+
+            interaction.editReply({ embeds: [embed], fetchReply: true })
+	.then(() => {
+		interaction.channel.awaitMessages({ filter: collectorFilter, max: 1, time: 30000, errors: ['time'] })
+			.then(collected => {
+                const embed1 = new EmbedBuilder()
+  .setTitle("Угадай логотип")
+  .setDescription(`Ответ: **${item.answers[0]}**`)
+  .setImage(item.image)
+  .setColor(guild.settings.colors.correct);
+				interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
+                give.CorrectLogo(collected.first().author.id)
+			})
+			.catch(collected => {
+                const embed5 = new EmbedBuilder()
+                .setTitle("Угадай логотип")
+                .setDescription(`Ответ: **${item.answers[0]}**`)
                 .setImage(item.image)
                 .setColor(guild.settings.colors.error);
                               interaction.followUp({  content: `**Победителей нет(**`, embeds: [embed5] });

@@ -1,5 +1,4 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
-const { bot_id } = require('../../../config.js');
 
 module.exports = {
     cooldown: 3,
@@ -52,7 +51,7 @@ module.exports = {
                 error = true;
                 msg = '<:no:1107254682100957224> | Я не хочу отправлять в мут таких людей';
                 break;
-            case bot_id:
+            case bot.id:
                 error = true;
                 msg = '<:no:1107254682100957224> | А как я отвечу тебе?';
                 break;

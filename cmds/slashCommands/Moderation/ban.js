@@ -1,5 +1,4 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
-const { bot_id } = require('../../../config.js');
 
 module.exports = {
     cooldown: 3,
@@ -36,7 +35,7 @@ module.exports = {
                 error = true;
                 msg = '<:no:1107254682100957224> | Вы не можете заблокировать лучшего человека на этом сервере';
                 break;
-            case bot_id:
+            case bot.id:
                 error = true;
                 msg = '<:no:1107254682100957224> | Как я заблокирую самого себя?';
                 break;
