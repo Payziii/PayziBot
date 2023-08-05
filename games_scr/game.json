@@ -283,5 +283,20 @@
         "image": "https://reddead2.ru/catimages/screenshots/646.jpg",
         "answers": ["RDR2", "Red Dead Redemption 2", "РДР2", "РДР 2", "RDR 2"],
         "id": 57
+    },
+    {
+        "image": "https://marvinlee.co/wp-content/uploads/2017/10/2048thumb.png",
+        "answers": ["2048"],
+        "id": 58
+    },
+    {
+        "image": "https://www.gamegrin.com/assets/game/1080-avalanche/screenshots/1080-avalanche-screenshots-18.jpg",
+        "answers": ["Avalanche", "Аваланч"],
+        "id": 59
+    },
+    {
+        "image": "https://cdn.akamai.steamstatic.com/steam/apps/731430/ss_23d5488a9dfc98908865887b60b6c5208d77fd5c.1920x1080.jpg",
+        "answers": ["Influence"],
+        "id": 60
     }
 ]

@@ -898,5 +898,305 @@
         "answers": ["Костанай"],
         "country": "Казахстан",
         "id": 150
+    },
+    {
+        "image": "https://kavtoday.ru/files/oleg/nalchikgory.jpg",
+        "answers": ["Нальчик"],
+        "country": "Россия",
+        "id": 151
+    },
+    {
+        "image": "https://sun9-42.userapi.com/impg/7noCY3BdOXuRlO96Vc9iShi88r4cGkVYymrhMw/1-lMly3X5rY.jpg?size=1280x828&quality=95&sign=45e2ed2ccf6fdd02d9dbb4b40c478d6a&c_uniq_tag=0RFlIL5rZ0JoOU3TQhV2LqUvTcAxkerp5xQtHuwnUSA&type=album",
+        "answers": ["Таганрог"],
+        "country": "Россия",
+        "id": 152
+    },
+    {
+        "image": "https://ic.pics.livejournal.com/zdorovs/16627846/1512547/1512547_original.jpg",
+        "answers": ["Нижнекамск"],
+        "country": "Россия",
+        "id": 153
+    },
+    {
+        "image": "https://историческийбагаж.рф/static/post/4210-8007.jpg",
+        "answers": ["Благовещенск"],
+        "country": "Россия",
+        "id": 154
+    },
+    {
+        "image": "https://img-fotki.yandex.ru/get/41717/199172168.78/0_14b9b2_517479cb_orig",
+        "answers": ["Комсомольск-На-Амуре", "Комсомольск На Амуре"],
+        "country": "Россия",
+        "id": 155
+    },
+    {
+        "image": "https://celes.club/uploads/posts/2022-08/1661366276_24-celes-club-p-naberezhnaya-petrozavodska-krasivo-25.jpg",
+        "answers": ["Петрозаводск"],
+        "country": "Россия",
+        "id": 156
+    },
+    {
+        "image": "http://красотаиздоровьеплюс.com/attachments/Image/Korolev_sneg_1.jpg",
+        "answers": ["Королёв", "Королев"],
+        "country": "Россия",
+        "id": 157
+    },
+    {
+        "image": "https://m.avtoradio.ru/vardata/modules/lenta/images/700000/687939_2_1576227242.jpg",
+        "answers": ["Шахты"],
+        "country": "Россия",
+        "id": 158
+    },
+    {
+        "image": "https://sun9-56.userapi.com/impg/c858232/v858232671/156e10/tKGiDr1w6Xg.jpg?size=1024x682&quality=96&sign=c094a0ea042e97c6af1515c88fd6a78d&c_uniq_tag=HEm6I2dewQP2NlrwZ-pAq2pKaipdqyWDGOvUa7Ww2iE&type=album",
+        "answers": ["Энгельс"],
+        "country": "Россия",
+        "id": 159
+    },
+    {
+        "image": "https://peterburg.guide/wp-content/uploads/2019/01/IMG_20190124_150820_993.jpg",
+        "answers": ["Великий Новгород"],
+        "country": "Россия",
+        "id": 160
+    },
+    {
+        "image": "https://sun1-89.userapi.com/impg/Pk3d4JMWRncsukP9ievJ4LdEiwmi6mhuIR6WHQ/jpf1yYQ-4G4.jpg?size=1200x780&quality=95&sign=96d4f853ce220078420b71bc44bd77b5&c_uniq_tag=p19zEEoE8nQinq-f7Fbv5021nPQw7rH-f8VFQO8anJU&type=album",
+        "answers": ["Люберцы"],
+        "country": "Россия",
+        "id": 161
+    },
+    {
+        "image": "https://prikolnye-kartinki.ru/img/picture/Nov/15/8009e127567f3695ac86a42bc89aa529/3.jpg",
+        "answers": ["Братск"],
+        "country": "Россия",
+        "id": 162
+    },
+    {
+        "image": "https://transphoto.org/photo/05/28/94/528944.jpg",
+        "answers": ["Старый Оскол"],
+        "country": "Россия",
+        "id": 163
+    },
+    {
+        "image": "https://cdn.fishki.net/upload/post/2016/08/04/2032776/foklqbqq5mw.jpg",
+        "answers": ["Ангарск"],
+        "country": "Россия",
+        "id": 164
+    },
+    {
+        "image": "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663239306_18-mykaleidoscope-ru-p-respublika-komi-stolitsa-siktivkar-oboi-19.jpg",
+        "answers": ["Сывтывкар"],
+        "country": "Россия",
+        "id": 165
+    },
+    {
+        "image": "https://eurasianmagazine.ru/upload/iblock/acb/acba81451edc09f65ff795588ca819dc.jpg",
+        "answers": ["Дзержинск"],
+        "country": "Россия",
+        "id": 166
+    },
+    {
+        "image": "http://static.tildacdn.com/tild3064-3833-4566-a262-316663653330/scale_1200.jpg",
+        "answers": ["Псков"],
+        "country": "Россия",
+        "id": 167
+    },
+    {
+        "image": "https://i.ytimg.com/vi/qrlqKLeGn3I/maxresdefault.jpg",
+        "answers": ["Орск"],
+        "country": "Россия",
+        "id": 168
+    },
+    {
+        "image": "https://ic.pics.livejournal.com/umra/8672859/636358/636358_1000.jpg",
+        "answers": ["Красногорск"],
+        "country": "Россия",
+        "id": 169
+    },
+    {
+        "image": "https://armavirtur.ru/upload/resize_cache/iblock/1ea/1600_1600_040cd750bba9870f18aada2478b24840a/p4i0rpzzifc4vxlws30ia9bolt1jurwn.jpg",
+        "answers": ["Армавир"],
+        "country": "Россия",
+        "id": 170
+    },
+    {
+        "image": "https://sun9-68.userapi.com/impg/dXLN_7VmgFRyj4lhOydxNBam2b24zHRGVtmfxg/DB8aZA5tTVQ.jpg?size=1140x809&quality=95&sign=350fdfcb37016f891d9e1228af3b47e5&c_uniq_tag=vustXeSnZYawlf0gPx-kZlkn9rKhFUEukhrmzsvP9ao&type=album",
+        "answers": ["Абакан"],
+        "country": "Россия",
+        "id": 171
+    },
+    {
+        "image": "https://admbal.ru/upload/iblock/49d/49d57d6c0190e6683af065df45b83e58.jpg",
+        "answers": ["Балаково"],
+        "country": "Россия",
+        "id": 172
+    },
+    {
+        "image": "https://avatars.dzeninfra.ru/get-zen_doc/1821029/pub_63101dd7ef40c93f998f5961_63101e6ab8300a1e70a38337/scale_1200",
+        "answers": ["Бийск"],
+        "country": "Россия",
+        "id": 173
+    },
+    {
+        "image": "http://ic.pics.livejournal.com/sergeydolya/14214797/271161/271161_original.jpg",
+        "answers": ["Южно-Сахалинск", "Южно Сахалинск"],
+        "country": "Россия",
+        "id": 174
+    },
+    {
+        "image": "https://vebcam.ru/wp-content/uploads/2023/01/odintsovo.jpg",
+        "answers": ["Одинцово"],
+        "country": "Россия",
+        "id": 175
+    },
+    {
+        "image": "http://primamedia_2537050521.s3.cloud.mts.ru/files/big/1412/1411195.jpg",
+        "answers": ["Уссурийск"],
+        "country": "Россия",
+        "id": 176
+    },
+    {
+        "image": "https://pp.userapi.com/c855724/v855724557/815f6/3aKR6Q4n4DA.jpg",
+        "answers": ["Прокопьевск"],
+        "country": "Россия",
+        "id": 177
+    },
+    {
+        "image": "https://travelsoul.ru/wp-content/uploads/c/a/c/cac0fd2470acc893fe0e33e48e572f11.jpeg",
+        "answers": ["Рыбинск"],
+        "country": "Россия",
+        "id": 178
+    },
+    {
+        "image": "http://zabavniki.club/wp-content/uploads/volgodonsk_foto_16_13140532.jpg",
+        "answers": ["Волгодонск"],
+        "country": "Россия",
+        "id": 179
+    },
+    {
+        "image": "https://www.hostpic.org/images/2202191729390103.jpg",
+        "answers": ["Сызрань"],
+        "country": "Россия",
+        "id": 180
+    },
+    {
+        "image": "https://i.pinimg.com/originals/86/05/f2/8605f2adc07d9b5b2345ea2fb6ce2fa8.jpg",
+        "answers": ["Петропавлоск-Камчатский", "Петропавлоск Камчатский"],
+        "country": "Россия",
+        "id": 181
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-rk0BiYOTivU/WdYyIkyBgSI/AAAAAAAAZ9M/reO0PCcR1I8gWkrXhSnXTbtLKx6Tk6G2QCLcBGAs/s1600/2017.10.05_003.jpg",
+        "answers": ["Каменск-уральский", "Каменск уральский"],
+        "country": "Россия",
+        "id": 182
+    },
+    {
+        "image": "https://novocherkassk.net/gallery/data/2016/11/.o.8469-DJI_0037lr.jpg",
+        "answers": ["Новочеркасск"],
+        "country": "Россия",
+        "id": 183
+    },
+    {
+        "image": "http://ic.pics.livejournal.com/zdorovs/16627846/1503680/1503680_original.jpg",
+        "answers": ["Альметьевск"],
+        "country": "Россия",
+        "id": 184
+    },
+    {
+        "image": "https://celes.club/uploads/posts/2022-05/1651846399_15-celes-club-p-zlatoust-gorod-krasivo-foto-15.jpg",
+        "answers": ["Златоуст"],
+        "country": "Россия",
+        "id": 185
+    },
+    {
+        "image": "https://www.atomic-energy.ru/files/images/2019/09/severodvinsk.jpg",
+        "answers": ["Северодвинск"],
+        "country": "Россия",
+        "id": 186
+    },
+    {
+        "image": "https://static.eastlines.ru/userfiles/citys/original/361_khasavyurt-.jpg",
+        "answers": ["Хасавюрт"],
+        "country": "Россия",
+        "id": 187
+    },
+    {
+        "image": "https://of-crimea.ru/plug/2017/01/kerch.jpg",
+        "answers": ["Керчь"],
+        "country": "Россия",
+        "id": 188
+    },
+    {
+        "image": "https://yobte.ru/uploads/posts/2023-05/domodedovo-dostoprimechatelnosti-141-foto-25.webp",
+        "answers": ["Домодедово"],
+        "country": "Россия",
+        "id": 189
+    },
+    {
+        "image": "https://api.rbsmi.ru/attachments/9f486007ea839d13501f13aaf03a57f2f4ed4ba8/store/crop/0/0/640/480/1600/0/0/4a66626a71ea3eb00bebe1e825e5174f0b4a9dc5e39d5d2c785d368c7b86/a5389b97bf7267ee157af257e60be422.jpg",
+        "answers": ["Салават"],
+        "country": "Россия",
+        "id": 190
+    },
+    {
+        "image": "http://img-fotki.yandex.ru/get/15575/18746936.a3/0_dd026_e8f0ce1d_orig.jpg",
+        "answers": ["Миасс"],
+        "country": "Россия",
+        "id": 191
+    },
+    {
+        "image": "http://kopeysk24.ru/netcat_files/userfiles/Pages/History/live.jpg",
+        "answers": ["Копейск"],
+        "country": "Россия",
+        "id": 192
+    },
+    {
+        "image": "http://klubmama.ru/uploads/posts/2022-08/1661308245_6-klubmama-ru-p-podelki-dostoprimechatelnosti-pyatigorska-6.jpg",
+        "answers": ["Пятигорск"],
+        "country": "Россия",
+        "id": 193
+    },
+    {
+        "image": "https://bl-g.ru/upload/iblock/88d/proyekty_osveshcheniya_v_elektrostali_2.jpg",
+        "answers": ["Электросталь"],
+        "country": "Россия",
+        "id": 194
+    },
+    {
+        "image": "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663421273_28-mykaleidoscope-ru-p-respublika-adigeya-stolitsa-maikop-dostopr-30.jpg",
+        "answers": ["Майкоп"],
+        "country": "Россия",
+        "id": 195
+    },
+    {
+        "image": "https://fb.ru/media/i/2/9/2/9/3/6/1/i/2929361.jpg",
+        "answers": ["Находка"],
+        "country": "Россия",
+        "id": 196
+    },
+    {
+        "image": "http://s4.fotokto.ru/photo/full/304/3049276.jpg",
+        "answers": ["Березники"],
+        "country": "Россия",
+        "id": 197
+    },
+    {
+        "image": "https://storage.rentride.ru/uploads/posts/2022/11/28/KolomnaKreml.webp",
+        "answers": ["Коломна"],
+        "country": "Россия",
+        "id": 198
+    },
+    {
+        "image": "https://zema.su/sites/default/files/photo/45/er345exposure.jpg",
+        "answers": ["Щёлково", "Щелково"],
+        "country": "Россия",
+        "id": 199
+    },
+    {
+        "image": "http://mosprogulka.ru/Pictures/Thirteen/Serpuhov_2_Moskovskaja_ulica.jpg",
+        "answers": ["Серпухов"],
+        "country": "Россия",
+        "id": 200
     }
 ]
