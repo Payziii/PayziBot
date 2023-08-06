@@ -1,4 +1,4 @@
-const {SlashCommandBuilder, EmbedBuilder} = require("discord.js");
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -11,7 +11,7 @@ module.exports = {
         .addFields(
           {
             name: "Утилиты",
-            value: "`help`, `avatar`, `userinfo`, `stats`, `translate`, `weather`, `github`",
+            value: "`help`, `avatar`, `userinfo`, `stats`, `translate`, `weather`, `github`, `serverinfo`",
           },
           {
             name: "Модерация",

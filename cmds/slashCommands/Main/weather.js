@@ -1,4 +1,4 @@
-const {SlashCommandBuilder, EmbedBuilder} = require("discord.js");
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 const { Gismeteo } = require('gismeteo');
 const gismeteo = new Gismeteo();
 
@@ -16,7 +16,6 @@ module.exports = {
     async execute(interaction, guild) { 
         let city = interaction.options.getString('город');
         await interaction.deferReply();
-        let degrees = guild.settings.other.weather.degree;
 
         gismeteo.getNow(city).then((cur) => {
             const embed = new EmbedBuilder()

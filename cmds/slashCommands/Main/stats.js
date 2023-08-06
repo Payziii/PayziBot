@@ -1,7 +1,7 @@
-const {SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder} = require("discord.js");
+const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require("discord.js");
 const os = require('os')
 const time = require('payzi-time');
-const config = require('../../../config.js');
+const { version } = require('../../../config.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -17,7 +17,7 @@ module.exports = {
         else if (uptime.days === 0) bremya = `${uptime.hours} ч. ${uptime.minutes} м.`
         else bremya = `${uptime.days} д. ${uptime.hours} ч. ${uptime.minutes} м.`
         const embed = new EmbedBuilder()
-  .setTitle(`PayziBot ${config.version}`)
+  .setTitle(`PayziBot ${version}`)
   .setDescription(`<:arrow:1107256361219268718> Бот работает: **${bremya}**`)
   .addFields(
     {
