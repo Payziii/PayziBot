@@ -1,4 +1,4 @@
-const {SlashCommandBuilder, EmbedBuilder} = require("discord.js");
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 const tr = require('googletrans').default;
 
 module.exports = {

@@ -15,12 +15,6 @@ const guild = Schema({
       error: {type: String, default: '#ff033e'},
       correct: {type: String, default: '#008000'}
     },
-    other: {
-        weather: {
-            degree: {type: String, default: 'C'},
-        },
-        color: {type: String, default: '#255520'}
-    },
     starboard: {
       channelID: {type: String, default: '-1'},
       reqReacts: { type: Number, default: 1 },
