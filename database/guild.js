@@ -9,9 +9,8 @@ const premiumSchema = Schema({
 
 const guild = Schema({
   guildID: String,
-  settings: {
     colors: {
-      basic: {type: String, default: '#255520'},
+      basic: {type: String, default: '#3fcc65'},
       error: {type: String, default: '#ff033e'},
       correct: {type: String, default: '#008000'}
     },
@@ -23,8 +22,22 @@ const guild = Schema({
     },
     neuro: {
       chatgpt: {type: Boolean, default: false}
-    }
-  },
+    },
+    welcome: {
+      channelID: {type: String, default: '-1'},
+      welcomeText: {type: String, default: 'Hello, {user.mention}. Welcome to the {guild.name}'},
+      autoRoleID: {type: String, default: '-1'}
+    },
+    leave: {
+      channelID: {type: String, default: '-1'},
+      welcomeText: {type: String, default: 'Oh no, {user.name} has left us'}
+    },
+    autoWeather: {
+      channelID: {type: String, default: '-1'},
+      city: {type: String, default: 'Москва'},
+      hours: {type: Number, default: 24},
+      lastSend: {type: Number, default: 0},
+    },
   premium: {type: premiumSchema, default: null}
 })
 

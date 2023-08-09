@@ -13,7 +13,7 @@ module.exports = {
         let totalBots = server.members.cache.filter(c => c.user.bot == true).size;
 
         const embed = new EmbedBuilder()
-  .setColor(guild.settings.colors.basic)
+  .setColor(guild.colors.basic)
   .setTitle(server.name)
   .setDescription(`Владелец: **${server.members.cache.get(server.ownerId).user.username}**\nСервер создан: <t:${(server.createdTimestamp/1000).toFixed(0)}:D> (<t:${(server.createdTimestamp/1000).toFixed(0)}:R>)\nБустов: **${server.premiumSubscriptionCount}**`)
   .addFields(

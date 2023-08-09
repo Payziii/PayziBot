@@ -35,7 +35,7 @@ try {
       interaction.channel.awaitMessages({ filter: collectorFilter2, max: 1, time: 30000, errors: ['time'] })
         .then(collected => {
           if(/^#[0-9A-F]{6}$/i.test(collected.first().content)) {
-            guild.settings.colors.basic = collected.first().content;
+            guild.colors.basic = collected.first().content;
             guild.save()
             interaction.followUp(`Для эмбеда установлен цвет \`${collected.first().content}\``)
             return;

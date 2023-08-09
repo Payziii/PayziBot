@@ -40,7 +40,7 @@ module.exports = {
   .setDescription("У вас есть **30 секунд** чтобы ответить, какая игра изображена на картинке ниже")
   .setImage(item.image)
   .setFooter({text: `Игру угадали ${percent}% пользователей`})
-  .setColor(guild.settings.colors.basic);
+  .setColor(guild.colors.basic);
 
             interaction.editReply({ embeds: [embed], fetchReply: true })
 	.then(() => {
@@ -50,7 +50,7 @@ module.exports = {
   .setTitle("Угадай игру")
   .setDescription(`Ответ: **${item.answers[0]}**`)
   .setImage(item.image)
-  .setColor(guild.settings.colors.correct);
+  .setColor(guild.colors.correct);
 				interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
                 give.CorrectGame(collected.first().author.id)
                 games.gameGiveVerno(name, item.id)
@@ -60,7 +60,7 @@ module.exports = {
                 .setTitle("Угадай игру")
                 .setDescription(`Ответ: **${item.answers[0]}**`)
                 .setImage(item.image)
-                .setColor(guild.settings.colors.error);
+                .setColor(guild.colors.error);
                               interaction.followUp({  content: `**Победителей нет(**`, embeds: [embed5] });
 			});
 	});
@@ -80,7 +80,7 @@ module.exports = {
   .setDescription(`У вас есть **30 секунд** чтобы ответить, какой город изображен на фото ниже\nСтрана: **${item.country}**`)
   .setImage(item.image)
   .setFooter({text: `Город угадали ${percent}% пользователей`})
-  .setColor(guild.settings.colors.basic);
+  .setColor(guild.colors.basic);
 
             interaction.editReply({ embeds: [embed], fetchReply: true })
 	.then(() => {
@@ -90,7 +90,7 @@ module.exports = {
   .setTitle("Угадай город")
   .setDescription(`Ответ: **${item.answers[0]}**\nСтрана: **${item.country}**`)
   .setImage(item.image)
-  .setColor(guild.settings.colors.correct);
+  .setColor(guild.colors.correct);
 				interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
                 give.CorrectCity(collected.first().author.id)
                 games.gameGiveVerno(name, item.id)
@@ -100,7 +100,7 @@ module.exports = {
                 .setTitle("Угадай город")
                 .setDescription(`Ответ: **${item.answers[0]}**\nСтрана: **${item.country}**`)
                 .setImage(item.image)
-                .setColor(guild.settings.colors.error);
+                .setColor(guild.colors.error);
                               interaction.followUp({  content: `**Победителей нет(**`, embeds: [embed5] });
 			});
 	});
@@ -120,7 +120,7 @@ module.exports = {
   .setDescription(`У вас есть **30 секунд** чтобы ответить, чей логотип изображен на фото ниже`)
   .setImage(item.image)
   .setFooter({text: `Логотип угадали ${percent}% пользователей`})
-  .setColor(guild.settings.colors.basic);
+  .setColor(guild.colors.basic);
 
             interaction.editReply({ embeds: [embed], fetchReply: true })
 	.then(() => {
@@ -130,7 +130,7 @@ module.exports = {
   .setTitle("Угадай логотип")
   .setDescription(`Ответ: **${item.answers[0]}**`)
   .setImage(item.image)
-  .setColor(guild.settings.colors.correct);
+  .setColor(guild.colors.correct);
 				interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
                 give.CorrectLogo(collected.first().author.id)
                 games.gameGiveVerno(name, item.id)
@@ -140,7 +140,7 @@ module.exports = {
                 .setTitle("Угадай логотип")
                 .setDescription(`Ответ: **${item.answers[0]}**`)
                 .setImage(item.image)
-                .setColor(guild.settings.colors.error);
+                .setColor(guild.colors.error);
                               interaction.followUp({  content: `**Победителей нет(**`, embeds: [embed5] });
 			});
 	});

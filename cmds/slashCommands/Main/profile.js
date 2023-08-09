@@ -14,7 +14,7 @@ module.exports = {
             value: `Игр: **${user.games.game}**\nГородов: **${user.games.city}**\nЛоготипов: **${user.games.logo}**`,
           },
         )
-        .setColor(guild.settings.colors.basic)
+        .setColor(guild.colors.basic)
             await interaction.reply({ embeds: [embed] });
     },
 };

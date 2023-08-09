@@ -7,10 +7,10 @@ function general(guild) {
   .addFields(
     {
       name: "Основное",
-      value: `Цвет embed: **${guild.settings.colors.basic}**`,
+      value: `Цвет embed: **${guild.colors.basic}**`,
     },
   )
-  .setColor(guild.settings.colors.basic)
+  .setColor(guild.colors.basic)
   .setFooter({
     text: "Выберите пункт настроек по кнопке ниже",
   });

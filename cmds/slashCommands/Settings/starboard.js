@@ -36,17 +36,17 @@ module.exports = {
     async execute(interaction, guild) {
       await interaction.deferReply();
       if (interaction.options.getSubcommand() === 'off') {
-        guild.settings.starboard.channelID = '-1';
+        guild.starboard.channelID = '-1';
         guild.save()
         interaction.followUp('Звёздная доска успешно выключена!')
       }else if (interaction.options.getSubcommand() === 'channel-set') {
         channel = interaction.options.getChannel('канал')
-        guild.settings.starboard.channelID = channel.id;
+        guild.starboard.channelID = channel.id;
         guild.save()
         interaction.followUp(`Звёздная доска успешно включена в канале <#${channel.id}>`)
       }else if (interaction.options.getSubcommand() === 'stars-needed') {
         count = interaction.options.getInteger('количество')
-        guild.settings.starboard.reqReacts = count;
+        guild.starboard.reqReacts = count;
         guild.save()
         interaction.followUp(`Выбрано количество звёзд для попадания на звездную доску: \`${count}\``)
       }

@@ -17,7 +17,7 @@ async function CorrectCity(id) {
 async function CorrectLogo(id) {
     user = await User.findOne({ userID: id })
     if(!user) return;
-    user.games.logor++;
+    user.games.logo++;
     user.save()
 }
 

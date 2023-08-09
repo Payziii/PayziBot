@@ -28,7 +28,7 @@ module.exports = {
             if(result.hasCorrectedText === true) t = result.correctedText;
 
             const embed = new EmbedBuilder()
-            .setColor(guild.settings.colors.basic)
+            .setColor(guild.colors.basic)
             .setTitle("Переводчик")
             .setDescription(result.text)
             .setThumbnail("https://cdn.discordapp.com/attachments/695277643360239616/772322213394120714/1492616968-18-google-translate-text-language-translation_83413.png");

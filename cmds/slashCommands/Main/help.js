@@ -27,7 +27,7 @@ module.exports = {
           },
         )
         .setThumbnail(`https://cdn.discordapp.com/icons/${interaction.guild.id}/${interaction.guild.icon}.webp`)
-        .setColor(guild.settings.colors.basic)
+        .setColor(guild.colors.basic)
         .setFooter({
           text: "Желаем приятного использования!",
         });

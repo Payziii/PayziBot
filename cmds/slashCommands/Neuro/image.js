@@ -8,7 +8,7 @@ module.exports = {
         .addStringOption((option) =>
             option.setName('запрос')
             .setDescription('Опишите картинку, которую хотите получить')
-            .setMaxLength(64)
+            .setMaxLength(128)
             .setRequired(true) 
         ),
     async execute(interaction, guild, user, openai) {
@@ -23,7 +23,7 @@ module.exports = {
   .setTitle("Генерация изображений")
   .setDescription(`Запрос: \`\`\`${text}\`\`\``)
   .setImage(image.data.data[0].url)
-  .setColor(guild.settings.colors.basic);
+  .setColor(guild.colors.basic);
 
 await interaction.editReply({ embeds: [embed] });
     } catch (error) {

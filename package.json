@@ -14,7 +14,7 @@
     "discord.js": "^14.11.0",
     "gismeteo": "^1.0.8",
     "googletrans": "^1.0.2",
-    "mongoose": "^6.0.12",
+    "mongoose": "^7.4.2",
     "node-fetch": "^2.6.12",
     "openai": "^3.3.0",
     "payzi-time": "^0.0.3",

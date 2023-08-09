@@ -2,6 +2,9 @@ const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRow
 const os = require('os')
 const time = require('payzi-time');
 const { version } = require('../../../config.js');
+const { info } = require('../../../changelog.js');
+const { connection } = require("mongoose")
+const { switchTo } = require('../../../func/cmds/db_status.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -28,30 +31,42 @@ module.exports = {
       name: "Хостинг",
       value: `ОЗУ: \`${(process.memoryUsage().heapUsed / (1024 * 1024)).toFixed(0)} МБ\`/\`${(os.totalmem()/ (1024 * 1024)).toFixed(0)} МБ\`\nWebSocket: \`${client.ws.ping}ms\`\nЦП: \`${os.cpus()[0].model}\``,
     },
+    {
+      name: "База данных",
+      value: `Статус: ${switchTo(connection.readyState)}`
+    },
   )
   .setThumbnail("https://cdn.discordapp.com/avatars/732867965053042690/f3f976adc4cb628dd707a8f4203e1f5d.webp?size=4096")
-        .setColor(guild.settings.colors.basic)
+        .setColor(guild.colors.basic)
         const links = new EmbedBuilder()
         .setTitle("Ссылки")
         .setDescription(`<:arrow:1107256361219268718> [Сервер поддержки](https://discord.gg/E7SFuVEB2Z)\n
         <:arrow:1107256361219268718> [Добавить бота](https://discord.com/api/oauth2/authorize?client_id=576442351426207744&permissions=1376939797574&scope=bot)\n
         <:arrow:1107256361219268718> [Документация](https://payzibot.fiftygames.ru/)\n\n
-        <:arrow:1107256361219268718> [PayziBot на BotiCord](https://boticord.top/bot/576442351426207744)`)
+        <:arrow:1107256361219268718> [PayziBot на BotiCord](https://boticord.top/bot/payzibot)`)
         .setThumbnail("https://cdn.discordapp.com/avatars/732867965053042690/f3f976adc4cb628dd707a8f4203e1f5d.webp?size=4096")
-        .setColor(guild.settings.colors.basic);
+        .setColor(guild.colors.basic);
         const link_button = new ButtonBuilder()
 			.setCustomId('link_button')
 			.setLabel('Ссылки')
 			.setStyle(ButtonStyle.Secondary);
+      const change_button = new ButtonBuilder()
+			.setCustomId('change_button')
+			.setLabel('Изменения')
+			.setStyle(ButtonStyle.Secondary);
       const row = new ActionRowBuilder()
-			.addComponents(link_button);
+			.addComponents(link_button, change_button);
 
       const response =  await interaction.editReply({ embeds: [embed], components: [row] });
             const collectorFilter = i => i.user.id === interaction.user.id;
 try {
 	const confirmation = await response.awaitMessageComponent({ filter: collectorFilter, time: 60_000 });
 
-  await interaction.editReply({ embeds: [links], components: []});
+  if (confirmation.customId === 'link_button') {
+    await interaction.editReply({ embeds: [links], components: []});
+  }else if (confirmation.customId === 'change_button') {
+    await interaction.editReply({ content: info, embeds: [], components: []});
+  }
 
 } catch (e) {
 	await interaction.editReply({ embeds: [embed], components: [] });

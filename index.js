@@ -23,7 +23,7 @@ const client = new Client({
 	],
 	presence: {
 		status: 'online',
-		activities: [{ name: '/image | Генерация изображений', type: ActivityType.Competing }],
+		activities: [{ name: '/guess | Угадай логотип', type: ActivityType.Competing }],
 	},
 });
 
@@ -107,10 +107,10 @@ client.on('messageReactionAdd', async (react, user) => {
 	if (react.partial) await react.fetch()
 	let guild = await Guild.findOne({ guildID: react.message.guild.id });
 	if (!guild) return;
-	let customReact = guild.settings.starboard.customReact;
+	let customReact = guild.starboard.customReact;
 	if(react.emoji.name != customReact) return;
-	if(guild.settings.starboard.channelID == '-1') return;
-	if(react.count < guild.settings.starboard.reqReacts) return;
+	if(guild.starboard.channelID == '-1') return;
+	if(react.count < guild.starboard.reqReacts) return;
 	let messageAttachment = react.message.attachments.size > 0 ? Array.from(react.message.attachments.values())[0].url : null
 
 	const embed = new EmbedBuilder()
@@ -118,11 +118,11 @@ client.on('messageReactionAdd', async (react, user) => {
 			name: react.message.author.username,
 			iconURL: react.message.author.displayAvatarURL(),
 		})
-		.setColor(guild.settings.other.color)
+		.setColor(guild.other.color)
 		.setImage(messageAttachment);
 	let content = react.message.content.replaceAll(' ', '')
 	if(content.length > 0) embed.setDescription(react.message.content || 'Пустая строка');
-	let msg = guild.settings.starboard.data.get(react.message.id);
+	let msg = guild.starboard.data.get(react.message.id);
 	let reactMsg;
 	if(/\p{Emoji}/u.test(customReact) == false) {
 		if(react.message.guild.emojis.cache.find(emoji => emoji.name === customReact) == undefined) return;
@@ -132,14 +132,14 @@ client.on('messageReactionAdd', async (react, user) => {
 		reactMsg = customReact
 	}
 	if(msg == undefined) {
-			react.message.guild.channels.cache.get(guild.settings.starboard.channelID).send({content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
+			react.message.guild.channels.cache.get(guild.starboard.channelID).send({content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
 			.then(message => {
-				guild.settings.starboard.data.set(react.message.id, message.id)
+				guild.starboard.data.set(react.message.id, message.id)
 				guild.save()
 			})
 			.catch(e => console.log(e));
 	}else{
-		react.message.guild.channels.cache.get(guild.settings.starboard.channelID).messages.cache.get(msg).edit({content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
+		react.message.guild.channels.cache.get(guild.starboard.channelID).messages.cache.get(msg).edit({content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
 			.catch(e => console.log(e));
 	}
 })
@@ -149,11 +149,11 @@ client.on('messageReactionRemove', async (react, user) => {
 	if (react.partial) await react.fetch()
 	let guild = await Guild.findOne({ guildID: react.message.guild.id });
 	if (!guild) return;
-	let customReact = guild.settings.starboard.customReact;
+	let customReact = guild.starboard.customReact;
 	if(react.emoji.name != customReact) return;
-	if(guild.settings.starboard.channelID == '-1') return;
-	if(react.count < guild.settings.starboard.reqReacts) {
-		let msg = guild.settings.starboard.data.get(react.message.id);
+	if(guild.starboard.channelID == '-1') return;
+	if(react.count < guild.starboard.reqReacts) {
+		let msg = guild.starboard.data.get(react.message.id);
 		let reactMsg;
 	if(/\p{Emoji}/u.test(customReact) == false) {
 		if(react.message.guild.emojis.cache.find(emoji => emoji.name === customReact) == undefined) return;
@@ -163,9 +163,9 @@ client.on('messageReactionRemove', async (react, user) => {
 		reactMsg = customReact
 	}
 		if(msg == undefined) return;
-		react.message.guild.channels.cache.get(guild.settings.starboard.channelID).messages.cache.get(msg).delete()
+		react.message.guild.channels.cache.get(guild.starboard.channelID).messages.cache.get(msg).delete()
 			.catch(e => console.log(e));
-		guild.settings.starboard.data.delete(react.message.id)
+		guild.starboard.data.delete(react.message.id)
 		guild.save()
 		return;
 	}
@@ -176,20 +176,20 @@ client.on('messageReactionRemove', async (react, user) => {
 			name: react.message.author.username,
 			iconURL: react.message.author.displayAvatarURL(),
 		})
-		.setColor(guild.settings.other.color)
+		.setColor(guild.other.color)
 		.setImage(messageAttachment);
 	let content = react.message.content.replaceAll(' ', '')
 	if(content.length > 0) embed.setDescription(react.message.content || 'Пустая строка');
-	let msg = guild.settings.starboard.data.get(react.message.id);
+	let msg = guild.starboard.data.get(react.message.id);
 	if(msg == undefined) {
-		react.message.guild.channels.cache.get(guild.settings.starboard.channelID).send({content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
+		react.message.guild.channels.cache.get(guild.starboard.channelID).send({content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
 			.then(message => {
-				guild.settings.starboard.data.set(react.message.id, message.id)
+				guild.starboard.data.set(react.message.id, message.id)
 				guild.save()
 			})
 			.catch(e => console.log(e));
 	}else{
-		react.message.guild.channels.cache.get(guild.settings.starboard.channelID).messages.cache.get(msg).edit({content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
+		react.message.guild.channels.cache.get(guild.starboard.channelID).messages.cache.get(msg).edit({content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
 			.catch(e => console.log(e));
 	}
 })
@@ -233,7 +233,7 @@ client.on('messageCreate', async (message) => {
 	if(!user) return;
 	// DB
 	if(message.content.startsWith('<@576442351426207744>')) {
-		if(guild.settings.neuro.chatgpt === true) {
+		if(guild.neuro.chatgpt === true) {
 			const chatCompletion = await openai.createChatCompletion({
 				model: "gpt-3.5-turbo",
 				messages: [
@@ -264,4 +264,4 @@ client.on('messageCreate', async (message) => {
 	cmd.run(client, message, args, guild, user);
 });
 
-client.login(tokens.discord.release);
+client.login(tokens.discord.beta);
