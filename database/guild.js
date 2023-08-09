@@ -1,12 +1,5 @@
 const { Schema, model } = require('mongoose');
 
-const premiumSchema = Schema({
-    status: {type: Boolean, default: false},
-    userID: {type: String, default: '-1'},
-    endDate: {type: Number, default: 0},
-    startDate: {type: Number, default: 0}
-})
-
 const guild = Schema({
   guildID: String,
     colors: {
@@ -38,7 +31,12 @@ const guild = Schema({
       hours: {type: Number, default: 24},
       lastSend: {type: Number, default: 0},
     },
-  premium: {type: premiumSchema, default: null}
+  premium: {
+    status: {type: Boolean, default: false},
+    userID: {type: String, default: '-1'},
+    endDate: {type: Number, default: 0},
+    startDate: {type: Number, default: 0}
+}
 })
 
 module.exports = model("Guild", guild)
