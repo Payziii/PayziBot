@@ -118,7 +118,7 @@ client.on('messageReactionAdd', async (react, user) => {
 			name: react.message.author.username,
 			iconURL: react.message.author.displayAvatarURL(),
 		})
-		.setColor(guild.other.color)
+		.setColor(guild.colors.basic)
 		.setImage(messageAttachment);
 	let content = react.message.content.replaceAll(' ', '')
 	if(content.length > 0) embed.setDescription(react.message.content || 'Пустая строка');
@@ -176,7 +176,7 @@ client.on('messageReactionRemove', async (react, user) => {
 			name: react.message.author.username,
 			iconURL: react.message.author.displayAvatarURL(),
 		})
-		.setColor(guild.other.color)
+		.setColor(guild.colors.basic)
 		.setImage(messageAttachment);
 	let content = react.message.content.replaceAll(' ', '')
 	if(content.length > 0) embed.setDescription(react.message.content || 'Пустая строка');

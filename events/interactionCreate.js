@@ -43,6 +43,7 @@ module.exports = {
     const { cooldowns } = client
     if (interaction.channel === null) return interaction.reply("<:no:1107254682100957224> | Я доступен только на серверах!");
     const cmd = interaction.client.commands.get(interaction.commandName);
+    if(!cmd) return interaction.reply(`<:no:1107254682100957224> | Команда не найдена!`)
     if (!cooldowns.has(cmd.data.name)) {
         cooldowns.set(cmd.data.name, new Collection());
     }
