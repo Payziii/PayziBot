@@ -2,7 +2,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 const { Gismeteo } = require('gismeteo');
 const gismeteo = new Gismeteo();
 
-async function getWeather(city) {
+async function getWeather(city, channel, color) {
     gismeteo.getNow(city).then((cur) => {
         const embed = new EmbedBuilder()
 .setTitle(city)
@@ -25,14 +25,14 @@ async function getWeather(city) {
 },
 )
 .setThumbnail(cur.image)
-.setColor(guild.colors.basic)
+.setColor(color)
 .setFooter({
 text: "Сервис: Gismeteo",
 });
 
-return embed;
+channel.send({embeds: [embed]})
 }).catch(e => {
-    return false;
+    return console.log(e);
   })
 }
 

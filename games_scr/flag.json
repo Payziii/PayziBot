@@ -1,0 +1,86 @@
+[
+    {
+        "image": "https://militaryarms.ru/wp-content/uploads/2021/09/%D0%90%D0%B2%D1%81%D1%82%D1%80%D0%B0%D0%BB%D0%B8%D1%8F.jpg",
+        "options": ["Австралия", "США", "Аргентина", "Китай", "Тайвань"],
+        "answer": 1,
+        "id": 1
+    },
+    {
+        "image": "http://stage48.net/wiki/images/7/76/Flag_of_Austria.png",
+        "options": ["Польша", "Индонезия", "Австрия", "Монако", "Россия"],
+        "answer": 3,
+        "id": 2
+    },
+    {
+        "image": "https://wonderfulengineering.com/wp-content/uploads/2015/07/azerbaijan-flag-9.jpg",
+        "options": ["Украина", "Азербайджан", "Турция", "Австралия", "Австрия"],
+        "answer": 2,
+        "id": 3
+    },
+    {
+        "image": "https://zabavnikplus.ru/wp-content/uploads/b/1/2/b12c05b92a624c5114103d068bd4b3c3.jpeg",
+        "options": ["Таджикистан", "Польша", "Турция", "Албания", "Китай"],
+        "answer": 4,
+        "id": 4
+    },
+    {
+        "image": "http://ploshadtruda.ru/wp-content/uploads/2017/04/%D0%90%D0%BB%D0%B6%D0%B8%D1%80_%D1%84%D0%BB%D0%B0%D0%B3.jpg",
+        "options": ["Аргентина", "Россия", "Азербайджан", "Турция", "Алжир"],
+        "answer": 5,
+        "id": 5
+    },
+    {
+        "image": "https://immi.ksdd.ru/wp-content/uploads/2019/04/angola-p.jpg",
+        "options": ["Ангола", "СССР", "Беларусь", "Индия", "Иран"],
+        "answer": 1,
+        "id": 6
+    },
+    {
+        "image": "https://i.ytimg.com/vi/5RWVNK-Tbr4/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGH8gFCgTMA8=&rs=AOn4CLDgnY_WEkukX9hNp8goHE8HS6YXjQ",
+        "options": ["Ангола", "Андорра", "Франция", "Италия", "Нигер"],
+        "answer": 2,
+        "id": 7
+    },
+    {
+        "image": "https://i5.walmartimages.com/asr/ee419e6b-fba0-4bd6-b2e5-f53c281f9be5_1.46cc09070d025652f67c2da38341aa4f.jpeg",
+        "options": ["Япония", "Нигерия", "Антигуа и Барбуда", "Ирак", "Великобритания"],
+        "answer": 3,
+        "id": 8
+    },
+    {
+        "image": "https://immi.ksdd.ru/wp-content/uploads/2019/11/Argentina.png",
+        "options": ["Солнце", "Япония", "Армения", "Аргентина", "Багамы"],
+        "answer": 4,
+        "id": 9
+    },
+    {
+        "image": "https://www.worldatlas.com/img/flag/am-flag.jpg",
+        "options": ["Гвинея", "Боливия", "Франция", "Аргентина", "Армения"],
+        "answer": 5,
+        "id": 10
+    },
+    {
+        "image": "https://s1.1zoom.ru/big7/196/AfghanistanFlag_Stripes_338302.jpg",
+        "options": ["Афганистан", "Иран", "Ирак", "Армения", "Северная Корея"],
+        "answer": 1,
+        "id": 11
+    },
+    {
+        "image": "https://jooinn.com/images/bahamas-grunge-flag-2.jpg",
+        "options": ["Габон", "Багамы", "Гвинея", "Индия", "Италия"],
+        "answer": 2,
+        "id": 12
+    },
+    {
+        "image": "https://www.knowledgetribe.in/sites/default/files/inline-images/bangladesh.jpg",
+        "options": ["Япония", "Южная Корея", "Бангладеш", "Киргизия", "Куба"],
+        "answer": 3,
+        "id": 13
+    },
+    {
+        "image": "https://avatars.mds.yandex.net/i?id=166e5fc7a2cd41c36d0767e913b6a73291dbb0a7-9046334-images-thumbs&n=13",
+        "options": ["Япония", "Южная Корея", "Бангладеш", "Барбадос", "Куба"],
+        "answer": 4,
+        "id": 14
+    }
+]
