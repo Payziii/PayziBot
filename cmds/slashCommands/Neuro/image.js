@@ -8,7 +8,7 @@ module.exports = {
         .addStringOption((option) =>
             option.setName('запрос')
             .setDescription('Опишите картинку, которую хотите получить')
-            .setMaxLength(128)
+            .setMaxLength(192)
             .setRequired(true) 
         ),
     async execute(interaction, guild, user, openai) {

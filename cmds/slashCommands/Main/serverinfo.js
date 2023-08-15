@@ -15,7 +15,7 @@ module.exports = {
         const embed = new EmbedBuilder()
   .setColor(guild.colors.basic)
   .setTitle(server.name)
-  .setDescription(`Владелец: **${server.members.cache.get(server.ownerId).user.username}**\nСервер создан: <t:${(server.createdTimestamp/1000).toFixed(0)}:D> (<t:${(server.createdTimestamp/1000).toFixed(0)}:R>)\nБустов: **${server.premiumSubscriptionCount}**`)
+  .setDescription(`<:arrow:1140937463209152572> Владелец: **${server.members.cache.get(server.ownerId).user.username}**\n<:arrow:1140937463209152572> Сервер создан: <t:${(server.createdTimestamp/1000).toFixed(0)}:D> (<t:${(server.createdTimestamp/1000).toFixed(0)}:R>)\n<:arrow:1140937463209152572> Бустов: **${server.premiumSubscriptionCount}**`)
   .addFields(
     {
       name: "<:member:732128945365057546> Участники",

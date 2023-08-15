@@ -21,7 +21,7 @@ module.exports = {
         else bremya = `${uptime.days} д. ${uptime.hours} ч. ${uptime.minutes} м.`
         const embed = new EmbedBuilder()
   .setTitle(`PayziBot ${version}`)
-  .setDescription(`<:arrow:1107256361219268718> Бот работает: **${bremya}**`)
+  .setDescription(`<:arrow:1140937463209152572> Бот работает: **${bremya}**`)
   .addFields(
     {
       name: "Статистика",
@@ -40,10 +40,10 @@ module.exports = {
         .setColor(guild.colors.basic)
         const links = new EmbedBuilder()
         .setTitle("Ссылки")
-        .setDescription(`<:arrow:1107256361219268718> [Сервер поддержки](https://discord.gg/E7SFuVEB2Z)\n
-        <:arrow:1107256361219268718> [Добавить бота](https://discord.com/api/oauth2/authorize?client_id=576442351426207744&permissions=1376939797574&scope=bot)\n
-        <:arrow:1107256361219268718> [Документация](https://payzibot.fiftygames.ru/)\n\n
-        <:arrow:1107256361219268718> [PayziBot на BotiCord](https://boticord.top/bot/payzibot)`)
+        .setDescription(`<:arrow:1140937463209152572> [Сервер поддержки](https://discord.gg/E7SFuVEB2Z)\n
+        <:arrow:1140937463209152572> [Добавить бота](https://discord.com/api/oauth2/authorize?client_id=576442351426207744&permissions=1376939797574&scope=bot)\n
+        <:arrow:1140937463209152572> [Документация](https://payzibot.fiftygames.ru/)\n\n
+        <:arrow:1140937463209152572> [PayziBot на BotiCord](https://boticord.top/bot/payzibot)`)
         .setThumbnail("https://cdn.discordapp.com/avatars/732867965053042690/f3f976adc4cb628dd707a8f4203e1f5d.webp?size=4096")
         .setColor(guild.colors.basic);
         const link_button = new ButtonBuilder()

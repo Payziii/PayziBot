@@ -57,7 +57,7 @@ module.exports = {
             .setColor(guild.colors.basic)
             .setTitle(`${status[member.presence?.status ?? "offline"]} ${user.username}`)
             .setDescription(`${activity}
-            Значки: ${user.flags.toArray().map(flag => flags[flag]).filter(Boolean).join(' ')}`)
+            <:arrow:1140937463209152572> Значки: ${user.flags.toArray().map(flag => flags[flag]).filter(Boolean).join(' ')}`)
             .setThumbnail(url)
             .addFields(
                 {

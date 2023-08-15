@@ -25,12 +25,6 @@ const guild = Schema({
       channelID: {type: String, default: '-1'},
       welcomeText: {type: String, default: 'Oh no, {user.name} has left us'}
     },
-    autoWeather: {
-      channelID: {type: String, default: '-1'},
-      city: {type: String, default: 'Москва'},
-      hours: {type: Number, default: 24},
-      lastSend: {type: Number, default: 0},
-    },
   premium: {
     status: {type: Boolean, default: false},
     userID: {type: String, default: '-1'},
