@@ -13,7 +13,8 @@ const user = Schema({
 	games: {
 		game: { type: Number, default: 0 },
 		city: { type: Number, default: 0 },
-		logo: { type: Number, default: 0 }
+		logo: { type: Number, default: 0 },
+		flag: { type: Number, default: 0 }
 	}
 });
 

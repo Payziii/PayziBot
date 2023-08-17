@@ -21,8 +21,16 @@ async function CorrectLogo(id) {
     user.save()
 }
 
+async function CorrectFlag(id) {
+    user = await User.findOne({ userID: id })
+    if(!user) return;
+    user.games.flag++;
+    user.save()
+}
+
 module.exports = {
     CorrectGame,
     CorrectCity,
-    CorrectLogo
+    CorrectLogo,
+    CorrectFlag
 }
