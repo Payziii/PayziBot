@@ -22,7 +22,11 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('logo')
-                .setDescription('Угадай логотип')),
+                .setDescription('Угадай логотип'))
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('flag')
+                .setDescription('Угадай страну по флагу')),
     async execute(interaction, guild) {
         await interaction.deferReply();
 // GAME
