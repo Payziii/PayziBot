@@ -156,7 +156,7 @@ interaction.channel.awaitMessages({ filter: collectorFilter, max: 1, time: 10000
     let name = 'flag';
     const item = flag[Math.floor(Math.random() * flag.length)];
     const collectorFilter = response => {
-        return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+        return item.answer.toString() === response.content.toLowerCase();
     };
     games.gameGiveAll(name, item.id);
     let percent = await games.gameGetPercent(name, item.id)
@@ -173,7 +173,7 @@ interaction.channel.awaitMessages({ filter: collectorFilter, max: 1, time: 10000
     .then(collected => {
         const embed1 = new EmbedBuilder()
 .setTitle("Угадай страну")
-.setDescription(`Ответ: **${item.options[item.answer]}**`)
+.setDescription(`Ответ: **${item.options[item.answer-1]}**`)
 .setImage(item.image)
 .setColor(guild.colors.correct);
         interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
@@ -183,7 +183,7 @@ interaction.channel.awaitMessages({ filter: collectorFilter, max: 1, time: 10000
     .catch(collected => {
         const embed5 = new EmbedBuilder()
         .setTitle("Угадай страну")
-        .setDescription(`Ответ: **${item.options[item.answer]}**`)
+        .setDescription(`Ответ: **${item.options[item.answer-1]}**`)
         .setImage(item.image)
         .setColor(guild.colors.error);
                       interaction.followUp({  content: `**Победителей нет(**`, embeds: [embed5] });
