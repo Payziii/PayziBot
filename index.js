@@ -172,4 +172,4 @@ client.on('messageCreate', async (message) => {
 	cmd.run(client, message, args, guild, user);
 });
 
-client.login(tokens.discord.beta);
+client.login(tokens.discord.release);
