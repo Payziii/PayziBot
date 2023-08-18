@@ -11,6 +11,7 @@ const guild = Schema({
       channelID: {type: String, default: '-1'},
       reqReacts: { type: Number, default: 1 },
       customReact: {type: String, default: '⭐'},
+      botsCanReact: {type: Boolean, default: false},
       data: {type: Map, default: []}
     },
     neuro: {
