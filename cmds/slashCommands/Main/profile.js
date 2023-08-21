@@ -11,7 +11,7 @@ module.exports = {
         .addFields(
           {
             name: "Угадано",
-            value: `Игр: **${user.games.game}**\nГородов: **${user.games.city}**\nЛоготипов: **${user.games.logo}**\nФлагов: **${user.games.flag}**`,
+            value: `<:arrow:1140937463209152572> Игр: **${user.games.game}**\n<:arrow:1140937463209152572> Городов: **${user.games.city}**\n<:arrow:1140937463209152572> Логотипов: **${user.games.logo}**\n<:arrow:1140937463209152572> Флагов: **${user.games.flag}**`,
           },
         )
         .setColor(guild.colors.basic)

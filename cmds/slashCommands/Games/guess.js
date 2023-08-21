@@ -164,7 +164,7 @@ interaction.channel.awaitMessages({ filter: collectorFilter, max: 1, time: 10000
 .setTitle("Угадай страну")
 .setDescription(`У вас есть **10 секунд** чтобы ответить, флаг какой страны изображен на фото ниже. Варианты ответов указаны ниже:\n1. **${item.options[0]}**\n2. **${item.options[1]}**\n3. **${item.options[2]}**\n4. **${item.options[3]}**\n5. **${item.options[4]}**`)
 .setImage(item.image)
-.setFooter({text: `Логотип угадали ${percent}% пользователей`})
+.setFooter({text: `Флаг угадали ${percent}% пользователей`})
 .setColor(guild.colors.basic);
 
     interaction.editReply({ embeds: [embed], fetchReply: true })

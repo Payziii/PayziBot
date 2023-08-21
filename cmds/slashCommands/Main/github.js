@@ -61,12 +61,13 @@ try {
      let desc;
     await require('node-fetch')(`https://api.github.com/users/${query}/repos`).then(r => r.json()).then(r => {
         if(r.length > 30) r = r.slice(0, 30);
-        desc = r.map(rp => rp.name).join(', ') || "Отсутствуют";
+        desc = "**" + r.map(rp => rp.name).join('**, **') + "**";
+        if(desc == "****") desc = "**Отсутствуют**"
 })
 const reps = new EmbedBuilder()
   .setTitle(`Пользователь ${login}`)
   .setURL(html_url)
-  .setDescription("Репозитории: **" + desc + "**")
+  .setDescription("Репозитории: " + desc)
   .setThumbnail(avatar)
   .setColor(guild.colors.basic)
   .setFooter({

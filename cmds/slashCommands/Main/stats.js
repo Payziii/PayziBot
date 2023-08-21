@@ -33,7 +33,7 @@ module.exports = {
     },
     {
       name: "База данных",
-      value: `Статус: ${switchTo(connection.readyState)}`
+      value: `Статус: **${switchTo(connection.readyState)}**`
     },
   )
   .setThumbnail("https://cdn.discordapp.com/avatars/732867965053042690/f3f976adc4cb628dd707a8f4203e1f5d.webp?size=4096")
