@@ -14,7 +14,9 @@ module.exports = {
 	if(react.count < guild.starboard.reqReacts) {
 		let msg = guild.starboard.data.get(react.message.id);
 		if(msg == undefined) return;
-		react.message.guild.channels.cache.get(guild.starboard.channelID).messages.cache.get(msg).delete()
+		let deleted_msg = await react.message.guild.channels.cache.get(guild.starboard.channelID).messages.cache.get(msg)
+		if(!deleted_msg) return;
+		deleted_msg.delete()
 			.catch(e => console.log(e));
 		guild.starboard.data.delete(react.message.id)
 		guild.save()

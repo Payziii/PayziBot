@@ -36,6 +36,7 @@ module.exports = {
     async execute(interaction, guild) {
       await interaction.deferReply();
       if (interaction.options.getSubcommand() === 'off') {
+        if(guild.starboard.channelID == '-1') return interaction.followUp(`<:no:1107254682100957224> | Звёздная доска и так выключена...`)
         guild.starboard.channelID = '-1';
         guild.save()
         interaction.followUp('Звёздная доска успешно выключена!')

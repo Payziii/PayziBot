@@ -8,7 +8,7 @@ module.exports = {
         .addStringOption((option) =>
             option.setName('запрос')
             .setDescription('Опишите картинку, которую хотите получить')
-            .setMaxLength(192)
+            .setMaxLength(256)
             .setRequired(true) 
         ),
     async execute(interaction, guild, user, openai) {
@@ -30,6 +30,8 @@ await interaction.editReply({ embeds: [embed] });
         if (error.response) {
           console.log(error.response.status);
           console.log(error.response.data);
+          interaction.client.channels.cache.get('1115145596429406280').send(`Ошибка в image: \`\`\`${error.response}\`\`\``)
+          interaction.editReply(`<:no:1107254682100957224> | Произошла неизвестная ошибка. Она была отправлена администрации бота!`)
         } else {
           console.log(error.message);
           interaction.editReply(`<:no:1107254682100957224> | Ошибка: \`\`\`${error.message}\`\`\``)

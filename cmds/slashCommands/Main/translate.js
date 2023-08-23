@@ -10,6 +10,20 @@ module.exports = {
             option.setName('язык')
             .setDescription('Язык, на который надо перевести')
             .setRequired(true)
+            .addChoices(
+                { name: 'Английский', value: "en" },
+                { name: 'Русский', value: "ru" },
+                { name: 'Украинский', value: "uk" },
+                { name: 'Немецкий', value: "de" },
+                { name: 'Японский', value: "ja" },
+                { name: 'Китайский', value: "zh" },
+                { name: 'Португальский', value: "pt" },
+                { name: 'Казахский', value: "kk" },
+                { name: 'Турецкий', value: "tr" },
+                { name: 'Французский', value: "fr" },
+                { name: 'Арабский', value: "ar" },
+                { name: 'Испанский', value: "es" },
+            )
         )
         .addStringOption((option) =>
         option.setName('текст')
