@@ -1,10 +1,10 @@
 const { SlashCommandBuilder, PermissionFlagsBits, ChannelType } = require("discord.js");
 
 module.exports = {
-    cooldown: 5,
+    cooldown: 15,
     data: new SlashCommandBuilder()
         .setName('starboard')
-        .setDescription('Насройки звёздной доски')
+        .setDescription('Настройки звёздной доски')
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
         .addSubcommand(subcommand =>
           subcommand

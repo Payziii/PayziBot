@@ -24,13 +24,17 @@ const guild = Schema({
     },
     leave: {
       channelID: {type: String, default: '-1'},
-      welcomeText: {type: String, default: 'Oh no, {user.name} has left us'}
+      leaveText: {type: String, default: 'Oh no, {user.name} has left us'}
     },
   premium: {
     status: {type: Boolean, default: false},
     userID: {type: String, default: '-1'},
     endDate: {type: Number, default: 0},
     startDate: {type: Number, default: 0}
+},
+  autoreact: {
+    channelID: {type: String, default: '-1'},
+    reacts: {type: Array, default: []}
 }
 })
 

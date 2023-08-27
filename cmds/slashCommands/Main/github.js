@@ -41,7 +41,7 @@ if(msg) return interaction.editReply(`<:no:1107254682100957224> | Ничего �
 const embed = new EmbedBuilder()
         .setTitle(`Пользователь ${login}`)
         .setURL(html_url)
-        .setDescription(`Публичных репозиториев: **${repos}**\nПодписчиков: **${fl}**\nИмя: **${name}**\nБио: **${bio}**`)
+        .setDescription(`<:arrow:1140937463209152572> Публичных репозиториев: **${repos}**\n<:arrow:1140937463209152572> Подписчиков: **${fl}**\n<:arrow:1140937463209152572> Имя: **${name}**\n<:arrow:1140937463209152572> Биография: **${bio}**`)
         .setThumbnail(avatar)
         .setColor(guild.colors.basic)
         .setFooter({

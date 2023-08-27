@@ -2,7 +2,7 @@ const { SlashCommandBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder, Permi
 const EmbedFunc = require('../../../func/config/embeds.js');
 
 module.exports = {
-    cooldown: 5,
+    cooldown: 15,
     data: new SlashCommandBuilder()
         .setName('config')
         .setDescription('Конфигурация сервера')

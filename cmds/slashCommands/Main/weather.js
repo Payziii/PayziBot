@@ -20,7 +20,7 @@ module.exports = {
         gismeteo.getNow(city).then((cur) => {
             const embed = new EmbedBuilder()
   .setTitle(city)
-  .setDescription(`${cur.summary}`)
+  .setDescription(`<:arrow:1140937463209152572> ${cur.summary}`)
   .addFields(
     {
       name: "Температура",
