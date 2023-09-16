@@ -1,3 +1,3 @@
 module.exports = {
-    info: "## PayziBot 0.9.4\n\n- Добавлены стрелочки в `weather` и `github`"
+    info: "## PayziBot 0.9.5\n\n- Сообщения от ChatGPT ограничены 2000 символами"
 }

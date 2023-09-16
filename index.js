@@ -155,7 +155,12 @@ client.on('messageCreate', async (message) => {
 					}
 				],
 			  });
-			  message.reply(chatCompletion.data.choices[0].message.content);
+			  let mess = chatCompletion.data.choices[0].message.content;
+			  if(mess.length > 2000) { 
+			     mess = mess.substring(0,1997);
+				 mess = mess + '...'
+			  }
+			  message.reply(mess);
 		}
 	}
 
