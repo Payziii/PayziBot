@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const { inspect } = require('util')
 
 module.exports = {
     cooldown: 60,
@@ -30,8 +31,8 @@ await interaction.editReply({ embeds: [embed] });
         if (error.response) {
           console.log(error.response.status);
           console.log(error.response.data);
-          interaction.client.channels.cache.get('1115145596429406280').send(`Ошибка в image: \`\`\`${error.response}\`\`\``)
-          interaction.editReply(`<:no:1107254682100957224> | Произошла неизвестная ошибка. Она была отправлена администрации бота!`)
+          interaction.client.channels.cache.get('1115145596429406280').send(`Ошибка в image (${error.response.status}): \`\`\`${inspect(error.response.data).slice(0, 1900)}\`\`\``)
+          interaction.editReply(`<:no:1107254682100957224> | Произошла неизвестная ошибка (Код: ${error.response.status}). Она была отправлена администрации бота!`)
         } else {
           console.log(error.message);
           interaction.editReply(`<:no:1107254682100957224> | Ошибка: \`\`\`${error.message}\`\`\``)

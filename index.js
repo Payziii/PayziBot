@@ -72,6 +72,10 @@ fs.readdir('./cmds/textCommands/', (err, files) => {
 	});
 });
 
+process.on('uncaughtException', (err) => {
+	client.channels.cache.get('1115145596429406280').send(`Ошибка: ${err}`)
+  })
+
 client.on('ready', async () => {
 	const commandsPath = path.join(__dirname, 'cmds', 'slashCommands');
 	fs.readdirSync(commandsPath).forEach((folder) => {

@@ -31,7 +31,7 @@ module.exports = {
     async execute(interaction, guild) {
       await interaction.deferReply();
       if (interaction.options.getSubcommand() === 'off') {
-        if(guild.autoreact.channelID == '-1' && guild.autoreact.reacts == []) return interaction.followUp(`<:no:1107254682100957224> | Автореакт и так выключен...`)
+        if(guild.autoreact.channelID == '-1' && guild.autoreact.reacts.length == 0) return interaction.followUp(`<:no:1107254682100957224> | Я думаю, автореакт уже выключен...`)
         guild.autoreact.channelID = '-1';
         guild.autoreact.reacts = [];
         guild.save()
