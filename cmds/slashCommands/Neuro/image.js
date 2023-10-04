@@ -15,20 +15,21 @@ module.exports = {
     async execute(interaction, guild, user, openai) {
         await interaction.deferReply();
         text = interaction.options.getString('запрос')
-        
+        const embed = new EmbedBuilder()
+  .setTitle("Генерация изображений")
+  .setDescription(`Запрос: \`\`\`${text}\`\`\``)
+  .setColor(guild.colors.basic);
+
         try {
         const image = await openai.createImage({
 			prompt: text
 		})
-        const embed = new EmbedBuilder()
-  .setTitle("Генерация изображений")
-  .setDescription(`Запрос: \`\`\`${text}\`\`\``)
-  .setImage(image.data.data[0].url)
-  .setColor(guild.colors.basic);
+    embed.setImage(image.data.data[0].url)
 
 await interaction.editReply({ embeds: [embed] });
     } catch (error) {
         if (error.response) {
+          if(error.response.data.error.code == 'content_policy_violation') return interaction.editReply(`<:no:1107254682100957224> | Кажется, в вашем запросе используются запрещённые слова или фразы...`)
           console.log(error.response.status);
           console.log(error.response.data);
           interaction.client.channels.cache.get('1115145596429406280').send(`Ошибка в image (${error.response.status}): \`\`\`${inspect(error.response.data).slice(0, 1900)}\`\`\``)
