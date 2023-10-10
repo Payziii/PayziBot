@@ -19,5 +19,12 @@ module.exports = {
             .replace('{guild.botCount}', guild.members.cache.filter(c => c.user.bot == true).size)
             .replace('{guild.channelCount}', guild.channels.cache.size)
             .replace('{guild.boosts}', guild.premiumSubscriptionCount))
+        if(g.welcome.autoRoleID == '-1') return;
+        if(guild.roles.cache.get(g.welcome.autoRoleID) == undefined) return;
+        member.roles.add(guild.roles.cache.get(g.welcome.autoRoleID)).then(() => {
+    return;
+        }).catch(() => {
+           return;
+        })
     }
 };
