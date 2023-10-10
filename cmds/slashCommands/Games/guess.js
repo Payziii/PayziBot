@@ -80,9 +80,11 @@ module.exports = {
             };
             games.gameGiveAll(name, item.id);
             let percent = await games.gameGetPercent(name, item.id)
+            let podsk = '';
+            if(percent < 50) podsk = `\nПодсказка: **` + item.answers[0][0] + '#'.repeat(item.answers[0].length-1) + '**'
             const embed = new EmbedBuilder()
   .setTitle("Угадай город")
-  .setDescription(`У вас есть **30 секунд** чтобы ответить, какой город изображен на фото ниже\nСтрана: **${item.country}**`)
+  .setDescription(`У вас есть **30 секунд** чтобы ответить, какой город изображен на фото ниже\nСтрана: **${item.country}**${podsk}`)
   .setImage(item.image)
   .setFooter({text: `Город угадали ${percent}% пользователей`})
   .setColor(guild.colors.basic);
