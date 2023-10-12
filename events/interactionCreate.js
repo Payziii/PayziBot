@@ -6,6 +6,7 @@ module.exports = {
 	name: Events.InteractionCreate,
 	async execute(interaction, client, openai) {
         if (!interaction.isChatInputCommand()) return;
+        if (interaction.channel === null) return interaction.reply("<:no:1107254682100957224> | Я доступен только на серверах!");
         // DB
     let guild = await Guild.findOne({ guildID: interaction.guild.id });
     let user = await User.findOne({ userID: interaction.user.id });
@@ -17,7 +18,7 @@ module.exports = {
 			.send(
 				`<:announcement:732128155195801641> | Сервер ${interaction.guild.name}(${
 					interaction.guild.id
-				}) успешно был добавлен в БД`
+				}) успешно был добавлен в MongoDB`
 			);
         })
 	}
@@ -29,7 +30,7 @@ module.exports = {
 			.send(
 				`<:member:732128945365057546> | Пользователь ${interaction.user.username}(${
 					interaction.user.id
-				}) успешно был добавлен в БД`
+				}) успешно был добавлен в MongoDB`
 			);
 		})
 	}
@@ -37,11 +38,10 @@ module.exports = {
     guild = await Guild.findOne({ guildID: interaction.guild.id });
     user = await User.findOne({ userID: interaction.user.id });
 
-    if (!guild) return interaction.reply("<:no:1107254682100957224> | Напиши команду еще раз!")
-    if (!user) return interaction.reply("<:no:1107254682100957224> | Напиши команду еще раз!")
+    if (!guild) return interaction.reply("<:no:1107254682100957224> | Напиши команду ещё раз!")
+    if (!user) return interaction.reply("<:no:1107254682100957224> | Напиши команду ещё раз!")
     // DB
     const { cooldowns } = client
-    if (interaction.channel === null) return interaction.reply("<:no:1107254682100957224> | Я доступен только на серверах!");
     const cmd = interaction.client.commands.get(interaction.commandName);
     if(!cmd) return interaction.reply(`<:no:1107254682100957224> | Команда не найдена!`)
     if (!cooldowns.has(cmd.data.name)) {
