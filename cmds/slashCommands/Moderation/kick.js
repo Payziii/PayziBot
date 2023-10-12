@@ -22,32 +22,32 @@ module.exports = {
         author = await interaction.guild.members.cache.get(interaction.user.id);
         bot = await interaction.guild.members.me;
         
-        if(bot.permissions.has("KickMembers") == false) return interaction.reply("<:no:1107254682100957224> | У меня нет прав для кика пользователей");
+        if(bot.permissions.has("KickMembers") == false) return interaction.reply("<:no:1107254682100957224> | У меня нет прав для того, чтобы выгонять пользователей...");
         let msg;
         let reason = interaction.options.getString('причина') || "Причина отсутствует";
         let error = false;
         switch (user.id) {
             case interaction.guild.ownerId:
                 error = true;
-                msg = '<:no:1107254682100957224> | Он не может выйти с сервера даже самостоятельно. Как я его кикну?';
+                msg = '<:no:1107254682100957224> | Он не может выйти с сервера даже самостоятельно. Как я его выгоню?';
                 break;
             case interaction.user.id:
                 error = true;
-                msg = '<:no:1107254682100957224> | Не пробовал просто выйти с сервера? Гений';
+                msg = '<:no:1107254682100957224> | Не пробовал просто выйти с сервера?';
                 break;
             case bot.id:
                 error = true;
-                msg = '<:no:1107254682100957224> | Я не хочу выходить с этого прекрасного сервера!';
+                msg = '<:no:1107254682100957224> | А может я не хочу выходить с этого прекрасного сервера!';
                 break;
             default:
-                msg = `${user} был кикнут с этого замечательного сервера. Причина: ${reason}`;
+                msg = `${user} был выгнан с этого замечательного сервера. Причина: ${reason}`;
         }
         reason = interaction.user.username + ': ' + reason;
         member = await interaction.guild.members.cache.get(user.id);
         if(error != true) {
             member.kick({reason: reason}) 
             .then(() => interaction.reply(msg))
-            .catch(() => interaction.reply('<:no:1107254682100957224> | Кажется я не могу кикнить этого пользователя...'))
+            .catch(() => interaction.reply('<:no:1107254682100957224> | Кажется я не могу выгнать этого пользователя...'))
         }else{
             interaction.reply(msg)
         }

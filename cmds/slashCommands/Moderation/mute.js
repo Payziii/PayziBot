@@ -53,7 +53,7 @@ module.exports = {
                 break;
             case bot.id:
                 error = true;
-                msg = '<:no:1107254682100957224> | А как я отвечу тебе?';
+                msg = '<:no:1107254682100957224> | А как я отвечу тебе после этого?';
                 break;
             default:
                 msg = `${user} получил мут. Причина: ${reason}`;

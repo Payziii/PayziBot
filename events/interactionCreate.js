@@ -18,7 +18,7 @@ module.exports = {
 			.send(
 				`<:announcement:732128155195801641> | Сервер ${interaction.guild.name}(${
 					interaction.guild.id
-				}) успешно был добавлен в MongoDB`
+				}) успешно был добавлен в MongoDB используя I`
 			);
         })
 	}
@@ -30,7 +30,7 @@ module.exports = {
 			.send(
 				`<:member:732128945365057546> | Пользователь ${interaction.user.username}(${
 					interaction.user.id
-				}) успешно был добавлен в MongoDB`
+				}) успешно был добавлен в MongoDB используя I`
 			);
 		})
 	}
@@ -38,12 +38,12 @@ module.exports = {
     guild = await Guild.findOne({ guildID: interaction.guild.id });
     user = await User.findOne({ userID: interaction.user.id });
 
-    if (!guild) return interaction.reply("<:no:1107254682100957224> | Напиши команду ещё раз!")
-    if (!user) return interaction.reply("<:no:1107254682100957224> | Напиши команду ещё раз!")
+    if (!guild) return interaction.reply("<:no:1107254682100957224> | Напиши команду ещё раз! Ошибка `NoG-I`")
+    if (!user) return interaction.reply("<:no:1107254682100957224> | Напиши команду ещё раз! Ошибка `NoU-I`")
     // DB
     const { cooldowns } = client
     const cmd = interaction.client.commands.get(interaction.commandName);
-    if(!cmd) return interaction.reply(`<:no:1107254682100957224> | Команда не найдена!`)
+    if(!cmd) return interaction.reply(`<:no:1107254682100957224> | Команда не найдена. Как такое могло произойти?`)
     if (!cooldowns.has(cmd.data.name)) {
         cooldowns.set(cmd.data.name, new Collection());
     }

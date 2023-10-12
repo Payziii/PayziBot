@@ -29,7 +29,7 @@ module.exports = {
 await interaction.editReply({ embeds: [embed] });
     } catch (error) {
         if (error.response) {
-          if(error.response.data.error.code == 'content_policy_violation') return interaction.editReply(`<:no:1107254682100957224> | Кажется, в вашем запросе используются запрещённые слова или фразы...`)
+          if(error.response.data.error.code == 'content_policy_violation') return interaction.editReply(`<:no:1107254682100957224> | Судя по всему, в вашем запросе используются запрещённые слова или фразы...`)
           console.log(error.response.status);
           console.log(error.response.data);
           interaction.client.channels.cache.get('1115145596429406280').send(`Ошибка в image (${error.response.status}): \`\`\`${inspect(error.response.data).slice(0, 1900)}\`\`\``)

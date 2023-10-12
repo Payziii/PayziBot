@@ -31,7 +31,7 @@ module.exports = {
     async execute(interaction, guild) {
       await interaction.deferReply();
       if (interaction.options.getSubcommand() === 'off') {
-        if(guild.autoreact.channelID == '-1' && guild.autoreact.reacts.length == 0) return interaction.followUp(`<:no:1107254682100957224> | Я думаю, автореакт уже выключен...`)
+        if(guild.autoreact.channelID == '-1' && guild.autoreact.reacts.length == 0) return interaction.followUp(`<:no:1107254682100957224> | Я думаю, автореакт и так выключен...`)
         guild.autoreact.channelID = '-1';
         guild.autoreact.reacts = [];
         guild.save()
@@ -40,7 +40,7 @@ module.exports = {
         channel = interaction.options.getChannel('канал')
         text = interaction.options.getString('реакции')
         reacts = text.split(' ');
-        if(reacts.length > 5) return interaction.followUp(`<:no:1107254682100957224> | Серверам без **PayziBot Premium** разрешено добавлять до 5 реакций в автореакт. Повысьте этот лимит до 15 реакций, купив подписку`)
+        if(reacts.length > 7) return interaction.followUp(`<:no:1107254682100957224> | Серверам без **PayziBot Premium** разрешено добавлять до 7 реакций в автореакт. Повысьте этот лимит до 15 реакций, купив подписку`)
         for(reaction of reacts) {
           if(/\p{Emoji}/u.test(reaction) == false) return interaction.followUp(`<:no:1107254682100957224> | Я думаю \`${reaction}\` не является эмодзи...`)
            if(reaction.includes('<')) {

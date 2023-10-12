@@ -17,7 +17,7 @@ module.exports = {
     async execute(interaction, guild) {
         await interaction.deferReply();
         bot = await interaction.guild.members.me;
-        if (bot.permissions.has("ManageChannels") == false) return interaction.reply("<:no:1107254682100957224> | У меня нет прав для блокировки пользователей");
+        if (bot.permissions.has("ManageChannels") == false) return interaction.reply("<:no:1107254682100957224> | У меня нет прав для управления каналами");
         if (interaction.options.getSubcommand() === 'lock') {
             interaction.channel.permissionOverwrites.edit(interaction.guild.roles.everyone, {
                 SendMessages: false,
