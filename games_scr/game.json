@@ -61,7 +61,7 @@
     },
     {
         "image": "https://img2.wtftime.ru/store/2020/08/10/58waesop.jpg",
-        "answers": ["CyberPunk 2077", "КиберПанк 2077"],
+        "answers": ["Cyberpunk 2077", "Киберпанк 2077"],
         "id": 13
     },
     {
@@ -75,8 +75,8 @@
         "id": 15
     },
     {
-        "image": "https://image.winudf.com/v2/image1/Y29tLm1hdHNiZW56Ny50b2lsZXRyb29tc2ltdWxhdG9yX3NjcmVlbl83XzE1NjcwMTQ0MzVfMDg2/screen-7.jpg?fakeurl=1&type=.jpg",
-        "answers": ["Toilet Room Simulator"],
+        "image": "https://files.vgtimes.ru/gallery/main/1615/6243179700_1678137405_7512.jpeg",
+        "answers": ["Warframe"],
         "id": 16
     },
     {
@@ -115,7 +115,7 @@
         "id": 23
     },
     {
-        "image": "https://rozetked.me/images/uploads/webp/ak6XDeJMv1Qn.webp",
+        "image": "https://files.vgtimes.ru/gallery/main/187060/2750276080_smuta04.jpg",
         "answers": ["Смута"],
         "id": 24
     },
@@ -185,8 +185,8 @@
         "id": 37
     },
     {
-        "image": "https://greatgamer.ru/images/screenshots/19022/screenshot_aaaaaaaaaaaaaaaaaaaaaaaaa_for_the_awesome_4.jpg",
-        "answers": ["AaaaaAAaaaAAAaaAAAAaAAAAA!!! for the Awesome"],
+        "image": "https://files.vgtimes.ru/gallery/main/185634/6966220260_mortal-kombat-1_20230926233437.jpg",
+        "answers": ["Mortal Kombat 1"],
         "id": 38
     },
     {
@@ -240,13 +240,13 @@
         "id": 48
     },
     {
-        "image": "https://greatgamer.ru/images/screenshots/35687/screenshot_prince_of_persia_the_lost_crown_1.jpg",
-        "answers": ["Prince of Persia The Lost Crown"],
+        "image": "https://files.vgtimes.ru/gallery/main/192632/6847974979_1696750051_8307.jpeg",
+        "answers": ["The Front", "Фронт"],
         "id": 49
     },
     {
-        "image": "https://greatgamer.ru/images/screenshots/35722/screenshot_snowbreak_containment_zone_4.jpg",
-        "answers": ["Snowbreak: Containment Zone", "Snowbreak", "Сноубрек", "Сноубрэк"],
+        "image": "https://escorenews.com/media/news/pic-20230322-3840x2160-1967551861.jpeg",
+        "answers": ["Counter Strike 2", "CS2", "Контрл Страйк 2", "КС2"],
         "id": 50
     },
     {
@@ -298,5 +298,40 @@
         "image": "https://cdn.akamai.steamstatic.com/steam/apps/731430/ss_23d5488a9dfc98908865887b60b6c5208d77fd5c.1920x1080.jpg",
         "answers": ["Influence"],
         "id": 60
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/159885/5024332068_f5qivh1wgaagoxc.jpg",
+        "answers": ["StarField", "Старфилд"],
+        "id": 61
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/169320/8209140712_1696792325_8789.jpeg",
+        "answers": ["PayDay 3", "ПайДей 3", "ПэйДэй 3", "ПэйДей 3"],
+        "id": 62
+    },
+    {
+        "image": "https://i.playground.ru/i/screenshot/126776/baldurs_gate_3.jpg",
+        "answers": ["Baldur’s Gate 3"],
+        "id": 63
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/171550/663054734_1696749910_9143.jpeg",
+        "answers": ["Overwatch 2", "ОверВоч 2"],
+        "id": 64
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/169245/175269861_1696749725_7988.jpeg",
+        "answers": ["Diablo IV", "Диабло 4"],
+        "id": 65
+    },
+    {
+        "image": "http://s01.riotpixels.net/data/11/49/11492839-3abb-4e7d-9962-0a4b1dc4e30e.jpg.720p.jpg/screenshot.apex-legends.1280x720.2019-02-05.10.jpg",
+        "answers": ["Apex Legends"],
+        "id": 66
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/174671/8484218824_1696751369_377.jpeg",
+        "answers": ["Battlefield 2042"],
+        "id": 67
     }
 ]
