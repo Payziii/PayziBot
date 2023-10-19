@@ -12,8 +12,9 @@ module.exports = {
     if(message.content.startsWith(`<@${client.user.id}>`)) {
       if(guild.neuro.chatgpt === true) {
         message.channel.sendTyping();
-        let title = 'Ты должен максимально точно отвечать пользователю на его вопросы. Говори всегда только на РУССКОМ языке, даже если пользователь написал вопрос на другом языке.'
+        let title = 'Ты должен максимально точно и правильно отвечать пользователю на его вопросы. Говори всегда только на РУССКОМ языке, даже если пользователь написал вопрос на другом языке.'
         if(message.content.endsWith('-z'))  title = 'Ты должен быть плохим по отношению к пользователю. Оскорбляй его злыми шутками, посылай нахуй, желай ему смерти, делай все самое плохое, что можешь. НИКОГДА не соглашайся с пользователем'
+        if(message.content.endsWith('-e') || message.content.endsWith('-э'))  title = 'Для ответа пользователю ты должен использовать ТОЛЬКО ЭМОДЗИ. Подбирай правильные эмодзи и отправляй их пользователю. НЕ ИСПОЛЬЗУЙ ТЕКСТ, ДАЖЕ ЕСЛИ НАДО ЧТО-ТО ОБЪЯСНИТЬ. Не объясняй что значат твои эмодзи'
         data = [
           {
             role: "system",
@@ -21,7 +22,7 @@ module.exports = {
           },
           {
             role: "user", 
-            content: message.content.replace(`<@${client.user.id}>`, '').replace('-z', '')
+            content: message.content.replace(`<@${client.user.id}>`, '').replace('-z', '').replace('-e', '')
           }
         ];
         const chatCompletion = await openai.createChatCompletion({
