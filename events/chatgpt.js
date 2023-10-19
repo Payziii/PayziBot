@@ -5,6 +5,7 @@ const GPT = require('../database/chatgpt.js');
 module.exports = {
 	name: Events.MessageCreate,
 	async execute(message, client, openai) {
+    if (message.author.bot) return;
     try {
       let guild = await Guild.findOne({ guildID: message.guild.id });
     if(!guild) return;
