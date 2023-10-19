@@ -5,7 +5,8 @@ const guild = Schema({
     colors: {
       basic: {type: String, default: '#3fcc65'},
       error: {type: String, default: '#ff033e'},
-      correct: {type: String, default: '#008000'}
+      correct: {type: String, default: '#008000'},
+      starboard: {type: String, default: '#cfc50d'}
     },
     starboard: {
       channelID: {type: String, default: '-1'},
@@ -35,7 +36,8 @@ const guild = Schema({
   autoreact: {
     channelID: {type: String, default: '-1'},
     reacts: {type: Array, default: []}
-}
+},
+customCommands: {type: Map, default: []}
 })
 
 module.exports = model("Guild", guild)
