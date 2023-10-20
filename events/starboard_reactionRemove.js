@@ -37,7 +37,7 @@ module.exports = {
 			name: react.message.author.username,
 			iconURL: react.message.author.displayAvatarURL(),
 		})
-		.setColor(guild.colors.basic)
+		.setColor(guild.colors.starboard)
 		.setImage(messageAttachment);
 	let content = react.message.content.replaceAll(' ', '')
 	if(content.length > 0) embed.setDescription(react.message.content || 'Пустая строка');

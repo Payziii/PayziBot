@@ -732,7 +732,7 @@
         "id": 122
     },
     {
-        "image": "https://avto-turist5.ru/wp-content/uploads/2020/07/smol5.jpg",
+        "image": "http://pro-smolensk.ru/images/photo/vecherniy-smolensk-2015-god-255.jpg",
         "answers": ["Смоленск"],
         "country": "Россия",
         "id": 123
@@ -822,7 +822,7 @@
         "id": 137
     },
     {
-        "image": "https://sledcom.ru/upload/site1/geogr/vid_Tambova.jpg",
+        "image": "http://gas-kvas.com/en/uploads/posts/2022-07/1657058334_21-gas-kvas-com-p-beautiful-places-and-sights-of-the-city-ta-23.jpg",
         "answers": ["Тамбов"],
         "country": "Россия",
         "id": 138
@@ -1074,14 +1074,14 @@
         "id": 179
     },
     {
-        "image": "https://www.hostpic.org/images/2202191729390103.jpg",
+        "image": "https://ic.pics.livejournal.com/zdorovs/16627846/1569872/1569872_original.jpg",
         "answers": ["Сызрань"],
         "country": "Россия",
         "id": 180
     },
     {
         "image": "https://i.pinimg.com/originals/86/05/f2/8605f2adc07d9b5b2345ea2fb6ce2fa8.jpg",
-        "answers": ["Петропавлоск-Камчатский", "Петропавлоск Камчатский"],
+        "answers": ["Петропавловск-Камчатский", "Петропавловск Камчатский"],
         "country": "Россия",
         "id": 181
     },
@@ -1198,5 +1198,269 @@
         "answers": ["Серпухов"],
         "country": "Россия",
         "id": 200
+    },
+    {
+        "image": "https://class-tour.com/wp-content/uploads/f/a/4/fa4228eeae08f7bd01e8f59edb03c319.jpeg",
+        "answers": ["Ковров"],
+        "country": "Россия",
+        "id": 201
+    },
+    {
+        "image": "http://ic.pics.livejournal.com/zdorovs/16627846/1913455/1913455_original.jpg",
+        "answers": ["Нефтекамск"],
+        "country": "Россия",
+        "id": 203
+    },
+    {
+        "image": "https://newsdelo.com/wp-content/uploads/2018/09/news-300.jpg",
+        "answers": ["Батайск"],
+        "country": "Россия",
+        "id": 204
+    },
+    {
+        "image": "https://sun9-25.userapi.com/3hcR4476kW56GLGUY22ArDCp6Spv6sco7PpwzQ/W6-2BsKLIoI.jpg",
+        "answers": ["Рубцовск"],
+        "country": "Россия",
+        "id": 205
+    },
+    {
+        "image": "http://rasfokus.ru/images/photos/medium/8bb9cbdec397a68e561a310564371856.jpg",
+        "answers": ["Обнинск"],
+        "country": "Россия",
+        "id": 206
+    },
+    {
+        "image": "https://sun9-57.userapi.com/impg/lTdfwDx1cFfVHR3_j-FGmVmMHGnSchAEEafO_Q/fDjwXg9y6Bs.jpg?size=1280x960&quality=96&sign=ca07471f628081889629c55eab547feb&c_uniq_tag=xae1R2evg7HSJNTsPnuo28IaIpirSdWzGnqJneE-rXA&type=album",
+        "answers": ["Кызыл"],
+        "country": "Россия",
+        "id": 207
+    },
+    {
+        "image": "https://cdn.tripster.ru/thumbs2/74f86f7e-e598-11ed-bbd8-1a3605cc7ccd.1080x810.jpeg",
+        "answers": ["Дербент"],
+        "country": "Россия",
+        "id": 208
+    },
+    {
+        "image": "https://storage.myseldon.com/news-pict-0b/0B834873C2568463C5B79D3F8E734F8A",
+        "answers": ["Нефтеюганск"],
+        "country": "Россия",
+        "id": 209
+    },
+    {
+        "image": "https://kartinki.pics/pics/uploads/posts/2022-08/1660043791_52-kartinkin-net-p-ingushetiya-dostoprimechatelnosti-krasivo-53.jpg",
+        "answers": ["Назрань"],
+        "country": "Россия",
+        "id": 210
+    },
+    {
+        "image": "https://s5.stc.all.kpcdn.net/russia/wp-content/uploads/2022/05/kaspijsk-semka-s-vozduha.jpg",
+        "answers": ["Каспийск"],
+        "country": "Россия",
+        "id": 211
+    },
+    {
+        "image": "https://оф-долгопрудный.рф/wp-content/uploads/2023/05/photo_2023-05-24_11-23-29-scaled.jpg",
+        "answers": ["Долгопрудный"],
+        "country": "Россия",
+        "id": 212
+    },
+    {
+        "image": "https://www.grani21.ru/sites/default/files/03_CIMG0496_koltso_bierieza.JPG",
+        "answers": ["Новочебоксарск"],
+        "country": "Россия",
+        "id": 213
+    },
+    {
+        "image": "https://visittula.com/upload/iblock/9c1/9c14c717bb25da113759edb29e095df9.jpg",
+        "answers": ["Новомосковск"],
+        "country": "Россия",
+        "id": 214
+    },
+    {
+        "image": "https://nesiditsa.ru/wp-content/uploads/2012/07/beshtaugorets1.jpg",
+        "answers": ["Ессентуки"],
+        "country": "Россия",
+        "id": 215
+    },
+    {
+        "image": "https://nesiditsa.ru/wp-content/uploads/2012/07/Nevinnomyissk1.jpg",
+        "answers": ["Невинномысск"],
+        "country": "Россия",
+        "id": 216
+    },
+    {
+        "image": "https://ic.pics.livejournal.com/zdorovs/16627846/1898668/1898668_original.jpg",
+        "answers": ["Октябрьский"],
+        "country": "Россия",
+        "id": 217
+    },
+    {
+        "image": "https://ramenskoye.ru/images/2019/11/20/about-ramenskoye-10.jpg",
+        "answers": ["Раменское"],
+        "country": "Россия",
+        "id": 218
+    },
+    {
+        "image": "https://narslovar.ru/wp-content/uploads/2019/12/0-Pervouralsk.jpg",
+        "answers": ["Первоуральск"],
+        "country": "Россия",
+        "id": 219
+    },
+    {
+        "image": "https://aif-s3.aif.ru/images/026/152/d0d66cdbfd151de556d6c56160f5f4b7.jpg",
+        "answers": ["Михайловск"],
+        "country": "Россия",
+        "id": 220
+    },
+    {
+        "image": "https://storage.yandexcloud.net/moskvichmag/uploads/2021/02/reutov.jpg",
+        "answers": ["Реутов"],
+        "country": "Россия",
+        "id": 221
+    },
+    {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/2/2c/The_city_of_Cherkessk.jpg",
+        "answers": ["Черкесск"],
+        "country": "Россия",
+        "id": 222
+    },
+    {
+        "image": "https://aviation21.ru/wp-content/uploads/2021/01/zhukovsky-town-820x410.jpg",
+        "answers": ["Жуковский"],
+        "country": "Россия",
+        "id": 223
+    },
+    {
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/72/a4/23/caption.jpg?w=500&h=400&s=1",
+        "answers": ["Димитровград"],
+        "country": "Россия",
+        "id": 224
+    },
+    {
+        "image": "https://www.vinex-media.ru/upload/iblock/842/pushkino.jpg",
+        "answers": ["Пушкино"],
+        "country": "Россия",
+        "id": 225
+    },
+    {
+        "image": "https://vebcam.ru/wp-content/uploads/2021/11/Artem-nochnoe-vremya.jpg",
+        "answers": ["Артём", "Артем"],
+        "country": "Россия",
+        "id": 226
+    },
+    {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvfaW5rqUT3Yp3YTr6KTJE4Er_543gJYz4Zw&usqp=CAU",
+        "answers": ["Камышин"],
+        "country": "Россия",
+        "id": 227
+    },
+    {
+        "image": "https://of-crimea.ru/plug/2017/05/evpatoriya.jpg",
+        "answers": ["Евпатория"],
+        "country": "Россия",
+        "id": 228
+    },
+    {
+        "image": "https://rg.ru/uploads/images/200/92/49/17_TASS_Krasilnikov_Stanislav.jpg",
+        "answers": ["Муром"],
+        "country": "Россия",
+        "id": 229
+    },
+    {
+        "image": "https://admhmansy.ru/docs/08-04/1_1.jpg",
+        "answers": ["Ханты-Мансийск"],
+        "country": "Россия",
+        "id": 230
+    },
+    {
+        "image": "https://goarctic.ru/upload/iblock/2f7/2f72d734b8570745b1ef567f118bf294.jpg",
+        "answers": ["Новый Уренгой"],
+        "country": "Россия",
+        "id": 231
+    },
+    {
+        "image": "https://nesiditsa.ru/wp-content/uploads/2013/04/image0271.jpg",
+        "answers": ["ЗАТО Северск", "Северск"],
+        "country": "Россия",
+        "id": 232
+    },
+    {
+        "image": "https://ozzebra.ru/wp-content/uploads/turizm-01.jpg",
+        "answers": ["Орехово-Зуево"],
+        "country": "Россия",
+        "id": 233
+    },
+    {
+        "image": "https://galina-lukas.ru/sites/default/files/525/arzamas.jpg",
+        "answers": ["Арзамас"],
+        "country": "Россия",
+        "id": 234
+    },
+    {
+        "image": "https://drevo-info.ru/pictures/thumbs/004/016359.jpg",
+        "answers": ["Ногинск"],
+        "country": "Россия",
+        "id": 235
+    },
+    {
+        "image": "https://www.novoshakhtinsk.org/novoshakhtinsk/turizm/4.jpg",
+        "answers": ["Новошахтинск"],
+        "country": "Россия",
+        "id": 236
+    },
+    {
+        "image": "https://berdsk-bn.ru/wp-content/uploads/2021/11/0_542be_2b2713ea_orig.gif",
+        "answers": ["Бердск"],
+        "country": "Россия",
+        "id": 237
+    },
+    {
+        "image": "https://gorod-elista.ru/images/cache/6/634fae42cf2d1a09a53d7c597e035292.jpg",
+        "answers": ["Элиста"],
+        "country": "Россия",
+        "id": 238
+    },
+    {
+        "image": "https://im.kommersant.ru/Issues.photo/DAILY/2019/110/KMO_160889_00002_1_t218_214902.jpg",
+        "answers": ["Сергиев Посад"],
+        "country": "Россия",
+        "id": 239
+    },
+    {
+        "image": "https://prorus.ru/_/manager/files/60a/7b4c3e2845/DJI-0956-03%20Panorama-result.jpg",
+        "answers": ["Видное"],
+        "country": "Россия",
+        "id": 240
+    },
+    {
+        "image": "https://avatars.dzeninfra.ru/get-zen_doc/4392090/pub_60a68145e3b9690bce518d23_60a6815870bb2023e71cb5bf/scale_1200",
+        "answers": ["Ачинск"],
+        "country": "Россия",
+        "id": 241
+    },
+    {
+        "image": "https://perito.media/uploads/post/image/4ab7a90086c8412703c782939e8c9adba706ec28355ec3461bf129cc510f9c65/main_000-%D0%9F%D0%B0%D0%BD%D0%BE%D1%80%D0%B0%D0%BC%D0%B0_%D0%A2%D0%BE%D0%B1%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%9A%D1%80%D0%B5%D0%BC%D0%BB%D1%8F.jpg",
+        "answers": ["Тобольск"],
+        "country": "Россия",
+        "id": 242
+    },
+    {
+        "image": "https://sdelanounas.ru/i/a/w/aW1nLWZvdGtpLnlhbmRleC5ydS9nZXQvNTgxOC8xMjQwMzc5MzAuMTEvMF82ZjU3MV9jOTIyY2VjZl9YTC5qcGc_X19pZD05MjE1.jpg",
+        "answers": ["Ноябрьск"],
+        "country": "Россия",
+        "id": 243
+    },
+    {
+        "image": "https://24warez.ru/uploads/posts/061116/181716/1.jpg",
+        "answers": ["Верхняя Пышма"],
+        "country": "Россия",
+        "id": 244
+    },
+    {
+        "image": "https://novyjput.ru/wp-content/uploads/2022/04/1-31-e1649673687325.jpg",
+        "answers": ["Кувандык"],
+        "country": "Россия",
+        "id": 245
     }
 ]

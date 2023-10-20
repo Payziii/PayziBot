@@ -333,5 +333,10 @@
         "image": "https://files.vgtimes.ru/gallery/main/174671/8484218824_1696751369_377.jpeg",
         "answers": ["Battlefield 2042"],
         "id": 67
+    },
+    {
+        "image": "https://magazun.com/images/detailed/465/4_2867df9a-f7eb-11ea-a24e-7085c2a4485b.jpg",
+        "answers": ["Tony Hawk"],
+        "id": 68
     }
 ]
