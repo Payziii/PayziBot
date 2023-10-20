@@ -33,6 +33,13 @@ await interaction.editReply({ embeds: [embed] });
           console.log(error.response.status);
           console.log(error.response.data);
           interaction.client.channels.cache.get('1115145596429406280').send(`Ошибка в image (${error.response.status}): \`\`\`${inspect(error.response.data).slice(0, 1900)}\`\`\``)
+          if(error.response.status == 429){
+            message.editReply('<:no:1107254682100957224> | Слишком много запросов. Повторите попытку позже!')
+            return;
+          }else if(error.response.status == 503){
+            message.editReply('<:no:1107254682100957224> | Сервера перегружены. Повторите попытку позже!')
+            return;
+          }
           interaction.editReply(`<:no:1107254682100957224> | Произошла неизвестная ошибка (Код: ${error.response.status}). Она была отправлена администрации бота!`)
         } else {
           console.log(error.message);

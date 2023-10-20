@@ -74,8 +74,15 @@ module.exports = {
 
     }
     catch(error) {
+      if(error.response && error.response.status == 429){
+        message.reply('<:no:1107254682100957224> | Слишком много запросов. Повторите попытку позже!')
+        return;
+      }else if(error.response && error.response.status == 503){
+        message.reply('<:no:1107254682100957224> | Сервера перегружены. Повторите попытку позже!')
+        return;
+      }
       console.log(error)
-      message.reply(`Ошибка? \`\`\`bash\n${error}\`\`\``)
+      message.reply(`Ошибка: \`\`\`js\n${error}\`\`\``)
     }
 
     }
