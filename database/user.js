@@ -18,6 +18,6 @@ const user = Schema({
 	}
 });
 
-module.exports = 
+module.exports =
 	model('User', user),
 	model('PremiumUser', premiumSchema)

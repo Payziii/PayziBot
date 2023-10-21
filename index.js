@@ -35,8 +35,8 @@ mongoose.connect(
 
 const configuration = new Configuration({
 	apiKey: tokens.openAI,
-  });
-  const openai = new OpenAIApi(configuration);
+});
+const openai = new OpenAIApi(configuration);
 
 client.commands = new Collection();
 client.textCommands = new Collection();
@@ -75,7 +75,7 @@ fs.readdir('./cmds/textCommands/', (err, files) => {
 
 process.on('uncaughtException', (err) => {
 	client.channels.cache.get('1115145596429406280').send(`Ошибка: ${err}`)
-  })
+})
 
 client.on('ready', async () => {
 	const commandsPath = path.join(__dirname, 'cmds', 'slashCommands');
@@ -117,25 +117,23 @@ client.on('messageCreate', async (message) => {
 
 	if (!guild) {
 		await Guild.create({ guildID: message.guild.id }).then(() => {
-		client.channels.cache
-			.get('1124261194325299271')
-			.send(
-				`<:announcement:732128155195801641> | Сервер ${message.guild.name}(${
-					message.guild.id
-				}) успешно был добавлен в MongoDB`
-			);
+			client.channels.cache
+				.get('1124261194325299271')
+				.send(
+					`<:announcement:732128155195801641> | Сервер ${message.guild.name}(${message.guild.id
+					}) успешно был добавлен в MongoDB`
+				);
 		})
 	}
 
-	if(!user) {
+	if (!user) {
 		await User.create({ userID: message.author.id }).then(() => {
 			client.channels.cache
-			.get('1124261194325299271')
-			.send(
-				`<:member:732128945365057546> | Пользователь ${message.author.username}(${
-					message.author.id
-				}) успешно был добавлен в MongoDB`
-			);
+				.get('1124261194325299271')
+				.send(
+					`<:member:732128945365057546> | Пользователь ${message.author.username}(${message.author.id
+					}) успешно был добавлен в MongoDB`
+				);
 		})
 	}
 
@@ -143,7 +141,7 @@ client.on('messageCreate', async (message) => {
 	user = await User.findOne({ userID: message.author.id })
 
 	if (!guild) return;
-	if(!user) return;
+	if (!user) return;
 	// DB
 
 	const args = msg
