@@ -14,15 +14,16 @@ module.exports = {
                 .setRequired(true))
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages),
     async execute(interaction) {
+        await interaction.deferReply();
         bot = await interaction.guild.members.me;
-        if(bot.permissions.has("ManageMessages") == false) return interaction.reply("<:no:1107254682100957224> | У меня нет прав для того, чтобы очищать сообщения...");
+        if(bot.permissions.has("ManageMessages") == false) return interaction.editReply("<:no:1107254682100957224> | У меня нет прав для того, чтобы очищать сообщения...");
 
         count = interaction.options.getInteger('количество')
         interaction.channel.bulkDelete(count)
         .then(messages => {
-            interaction.reply(`<:yes:1107254746336735312> | Очищено ${messages.size} за последние 2 недели`)
+            interaction.editReply(`<:yes:1107254746336735312> | Очищено ${messages.size} за последние 2 недели`)
     })
         .catch(console.error);
-        interaction.reply("<:no:1107254682100957224> | Непредвиденная ошибка?");
+        interaction.editReply("<:no:1107254682100957224> | Непредвиденная ошибка?");
     },
 };
