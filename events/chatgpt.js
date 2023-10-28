@@ -80,6 +80,9 @@ module.exports = {
       } else if (error.response && error.response.status == 503) {
         message.reply('<:no:1107254682100957224> | Сервера перегружены. Повторите попытку позже!')
         return;
+      } else if (error.response && error.response.status == 502) {
+        message.reply('<:no:1107254682100957224> | Превышено время ожидания, либо запрос не был обработан. Повторите попытку позже!')
+        return;
       }
       console.log(error)
       message.reply(`Ошибка: \`\`\`js\n${error}\`\`\``)
