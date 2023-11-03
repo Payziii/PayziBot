@@ -14,6 +14,7 @@ module.exports = {
         ),
     async execute(interaction, guild, user, openai) {
         await interaction.deferReply();
+        openai = openai[0];
         text = interaction.options.getString('запрос')
         const embed = new EmbedBuilder()
   .setTitle("Генерация изображений")

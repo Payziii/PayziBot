@@ -6,6 +6,7 @@ module.exports = {
   name: Events.MessageCreate,
   async execute(message, client, openai) {
     if (message.author.bot) return;
+    openai = openai[1];
     try {
       let guild = await Guild.findOne({ guildID: message.guild.id });
       if (!guild) return;

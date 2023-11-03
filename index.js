@@ -34,10 +34,13 @@ mongoose.connect(
 	{ useNewUrlParser: true, useUnifiedTopology: true },
 );
 
-const configuration = new Configuration({
-	apiKey: tokens.openAI,
-});
-const openai = new OpenAIApi(configuration);
+let openai = new Array();
+for(i = 0; i<tokens.openAI.length; i++) {
+	const configuration = new Configuration({
+		apiKey: tokens.openAI[i],
+	});
+	openai.push(new OpenAIApi(configuration))
+	}
 
 client.commands = new Collection();
 client.textCommands = new Collection();

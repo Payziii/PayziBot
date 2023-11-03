@@ -1,5 +1,5 @@
 module.exports = {
-    version: '0.10.8',
+    version: '0.10.9',
     owners: ['439079453650321409', '867048292566302730'],
     tokens: {
         discord: {
@@ -7,6 +7,6 @@ module.exports = {
             beta: 'NzMyODY3OTY1MDUzMDQyNjkw.GcJI3y.ScKwib1D8d2s-J5Tm_2OlYjQnHCLSvNl5NSfkA'
         },
         mongoURL: 'mongodb+srv://Mikhail:Mikhail2008@cluster0.b7l4v.mongodb.net/PayziBot?retryWrites=true&w=majority',
-        openAI: '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'
+        openAI: ['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', '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']
     }
 }
