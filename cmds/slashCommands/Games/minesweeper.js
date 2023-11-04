@@ -10,8 +10,8 @@ module.exports = {
         await interaction.deferReply();
 
         const Game = new Minesweeper({
-            message: message,
-            isSlashGame: false,
+            message: interaction,
+            isSlashGame: true,
             embed: {
               title: 'Сапёр',
               color: guild.colors.basic,
