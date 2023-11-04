@@ -19,7 +19,7 @@ module.exports = {
           },
           {
             name: "Игры",
-            value: "`guess`, `profile`",
+            value: "`guess`, `profile`, `minesweeper`",
           },
           {
             name: "Нейросети",

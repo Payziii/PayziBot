@@ -1,3 +1,3 @@
 module.exports = {
-    info: "## PayziBot 0.10.9\n\n- Команда `image` снова работает"
+    info: "## PayziBot 0.11.0\n\n- Сапёр по команде `minesweeper`"
 }

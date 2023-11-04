@@ -14,6 +14,9 @@ module.exports = {
     //   if(command.allowUsers[0] != 'everyone' || command.allowUsers.includes(message.author.id) == false) return; 
     // }
     // В данном примере команда приватна и может выполниться только определёнными пользователями
+    if(command.allowUsers && command.allowUsers.length > 0) {
+       if(command.allowUsers[0] != 'everyone' || command.allowUsers.includes(message.author.id) == false) return; 
+    }
     if (!command.reply) return;
     let answer = command.reply
       .replace('{user.mention}', message.author)
