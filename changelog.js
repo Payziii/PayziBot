@@ -1,3 +1,3 @@
 module.exports = {
-    info: "## PayziBot 0.11.0\n\n- Сапёр по команде `minesweeper`"
+    info: "## PayziBot 0.11.1\n\n- Команда `typing`"
 }
