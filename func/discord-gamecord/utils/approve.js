@@ -13,14 +13,14 @@ module.exports = class Approve extends events {
     if (!options.embed.rejectColor) options.embed.rejectColor = options.embed.color;
 
     if (!options.buttons) options.buttons = {};
-    if (!options.buttons.accept) options.buttons.accept = 'Accept';
-    if (!options.buttons.reject) options.buttons.reject = 'Reject';
+    if (!options.buttons.accept) options.buttons.accept = 'Принять';
+    if (!options.buttons.reject) options.buttons.reject = 'Отказать';
 
     if (!options.reqTimeoutTime) options.reqTimeoutTime = 30000;
     if (typeof options.mentionUser === 'undefined') options.mentionUser = false;
-    if (!options.requestMessage) options.requestMessage = '{player} has invited you for a round of Game.';
-    if (!options.rejectMessage) options.rejectMessage = 'The player denied your request for a round of Game.';
-    if (!options.reqTimeoutMessage) options.reqTimeoutMessage = 'Dropped the game as the player did not respond.';
+    if (!options.requestMessage) options.requestMessage = '{player} пригласил вас в Game.';
+    if (!options.rejectMessage) options.rejectMessage = 'Пользователь отказался от игры в Game.';
+    if (!options.reqTimeoutMessage) options.reqTimeoutMessage = 'Время ожидания истекло.';
 
     super();
     this.options = options;

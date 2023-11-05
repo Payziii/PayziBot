@@ -1,5 +1,5 @@
 module.exports = {
-    version: '0.11.1',
+    version: '0.12.0',
     owners: ['439079453650321409', '867048292566302730'],
     tokens: {
         discord: {

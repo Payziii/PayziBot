@@ -32,8 +32,8 @@ module.exports = class TicTacToe extends approve {
     if (!options.winMessage) options.winMessage = '{emoji} | **{player}** won the TicTacToe Game.';
     if (!options.tieMessage) options.tieMessage = 'The Game tied! No one won the Game!';
     if (!options.timeoutMessage) options.timeoutMessage = 'The Game went unfinished! No one won the Game!';
-    if (!options.requestMessage) options.requestMessage = '{player} has invited you for a round of **Tic Tac Toe**.';
-    if (!options.rejectMessage) options.rejectMessage = 'The player denied your request for a round of **Tic Tac Toe**.';
+    if (!options.requestMessage) options.requestMessage = '{player} пригласил вас сыграть в **крестики-нолики**.';
+    if (!options.rejectMessage) options.rejectMessage = 'Пользователь отказался играть в **крестики-нолики**.';
 
 
     if (typeof options.embed !== 'object') throw new TypeError('INVALID_EMBED: embed option must be an object.');
@@ -90,7 +90,6 @@ module.exports = class TicTacToe extends approve {
     const embed = new EmbedBuilder()
     .setColor(this.options.embed.color)
     .setTitle(this.options.embed.title)
-    .setFooter({ text: this.message.author.tag + ' vs ' + this.opponent.tag })
     .addFields({ name: this.options.embed.statusTitle, value: this.getTurnMessage() }) 
 
     await msg.edit({ content: null, embeds: [embed], components: this.getComponents() });
@@ -120,7 +119,6 @@ module.exports = class TicTacToe extends approve {
       const embed = new EmbedBuilder()
       .setColor(this.options.embed.color)
       .setTitle(this.options.embed.title)
-      .setFooter({ text: this.message.author.tag + ' vs ' + this.opponent.tag })
       .addFields({ name: this.options.embed.statusTitle, value: this.getTurnMessage() }) 
 
       return await msg.edit({ embeds: [embed], components: this.getComponents() });
@@ -142,7 +140,6 @@ module.exports = class TicTacToe extends approve {
     const embed = new EmbedBuilder()
     .setColor(this.options.embed.color)
     .setTitle(this.options.embed.title)
-    .setFooter({ text: this.message.author.tag + ' vs ' + this.opponent.tag })
     .addFields({ name: this.options.embed.overTitle, value: this.getTurnMessage(result + 'Message') })
 
     return await msg.edit({ embeds: [embed], components: disableButtons(this.getComponents()) });
