@@ -206,4 +206,4 @@ const manager = new GiveawayManagerWithOwnDatabase(client, {
 // We now have a giveawaysManager property to access the manager everywhere!
 client.giveawaysManager = manager;
 
-client.login(tokens.discord.beta);
+client.login(tokens.discord.release);
