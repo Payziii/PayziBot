@@ -42,7 +42,7 @@ module.exports = {
         .setTitle("Ссылки")
         .setDescription(`<:arrow:1140937463209152572> [Сервер поддержки](https://discord.gg/E7SFuVEB2Z)\n
         <:arrow:1140937463209152572> [Добавить бота](https://discord.com/api/oauth2/authorize?client_id=576442351426207744&permissions=1411299798102&scope=bot)\n
-        <:arrow:1140937463209152572> [Документация](https://payzibot.fiftygames.ru/)\n\n
+        <:arrow:1140937463209152572> [Документация](https://docs.payzibot.ru/)\n\n
         <:arrow:1140937463209152572> [PayziBot на BotiCord](https://boticord.top/bot/payzibot)`)
         .setThumbnail("https://cdn.discordapp.com/avatars/732867965053042690/f3f976adc4cb628dd707a8f4203e1f5d.webp?size=4096")
         .setColor(guild.colors.basic);

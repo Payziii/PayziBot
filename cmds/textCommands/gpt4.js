@@ -6,6 +6,13 @@ const config = require('../../config.js');
 exports.run = async (client, message, args, guild) => {
     rsnchat.gpt(args.join(' '))
   .then(response => {
+    if(!response.message) return message.reply("<:no:1107254682100957224> | Ответ не был получен!")
+    if(response.message.length > 2000) {
+      let mess = response.message;
+      mess = mess.substring(0, 1997);
+            mess = mess + '...'
+            return message.reply(mess)
+    }
     message.reply(response.message);
   }).catch(e => {
     message.reply('<:no:1107254682100957224> | Слишком много запросов, либо сервера перегружены. Повторите попытку позже!')

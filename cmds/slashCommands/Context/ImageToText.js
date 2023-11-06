@@ -14,7 +14,9 @@ module.exports = {
 
         const worker = await createWorker('rus+eng');
         const ret = await worker.recognize(attachment.url);
-        interaction.editReply(ret.data.text || "Нет текста");
+        if(!ret.data.text) return interaction.editReply("<:no:1107254682100957224> | Текст на картинке отсутствует")
+        if(ret.data.text.length > 2000) return interaction.editReply("<:no:1107254682100957224> | На картинке более 2 тысяч символов")
+        interaction.editReply(ret.data.text);
         await worker.terminate();
     },
 };
