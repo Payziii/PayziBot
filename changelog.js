@@ -1,3 +1,3 @@
 module.exports = {
-    info: "## PayziBot 0.12.2\n\n- Мини-игра `colorfield`"
+    info: "## PayziBot 0.12.3\n\n- Мини-игра `hangman`"
 }
