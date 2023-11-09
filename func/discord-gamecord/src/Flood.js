@@ -86,7 +86,8 @@ module.exports = class Flood extends events {
     .setColor(this.options.embed.color)
     .setTitle(this.options.embed.title)
     .setDescription(this.getBoardContent())
-    .addFields({ name: 'Turns', value: `${this.turns}/${this.maxTurns}` })
+    .addFields({ name: 'Как играть?', value: `Выбирайте нужный цвет, чтобы перекрасить ваше поле, начиная с верхнего левого угла. Закрасьте всю доску!` })
+    .addFields({ name: 'Ходы', value: `${this.turns}/${this.maxTurns}` })
     .setAuthor({ name: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) });
 
     
@@ -117,7 +118,7 @@ module.exports = class Flood extends events {
       .setColor(this.options.embed.color)
       .setTitle(this.options.embed.title)
       .setDescription(this.getBoardContent())
-      .addFields({ name: 'Turns', value: `${this.turns}/${this.maxTurns}` })
+      .addFields({ name: 'Ходы', value: `${this.turns}/${this.maxTurns}` })
       .setAuthor({ name: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) });
 
       return await msg.edit({ embeds: [embed], components: [row] });
@@ -140,7 +141,7 @@ module.exports = class Flood extends events {
     .setColor(this.options.embed.color)
     .setTitle(this.options.embed.title)
     .setDescription(this.getBoardContent())
-    .addFields({ name: 'Game Over', value: GameOverMessage.replace('{turns}', this.turns) })
+    .addFields({ name: 'Игра окончена', value: GameOverMessage.replace('{turns}', this.turns) })
     .setAuthor({ name: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) });
 
     return msg.edit({ embeds: [embed], components: disableButtons(msg.components) });

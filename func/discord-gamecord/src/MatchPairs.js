@@ -64,7 +64,7 @@ module.exports = class MatchPairs extends events {
     }
     
     this.emojis = shuffleArray(this.emojis).slice(0, 12);
-    this.emojis.push(...this.emojis, '🃏');
+    this.emojis.push(...this.emojis, '🎴');
     this.emojis = shuffleArray(this.emojis);
     this.components = this.getComponents();
 

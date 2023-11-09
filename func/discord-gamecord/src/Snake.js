@@ -1,9 +1,8 @@
 const { EmbedBuilder, ActionRowBuilder } = require('discord.js');
 const { disableButtons, formatMessage, ButtonBuilder } = require('../utils/utils');
 const events = require('events');
-const HEIGHT = 10;
-const WIDTH = 15;
 
+let HEIGHT, WIDTH;
 
 module.exports = class SnakeGame extends events {
   constructor(options = {}) {
@@ -13,6 +12,10 @@ module.exports = class SnakeGame extends events {
     if (typeof options.message !== 'object') throw new TypeError('INVALID_MESSAGE: message option must be an object.');
     if (typeof options.isSlashGame !== 'boolean') throw new TypeError('INVALID_COMMAND_TYPE: isSlashGame option must be a boolean.');
 
+    if(!options.height) options.height = 10;
+    if(!options.width) options.width = 10;
+    HEIGHT = options.height;
+    WIDTH = options.width;
 
     if (!options.embed) options.embed = {};
     if (!options.embed.title) options.embed.title = 'Snake Game';
@@ -145,8 +148,8 @@ module.exports = class SnakeGame extends events {
     const embed = new EmbedBuilder()
     .setColor(this.options.embed.color)
     .setTitle(this.options.embed.title)
-    .setDescription('**Score:** ' + this.score + '\n\n' + this.getBoardContent())
-    .setFooter({ text: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) })
+    .setDescription('**Счет:** ' + this.score + '\n\n' + this.getBoardContent())
+    .setAuthor({ name: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) });
 
 
     const up = new ButtonBuilder().setEmoji(emojis.up).setStyle('PRIMARY').setCustomId('snake_up');
@@ -175,8 +178,8 @@ module.exports = class SnakeGame extends events {
     const embed = new EmbedBuilder()
     .setColor(this.options.embed.color)
     .setTitle(this.options.embed.title)
-    .setDescription('**Score:** ' + this.score + '\n\n' + this.getBoardContent())
-    .setFooter({ text: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) })
+    .setDescription('**Счет:** ' + this.score + '\n\n' + this.getBoardContent())
+    .setAuthor({ name: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) });
 
     return msg.edit({ embeds: [embed] });
   }
@@ -190,8 +193,8 @@ module.exports = class SnakeGame extends events {
     const embed = new EmbedBuilder()
     .setColor(this.options.embed.color)
     .setTitle(this.options.embed.overTitle)
-    .setDescription('**Score:** ' + this.score + '\n\n' + this.getBoardContent(true))
-    .setFooter({ text: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) })
+    .setDescription('**Счет:** ' + this.score + '\n\n' + this.getBoardContent(true))
+    .setAuthor({ name: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) });
 
     return msg.edit({ embeds: [embed], components: disableButtons(msg.components) });
   }

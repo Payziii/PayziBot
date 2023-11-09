@@ -1,3 +1,3 @@
 module.exports = {
-    info: "## PayziBot 0.12.1\n\n- Добавлен вывод ошибок при распознавании текста\n- Изменена ссылка на документацию PayziBot в `stats`\n- Изменения в GPT-модуле"
+    info: "## PayziBot 0.12.2\n\n- Мини-игра `colorfield`"
 }
