@@ -10,5 +10,5 @@ module.exports = {
     async execute(interaction, guild) {
         const item = words[Math.floor(Math.random() * words.length)];
         await hangman.create(interaction, 'random', { word: item, players: [interaction.user] })
-    },
+    }, 
 };
