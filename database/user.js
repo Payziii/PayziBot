@@ -14,10 +14,10 @@ const user = Schema({
 		game: { type: Number, default: 0 },
 		city: { type: Number, default: 0 },
 		logo: { type: Number, default: 0 },
-		flag: { type: Number, default: 0 }
-	}
+		flag: { type: Number, default: 0 },
+	},
 });
 
 module.exports =
 	model('User', user),
-	model('PremiumUser', premiumSchema)
+model('PremiumUser', premiumSchema);

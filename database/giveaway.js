@@ -21,7 +21,7 @@ const giveaway = Schema({
 		noWinner: String,
 		winners: String,
 		endedAt: String,
-		hostedBy: String
+		hostedBy: String,
 	},
 	thumbnail: String,
 	image: String,
@@ -39,7 +39,7 @@ const giveaway = Schema({
 		enabled: Boolean,
 		content: String,
 		threshold: Number,
-		embedColor: Mixed
+		embedColor: Mixed,
 	},
 	pauseOptions: {
 		isPaused: Boolean,
@@ -47,15 +47,15 @@ const giveaway = Schema({
 		unPauseAfter: Number,
 		embedColor: Mixed,
 		durationAfterPause: Number,
-		infiniteDurationText: String
+		infiniteDurationText: String,
 	},
 	isDrop: Boolean,
 	allowedMentions: {
 		parse: { type: [String], default: undefined },
 		users: { type: [String], default: undefined },
-		roles: { type: [String], default: undefined }
-	}
+		roles: { type: [String], default: undefined },
+	},
 },
-{ id: false })
+{ id: false });
 
-module.exports = model("Giveaway", giveaway)
+module.exports = model('Giveaway', giveaway);
