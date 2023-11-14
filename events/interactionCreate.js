@@ -52,7 +52,7 @@ module.exports = {
 		if (timestamps.has(interaction.user.id)) {
 			const expirationTime = timestamps.get(interaction.user.id) + cooldownAmount;
 
-			if (now < expirationTime) {
+			if (now < expirationTime && !user.bypassDelay) {
 				const expiredTimestamp = Math.round(expirationTime / 1000);
 				return interaction.reply({
 					content: `<:timeout_clock:1134453176091824250> | Сейчас вы не можете использовать команду \`${cmd.data.name}\`. Попробуйте снова <t:${expiredTimestamp}:R>.`,

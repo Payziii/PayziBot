@@ -16,6 +16,7 @@ const user = Schema({
 		logo: { type: Number, default: 0 },
 		flag: { type: Number, default: 0 },
 	},
+	bypassDelay: { type: Boolean, default: false },
 });
 
 module.exports =
