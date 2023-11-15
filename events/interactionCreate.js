@@ -64,6 +64,7 @@ module.exports = {
 		setTimeout(() => timestamps.delete(interaction.user.id), cooldownAmount);
 		try {
 			await cmd.execute(interaction, guild, user, openai);
+			client.cmdsUsed++;
 		}
 		catch (error) {
 			if (interaction.deferred === false) {
