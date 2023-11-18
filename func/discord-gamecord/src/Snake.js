@@ -65,8 +65,8 @@ module.exports = class SnakeGame extends events {
     super();
     this.options = options;
     this.message = options.message;
-    this.snake = [{ x: 5, y: 5 }];
-    this.apple = { x: 1, y: 1 };
+    this.snake = [{ x: 1, y: 1 }];
+    this.apple = { x: 3, y: 3 };
     this.snakeLength = 1;
     this.gameBoard = [];
     this.score = 0;

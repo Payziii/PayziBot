@@ -21,7 +21,7 @@ module.exports = {
 		else bremya = `${uptime.days} д. ${uptime.hours} ч. ${uptime.minutes} м.`;
 		const embed = new EmbedBuilder()
 			.setTitle(`PayziBot ${version}`)
-			.setDescription(`<:arrow:1140937463209152572> Бот работает: **${bremya}**`)
+			.setDescription(`<:arrow:1140937463209152572> Бот работает: **${bremya}**\n<:arrow:1140937463209152572> С момента включения использовано: **${client.cmdsUsed} команд**`)
 			.addFields(
 				{
 					name: 'Статистика',
