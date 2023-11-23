@@ -1,0 +1,342 @@
+[
+    {
+        "image": "https://i.pinimg.com/originals/0a/bf/ed/0abfed196c22af35bd6fde284d5c6a56.jpg",
+        "answers": ["Minecraft", "Майнкрафт", "Майн"],
+        "id": 1
+    },
+    {
+        "image": "https://cq.ru/storage/uploads/images/83795/image8.jpg",
+        "answers": ["Dota 2", "Дота 2"],
+        "id": 2
+    },
+    {
+        "image": "https://i.playground.ru/p/VhVI2xl5CsGdo_AUdkuaWQ.png",
+        "answers": ["Skyrim", "Скайрим"],
+        "id": 3
+    },
+    {
+        "image": "https://cq.ru/storage/uploads/posts/85936/3.png",
+        "answers": ["Valorant", "Валорант"],
+        "id": 4
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/185670/ss_8ee5f14a331ab788330f3e03953e7d8f01651.jpg",
+        "answers": ["Кужлёвка", "Кужлевка"],
+        "id": 5
+    },
+    {
+        "image": "https://s.gamer-info.com/vd/1/7/3/3/17334.jpg",
+        "answers": ["Clash Royale", "Клеш Рояль", "Клэш Рояль", "КР"],
+        "id": 6
+    },
+    {
+        "image": "http://lh3.googleusercontent.com/rMzCibbOn3CVfEa2zqlhem-kZN-egXA0fX-61EKm6zPHgpA03mh8nRc4jRO--6ueRP0=h800",
+        "answers": ["Clash Of Clans", "Клеш Оф Кленс", "Клэш Оф Кленс", "КОК"],
+        "id": 7
+    },
+    {
+        "image": "https://media.discordapp.net/attachments/1054039689214054400/1129108721570689155/Screenshot_20230713-225129.jpg?width=1440&height=631",
+        "answers": ["Brawl Stars", "Бравл Старс", "Бравл", "БС"],
+        "id": 8
+    },
+    {
+        "image": "http://all-cs.net.ru/_ld/44/98512202.jpg",
+        "answers": ["CS 1.6", "КС 1.6", "Контрл Страйк 1.6", "Counter Strike 1.6"],
+        "id": 9
+    },
+    {
+        "image": "https://steamuserimages-a.akamaihd.net/ugc/430448599219584381/97E6255AD6C2973B908F1EF633E750C45D48D37A/?imw=512&amp;imh=288&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true",
+        "answers": ["CS:GO", "КС:ГО", "КС ГО", "CS GO", "КС"],
+        "id": 10
+    },
+    {
+        "image": "https://andreyex.ru/wp-content/uploads/2021/09/Obzor-Standoff-2_1.jpg",
+        "answers": ["Standoff 2", "Стендофф 2", "Стэндофф 2", "Станок"],
+        "id": 11
+    },
+    {
+        "image": "https://i.ytimg.com/vi/iVKN9R2Xxs0/maxresdefault.jpg",
+        "answers": ["Block Strike", "Блок Страйк", "БС"],
+        "id": 12
+    },
+    {
+        "image": "https://img2.wtftime.ru/store/2020/08/10/58waesop.jpg",
+        "answers": ["Cyberpunk 2077", "Киберпанк 2077"],
+        "id": 13
+    },
+    {
+        "image": "https://oir.mobi/uploads/posts/2020-01/1578423581_38-51.jpg",
+        "answers": ["STALKER", "СТАЛКЕР"],
+        "id": 14
+    },
+    {
+        "image": "https://miggim.ru/wp-content/uploads/0/7/5/07501d41c9e13177f3a4481074ec267f.jpeg",
+        "answers": ["Genshin Impact", "Геншин Импакт", "Геншин"],
+        "id": 15
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/1615/6243179700_1678137405_7512.jpeg",
+        "answers": ["Warframe"],
+        "id": 16
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/12332/screenshot_metro_2033_134.jpg",
+        "answers": ["Metro 2033", "Метро 2033", "Метро"],
+        "id": 17
+    },
+    {
+        "image": "https://i.pinimg.com/originals/23/ee/2b/23ee2bc2ce1d015459ef95f31beb0d94.jpg",
+        "answers": ["GTA V", "GTA 5", "ГТА 5", "ГТА V"],
+        "id": 18
+    },
+    {
+        "image": "https://i.playground.ru/i/screenshot/21940/portal.jpg",
+        "answers": ["Portal", "Портал"],
+        "id": 19
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/137871/1583283325_6483.jpeg",
+        "answers": ["Undertale", "Андертейл"],
+        "id": 20
+    },
+    {
+        "image": "https://media.kg-portal.ru/games/w/witcher3/images/witcher3_46.jpg",
+        "answers": ["The Witcher 3", "Ведьмак 3", "Ведьмак"],
+        "id": 21
+    },
+    {
+        "image": "https://d31xsmoz1lk3y3.cloudfront.net/big/1563697.jpg",
+        "answers": ["Mario", "Марио", "Супер Марио", "Super Mario"],
+        "id": 22
+    },
+    {
+        "image": "https://cdn.akamai.steamstatic.com/steam/apps/541570/ss_3350d5fed3d1a4398b8bf18663914b0291e686a0.1920x1080.jpg",
+        "answers": ["Sally Face", "Салли Фейс"],
+        "id": 23
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/187060/2750276080_smuta04.jpg",
+        "answers": ["Смута"],
+        "id": 24
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/18687/screenshot_terraria_104.jpg",
+        "answers": ["Terraria", "Террария"],
+        "id": 25
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/4699/screenshot_world_of_tanks_5.jpg",
+        "answers": ["World Of Tanks", "WOT", "Ворлд Оф Тенкс", "Ворлд Оф Тэнкс"],
+        "id": 26
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/2422/screenshot_order_of_war_31.jpg",
+        "answers": ["Order Of War"],
+        "id": 27
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/8234/screenshot_warface_39.jpg",
+        "answers": ["Warface", "Варфейс"],
+        "id": 28
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/10728/screenshot_call_of_duty_4_modern_warfare_98.jpg",
+        "answers": ["Call Of Duty", "Кол Оф Дюти"],
+        "id": 29
+    },
+    {
+        "image": "https://gameguru.ru/media/f/screens/3/21/65/47/7777.jpg",
+        "answers": ["Raft", "Рафт"],
+        "id": 30
+    },
+    {
+        "image": "https://gamebomb.ru/files/galleries/001/b/b6/119254.jpg",
+        "answers": ["The Forest", "Зе Форест", "Лес"],
+        "id": 31
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/1282/screenshot_fallout_2_53.jpg",
+        "answers": ["Fallout 2", "Фоллаут 2", "Фаллаут 2"],
+        "id": 32
+    },
+    {
+        "image": "http://s01.riotpixels.net/data/b5/29/b529e51d-a2c9-4efb-aa41-70b8471e8a42.jpg/screenshot.assassins-creed.1680x1050.2008-04-11.59.jpg",
+        "answers": ["Assassin's Creed", "Ассасинс Крид"],
+        "id": 33
+    },
+    {
+        "image": "https://wargm.ru/img/db/b2/cd/b2cd82ff8292f8eff4f4cba32b6226dc3.jpg",
+        "answers": ["Fortnite", "Фортнайт", "фн"],
+        "id": 34
+    },
+    {
+        "image": "https://sun9-76.userapi.com/impf/c849320/v849320097/5dc1a/AsS81rZZRiA.jpg?size=640x480&quality=96&sign=fbf4438b7010bb3a6894b470fb5af454&c_uniq_tag=qENzncKXfmHMNoKb8gUwQg_03egpoFNxIO6Ig6jl-uM&type=album",
+        "answers": ["Touhou 8", "Тоухоу 8"],
+        "id": 35
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/15199/screenshot_microsoft_flight_31.jpg",
+        "answers": ["Microsoft Flight", "Майкрософт Флайт", "Флайт", "Flight"],
+        "id": 36
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/18668/screenshot_dayz_178.jpg",
+        "answers": ["DayZ", "ДэйЗ", "ДайЗ"],
+        "id": 37
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/185634/6966220260_mortal-kombat-1_20230926233437.jpg",
+        "answers": ["Mortal Kombat 1"],
+        "id": 38
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/33694/screenshot_hitman_2_2.jpg",
+        "answers": ["Hitman 2", "Хитман 2", "Хитмэн 2"],
+        "id": 39
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/27669/screenshot_kursk_3.jpg",
+        "answers": ["KURSK", "Курск"],
+        "id": 40
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/33940/screenshot_hytale_9.jpg",
+        "answers": ["Hytale", "Хайтейл"],
+        "id": 41
+    },
+    {
+        "image": "https://topmmogames.org/upload/img/blockade-3d/blockade-3d-6.jpg",
+        "answers": ["Blockade 3d", "Блокада 3д"],
+        "id": 42
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/34852/screenshot_minecraft_dungeons_5.jpg",
+        "answers": ["Minecraft Dungeons", "Майнкрафт Данженс"],
+        "id": 43
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/34901/screenshot_fifa_21_7.jpg",
+        "answers": ["FIFA 21", "ФИФА 21"],
+        "id": 44
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/35095/screenshot_stray_1.jpg",
+        "answers": ["Stray", "Стрей", "Стрэй"],
+        "id": 45
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/35452/screenshot_tekken_8_7.jpg",
+        "answers": ["Tekken 8", "Теккен 8", "Тэккен 8"],
+        "id": 46
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/35525/screenshot_minecraft_legends_3.jpg",
+        "answers": ["Minecraft Legends", "Майнкрафт Легенды", "Майнкрафт Ледженс"],
+        "id": 47
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/35611/screenshot_hello_neighbor_2_3.jpg",
+        "answers": ["Hello Neighbor 2", "Привет Сосед 2"],
+        "id": 48
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/192632/6847974979_1696750051_8307.jpeg",
+        "answers": ["The Front", "Фронт"],
+        "id": 49
+    },
+    {
+        "image": "https://escorenews.com/media/news/pic-20230322-3840x2160-1967551861.jpeg",
+        "answers": ["Counter Strike 2", "CS2", "Контрл Страйк 2", "КС2"],
+        "id": 50
+    },
+    {
+        "image": "https://i.ytimg.com/vi/l1izB93IvhA/maxresdefault.jpg",
+        "answers": ["Сапёр", "Сапер"],
+        "id": 51
+    },
+    {
+        "image": "https://nvplay.ru/uploads/images/News/2023/02.21/Atomic-Heart-3-big.jpg",
+        "answers": ["Atomic Heart", "Атомик Харт"],
+        "id": 52
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/thumb/134577/robloxplayerbeta_2015-06-01_15-56-49-29.jpg",
+        "answers": ["Roblox", "Роблокс"],
+        "id": 53
+    },
+    {
+        "image": "https://greatgamer.ru/images/screenshots/4215/screenshot_plants_vs_zombies_7.jpg",
+        "answers": ["Plants vs. Zombies", "Plants vs Zombies", "Растения против зомби"],
+        "id": 54
+    },
+    {
+        "image": "https://www.gameawards.ru/useruploads/media/cad97c1c0ee376760d33b2e417cc578f1573595951.jpg",
+        "answers": ["Caliber", "Калибр"],
+        "id": 55
+    },
+    {
+        "image": "https://играем.рф/media/Teardown/screenshots/1666002568.9425623Teardown_Screenshot_2.jpg",
+        "answers": ["Teardown", "Тирдаун"],
+        "id": 56
+    },
+    {
+        "image": "https://reddead2.ru/catimages/screenshots/646.jpg",
+        "answers": ["RDR2", "Red Dead Redemption 2", "РДР2", "РДР 2", "RDR 2"],
+        "id": 57
+    },
+    {
+        "image": "https://marvinlee.co/wp-content/uploads/2017/10/2048thumb.png",
+        "answers": ["2048"],
+        "id": 58
+    },
+    {
+        "image": "https://www.gamegrin.com/assets/game/1080-avalanche/screenshots/1080-avalanche-screenshots-18.jpg",
+        "answers": ["Avalanche", "Аваланч"],
+        "id": 59
+    },
+    {
+        "image": "https://cdn.akamai.steamstatic.com/steam/apps/731430/ss_23d5488a9dfc98908865887b60b6c5208d77fd5c.1920x1080.jpg",
+        "answers": ["Influence"],
+        "id": 60
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/159885/5024332068_f5qivh1wgaagoxc.jpg",
+        "answers": ["StarField", "Старфилд"],
+        "id": 61
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/169320/8209140712_1696792325_8789.jpeg",
+        "answers": ["PayDay 3", "ПайДей 3", "ПэйДэй 3", "ПэйДей 3"],
+        "id": 62
+    },
+    {
+        "image": "https://i.playground.ru/i/screenshot/126776/baldurs_gate_3.jpg",
+        "answers": ["Baldur’s Gate 3"],
+        "id": 63
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/171550/663054734_1696749910_9143.jpeg",
+        "answers": ["Overwatch 2", "ОверВоч 2"],
+        "id": 64
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/169245/175269861_1696749725_7988.jpeg",
+        "answers": ["Diablo IV", "Диабло 4"],
+        "id": 65
+    },
+    {
+        "image": "http://s01.riotpixels.net/data/11/49/11492839-3abb-4e7d-9962-0a4b1dc4e30e.jpg.720p.jpg/screenshot.apex-legends.1280x720.2019-02-05.10.jpg",
+        "answers": ["Apex Legends"],
+        "id": 66
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/174671/8484218824_1696751369_377.jpeg",
+        "answers": ["Battlefield 2042"],
+        "id": 67
+    },
+    {
+        "image": "https://magazun.com/images/detailed/465/4_2867df9a-f7eb-11ea-a24e-7085c2a4485b.jpg",
+        "answers": ["Tony Hawk"],
+        "id": 68
+    }
+]

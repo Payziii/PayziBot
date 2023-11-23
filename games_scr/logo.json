@@ -1,0 +1,252 @@
+[
+    {
+        "image": "https://free-png.ru/wp-content/uploads/2021/07/free-png.ru-53.png",
+        "answers": ["Пятёрочка", "Пятерочка"],
+        "id": 1
+    },
+    {
+        "image": "https://logodope.ru/wp-content/uploads/2019/04/2023-05-04_18-27-44_014916-logodope.png",
+        "answers": ["ВКонтакте", "ВК", "VK"],
+        "id": 2
+    },
+    {
+        "image": "https://media.discordapp.net/attachments/1137684346837409933/1137686317615030315/-jPDNh2uBGPUFAnu88X0S-transformed.png?width=655&height=655",
+        "answers": ["Яндекс Плюс", "Плюс"],
+        "id": 3
+    },
+    {
+        "image": "https://автолого.рф/wp-content/uploads/audi-emblem-2016-black-1920x1080-1024x576.png",
+        "answers": ["Audi", "Ауди"],
+        "id": 4
+    },
+    {
+        "image": "https://camo.githubusercontent.com/ec4c59a326d4cbef0654abfaee175b92251cae890b780d3e73c85b91c205a18f/68747470733a2f2f70656574636b2e6769746875622e696f2f42617369632d507974686f6e2f696d616765732f6c6f676f2f70795f6c6f676f2e706e67",
+        "answers": ["Python", "Питон", "Пайтон"],
+        "id": 5
+    },
+    {
+        "image": "https://rusgeosystems.ru/wp-content/uploads/2021/03/rzhd-e1623878023614.png",
+        "answers": ["РЖД"],
+        "id": 6
+    },
+    {
+        "image": "https://projector-laser.ru/wp-content/uploads/2020/12/LG-Logo-1536x864.png",
+        "answers": ["LG"],
+        "id": 7
+    },
+    {
+        "image": "https://www.sandstein.de/media/bilder/snm/themen/figma-50.png.scaled/50b7d38a533ef3e4175e5ece184417ef.png",
+        "answers": ["Figma", "Фигма"],
+        "id": 8
+    },
+    {
+        "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/acb88620130385.562ee34b3029a.png",
+        "answers": ["Cinema 4D", "Cinema", "Синема 4Д", "Синема"],
+        "id": 9
+    },
+    {
+        "image": "https://marcas-logos.net/wp-content/uploads/2019/12/Telegram-logo.png",
+        "answers": ["Telegram", "Телеграм"],
+        "id": 10
+    },
+    {
+        "image": "https://www.pngall.com/wp-content/uploads/11/Kia-Logo-Transparent.png",
+        "answers": ["KIA", "КИА"],
+        "id": 11
+    },
+    {
+        "image": "https://static.tildacdn.com/tild3962-3637-4033-b863-303865376630/photo.png",
+        "answers": ["Магнит"],
+        "id": 12
+    },
+    {
+        "image": "https://images-ext-2.discordapp.net/external/hOIX5J0zyuQvhT5cnR37EfJpgVld-MWwrsb3ihjCchQ/https/www.digiseller.ru/preview/1127400/p1_3659472_26e114eb.png?width=655&height=655",
+        "answers": ["Discord", "Дискорд"],
+        "id": 13
+    },
+    {
+        "image": "https://hdpic.club/uploads/posts/2021-12/1640892187_1-hdpic-club-p-logotip-tesla-1.png",
+        "answers": ["Tesla", "Тесла"],
+        "id": 14
+    },
+    {
+        "image": "https://www.pngmart.com/files/22/Linux-Logo-PNG-Isolated-HD.png",
+        "answers": ["Linux", "Линукс"],
+        "id": 15
+    },
+    {
+        "image": "https://media.discordapp.net/attachments/1137684346837409933/1137691627289321532/logo_ugmpk_Abali.ru_-e1670907589269-1024x838.png?width=801&height=655",
+        "answers": ["УГМК"],
+        "id": 16
+    },
+    {
+        "image": "https://lk-rostelecom.ru/wp-content/uploads/2019/03/cropped-RT_logo-RGB.png",
+        "answers": ["Ростелеком"],
+        "id": 17
+    },
+    {
+        "image": "https://cardz.ru/local/styles/img/subscription-brands/tinkoff2.png",
+        "answers": ["Тинькофф"],
+        "id": 18
+    },
+    {
+        "image": "https://camo.githubusercontent.com/12769e3f9756deda11aea7d097acc3eb5e9f439753e06d318d87e52fb604ab8e/68747470733a2f2f692e6962622e636f2f354b7053434e762f77696e31312e706e67",
+        "answers": ["Windows 11", "Виндовс 11"],
+        "id": 19
+    },
+    {
+        "image": "https://www.pm-store.ru/media/993/9938.png",
+        "answers": ["HP", "ХП"],
+        "id": 20
+    },
+    {
+        "image": "https://i.pinimg.com/originals/05/bb/db/05bbdb9108075c5cf572ddb57fef7595.png",
+        "answers": ["Apple", "Эппл", "Эпл"],
+        "id": 21
+    },
+    {
+        "image": "https://idgrup.com/wp-content/uploads/2015/10/Huawei-logo-sun.png",
+        "answers": ["Huawei", "Хуавей", "Хуавэй"],
+        "id": 22
+    },
+    {
+        "image": "https://1000logos.net/wp-content/uploads/2017/03/Nokia-Logo.png",
+        "answers": ["Nokia", "Нокиа", "Нокия"],
+        "id": 23
+    },
+    {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/1022px-Android_robot.svg.png",
+        "answers": ["Android", "Андроид"],
+        "id": 24
+    },
+    {
+        "image": "https://i.pinimg.com/originals/05/65/25/056525b8242eec970cc5ad3214200cff.png",
+        "answers": ["Mac OS", "Мак Ос", "Мак", "Mac"],
+        "id": 25
+    },
+    {
+        "image": "https://i.pinimg.com/originals/70/67/e2/7067e2a36888b59fdc990c38980e066d.png",
+        "answers": ["Lacoste", "Лакост", "Лакосте", "Лакостэ"],
+        "id": 26
+    },
+    {
+        "image": "https://dr1ver.ru/wp-content/uploads/2020/09/renault-logo-2015-2048x2048_cr.png",
+        "answers": ["Renault", "Ренаулт"],
+        "id": 27
+    },
+    {
+        "image": "https://engrave.su/image/catalog/cars/Pryamougolnyiy_brelok_s_gravirovkoy_Skoda.png",
+        "answers": ["Skoda", "Шкода", "Скода"],
+        "id": 28
+    },
+    {
+        "image": "https://yt3.googleusercontent.com/ytc/AL5GRJVqY9pBblDuktkgHQJDeHOIJXDZo9gAsLBe0_QX=s900-c-k-c0x00ffffff-no-rj",
+        "answers": ["Чижик"],
+        "id": 29
+    },
+    {
+        "image": "https://companieslogo.com/img/orig/NVDA-220e1e03.png?t=1633073585",
+        "answers": ["Nvidia", "Нвидиа", "Нвидия"],
+        "id": 30
+    },
+    {
+        "image": "https://i.pinimg.com/originals/2a/2d/8b/2a2d8b2e6465ea7dceae12fba63f9a53.jpg",
+        "answers": ["Starbucks", "Старбакс"],
+        "id": 31
+    },
+    {
+        "image": "https://www.freepnglogos.com/uploads/dvd-png/dvd-svg-png-icon-download-onlinewebfontsm-25.png",
+        "answers": ["DVD", "ДВД"],
+        "id": 32
+    },
+    {
+        "image": "https://mir-cdn.behance.net/v1/rendition/projects/max_808/67e111130223531.Y3JvcCwxMjA1LDk0MywzNTgsNjg.jpg",
+        "answers": ["Shell", "Шелл"],
+        "id": 33
+    },
+    {
+        "image": "https://pngimg.com/uploads/meta/meta_PNG4.png",
+        "answers": ["Meta", "Мета"],
+        "id": 34
+    },
+    {
+        "image": "https://logos-download.com/wp-content/uploads/2016/05/Xiaomi_commonly_used_Logo_2010.png",
+        "answers": ["Xiaomi", "Сяоми"],
+        "id": 35
+    },
+    {
+        "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/48450793857903.5e6fc4a2bc5e1.jpg",
+        "answers": ["Nike", "Найк"],
+        "id": 36
+    },
+    {
+        "image": "https://logolook.net/wp-content/uploads/2021/06/Symbol-Instagram-2048x1152.png",
+        "answers": ["Instagram", "Инстаграм"],
+        "id": 37
+    },
+    {
+        "image": "https://avatars.mds.yandex.net/i?id=2a00000189b76edbc3eeaffe735c940e6857-1749611-fast-images&n=13",
+        "answers": ["Twitter", "Твиттер", "X", "Х"],
+        "id": 38
+    },
+    {
+        "image": "https://i.pinimg.com/originals/b0/d6/92/b0d692e18e76dd369b7a4a28fc71c15c.png",
+        "answers": ["Pinterest", "Пинтерест"],
+        "id": 39
+    },
+    {
+        "image": "https://catherineasquithgallery.com/uploads/posts/2021-03/1614807581_160-p-fon-dlya-skaipa-202.png",
+        "answers": ["Skype", "Скайп"],
+        "id": 40
+    },
+    {
+        "image": "https://www.freepngimg.com/thumb/paypal/2-2-paypal-logo-transparent-png.png",
+        "answers": ["PayPal", "ПэйПал"],
+        "id": 41
+    },
+    {
+        "image": "https://i.pinimg.com/originals/23/24/28/2324287097b26cde49893d5512434254.png",
+        "answers": ["Rolex", "Ролекс"],
+        "id": 42
+    },
+    {
+        "image": "https://logolook.net/wp-content/uploads/2022/02/Skyrim-Logo.png",
+        "answers": ["Skyrim", "Скайрим"],
+        "id": 43
+    },
+    {
+        "image": "https://desktopgamer.net/wp-content/uploads/bluestacks-icon-min-300x262.png",
+        "answers": ["BlueStacks", "БлуСтакс"],
+        "id": 44
+    },
+    {
+        "image": "https://www.freepngimg.com/thumb/google/153886-logo-google-hq-image-free.png",
+        "answers": ["Google", "Гугл"],
+        "id": 45
+    },
+    {
+        "image": "https://cdn-st2.rtr-vesti.ru/vh/pictures/hd/160/365/7.jpg",
+        "answers": ["Yandex", "Яндекс"],
+        "id": 46
+    },
+    {
+        "image": "https://img.gazeta.ru/files3/31/13155031/maxresdefault-pic4_zoom-1500x1500-77419.jpg",
+        "answers": ["Paint", "Пэйнт", "Пейнт"],
+        "id": 47
+    },
+    {
+        "image": "https://sun6-21.userapi.com/s/v1/if1/TZ5mzRF23DLDVFHWd4NrXIuxsU1OQq4urusjMijNf3yZoVoazrYBLdRgJJDSf0R9rnnSungD.jpg?size=1600x1600&quality=96&crop=0,0,1600,1600&ava=1",
+        "answers": ["Aliexpress", "Алиэкспресс"],
+        "id": 48
+    },
+    {
+        "image": "https://adindex.ru/files2/news/2018_03/169840_Mir_Logo_Id_04.005.jpeg",
+        "answers": ["МИР"],
+        "id": 49
+    },
+    {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/MasterCard_logo.png",
+        "answers": ["MasterCard", "МастерКард"],
+        "id": 50
+    }
+]
