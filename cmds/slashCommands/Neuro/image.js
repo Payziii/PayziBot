@@ -30,7 +30,6 @@ module.exports = {
 await interaction.editReply({ embeds: [embed] });
     } catch (error) {
         if (error.response) {
-          console.log(error.response)
           if(error.response.data.error.code == 'content_policy_violation') return interaction.editReply(`<:no:1107254682100957224> | Судя по всему, в вашем запросе используются запрещённые слова или фразы...`)
           console.log(error.response.status);
           console.log(error.response.data);
