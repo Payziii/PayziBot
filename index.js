@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { Client, GatewayIntentBits, Collection, ActivityType, Partials } = require('discord.js');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -30,7 +31,7 @@ const client = new Client({
 });
 
 mongoose.connect(
-	tokens.mongoURL,
+	process.env.MONGO,
 	{ useNewUrlParser: true, useUnifiedTopology: true },
 );
 
@@ -210,4 +211,4 @@ const manager = new GiveawayManagerWithOwnDatabase(client, {
 // We now have a giveawaysManager property to access the manager everywhere!
 client.giveawaysManager = manager;
 
-client.login(tokens.discord.release);
+client.login(process.env.TOKEN);
