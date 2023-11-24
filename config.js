@@ -7,7 +7,10 @@ module.exports = {
 		errorLogs: '1115145596429406280',
 		dbLogs: '1124261194325299271'
 	},
+	// первый токен для генерации изображений,
+	// второй для gpt 3.5
 	tokens: {
 		openAI: ['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', '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'],
 	},
+	// пэйщ убери нахуй токены отсюда
 };
