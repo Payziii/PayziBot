@@ -109,7 +109,7 @@ client.on('ready', async () => {
 		await client.application.commands.set(
 			client.commands.map((c) => c.data),
 		);
-		console.log('| Обновление команд окончено');
+		console.log('| Обновление команд окончено. Бот успешно запущен!');
 	}
 	catch (error) {
 		console.error(error);
