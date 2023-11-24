@@ -41,7 +41,7 @@ module.exports = {
 			.setColor(guild.colors.starboard)
 			.setImage(messageAttachment);
 		const content = react.message.content.replaceAll(' ', '');
-		if (content.length > 0) embed.setDescription(react.message.content || 'Пустая строка');
+		if (content.length > 0) embed.setDescription(react.message.content || 'Пустое сообщение');
 		const msg = guild.starboard.data.get(react.message.id);
 		if (msg == undefined) {
 			react.message.guild.channels.cache.get(guild.starboard.channelID).send({ content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })

@@ -24,7 +24,7 @@ module.exports = {
 				.addFields(
 					{
 						name: 'Температура',
-						value: `Сейчас: **${cur.temp}°C**\nПо ощущениям: **${cur.temp_feels}°C**`,
+						value: `Сейчас: **${cur.temp || '?'}°C**\nПо ощущениям: **${cur.temp_feels || '?'}°C**`,
 						inline: true,
 					},
 					{

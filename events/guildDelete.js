@@ -1,4 +1,5 @@
 const { Events, EmbedBuilder } = require('discord.js');
+const { channels } = require('../config.js');
 
 module.exports = {
 	name: Events.GuildDelete,
@@ -11,7 +12,7 @@ module.exports = {
 				text: `ID: ${guild.id}`,
 			});
 
-		client.channels.cache.get('1137366763177267261')
+		client.channels.cache.get(channels.serverLogs)
 			.send({ embeds: [embed] });
 	},
 };

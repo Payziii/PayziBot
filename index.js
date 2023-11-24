@@ -3,7 +3,7 @@ const { Client, GatewayIntentBits, Collection, ActivityType, Partials } = requir
 const fs = require('node:fs');
 const path = require('node:path');
 const mongoose = require('mongoose');
-const { tokens } = require('./config.js');
+const { tokens, channels } = require('./config.js');
 const { Configuration, OpenAIApi } = require('openai');
 
 const User = require('./database/user.js');
@@ -81,7 +81,7 @@ fs.readdir('./cmds/textCommands/', (err, files) => {
 });
 
 process.on('uncaughtException', (err) => {
-	client.channels.cache.get('1115145596429406280').send(`Ошибка: ${err}`);
+	client.channels.cache.get(channels.errorLogs).send(`Ошибка: ${err}`);
 });
 
 client.on('ready', async () => {
@@ -109,7 +109,7 @@ client.on('ready', async () => {
 		await client.application.commands.set(
 			client.commands.map((c) => c.data),
 		);
-		console.log('| Обновление команд окончено');
+		console.log('| Обновление команд окончено. Бот успешно запущен!');
 	}
 	catch (error) {
 		console.error(error);
@@ -127,7 +127,7 @@ client.on('messageCreate', async (message) => {
 	if (!guild) {
 		await Guild.create({ guildID: message.guild.id }).then(() => {
 			client.channels.cache
-				.get('1124261194325299271')
+				.get(channels.dbLogs)
 				.send(
 					`<:announcement:732128155195801641> | Сервер ${message.guild.name}(${message.guild.id
 					}) успешно был добавлен в MongoDB`,
@@ -138,7 +138,7 @@ client.on('messageCreate', async (message) => {
 	if (!user) {
 		await User.create({ userID: message.author.id }).then(() => {
 			client.channels.cache
-				.get('1124261194325299271')
+				.get(channels.dbLogs)
 				.send(
 					`<:member:732128945365057546> | Пользователь ${message.author.username}(${message.author.id
 					}) успешно был добавлен в MongoDB`,

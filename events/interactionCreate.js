@@ -1,6 +1,7 @@
 const { Events, Collection } = require('discord.js');
 const Guild = require('../database/guild.js');
 const User = require('../database/user.js');
+const { channels } = require('../config.js');
 
 module.exports = {
 	name: Events.InteractionCreate,
@@ -14,7 +15,7 @@ module.exports = {
 		if (!guild) {
 			await Guild.create({ guildID: interaction.guild.id }).then(() => {
 				client.channels.cache
-					.get('1124261194325299271')
+					.get(channels.dbLogs)
 					.send(
 						`<:announcement:732128155195801641> | Сервер ${interaction.guild.name}(${interaction.guild.id
 						}) успешно был добавлен в MongoDB используя I`,
@@ -25,7 +26,7 @@ module.exports = {
 		if (!user) {
 			await User.create({ userID: interaction.user.id }).then(() => {
 				client.channels.cache
-					.get('1124261194325299271')
+					.get(channels.dbLogs)
 					.send(
 						`<:member:732128945365057546> | Пользователь ${interaction.user.username}(${interaction.user.id
 						}) успешно был добавлен в MongoDB используя I`,

@@ -7,7 +7,7 @@ function switchTo(val) {
 		break;
 	case 2: status = '🟠 Подключение...';
 		break;
-	case 3: status = '🟣 ААААА';
+	case 3: status = '🟣 Неизвестно?';
 		break;
 	}
 	return status;
