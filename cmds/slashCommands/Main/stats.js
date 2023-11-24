@@ -25,7 +25,7 @@ module.exports = {
 			.addFields(
 				{
 					name: 'Статистика',
-					value: `Серверов: **${client.guilds.cache.size}**\nКаналов: **${client.channels.cache.size}**\nПользователей: **${client.users.cache,size}**`,
+					value: `Серверов: **${client.guilds.cache.size}**\nКаналов: **${client.channels.cache.size}**\nПользователей: **${client.users.cache.size}**`,
 				},
 				{
 					name: 'Хостинг',
