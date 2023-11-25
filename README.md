@@ -12,8 +12,8 @@
 
 1. Введите в консоль `git clone https://github.com/Payziii/PayziBot.git` для клонирования репозитория и `cd payzibot` для перехода в папку с ботом
 2. Установите необходимые пакеты командой `npm i`
-3. Создайте файл .env и введите туда ваши данные:![Картинка](image.png)
-4. Измените [config.js](https://github.com/oxened/PayziBot/blob/main/config.js)
+3. Создайте файл .env и введите туда ваши данные: <img align="center" height="60" src="env.png">
+4. Измените [config.js](https://github.com/Payziii/PayziBot/blob/main/config.js)
 5. Запустите бота командой `npm start` или же `node index.js`
 6. Дождитесь вывода в консоль `| Обновление команд окончено. Бот успешно запущен!`, после чего можете спокойно использовать бота
 
@@ -24,4 +24,5 @@
 - Большая помощь от [oddyamill](https://github.com/oddyamill)
 - Идея некоторых функций от [sherrial](https://github.com/sherrial)
 - Идея некоторых функций от [korarar](https://github.com/korarar)
+- Небольшая помощь от [mrM0der](https://github.com/MrM0der)
 - Большинство игр сделаны с помощью [gamecord](https://github.com/aniket091/Gamecord)

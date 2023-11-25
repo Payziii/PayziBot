@@ -3,7 +3,7 @@ const { Client, GatewayIntentBits, Collection, ActivityType, Partials } = requir
 const fs = require('node:fs');
 const path = require('node:path');
 const mongoose = require('mongoose');
-const { tokens, channels } = require('./config.js');
+const { channels } = require('./config.js');
 const { Configuration, OpenAIApi } = require('openai');
 
 const User = require('./database/user.js');
@@ -36,9 +36,10 @@ mongoose.connect(
 );
 
 const openai = new Array();
-for (let i = 0; i < tokens.openAI.length; i++) {
+let tokens = process.env.OPENAI.split(", ");
+for (let i = 0; i < tokens.length; i++) {
 	const configuration = new Configuration({
-		apiKey: tokens.openAI[i],
+		apiKey: tokens[i],
 	});
 	openai.push(new OpenAIApi(configuration));
 }
