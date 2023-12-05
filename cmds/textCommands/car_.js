@@ -6,7 +6,7 @@ const { EmbedBuilder } = require('discord.js');
 const cars = require('../../games_scr/custom/car_.json');
 
 exports.run = async (client, message, args, guild) => {
-	if(message.guild.id != '1106931587267969036') return;
+	if(message.guild.id != '1149289750210019338') return;
 	const item = cars[Math.floor(Math.random() * cars.length)];
 	const image = item.image[Math.floor(Math.random() * item.image.length)];
 	const collectorFilter = response => {
