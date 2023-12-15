@@ -1,6 +1,6 @@
 const config = require('../../config.js');
 exports.run = async (client, message, args) => {
-	if (!config.owners.includes(author)) return;
+	if (!config.owners.includes(message.author.id)) return;
 		try {
 			const exec = require('child_process').exec;
 			exec(args.join(' '), { encoding: 'UTF-8' },
