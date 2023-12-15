@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { Minesweeper } = require('../../../func/discord-gamecord');
+const { CheckAch } = require('../../../func/games/giveAch.js');
 
 module.exports = {
 	cooldown: 30,
@@ -34,5 +35,11 @@ module.exports = {
 		});
 
 		Game.startGame();
+
+		Game.on('gameOver', result => {
+			if(result.result == 'win') {
+				CheckAch(0, interaction.user.id, interaction.channel)
+			}
+		  });
 	},
 };

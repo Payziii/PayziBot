@@ -1,4 +1,5 @@
 const User = require('../../database/user.js');
+const { CheckAch } = require('./giveAch.js');
 
 async function CorrectGame(id) {
 	const user = await User.findOne({ userID: id });
@@ -7,9 +8,12 @@ async function CorrectGame(id) {
 	user.save();
 }
 
-async function CorrectCity(id) {
+async function CorrectCity(id, channel) {
 	const user = await User.findOne({ userID: id });
 	if (!user) return;
+	if(user.games.city >= 49) {
+		CheckAch(1, id, channel)
+	}
 	user.games.city++;
 	user.save();
 }

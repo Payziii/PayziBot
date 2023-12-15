@@ -1,5 +1,6 @@
 const { Events, EmbedBuilder } = require('discord.js');
 const Guild = require('../database/guild.js');
+const { CheckAch } = require('../func/games/giveAch.js');
 
 module.exports = {
 	name: Events.MessageReactionAdd,
@@ -38,6 +39,7 @@ module.exports = {
 				.then(message => {
 					guild.starboard.data.set(react.message.id, message.id);
 					guild.save();
+					CheckAch(4, react.message.author.id, react.message.channel)
 				})
 				.catch(e => console.log(e));
 		}

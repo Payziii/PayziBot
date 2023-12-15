@@ -100,7 +100,7 @@ module.exports = {
 								.setImage(item.image)
 								.setColor(guild.colors.correct);
 							interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
-							give.CorrectCity(collected.first().author.id);
+							give.CorrectCity(collected.first().author.id, interaction.channel);
 							games.gameGiveVerno(name, item.id);
 						})
 						.catch(() => {

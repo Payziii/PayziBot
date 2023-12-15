@@ -11,21 +11,14 @@ module.exports = {
 				.setName('ник')
 				.setDescription('Ник пользователя на GitHub.')
 				.setRequired(true)
-				.setMaxLength(30),
+				.setMaxLength(39),
 		),
 	async execute(interaction, guild) {
 		await interaction.deferReply();
 		const query = interaction.options.getString('ник');
 
-		let msg;
-		let bio = 'Отсутствует';
-		let name = 'Отсутствует';
-		let login;
-		let repos;
-		let html_url;
-		let id;
-		let avatar;
-		let fl;
+		let bio, name = 'Отсутствует';
+		let login, repos, html_url, id, avatar, fl, msg;
 
 		await require('node-fetch')(`https://api.github.com/users/${query}`).then(r => r.json()).then(r => {
 			if (r.message && r.message == 'Not Found') return msg = true;

@@ -13,7 +13,7 @@ exports.run = async (client, message, args) => {
 			}
 			message.reply(response.message);
 		}).catch(() => {
-			message.reply('<:no:1107254682100957224> | Слишком много запросов, либо сервера перегружены. Повторите попытку позже!');
+			message.reply('<:no:1107254682100957224> | Повторите свой запрос немного позже, возникли непредвиденные проблемы!');
 		});
 };
 exports.help = {

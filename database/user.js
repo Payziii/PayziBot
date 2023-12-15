@@ -16,6 +16,7 @@ const user = Schema({
 		logo: { type: Number, default: 0 },
 		flag: { type: Number, default: 0 },
 	},
+	ach: { type: Array, default: [] },
 	bypassDelay: { type: Boolean, default: false },
 });
 

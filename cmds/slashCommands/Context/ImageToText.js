@@ -1,5 +1,6 @@
 const { ContextMenuCommandBuilder, ApplicationCommandType } = require('discord.js');
 const { createWorker } = require('tesseract.js');
+const { CheckAch } = require('../../../func/games/giveAch.js');
 
 module.exports = {
 	data: new ContextMenuCommandBuilder()
@@ -17,6 +18,7 @@ module.exports = {
 		if (!ret.data.text) return interaction.editReply('<:no:1107254682100957224> | Текст на картинке отсутствует');
 		if (ret.data.text.length > 2000) return interaction.editReply('<:no:1107254682100957224> | На картинке более 2 тысяч символов');
 		interaction.editReply(ret.data.text);
+		CheckAch(3, interaction.user.id, interaction.channel)
 		await worker.terminate();
 	},
 };

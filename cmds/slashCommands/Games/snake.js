@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { Snake } = require('../../../func/discord-gamecord');
+const { CheckAch } = require('../../../func/games/giveAch.js');
 
 module.exports = {
 	cooldown: 30,
@@ -48,5 +49,11 @@ module.exports = {
 		});
 
 		Game.startGame();
+
+		Game.on('gameOver', result => {
+			if(result.score >= 50) {
+				CheckAch(2, interaction.user.id, interaction.channel)
+			}
+		  });
 	},
 };
