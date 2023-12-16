@@ -6,7 +6,7 @@ module.exports = {
 	async execute(guild, client) {
 		const embed = new EmbedBuilder()
 			.setTitle('Новый сервер')
-			.setDescription(`Название: **${guild.name}**\nУчастников: **${guild.memberCount}**\n\nСервер создан: <t:${(guild.createdTimestamp / 1000).toFixed(0)}:D> (<t:${(guild.createdTimestamp / 1000).toFixed(0)}:R>)`)
+			.setDescription(`Название: **${guild.name}**\nУчастников: **${guild.memberCount}**\nВладелец: **${guild.members.cache.get(guild.ownerId).user.username}** (${guild.ownerId})\n\nСервер создан: <t:${(guild.createdTimestamp / 1000).toFixed(0)}:D> (<t:${(guild.createdTimestamp / 1000).toFixed(0)}:R>)`)
 			.setColor('#3fcc65')
 			.setFooter({
 				text: `ID: ${guild.id}`,
