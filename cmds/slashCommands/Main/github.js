@@ -17,13 +17,14 @@ module.exports = {
 		await interaction.deferReply();
 		const query = interaction.options.getString('ник');
 
-		let bio, name = 'Отсутствует';
+		let bio = 'Отсутствует', name = 'Отсутствует', blog = 'Отсутствует';
 		let login, repos, html_url, id, avatar, fl, msg;
 
 		await require('node-fetch')(`https://api.github.com/users/${query}`).then(r => r.json()).then(r => {
 			if (r.message && r.message == 'Not Found') return msg = true;
 			if (r.bio) bio = r.bio;
 			if (r.name) name = r.name;
+    if (r.blog) blog = r.blog;
 			login = r.login;
 			repos = r.public_repos;
 			fl = r.followers;
@@ -35,7 +36,7 @@ module.exports = {
 		const embed = new EmbedBuilder()
 			.setTitle(`Пользователь ${login}`)
 			.setURL(html_url)
-			.setDescription(`<:arrow:1140937463209152572> Публичных репозиториев: **${repos}**\n<:arrow:1140937463209152572> Подписчиков: **${fl}**\n<:arrow:1140937463209152572> Имя: **${name}**\n<:arrow:1140937463209152572> Биография: **${bio}**`)
+			.setDescription(`<:arrow:1140937463209152572> Публичных репозиториев: **${repos}**\n<:arrow:1140937463209152572> Подписчиков: **${fl}**\n<:arrow:1140937463209152572> Имя: **${name}**\n<:arrow:1140937463209152572> Биография: **${bio}**\n<:arrow:1140937463209152572> Сайт: **[Нажмите сюда](${blog})**`)
 			.setThumbnail(avatar)
 			.setColor(guild.colors.basic)
 			.setFooter({
