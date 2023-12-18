@@ -1,5 +1,6 @@
 const { SlashCommandBuilder, ChannelType } = require('discord.js');
 const ms = require('../../../func/ms.js');
+const messages = require('../../../games_scr/giveaways/messages.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -31,7 +32,17 @@ module.exports = {
 					.setName('канал')
 					.addChannelTypes(ChannelType.GuildText)
 					.setDescription('Канал, в котором будет создан розыгрыш'))
-				),
+				)
+		.addSubcommand(subcommand =>
+			subcommand
+				.setName('reroll')
+				.setDescription('Выбрать нового победителя')
+				.addStringOption((option) =>
+				option
+					.setName('айди')
+					.setDescription('ID сообщения')
+					.setRequired(true))
+		),
 	async execute(interaction, guild) {
 		if (interaction.options.getSubcommand() === 'start') {
 			channel = interaction.options.getChannel('канал') || interaction.channel;
@@ -43,7 +54,8 @@ module.exports = {
             .start(interaction.channel, {
                 duration: ms(duration),
                 winnerCount,
-                prize
+                prize,
+				messages: messages.start
             })
 		}
 	},
