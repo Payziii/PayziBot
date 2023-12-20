@@ -17,31 +17,26 @@ module.exports = {
 		const city = interaction.options.getString('город');
 		await interaction.deferReply();
 
-		gismeteo.getNow(city).then((cur) => {
+		await require('node-fetch')(`http://api.weatherapi.com/v1/current.json?key=${process.env.WEATHER}&q=${encodeURIComponent(city)}&lang=ru`).then(r => r.json()).then(r => {
 			const embed = new EmbedBuilder()
-				.setTitle(city)
-				.setDescription(`<:arrow:1140937463209152572> ${cur.summary}`)
+				.setTitle(r.location.name + ", " + r.location.country)
+				.setDescription(`<:arrow:1140937463209152572> ${r.current.condition.text}`)
 				.addFields(
 					{
 						name: 'Температура',
-						value: `Сейчас: **${cur.temp || '?'}°C**\nПо ощущениям: **${cur.temp_feels || '?'}°C**`,
-						inline: true,
-					},
-					{
-						name: 'Геомагнитное поле',
-						value: `**${cur.geomagnetic}**`.replace(1, 'Нет заметных возмущений').replace(2, 'Небольшие возмущения').replace(3, 'Слабая геомагнитная буря').replace(4, 'Малая геомагнитная буря').replace(5, 'Умеренная геомагнитная буря').replace(6, 'Сильная геомагнитная буря').replace(7, 'Жесткий геомагнитный шторм').replace(8, 'Экстремальный шторм'),
+						value: `Сейчас: **${r.current.temp_c || '?'}°C**\nПо ощущениям: **${r.current.feelslike_c || '?'}°C**`,
 						inline: true,
 					},
 					{
 						name: 'Прочее',
-						value: `Влажность: **${cur.humidity}%**\nВетер: **${cur.wind_speed} м/с (${cur.wind_dir})**\nДавление: **${cur.pressure} мм рт. ст.**`,
+						value: `Влажность: **${r.current.humidity}%**\nВетер: **${(r.current.wind_kph/3.6).toFixed(1)} м/с**\nДавление: **${r.current.pressure_mb} мм рт. ст.**`,
 						inline: false,
 					},
 				)
-				.setThumbnail(cur.image)
+				.setThumbnail("https:" + r.current.condition.icon)
 				.setColor(guild.colors.basic)
 				.setFooter({
-					text: 'Сервис: Gismeteo',
+					text: 'Сервис: WeatherApi 💖',
 				});
 
 			interaction.editReply({ embeds: [embed] });
