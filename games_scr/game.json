@@ -311,7 +311,7 @@
     },
     {
         "image": "https://i.playground.ru/i/screenshot/126776/baldurs_gate_3.jpg",
-        "answers": ["Baldur’s Gate 3"],
+        "answers": ["Baldur's Gate 3"],
         "id": 63
     },
     {
@@ -338,5 +338,90 @@
         "image": "https://magazun.com/images/detailed/465/4_2867df9a-f7eb-11ea-a24e-7085c2a4485b.jpg",
         "answers": ["Tony Hawk"],
         "id": 68
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/608/1583034429_4860.jpeg",
+        "answers": ["League of Legends"],
+        "id": 69
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/140015/1581476360_5400.jpeg",
+        "answers": ["PUBG", "ПАБГ"],
+        "id": 70
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/176485/20201003002215_1.jpg",
+        "answers": ["Among Us"],
+        "id": 71
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/180811/1633324271_8917.jpeg",
+        "answers": ["Goose Goose Duck", "Гуси", "гусь"],
+        "id": 72
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/139609/1583159756_7704.jpg",
+        "answers": ["Resident Evil", "Resident Evil 7"],
+        "id": 73
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/1404/half-life_153.jpg",
+        "answers": ["Half Life", "Халф Лайф", "хл"],
+        "id": 74
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/1405/steamlab_4.jpg",
+        "answers": ["Half Life 2", "Халф Лайф 2", "хл 2"],
+        "id": 75
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/179144/6612682746_1701371666_9558.jpeg",
+        "answers": ["The Day Before"],
+        "id": 76
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/170901/1636053119_5362.jpeg",
+        "answers": ["Elden Ring"],
+        "id": 77
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/135578/1581473280_7928.jpeg",
+        "answers": ["Rust", "Раст"],
+        "id": 78
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/31597/1854962363_1680588704_1341.jpeg",
+        "answers": ["Team Fortress 2", "Team Fortress", "Тим Фортресс", "Тим Фортресс 2"],
+        "id": 79
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/15698/up-strider.jpg",
+        "answers": ["Garry's Mod", "Гарис мод"],
+        "id": 80
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/292/1583135354_9081.jpg",
+        "answers": ["Postal", "Постал"],
+        "id": 81
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/138318/1581531025_5820.jpeg",
+        "answers": ["Hollow Knight"],
+        "id": 82
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/172321/1599237855_9314.jpeg",
+        "answers": ["Ultrakill"],
+        "id": 83
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/193196/981857015_csll_city.jpg",
+        "answers": ["Cities: Skylines 2", "Cities", "Skylines"],
+        "id": 84
+    },
+    {
+        "image": "https://files.vgtimes.ru/gallery/main/139618/ss_e03a3526536a7da15dc1b89dc4e6285a87e8e.jpg",
+        "answers": ["Slime Rancher"],
+        "id": 85
     }
 ]

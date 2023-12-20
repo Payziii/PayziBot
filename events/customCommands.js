@@ -1,5 +1,6 @@
 const { Events } = require('discord.js');
 const Guild = require('../database/guild.js');
+const { CheckAch } = require('../func/games/giveAch.js');
 
 module.exports = {
 	name: Events.MessageCreate,
@@ -28,5 +29,6 @@ module.exports = {
 			.replace('{guild.channelCount}', message.guild.channels.cache.size)
 			.replace('{guild.boosts}', message.guild.premiumSubscriptionCount);
 		message.reply(answer);
+		CheckAch(5, message.author.id, message.channel)
 	},
 };

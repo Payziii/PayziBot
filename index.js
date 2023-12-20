@@ -10,6 +10,9 @@ const User = require('./database/user.js');
 const Guild = require('./database/guild.js');
 const Giveaway = require('./database/giveaway.js');
 
+// NEW YEAR ACHVIEVEMENT
+const { CheckAch } = require('./func/games/giveAch.js');
+
 const client = new Client({
 	intents: [
 		GatewayIntentBits.GuildVoiceStates,
@@ -153,6 +156,12 @@ client.on('messageCreate', async (message) => {
 	if (!guild) return;
 	if (!user) return;
 	// DB
+
+	// NEW YEAR ACHVIEVEMENT
+	if(message.createdTimestamp > 1704049199000) {
+		CheckAch(6, message.author.id, message.channel)
+	}
+	// NEW YEAR ACHVIEVEMENT
 
 	const args = msg
 		.trim()

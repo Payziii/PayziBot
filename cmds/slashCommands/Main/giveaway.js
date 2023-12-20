@@ -57,6 +57,8 @@ module.exports = {
                 prize,
 				messages: messages.start
             })
+		}else if (interaction.options.getSubcommand() === 'reroll') {
+			
 		}
 	},
 };
