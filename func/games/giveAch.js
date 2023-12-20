@@ -1,5 +1,5 @@
 const User = require('../../database/user.js');
-const ach_list = require('../../games_scr/achievements/ach.json');
+const ach_list = require('../../games_scr/profile/achievements.json');
 const { EmbedBuilder } = require('discord.js');
 
 async function CheckAch(ach, id, channel) {

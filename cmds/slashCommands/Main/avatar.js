@@ -12,10 +12,7 @@ module.exports = {
 		),
 	async execute(interaction, guild) {
 		await interaction.deferReply();
-		let user = interaction.options.getUser('пользователь');
-		if (user == null) {
-			user = interaction.user;
-		}
+		let user = interaction.options.getUser('пользователь') || interaction.user;
 		const url = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.webp?size=4096`;
 		const png = new ButtonBuilder()
 			.setLabel('PNG')
