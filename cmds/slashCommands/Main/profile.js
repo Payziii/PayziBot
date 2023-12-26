@@ -21,6 +21,7 @@ module.exports = {
 			.setTitle(`${_user.username}`)
 			.setColor(guild.colors.basic)
 			.setDescription("Блокировка: **Имеет доступ к PayziBot**")
+			.setThumbnail(`https://cdn.discordapp.com/avatars/${_user.id}/${_user.avatar}.webp?size=4096`)
 			.addFields(
 				{
 				  name: "Достижения",
@@ -32,7 +33,8 @@ module.exports = {
 				  value: `Побед в "угадай...": **${user.games.game + user.games.city + user.games.logo + user.games.flag}**`,
 				  inline: false
 				},
-			  );
+			  )
+			  .setFooter({ text: `С новым годом! 🎄` });
 
 			  await interaction.editReply({ embeds: [embed] });
 	},

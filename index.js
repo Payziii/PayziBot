@@ -29,7 +29,7 @@ const client = new Client({
 	],
 	presence: {
 		status: 'online',
-		activities: [{ name: 'PayziBot — Зелёный бот', type: ActivityType.Custom }],
+		activities: [{ name: 'PayziBot - 2024', type: ActivityType.Custom }],
 	},
 });
 
@@ -173,6 +173,7 @@ client.on('messageCreate', async (message) => {
 			cm => cm.help.aliases && cm.help.aliases.includes(command),
 		);
 	if (!cmd) return;
+	if(user.block >= 2) return;
 	cmd.run(client, message, args, guild, user);
 });
 

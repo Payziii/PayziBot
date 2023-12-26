@@ -10,7 +10,7 @@ module.exports = {
 				.setName('количество')
 				.setDescription('Количество сообщений, которые требуется очистить')
 				.setMinValue(1)
-				.setMaxValue(1000)
+				.setMaxValue(100)
 				.setRequired(true))
 		.setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages),
 	async execute(interaction) {
@@ -21,9 +21,10 @@ module.exports = {
 		const count = interaction.options.getInteger('количество');
 		interaction.channel.bulkDelete(count)
 			.then(messages => {
-				interaction.editReply(`<:yes:1107254746336735312> | Очищено ${messages.size} за последние 2 недели`);
+				interaction.channel.send(`<:yes:1107254746336735312> | Очищено **${messages.size} сообщений** за последние 2 недели пользователем ${interaction.user}`);
 			})
-			.catch(console.error);
-		interaction.editReply('<:no:1107254682100957224> | Непредвиденная ошибка?');
+			.catch(() => {
+				interaction.editReply('<:no:1107254682100957224> | Непредвиденная ошибка?');
+			});
 	},
 };

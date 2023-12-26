@@ -14,7 +14,7 @@ module.exports = {
         ),
     async execute(interaction, guild, user, openai) {
         await interaction.deferReply();
-        return interaction.editReply('<:timeout_clock:1134453176091824250> | Функция временно отключена!')
+        return interaction.editReply('<:timeout_clock:1134453176091824250> | Команда будет доступна в 1.1.0')
         openai = openai[0];
         text = interaction.options.getString('запрос')
         const embed = new EmbedBuilder()

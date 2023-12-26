@@ -2,6 +2,7 @@ const RsnChat = require('rsnchat');
 const rsnchat = new RsnChat('CHATGPT_gBYbmLjx3O');
 
 exports.run = async (client, message, args) => {
+	return message.reply('<:timeout_clock:1134453176091824250> | Команда будет доступна в 1.1.0');
 	rsnchat.gpt(args.join(' '))
 		.then(response => {
 			if (!response.message) return message.reply('<:no:1107254682100957224> | Ответ не был получен!');

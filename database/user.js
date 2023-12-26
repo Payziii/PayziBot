@@ -17,6 +17,7 @@ const user = Schema({
 		flag: { type: Number, default: 0 },
 	},
 	ach: { type: Array, default: [] },
+	block: { type: Number, default: 0 },
 	bypassDelay: { type: Boolean, default: false },
 });
 

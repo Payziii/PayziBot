@@ -40,6 +40,7 @@ module.exports = {
 		if (!guild) return interaction.reply('<:no:1107254682100957224> | Напиши команду ещё раз! Ошибка `NoG-I`');
 		if (!user) return interaction.reply('<:no:1107254682100957224> | Напиши команду ещё раз! Ошибка `NoU-I`');
 		// DB
+		if(user.block >= 4) return; // Доступ запрещён
 		const { cooldowns } = client;
 		const cmd = interaction.client.commands.get(interaction.commandName);
 		if (!cmd) return interaction.reply('<:no:1107254682100957224> | Команда не найдена. Как такое могло произойти?');
@@ -47,8 +48,10 @@ module.exports = {
 			cooldowns.set(cmd.data.name, new Collection());
 		}
 		const now = Date.now();
+		let coef = 1;
+		if(user.block >= 3) coef = 2;
 		const timestamps = cooldowns.get(cmd.data.name);
-		const cooldownAmount = (cmd.cooldown ?? 1) * 1000;
+		const cooldownAmount = (cmd.cooldown ?? 1) * 1000*coef;
 
 		if (timestamps.has(interaction.user.id)) {
 			const expirationTime = timestamps.get(interaction.user.id) + cooldownAmount;
