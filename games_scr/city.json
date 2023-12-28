@@ -1462,5 +1462,101 @@
         "answers": ["Кувандык"],
         "country": "Россия",
         "id": 245
+    },
+    {
+        "image": "https://stihi.ru/pics/2015/10/30/8475.jpg",
+        "answers": ["Елец"],
+        "country": "Россия",
+        "id": 246
+    },
+    {
+        "image": "https://avatars.mds.yandex.net/i?id=0ad3918a42516478278951c6f4b873713bd968a9-10146075-images-thumbs&n=13",
+        "answers": ["Зеленодольск"],
+        "country": "Россия",
+        "id": 247
+    },
+    {
+        "image": "http://ic.pics.livejournal.com/zdorovs/16627846/1715037/1715037_original.jpg",
+        "answers": ["Новокуйбышевск"],
+        "country": "Россия",
+        "id": 248
+    },
+    {
+        "image": "https://avatars.mds.yandex.net/i?id=2d82d31e695260ae38a206c7e14480012efba184-9555577-images-thumbs&n=13",
+        "answers": ["Воткинск"],
+        "country": "Россия",
+        "id": 249
+    },
+    {
+        "image": "https://img-fotki.yandex.ru/get/6104/24332511.80/0_6c26e_ca24d5a7_XXL",
+        "answers": ["Железногорск"],
+        "country": "Россия",
+        "id": 250
+    },
+    {
+        "image": "https://avatars.mds.yandex.net/i?id=ce8f8fb936d4d99e3881ef56aae085db9b647d15-9802303-images-thumbs&n=13",
+        "answers": ["Даллас"],
+        "country": "США",
+        "id": 251
+    },
+    {
+        "image": "https://i.pinimg.com/originals/4c/ab/11/4cab1147cb4aed5d157778abc50dec9d.jpg",
+        "answers": ["Сан-Хосе", "Сан Хосе"],
+        "country": "США",
+        "id": 252
+    },
+    {
+        "image": "https://avatars.mds.yandex.net/i?id=cb4587a314d2128da72c176c35be58293230c355-5337213-images-thumbs&n=13",
+        "answers": ["Новый Орлеан"],
+        "country": "США",
+        "id": 253
+    },
+    {
+        "image": "https://avatars.mds.yandex.net/i?id=ebec51f210dde834d61540e5285225af679ced26-10767708-images-thumbs&n=13",
+        "answers": ["Мюнхен"],
+        "country": "Германия",
+        "id": 254
+    },
+    {
+        "image": "https://avatars.mds.yandex.net/i?id=61162ab0cd1ee11d469caeb9de957a893a519e54-9855643-images-thumbs&n=13",
+        "answers": ["Кёльн", "Кельн"],
+        "country": "Германия",
+        "id": 255
+    },
+    {
+        "image": "https://traveltimes.ru/wp-content/uploads/2021/08/Dortmund.png",
+        "answers": ["Дортмунд"],
+        "country": "Германия",
+        "id": 256
+    },
+    {
+        "image": "https://avatars.mds.yandex.net/i?id=514fdce2dfa17c384134bcb9def99f4b738f8497-10639540-images-thumbs&n=13",
+        "answers": ["Ганновер"],
+        "country": "Германия",
+        "id": 257
+    },
+    {
+        "image": "https://postila.ru/data/00/64/ae/d0/0064aed0ed3b3e283ca61ba65ec1e7f2d0484113690f1fd647b9436ca5359045.jpg",
+        "answers": ["Бонн"],
+        "country": "Германия",
+        "id": 258
+    },
+    {
+        "image": "https://avatars.mds.yandex.net/i?id=67d3b9ae8d010ab0d27cb81ec4ad5526d5f57cbc-10804497-images-thumbs&n=13",
+        "answers": ["Женева"],
+        "country": "Швейцария",
+        "id": 259
+    },
+    {
+        "image": "https://avatars.mds.yandex.net/i?id=1df93047d82981e01a162f9ed16aeb104a9cc191-5344236-images-thumbs&n=13",
+        "answers": ["Базель"],
+        "country": "Швейцария",
+        "id": 260
+    },
+    {
+        "image": "https://avatars.mds.yandex.net/i?id=01290b73202c191f3bcd89b9c36f814f77021332-10471435-images-thumbs&n=13",
+        "answers": ["Лозанна"],
+        "country": "Швейцария",
+        "id": 261
     }
 ]

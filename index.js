@@ -29,7 +29,7 @@ const client = new Client({
 	],
 	presence: {
 		status: 'online',
-		activities: [{ name: 'PayziBot - 2024', type: ActivityType.Custom }],
+		activities: [{ name: '🎄 PayziBot - 2024', type: ActivityType.Custom }],
 	},
 });
 

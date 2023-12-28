@@ -1,5 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const User = require('../../../database/user.js');
+const block = require('../../../games_scr/profile/block.json');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -20,7 +21,7 @@ module.exports = {
 		const embed = new EmbedBuilder()
 			.setTitle(`${_user.username}`)
 			.setColor(guild.colors.basic)
-			.setDescription("Блокировка: **Имеет доступ к PayziBot**")
+			.setDescription(`Блокировка: **${block[user.block].name}**`)
 			.setThumbnail(`https://cdn.discordapp.com/avatars/${_user.id}/${_user.avatar}.webp?size=4096`)
 			.addFields(
 				{

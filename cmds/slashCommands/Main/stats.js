@@ -3,8 +3,6 @@ const os = require('os');
 const time = require('payzi-time');
 const { version } = require('../../../config.js');
 const { info } = require('../../../changelog.js');
-const { connection } = require('mongoose');
-const { switchTo } = require('../../../func/cmds/db_status.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -30,10 +28,6 @@ module.exports = {
 				{
 					name: 'Хостинг',
 					value: `ОЗУ: \`${(process.memoryUsage().heapUsed / (1024 * 1024)).toFixed(0)} МБ\`/\`${(os.totalmem() / (1024 * 1024)).toFixed(0)} МБ\`\nWebSocket: \`${client.ws.ping}ms\`\nЦП: \`${os.cpus()[0].model}\``,
-				},
-				{
-					name: 'База данных',
-					value: `Статус: **${switchTo(connection.readyState)}**`,
 				},
 			)
 			.setThumbnail('https://cdn.discordapp.com/avatars/732867965053042690/f3f976adc4cb628dd707a8f4203e1f5d.webp?size=4096')
