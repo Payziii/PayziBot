@@ -52,10 +52,15 @@ module.exports = {
 			winnerCount = interaction.options.getInteger('победители');
 			prize = interaction.options.getString('приз');
 
+			duration = ms(duration);
+
+			if(isNaN(duration)) return interaction.reply(`<:no:1107254682100957224> | Время - это число. Также можете использовать приставки "с", "м", "ч", "д". Например: 1д - розыгрыш будет создан на 1 день.`)
+			if(duration < 1000) return interaction.reply(`<:no:1107254682100957224> | Я не могу создать розыгрыш менее, чем на 1 секунду`)
+
 			interaction.reply(`<a:loading:673777314584199169> | Создание розыгрыша`)
 			interaction.client.giveawaysManager
-				.start(interaction.channel, {
-					duration: ms(duration),
+				.start(channel, {
+					duration: duration,
 					winnerCount,
 					prize,
 					messages: messages.start,
