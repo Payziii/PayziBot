@@ -18,7 +18,7 @@ async function SendMess(ach, id, channel) {
   .setDescription(`Получено достижение: **${ach_list[ach].name}** (${ach_list[ach].description})`)
   .setColor("#7029f5")
   .setFooter({
-    text: "С наступающим новым годом!",
+    text: "С Новым Годом!",
   });
 
 await channel.send({ content: `<@${id}>`, embeds: [embed] });

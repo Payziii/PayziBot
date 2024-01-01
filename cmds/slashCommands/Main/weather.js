@@ -1,6 +1,4 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
-const { Gismeteo } = require('gismeteo');
-const gismeteo = new Gismeteo();
 
 module.exports = {
 	cooldown: 5,

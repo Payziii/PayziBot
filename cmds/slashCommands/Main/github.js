@@ -24,7 +24,10 @@ module.exports = {
 			if (r.message && r.message == 'Not Found') return msg = true;
 			if (r.bio) bio = r.bio;
 			if (r.name) name = r.name;
-			if (r.blog) blog = `[Нажмите сюда](${r.blog})`;
+			if (r.blog) {
+				if(r.blog.startsWith('http') == false) blog = `[Нажмите сюда](https://${r.blog})`;
+				else blog = `[Нажмите сюда](${r.blog})`;
+		}
 			login = r.login;
 			repos = r.public_repos;
 			fl = r.followers;
