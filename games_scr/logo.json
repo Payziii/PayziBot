@@ -1,11 +1,11 @@
 [
     {
-        "image": "https://free-png.ru/wp-content/uploads/2021/07/free-png.ru-53.png",
+        "image": "https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/8f/90/c7/8f90c752-169f-3523-9c01-b8a0ada9df57/AppIcon-0-0-1x_U007emarketing-0-0-0-5-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x630wa.png",
         "answers": ["Пятёрочка", "Пятерочка"],
         "id": 1
     },
     {
-        "image": "https://logodope.ru/wp-content/uploads/2019/04/2023-05-04_18-27-44_014916-logodope.png",
+        "image": "https://logospng.org/download/vk/vk-4096.png",
         "answers": ["ВКонтакте", "ВК", "VK"],
         "id": 2
     },
@@ -15,13 +15,13 @@
         "id": 3
     },
     {
-        "image": "https://автолого.рф/wp-content/uploads/audi-emblem-2016-black-1920x1080-1024x576.png",
+        "image": "http://www.ergunlerotomotiv.com.tr/resimler/KpnuDTJNv4.png",
         "answers": ["Audi", "Ауди"],
         "id": 4
     },
     {
-        "image": "https://camo.githubusercontent.com/ec4c59a326d4cbef0654abfaee175b92251cae890b780d3e73c85b91c205a18f/68747470733a2f2f70656574636b2e6769746875622e696f2f42617369632d507974686f6e2f696d616765732f6c6f676f2f70795f6c6f676f2e706e67",
-        "answers": ["Python", "Питон", "Пайтон"],
+        "image": "https://lada-granta-fanclub.ru/wp-content/uploads/2023/06/lada_PNG124.png",
+        "answers": ["Лада", "Lada"],
         "id": 5
     },
     {
@@ -185,7 +185,7 @@
         "id": 37
     },
     {
-        "image": "https://avatars.mds.yandex.net/i?id=2a00000189b76edbc3eeaffe735c940e6857-1749611-fast-images&n=13",
+        "image": "https://naked-science.ru/wp-content/uploads/2023/08/image-353.png",
         "answers": ["Twitter", "Твиттер", "X", "Х"],
         "id": 38
     },
@@ -195,7 +195,7 @@
         "id": 39
     },
     {
-        "image": "https://catherineasquithgallery.com/uploads/posts/2021-03/1614807581_160-p-fon-dlya-skaipa-202.png",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Skype_logo_%282019%E2%80%93present%29.svg/1200px-Skype_logo_%282019%E2%80%93present%29.svg.png",
         "answers": ["Skype", "Скайп"],
         "id": 40
     },
@@ -210,8 +210,8 @@
         "id": 42
     },
     {
-        "image": "https://logolook.net/wp-content/uploads/2022/02/Skyrim-Logo.png",
-        "answers": ["Skyrim", "Скайрим"],
+        "image": "https://static.tildacdn.com/tild3730-6637-4464-b638-623139383836/__2021-02-09__221109.png",
+        "answers": ["IKEA", "ИКЕА", "Икея"],
         "id": 43
     },
     {
@@ -241,7 +241,7 @@
     },
     {
         "image": "https://adindex.ru/files2/news/2018_03/169840_Mir_Logo_Id_04.005.jpeg",
-        "answers": ["МИР"],
+        "answers": ["МИР", "MIR"],
         "id": 49
     },
     {

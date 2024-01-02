@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { Gen } = require('../../../func/games/tipGen.js');
 const give = require('../../../func/games/guessUserCorrect.js');
 const games = require('../../../func/games/guessCounting.js');
 const game = require('../../../games_scr/game.json');
@@ -40,9 +41,11 @@ module.exports = {
 			};
 			games.gameGiveAll(name, item.id);
 			const percent = await games.gameGetPercent(name, item.id);
+			let podsk = '';
+			if (percent < 50) podsk = '\nПодсказка: **' + Gen(item.answers[0]) + '**';
 			const embed = new EmbedBuilder()
 				.setTitle('Угадай игру')
-				.setDescription('У вас есть **30 секунд** чтобы ответить, какая игра изображена на картинке ниже')
+				.setDescription(`У вас есть **30 секунд** чтобы ответить, какая игра изображена на картинке ниже${podsk}`)
 				.setImage(item.image)
 				.setFooter({ text: `Игру угадали ${percent}% пользователей` })
 				.setColor(guild.colors.basic);
@@ -82,7 +85,7 @@ module.exports = {
 			games.gameGiveAll(name, item.id);
 			const percent = await games.gameGetPercent(name, item.id);
 			let podsk = '';
-			if (percent < 50) podsk = '\nПодсказка: **' + item.answers[0][0] + '#'.repeat(item.answers[0].length - 1) + '**';
+			if (percent < 50) podsk = '\nПодсказка: **' + Gen(item.answers[0]) + '**';
 			const embed = new EmbedBuilder()
 				.setTitle('Угадай город')
 				.setDescription(`У вас есть **30 секунд** чтобы ответить, какой город изображен на фото ниже\nСтрана: **${item.country}**${podsk}`)
@@ -124,9 +127,11 @@ module.exports = {
 			};
 			games.gameGiveAll(name, item.id);
 			const percent = await games.gameGetPercent(name, item.id);
+			let podsk = '';
+			if (percent < 50) podsk = '\nПодсказка: **' + Gen(item.answers[0]) + '**';
 			const embed = new EmbedBuilder()
 				.setTitle('Угадай логотип')
-				.setDescription('У вас есть **10 секунд** чтобы ответить, чей логотип изображен на фото ниже')
+				.setDescription(`У вас есть **10 секунд** чтобы ответить, чей логотип изображен на фото ниже${podsk}`)
 				.setImage(item.image)
 				.setFooter({ text: `Логотип угадали ${percent}% пользователей` })
 				.setColor(guild.colors.basic);
