@@ -3,6 +3,7 @@ const os = require('os');
 const time = require('payzi-time');
 const { version } = require('../../../config.js');
 const { info } = require('../../../changelog.js');
+const { CheckAch } = require('../../../func/games/giveAch.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -61,6 +62,7 @@ module.exports = {
 				await interaction.editReply({ embeds: [links], components: [] });
 			}
 			else if (confirmation.customId === 'change_button') {
+				CheckAch(7, interaction.user.id, interaction.channel)
 				await interaction.editReply({ content: info, embeds: [], components: [] });
 			}
 

@@ -2,6 +2,7 @@ const { SlashCommandBuilder, ChannelType } = require('discord.js');
 const ms = require('../../../func/ms.js');
 const messages = require('../../../games_scr/giveaways/messages.js');
 const giveaway = require('../../../database/giveaway.js');
+const { CheckAch } = require('../../../func/games/giveAch.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -63,11 +64,13 @@ module.exports = {
 					duration: duration,
 					winnerCount,
 					prize,
+					hostedBy: interaction.user,
 					messages: messages.start,
 					embedColor: guild.colors.giveaway,
 					embedColorEnd: guild.colors.giveaway
 				}).then((data) => {
-					interaction.editReply(`<:Gift:1189196716373725235> | Розыгрыш начался. ID конкурса: \`${data.messageId}\` (сохраните его для выбора нового победителя или досрочного окончания)`)
+					interaction.editReply(`<:Gift:1189196716373725235> | Розыгрыш начался. ID роызыгрыша: \`${data.messageId}\` (сохраните его для выбора нового победителя или досрочного окончания)`)
+					CheckAch(8, interaction.user.id, interaction.channel)
 				}).catch((err) => {
 					console.log(err)
 					interaction.editReply(`<:no:1107254682100957224> | Неизвестная ошибка`)
@@ -85,7 +88,7 @@ module.exports = {
 				.reroll(id, {
 					messages: messages.reroll
 				}).then(() => {
-					interaction.editReply(`<:Gift:1189196716373725235> | Успешно выбран новые победители`)
+					interaction.editReply(`<:Gift:1189196716373725235> | Успешно выбраны новые победители`)
 				}).catch((err) => {
 					console.log(err)
 					interaction.editReply(`<:no:1107254682100957224> | Неизвестная ошибка`)
