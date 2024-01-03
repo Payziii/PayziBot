@@ -1560,7 +1560,7 @@
         "id": 261
     },
     {
-        "image": "https://mpv-video.ru/photo/reg47/20170924-1745_005.jpg",
+        "image": "https://i01.fotocdn.net/s130/e138bf6514c55ade/public_pin_l/2938050442.jpg",
         "answers": ["Сланцы"],
         "country": "Россия",
         "id": 262
@@ -1678,5 +1678,17 @@
         "answers": ["Осло"],
         "country": "Норвегия",
         "id": 281
+    },
+    {
+        "image": "https://krasnadzor.ru/images/Files/Input_files_2018/novosty/2018.10.22.04.jpg",
+        "answers": ["Дивногорск"],
+        "country": "Россия",
+        "id": 282
+    },
+    {
+        "image": "https://wallpapers.com/images/hd/minneapolis-bridge-minnesota-lmij7amvf7g6ejwn.jpg",
+        "answers": ["Миннеаполис"],
+        "country": "США",
+        "id": 283
     }
 ]

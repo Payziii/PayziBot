@@ -19,11 +19,11 @@ module.exports = {
 				},
 				{
 					name: 'Игры',
-					value: '`guess`, `profile`, `minesweeper`, `typing`, `ttt`, `colorfield`, `hangman`, `snake`',
+					value: '`guess`, `profile`, `minesweeper`, `typing`, `ttt`, `colorfield`, `hangman`, `snake`, `memory`',
 				},
 				{
 					name: 'Нейросети',
-					value: '`image`',
+					value: '`image`, `ask`',
 				},
 			)
 			.setThumbnail(`https://cdn.discordapp.com/icons/${interaction.guild.id}/${interaction.guild.icon}.webp`)

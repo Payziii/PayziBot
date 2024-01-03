@@ -38,21 +38,24 @@ module.exports = {
         .then(response => {
           res = response.message
         }).catch(() => {
-          return interaction.editReply('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже!')
+          interaction.editReply('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
+          return
         });
     } else if (model === 'gemini') {
       await rsnchat.gemini(text)
         .then(response => {
           res = response.message
         }).catch(() => {
-          return interaction.editReply('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже!')
+          interaction.editReply('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
+          return 
         });
     } else {
       await rsnchat.llama(text)
         .then(response => {
           res = response.message
         }).catch(() => {
-          return interaction.editReply('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже!')
+          interaction.editReply('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
+          return 
         });
     }
 

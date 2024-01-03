@@ -4,7 +4,7 @@ const { MatchPairs } = require('../../../func/discord-gamecord');
 module.exports = {
 	cooldown: 30,
 	data: new SlashCommandBuilder()
-		.setName('pairs')
+		.setName('memory')
 		.setDescription('Найдите пары'),
 	async execute(interaction, guild) {
 		await interaction.deferReply();
