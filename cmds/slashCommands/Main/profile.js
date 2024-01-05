@@ -1,6 +1,7 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
 const User = require('../../../database/user.js');
 const block = require('../../../games_scr/profile/block.json');
+const ach = require('../../../games_scr/profile/achievements.json');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -37,6 +38,34 @@ module.exports = {
 			  )
 			  .setFooter({ text: `С новым годом! 🎄` });
 
-			  await interaction.editReply({ embeds: [embed] });
+			  const ach_button = new ButtonBuilder()
+			.setCustomId('ach_button')
+			.setLabel('Достижения')
+			.setStyle(ButtonStyle.Secondary);
+		const games_button = new ButtonBuilder()
+			.setCustomId('games_button')
+			.setLabel('Игры')
+			.setStyle(ButtonStyle.Secondary);
+		const row = new ActionRowBuilder()
+			.addComponents(ach_button, games_button);
+
+			let text = ach.filter(x => user.ach.includes(x.id)).map(x => `${x.badge} | ${x.name}`).join("\n");
+			const ach_embed = new EmbedBuilder()
+			.setTitle(`Достижения ${_user.username}`)
+			.setThumbnail(`https://cdn.discordapp.com/avatars/${_user.id}/${_user.avatar}.webp?size=4096`)
+			.setDescription(text || "Отсутствуют")
+			.setColor(guild.colors.basic);
+
+			const response = await interaction.editReply({ embeds: [embed], components: [row] });
+
+			const collectorFilter = i => i.user.id === interaction.user.id;
+			const confirmation = await response.awaitMessageComponent({ filter: collectorFilter, time: 60_000 });
+
+			if (confirmation.customId === 'ach_button') {
+				await interaction.editReply({ embeds: [ach_embed], components: [] });
+			}
+			else if (confirmation.customId === 'games_button') {
+				await interaction.editReply({ content: 'Будет доступно уже совсем скоро)))', embeds: [], components: [] });
+			}
 	},
 };

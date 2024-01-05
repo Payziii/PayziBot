@@ -18,7 +18,7 @@ module.exports = {
 					.get(channels.dbLogs)
 					.send(
 						`<:announcement:732128155195801641> | Сервер ${interaction.guild.name}(${interaction.guild.id
-						}) успешно был добавлен в MongoDB используя I`,
+						}) успешно был добавлен в MongoDB используя I. Первая команда \`${interaction.commandName}\``,
 					);
 			});
 		}

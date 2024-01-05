@@ -1,6 +1,6 @@
 const User = require('../../database/user.js');
 const ach_list = require('../../games_scr/profile/achievements.json');
-const { EmbedBuilder } = require('discord.js');
+const { EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
 
 async function CheckAch(ach, id, channel) {
 	const user = await User.findOne({ userID: id });
@@ -12,7 +12,14 @@ async function CheckAch(ach, id, channel) {
 }
 
 async function SendMess(ach, id, channel) {
-	try {
+	const ach_link = new ButtonBuilder()
+	.setLabel('Все достижения')
+	.setURL('https://docs.payzibot.ru/first-steps/achievements')
+	.setStyle(ButtonStyle.Link);
+
+	const row = new ActionRowBuilder()
+			.addComponents(ach_link);
+
 	const embed = new EmbedBuilder()
   .setTitle("Новое достижение!")
   .setDescription(`Получено достижение: **${ach_list[ach].name}** (${ach_list[ach].description})`)
@@ -21,12 +28,8 @@ async function SendMess(ach, id, channel) {
     text: "С Новым Годом!",
   });
 
-await channel.send({ content: `<@${id}>`, embeds: [embed] });
+await channel.send({ content: `<@${id}>`, embeds: [embed], components: [row] });
 	}
-	catch(err) {
-		console.log(err)
-	}
-}
 
 module.exports = {
 	CheckAch,
