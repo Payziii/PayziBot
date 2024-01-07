@@ -2,8 +2,8 @@ const User = require('../../database/user.js');
 const ach_list = require('../../games_scr/profile/achievements.json');
 const { EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
 
-async function CheckAch(ach, id, channel) {
-	const user = await User.findOne({ userID: id });
+async function CheckAch(ach, id, channel, u) {
+	const user = u ? u : await User.findOne({ userID: id });
 	if (!user) return;
 	if(user.ach.includes(ach)) return;
 	user.ach.push(ach);

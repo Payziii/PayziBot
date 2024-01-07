@@ -4,7 +4,6 @@ const fs = require('node:fs');
 const path = require('node:path');
 const mongoose = require('mongoose');
 const { channels } = require('./config.js');
-const { Configuration, OpenAIApi } = require('openai');
 
 const User = require('./database/user.js');
 const Guild = require('./database/guild.js');
@@ -38,15 +37,6 @@ mongoose.connect(
 	{ useNewUrlParser: true, useUnifiedTopology: true },
 );
 
-const openai = new Array();
-let tokens = process.env.OPENAI.split(", ");
-for (let i = 0; i < tokens.length; i++) {
-	const configuration = new Configuration({
-		apiKey: tokens[i],
-	});
-	openai.push(new OpenAIApi(configuration));
-}
-
 client.commands = new Collection();
 client.textCommands = new Collection();
 client.textAliases = new Collection();
@@ -63,7 +53,7 @@ for (const file of eventFiles) {
 		client.once(event.name, (...args) => event.execute(...args, client));
 	}
 	else {
-		client.on(event.name, (...args) => event.execute(...args, client, openai));
+		client.on(event.name, (...args) => event.execute(...args, client));
 	}
 }
 
@@ -118,63 +108,6 @@ client.on('ready', async () => {
 	catch (error) {
 		console.error(error);
 	}
-});
-
-client.on('messageCreate', async (message) => {
-	const msg = message.content;
-	if (message.author.bot) return;
-
-	// DB
-	let guild = await Guild.findOne({ guildID: message.guild.id });
-	let user = await User.findOne({ userID: message.author.id });
-
-	if (!guild) {
-		await Guild.create({ guildID: message.guild.id }).then(() => {
-			client.channels.cache
-				.get(channels.dbLogs)
-				.send(
-					`<:announcement:732128155195801641> | Сервер ${message.guild.name}(${message.guild.id
-					}) успешно был добавлен в MongoDB`,
-				);
-		});
-	}
-
-	if (!user) {
-		await User.create({ userID: message.author.id }).then(() => {
-			client.channels.cache
-				.get(channels.dbLogs)
-				.send(
-					`<:member:732128945365057546> | Пользователь ${message.author.username}(${message.author.id
-					}) успешно был добавлен в MongoDB`,
-				);
-		});
-	}
-
-	guild = await Guild.findOne({ guildID: message.guild.id });
-	user = await User.findOne({ userID: message.author.id });
-
-	if (!guild) return;
-	if (!user) return;
-	// DB
-
-	// NEW YEAR ACHVIEVEMENT
-	if(message.createdTimestamp > 1704049199000) {
-		CheckAch(6, message.author.id, message.channel)
-	}
-	// NEW YEAR ACHVIEVEMENT
-
-	const args = msg
-		.trim()
-		.split(/ +/g);
-	const command = args.shift().toLowerCase();
-	const cmd =
-		client.textCommands.get(command) ||
-		client.textCommands.find(
-			cm => cm.help.aliases && cm.help.aliases.includes(command),
-		);
-	if (!cmd) return;
-	if(user.block >= 2) return;
-	cmd.run(client, message, args, guild, user);
 });
 
 const { GiveawaysManager } = require('discord-giveaways');

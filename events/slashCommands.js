@@ -5,45 +5,51 @@ const { channels } = require('../config.js');
 
 module.exports = {
 	name: Events.InteractionCreate,
-	async execute(interaction, client, openai) {
+	async execute(interaction, client) {
+
 		if (!interaction.isChatInputCommand()) return;
-		if (interaction.channel === null) return interaction.reply('<:no:1107254682100957224> | Я доступен только на серверах!');
-		// DB
+		if (interaction.channel === null) return interaction.reply('<:no:1107254682100957224> | Слэш-команды доступны только на серверах!');
+
+		// Получаем пользователя и сервер из базы данных
 		let guild = await Guild.findOne({ guildID: interaction.guild.id });
 		let user = await User.findOne({ userID: interaction.user.id });
 
+		// Если сервера нет, создаем
 		if (!guild) {
-			await Guild.create({ guildID: interaction.guild.id }).then(() => {
+			await Guild.create({ guildID: interaction.guild.id }).then(async () => {
 				client.channels.cache
 					.get(channels.dbLogs)
 					.send(
 						`<:announcement:732128155195801641> | Сервер ${interaction.guild.name}(${interaction.guild.id
-						}) успешно был добавлен в MongoDB используя I. Первая команда \`${interaction.commandName}\``,
+						}) успешно был добавлен в MongoDB`,
 					);
+				guild = await Guild.findOne({ guildID: interaction.guild.id });
 			});
 		}
 
+		// Также и с юзером
 		if (!user) {
-			await User.create({ userID: interaction.user.id }).then(() => {
+			await User.create({ userID: interaction.user.id }).then(async () => {
 				client.channels.cache
 					.get(channels.dbLogs)
 					.send(
 						`<:member:732128945365057546> | Пользователь ${interaction.user.username}(${interaction.user.id
-						}) успешно был добавлен в MongoDB используя I`,
+						}) успешно был добавлен в MongoDB. Первая команда \`${interaction.commandName}\``,
 					);
+				user = await User.findOne({ userID: interaction.user.id });
 			});
 		}
 
-		guild = await Guild.findOne({ guildID: interaction.guild.id });
-		user = await User.findOne({ userID: interaction.user.id });
+		if (!guild) return interaction.reply('<:no:1107254682100957224> | Напиши команду ещё раз!');
+		if (!user) return interaction.reply('<:no:1107254682100957224> | Напиши команду ещё раз!');
 
-		if (!guild) return interaction.reply('<:no:1107254682100957224> | Напиши команду ещё раз! Ошибка `NoG-I`');
-		if (!user) return interaction.reply('<:no:1107254682100957224> | Напиши команду ещё раз! Ошибка `NoU-I`');
-		// DB
 		if(user.block >= 4) return; // Доступ запрещён
-		const { cooldowns } = client;
-		const cmd = interaction.client.commands.get(interaction.commandName);
+
+		const cmd = interaction.client.commands.get(interaction.commandName); // Ищем команду
 		if (!cmd) return interaction.reply('<:no:1107254682100957224> | Команда не найдена. Как такое могло произойти?');
+
+		// Задержки
+		const { cooldowns } = client;
 		if (!cooldowns.has(cmd.data.name)) {
 			cooldowns.set(cmd.data.name, new Collection());
 		}
@@ -67,7 +73,7 @@ module.exports = {
 		timestamps.set(interaction.user.id, now);
 		setTimeout(() => timestamps.delete(interaction.user.id), cooldownAmount);
 		try {
-			await cmd.execute(interaction, guild, user, openai);
+			await cmd.execute(interaction, guild, user); // Выполняем команду
 			client.cmdsUsed++;
 		}
 		catch (error) {

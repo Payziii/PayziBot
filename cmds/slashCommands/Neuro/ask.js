@@ -23,7 +23,7 @@ module.exports = {
           { name: 'Llama', value: 'llama' }
         )
     ),
-  async execute(interaction, guild, user) {
+  async execute(interaction) {
     await interaction.deferReply();
 
     const model = interaction.options.getString('модель');

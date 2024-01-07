@@ -23,4 +23,4 @@ const user = Schema({
 
 module.exports =
 	model('User', user),
-model('PremiumUser', premiumSchema);
+	model('PremiumUser', premiumSchema);
