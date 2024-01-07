@@ -11,7 +11,7 @@ exports.run = async (client, message, args, guild, user) => {
 		} while (currentDate - date < milliseconds);
 	  }
 
-	  const game = require('../../games_scr/logo.json');
+	  const game = require('../../games_src/logo.json');
 
 	  for(i = 0; i <= game.length; i++) {
 		item = game[i];

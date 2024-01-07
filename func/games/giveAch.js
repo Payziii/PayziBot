@@ -1,5 +1,5 @@
 const User = require('../../database/user.js');
-const ach_list = require('../../games_scr/profile/achievements.json');
+const ach_list = require('../../games_src/profile/achievements.json');
 const { EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
 
 async function CheckAch(ach, id, channel, u) {
@@ -25,7 +25,7 @@ async function SendMess(ach, id, channel) {
   .setDescription(`Получено достижение: **${ach_list[ach].name}** (${ach_list[ach].description})`)
   .setColor("#7029f5")
   .setFooter({
-    text: "С Новым Годом!",
+    text: "Все достижения по кнопке ниже ⬇️",
   });
 
 await channel.send({ content: `<@${id}>`, embeds: [embed], components: [row] });

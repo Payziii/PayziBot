@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { FastType } = require('../../../func/discord-gamecord');
-const fasttype = require('../../../games_scr/fasttype.json');
+const fasttype = require('../../../games_src/fasttype.json');
 
 module.exports = {
 	cooldown: 30,

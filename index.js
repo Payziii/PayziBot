@@ -5,12 +5,7 @@ const path = require('node:path');
 const mongoose = require('mongoose');
 const { channels } = require('./config.js');
 
-const User = require('./database/user.js');
-const Guild = require('./database/guild.js');
 const Giveaway = require('./database/giveaway.js');
-
-// NEW YEAR ACHVIEVEMENT
-const { CheckAch } = require('./func/games/giveAch.js');
 
 const client = new Client({
 	intents: [
@@ -93,17 +88,17 @@ client.on('ready', async () => {
 				client.commands.set(command.data.name, command);
 			}
 			else {
-				console.log(`| ERROR | В ${filePath} нет "data" или "execute"`);
+				console.log(`❌ | ERROR | В ${filePath} нет "data" или "execute"`);
 			}
 		}
 	});
 
 	try {
-		console.log('| Обновление команд');
+		console.log('⌛ | Обновление команд');
 		await client.application.commands.set(
 			client.commands.map((c) => c.data),
 		);
-		console.log('| Обновление команд окончено. Бот успешно запущен!');
+		console.log('✅ | Обновление команд окончено. Бот успешно запущен!');
 	}
 	catch (error) {
 		console.error(error);

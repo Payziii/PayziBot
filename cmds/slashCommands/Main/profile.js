@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
 const User = require('../../../database/user.js');
-const block = require('../../../games_scr/profile/block.json');
-const ach = require('../../../games_scr/profile/achievements.json');
+const block = require('../../../games_src/profile/block.json');
+const ach = require('../../../games_src/profile/achievements.json');
 
 module.exports = {
 	data: new SlashCommandBuilder()

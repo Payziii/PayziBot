@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const hangman = require('../../../func/discord-hangman');
-const words = require('../../../games_scr/hangman.json');
+const words = require('../../../games_src/hangman.json');
 
 module.exports = {
 	cooldown: 30,

@@ -3,7 +3,7 @@
 // PAYZIBOT НЕ НЕСЕТ ОТВЕТСТВЕННОСТИ ЗА МАТЕРИАЛЫ ИЗ ДАННОЙ ИГРЫ
 
 const { EmbedBuilder } = require('discord.js');
-const cars = require('../../games_scr/custom/car_.json');
+const cars = require('../../games_src/custom/car_.json');
 
 exports.run = async (client, message, args, guild) => {
 	//if(message.guild.id != '1149289750210019338') return;

@@ -1,6 +1,6 @@
 const { SlashCommandBuilder, ChannelType } = require('discord.js');
 const ms = require('../../../func/ms.js');
-const messages = require('../../../games_scr/giveaways/messages.js');
+const messages = require('../../../games_src/giveaways/messages.js');
 const giveaway = require('../../../database/giveaway.js');
 const { CheckAch } = require('../../../func/games/giveAch.js');
 

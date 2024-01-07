@@ -1857,7 +1857,7 @@
 },
 {
 "image": ["https://gtava.ru/images/cars-more/Primo3_1.jpg", "https://gtava.ru/images/cars-more/Primo3_2.jpg", "https://gtava.ru/images/cars-more/Primo3_3.jpg"],
-"answers": ["Primo3/Primo"]
+"answers": ["Primo3", "Primo"]
 },
 {
 "image": ["https://gtava.ru/images/cars-more/Regina_1.jpg", "https://gtava.ru/images/cars-more/Regina_2.jpg", "https://gtava.ru/images/cars-more/Regina_3.jpg"],
@@ -2557,11 +2557,11 @@
 },
 {
 "image": ["https://gtava.ru/images/cars-more/Vincent2_1.jpg", "https://gtava.ru/images/cars-more/Vincent2_2.jpg", "https://gtava.ru/images/cars-more/Vincent2_3.jpg"],
-"answers": ["Vincent2,Vincent"]
+"answers": ["Vincent2", "Vincent"]
 },
 {
 "image": ["https://gtava.ru/images/cars-more/Vincent3_1.jpg", "https://gtava.ru/images/cars-more/Vincent3_2.jpg", "https://gtava.ru/images/cars-more/Vincent3_3.jpg"],
-"answers": ["Vincent3,Vincent"]
+"answers": ["Vincent3", "Vincent"]
 },
 {
 "image": ["https://gtava.ru/images/cars-more/Vorstand_1.jpg", "https://gtava.ru/images/cars-more/Vorstand_2.jpg", "https://gtava.ru/images/cars-more/Vorstand_3.jpg"],
@@ -2785,7 +2785,7 @@
 },
 {
 "image": ["https://gtava.ru/images/cars-more/Shamus_1.jpg", "https://gtava.ru/images/cars-more/Shamus_2.jpg", "https://gtava.ru/images/cars-more/Shamus_3.jpg"],
-"answers": ["Shamus", ""]
+"answers": ["Shamus"]
 },
 {
 "image": ["https://gtava.ru/images/cars-more/Spritzer_1.jpg", "https://gtava.ru/images/cars-more/Spritzer_2.jpg", "https://gtava.ru/images/cars-more/Spritzer_3.jpg"],

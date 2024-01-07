@@ -2,10 +2,10 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { Gen } = require('../../../func/games/tipGen.js');
 const give = require('../../../func/games/guessUserCorrect.js');
 const games = require('../../../func/games/guessCounting.js');
-const game = require('../../../games_scr/game.json');
-const city = require('../../../games_scr/city.json');
-const logo = require('../../../games_scr/logo.json');
-const flag = require('../../../games_scr/flag.json');
+const game = require('../../../games_src/game.json');
+const city = require('../../../games_src/city.json');
+const logo = require('../../../games_src/logo.json');
+const flag = require('../../../games_src/flag.json');
 
 module.exports = {
 	cooldown: 9,
