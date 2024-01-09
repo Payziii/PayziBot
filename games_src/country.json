@@ -1,0 +1,302 @@
+[
+    {
+        "image": ["https://i.postimg.cc/Gm4RvbQd/image.png"],
+        "answers": ["Австралия"],
+        "text": "Площадь этого государства - 7 692 024 км². Большую часть территории страны занимают обширные пустыни и низменные территории",
+        "id": 1
+    },
+    {
+        "image": ["https://i.postimg.cc/j26mrSb0/image.png", "https://i.postimg.cc/W4fj3wfp/image.png"],
+        "answers": ["Австрия"],
+        "text": "Государственный язык - немецкий. Является федеративным государством, объединяющим девять самостоятельных земель",
+        "id": 2
+    },
+    {
+        "image": ["https://i.postimg.cc/PxCPSx8y/image.png", "https://i.postimg.cc/3xWWrxnx/image.png"],
+        "answers": ["Азербайджан"],
+        "text": "Государственный флаг государства состоит из трёх равных по ширине горизонтальных полос. Согласно большинству советских, российских и западноевропейских авторитетных источников территория государства, как и всего Кавказа, принадлежит Передней Азии",
+        "id": 3
+    },
+    {
+        "image": ["https://i.postimg.cc/442N8tvT/image.png", "https://i.postimg.cc/LsJr8YYj/image.png"],
+        "answers": ["Албания"],
+        "text": "Страна расположена на Балканском полуострове в Южной Европе и занимает площадь в 28 748 км². Средние температуры января — +8—9 °C, июля — +24—25°C. Осадков — 800—2000 мм в год",
+        "id": 4
+    },
+    {
+        "image": ["https://i.postimg.cc/DzZ0BgWL/image.png"],
+        "answers": ["Алжир"],
+        "text": "Площадь составляет 2 381 741 км². Бо́льшая часть территории страны лежит в пустыне Сахара",
+        "id": 5
+    },
+    {
+        "image": ["https://i.postimg.cc/VLfxrLdZ/image.png"],
+        "answers": ["Ангола"],
+        "text": "Получило независимость в 1975 году. По добыче нефти на Африканском континенте это государство уступает лишь Нигерии",
+        "id": 6
+    },
+    {
+        "image": ["https://i.postimg.cc/3wpy4HRN/image.png"],
+        "answers": ["Андорра"],
+        "text": "В 2022 население составляло 85 560 человек. Территория составляет 468 км²",
+        "id": 7
+    },
+    {
+        "image": ["https://i.postimg.cc/CM8LYV16/image.png", "https://i.postimg.cc/yYHTVsVf/image.png"],
+        "answers": ["Аргентина"],
+        "text": "Входит в десятку крупнейших стран в мире. Занимает по размерам территории восьмое место",
+        "id": 8
+    },
+    {
+        "image": ["https://i.postimg.cc/mrds4BKJ/image.png", "https://i.postimg.cc/CM9J2XrN/image.png"],
+        "answers": ["Армения"],
+        "text": "Бывшая республика СССР. Преобладает горный рельеф",
+        "id": 9
+    },
+    {
+        "image": ["https://i.postimg.cc/gkWdWSnV/image.png", "https://i.postimg.cc/x1GXQNfC/image.png"],
+        "answers": ["Афганистан"],
+        "text": "Климат субтропический континентальный, холодный зимой и сухой жаркий летом. Слаборазвитое аграрное государство",
+        "id": 10
+    },
+    {
+        "image": ["https://i.postimg.cc/zBLMBwQP/image.png"],
+        "answers": ["Багамы", "Багамские острова"],
+        "text": "В 1781 году острова были снова захвачены Испанией. Архипелаг, состоящий примерно из 700 островов и коралловых рифов и занимающий пространство свыше 250 тыс. км².",
+        "id": 11
+    },
+    {
+        "image": ["https://i.postimg.cc/3rksthtQ/image.png", "https://i.postimg.cc/J4PjtwWt/image.png"],
+        "answers": ["Бангладеш"],
+        "text": "Государственный язык — бенгальский. Одно из самых бедных государств в Азии",
+        "id": 12
+    },
+    {
+        "image": ["https://i.postimg.cc/15r43DwH/image.png", "https://i.postimg.cc/KYv0H7rs/image.png"],
+        "answers": ["Белоруссия", "Беларусь"],
+        "text": "Занимает территорию, которая по своей форме напоминает пятиугольник. Почвенный покров страны включает 12 типов почв",
+        "id": 13
+    },
+    {
+        "image": ["https://i.postimg.cc/tRSDsVbh/image.png", "https://i.postimg.cc/nVGCHNy5/image.png"],
+        "answers": ["Бельгия"],
+        "text": "Форма правления — конституционная парламентская монархия. Основа экономики — сфера услуг и промышленность",
+        "id": 14
+    },
+    {
+        "image": ["https://i.postimg.cc/Ghrrp2FJ/image.png", "https://i.postimg.cc/vTZJW13p/image.png"],
+        "answers": ["Болгария"],
+        "text": "По данным МВФ, объём ВВП по ППС за 2018 год составил $159,681 млрд. Территория - 110 550 км²",
+        "id": 15
+    },
+    {
+        "image": ["https://i.postimg.cc/kXnHRtBs/image.png", "https://i.postimg.cc/QCRVwr9x/image.png"],
+        "answers": ["Бразилия"],
+        "text": "На севере страны находится Амазонская низменность. Речная сеть очень густая",
+        "id": 16
+    },
+    {
+        "image": ["https://i.postimg.cc/hv4zWq09/image.png", "https://i.postimg.cc/D02S1KJS/image.png"],
+        "answers": ["Великобритания"],
+        "text": "Бо́льшая её часть состоит из низменностей. Страна распространяет свой суверенитет на семнадцать территорий, которые не входят в её состав",
+        "id": 17
+    },
+    {
+        "image": ["https://i.postimg.cc/nhmWgshf/image.png"],
+        "answers": ["Венгрия"],
+        "text": "Законодательный орган — Государственное собрание. Футбольная Сборная дважды занимала 2-е место на Третьем чемпионате мира (1938) и Пятом чемпионате мира (1954)",
+        "id": 18
+    },
+    {
+        "image": ["https://i.postimg.cc/63CjbFWV/image.png", "https://i.postimg.cc/rpDF4NV2/image.png"],
+        "answers": ["Германия"],
+        "text": "Граничит с Данией на севере. Средние температуры июля от +14 в горах до +22°C в долинах",
+        "id": 19
+    },
+    {
+        "image": ["https://i.postimg.cc/C1Vdkrcn/image.png", "https://i.postimg.cc/4xmrQJ0j/image.png"],
+        "answers": ["Греция"],
+        "text": "Индустриально-аграрная страна. В 1983 году законодательно установлено, что вопросами местного значения ведают советы, избираемые населением путём прямых выборов",
+        "id": 20
+    },
+    {
+        "image": ["https://i.postimg.cc/L8TzQFj5/image.png", "https://i.postimg.cc/SKRDWxHk/image.png"],
+        "answers": ["Грузия"],
+        "text": "Население, по итогам официальной переписи 2014 года, составляет 3 713 804 человека. 31 марта 1991 года государство вышло из состава СССР",
+        "id": 21
+    },
+    {
+        "image": ["https://i.postimg.cc/sg6tFqrf/image.png", "https://i.postimg.cc/hG0QPL2G/image.png"],
+        "answers": ["Дания"],
+        "text": "Глава государства — король (королева), осуществляющий верховную власть через назначаемое правительство. Самая южная из скандинавских стран",
+        "id": 22
+    },
+    {
+        "image": ["https://i.postimg.cc/hvX0dyYs/image.png", "https://i.postimg.cc/SKr0TRx5/image.png"],
+        "answers": ["Египет"],
+        "text": "Находится в пределах субтропического и тропического климатических поясов. Глава государства — президент",
+        "id": 23
+    },
+    {
+        "image": ["https://i.postimg.cc/tRr60NcR/image.png", "https://i.postimg.cc/1thk3FYf/image.png"],
+        "answers": ["Израиль"],
+        "text": "Постиндустриальная страна с развитой экономикой. Арабский язык обладает особым статусом",
+        "id": 24
+    },
+    {
+        "image": ["https://i.postimg.cc/3Rkz1B4S/image.png", "https://i.postimg.cc/d3HkFJtt/image.png"],
+        "answers": ["Индия"],
+        "text": "Расположена на территории Южной Азии. Занимает первое место в мире по численности населения",
+        "id": 25
+    },
+    {
+        "image": ["https://i.postimg.cc/tCGFNNYB/image.png", "https://i.postimg.cc/ZRczscJ6/image.png"],
+        "answers": ["Индонезия"],
+        "text": "Реализуется план перенесения столицы в строящийся город Нусантара. Унитарная республика президентского типа",
+        "id": 26
+    },
+    {
+        "image": ["https://i.postimg.cc/L4jFWm8m/image.png", "https://i.postimg.cc/zG7gFmgj/image.png"],
+        "answers": ["Ирландия"],
+        "text": "Занимает приблизительно 83,5 % одноимённого острова. Климат государства — умеренный морской",
+        "id": 27
+    },
+    {
+        "image": ["https://i.postimg.cc/prMf1fXY/image.png", "https://i.postimg.cc/h4MvY8jD/image.png"],
+        "answers": ["Исландия"],
+        "text": "Отличается рыночной экономикой с относительно низкими налогами. Большинство населения являются потомками норвежских и гэльских поселенцев",
+        "id": 28
+    },
+    {
+        "image": ["https://i.postimg.cc/TPGq9q1V/image.png", "https://i.postimg.cc/kGTRxzGZ/image.png"],
+        "answers": ["Испания"],
+        "text": "Член ЕС и НАТО. В 2007 году государство занимало, по данным МВФ, по уровню экономического развития 8-е место в мире",
+        "id": 29
+    },
+    {
+        "image": ["https://i.postimg.cc/Dww0rxKk/image.png", "https://i.postimg.cc/mDX8rXRL/image.png"],
+        "answers": ["Италия"],
+        "text": "Внутри государства находятся два государства-анклава. Протяженность границы с Швейцарией 740 км",
+        "id": 30
+    },
+    {
+        "image": ["https://i.postimg.cc/65r7QSjx/image.png", "https://i.postimg.cc/QC6ygSS8/image.png"],
+        "answers": ["Казахстан"],
+        "text": "Бывшая республика СССР. Имеет самую протяжённую сухопутную границу в мире с Россией",
+        "id": 31
+    },
+    {
+        "image": ["https://i.postimg.cc/yY2y9wBQ/image.png", "https://i.postimg.cc/dtSqJcr0/image.png"],
+        "answers": ["Канада"],
+        "text": "Плотность населения (4,2 чел. на 1 км²) является одной из самых низких в мире. На флаге государства изображен кленовый лист",
+        "id": 32
+    },
+    {
+        "image": ["https://i.postimg.cc/gc7ZBQjv/image.png", "https://i.postimg.cc/mDDS79pR/image.png"],
+        "answers": ["Кипр"],
+        "text": "Большая часть одноименного острова занята горами. Субтропический средиземноморский климат",
+        "id": 33
+    },
+    {
+        "image": ["https://i.postimg.cc/50sQqkYk/image.png", "https://i.postimg.cc/sxXBx9Xd/image.png"],
+        "answers": ["Киргизия", "Кыргызстан"],
+        "text": "Является президентской, светской, унитарной республикой. Страна занимает 110-е место в мире по численности населения",
+        "id": 34
+    },
+    {
+        "image": ["https://i.postimg.cc/MTkX0MYN/image.png", "https://i.postimg.cc/NMrJVVmL/image.png"],
+        "answers": ["Китай"],
+        "text": "Государство расположено в Восточной Азии. Граничит с Северной Кореей",
+        "id": 35
+    },
+    {
+        "image": ["https://i.postimg.cc/W13Q85Wq/image.png", "https://i.postimg.cc/c4HSk16J/image.png"],
+        "answers": ["КНДР", "Северная Корея"],
+        "text": "После Второй Мировой Войны было в ведении СССР. Площадь государства — 120 540 км²",
+        "id": 36
+    },
+    {
+        "image": ["https://i.postimg.cc/tCMNWkLg/image.png", "https://i.postimg.cc/bJgBhbd2/image.png"],
+        "answers": ["Корея", "Южная Корея"],
+        "text": "После Второй Мировой Войны было в ведении США. Площадь страны составляет 100 210 км²",
+        "id": 37
+    },
+    {
+        "image": ["https://i.postimg.cc/jqPSTShd/image.png", "https://i.postimg.cc/6pSkTdWs/image.png"],
+        "answers": ["Латвия"],
+        "text": "Член ООН с 1991 года. С 5 августа 1940 года и до августа 1991 года страна входила в состав СССР",
+        "id": 38
+    },
+    {
+        "image": ["https://i.postimg.cc/qvq7PVMk/image.png", "https://i.postimg.cc/TYpwSvPT/image.png"],
+        "answers": ["Ливан"],
+        "text": "Название присвоено по горному хребту. На западе омывается Средиземным морем, береговая линия 225 км",
+        "id": 39
+    },
+    {
+        "image": ["https://i.postimg.cc/jj9sfZNt/image.png", "https://i.postimg.cc/kgvsDp0R/image.png"],
+        "answers": ["Литва"],
+        "text": "Поверхность равнинная, со следами древнего оледенения. Стала первой республикой, объявившей о выходе из СССР",
+        "id": 40
+    },
+    {
+        "image": ["https://i.postimg.cc/Dft3cS8d/image.png"],
+        "answers": ["Лихтенштейн"],
+        "text": "Площадь — 160 км². Граничит с Австрией на востоке и Швейцарией на западе",
+        "id": 41
+    },
+    {
+        "image": ["https://i.postimg.cc/yYZgf3nV/image.png"],
+        "answers": ["Люксембург"],
+        "text": "Одна из богатейших стран Европы с высочайшим уровнем жизни. Вместе с Бельгией и Нидерландами входит в состав Бенилюкса",
+        "id": 42
+    },
+    {
+        "image": ["https://i.postimg.cc/sXnz9mbT/image.png"],
+        "answers": ["Мексика"],
+        "text": "Крупнейшая в мире по населению испаноязычная страна. Климат - тропический и субтропический",
+        "id": 43
+    },
+    {
+        "image": ["https://i.postimg.cc/NMG9jN1D/image.png"],
+        "answers": ["Нидерланды"],
+        "text": "Член ООН, НАТО, Совета Европы, Европейского союза, ОЭСР. Государственный флаг — трёхцветный",
+        "id": 44
+    },
+    {
+        "image": ["https://i.postimg.cc/sgFJgr1J/image.png"],
+        "answers": ["Норвегия"],
+        "text": "Форма правления — конституционная монархия. Входит в НАТО",
+        "id": 45
+    },
+    {
+        "image": ["https://i.postimg.cc/L8h4snQc/image.png"],
+        "answers": ["Объединённые Арабские Эмираты", "Арабские Эмираты", "Эмираты", "ОАЭ"],
+        "text": "В стране имеются крупные запасы нефти, экспорт которой составлял значительную часть ВВП. В стране, помимо официального языка, также используется английский, хинди, урду, фарси и тагальский",
+        "id": 46
+    },
+    {
+        "image": ["https://i.postimg.cc/y6vtfnvH/image.png"],
+        "answers": ["Польша"],
+        "text": "Государство в Центральной Европе. Граничит с Калининградской областью (Россия)",
+        "id": 47
+    },
+    {
+        "image": ["https://i.postimg.cc/2SDH6qx0/image.png", "https://i.postimg.cc/g0fLzhVJ/image.png", "https://i.postimg.cc/SRRBgnP6/image.png"],
+        "answers": ["Россия"],
+        "text": "Граничит с 18 государствами мира. Плотность населения — 8,55 чел./км²",
+        "id": 48
+    },
+    {
+        "image": ["https://i.postimg.cc/XYqT3BNt/image.png"],
+        "answers": ["Сербия"],
+        "text": "Граничит с Венгрией. Две трети территории страны занимают горы",
+        "id": 49
+    },
+    {
+        "image": ["https://i.postimg.cc/R0wrb3Tf/image.png"],
+        "answers": ["США", "Америка", "Соединённые Штаты Америки"],
+        "text": "Экономика страны составляет около четверти мирового ВВП. Недра богаты запасами различных природных ископаемых",
+        "id": 50
+    }
+]
