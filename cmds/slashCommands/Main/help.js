@@ -29,7 +29,7 @@ module.exports = {
 			.setThumbnail(`https://cdn.discordapp.com/icons/${interaction.guild.id}/${interaction.guild.icon}.webp`)
 			.setColor(guild.colors.basic)
 			.setFooter({
-				text: 'С Новым 2024 Годом!',
+				text: 'Больше информации на docs.payzibot.ru',
 			});
 		await interaction.reply({ embeds: [embed] });
 	},

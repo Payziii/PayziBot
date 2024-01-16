@@ -36,7 +36,7 @@ module.exports = {
 				  inline: false
 				},
 			  )
-			  .setFooter({ text: `С новым годом! 🎄` });
+			  .setFooter({ text: `ID: ${_user.id}` });
 
 			  const ach_button = new ButtonBuilder()
 			.setCustomId('ach_button')
@@ -59,6 +59,9 @@ module.exports = {
 			const response = await interaction.editReply({ embeds: [embed], components: [row] });
 
 			const collectorFilter = i => i.user.id === interaction.user.id;
+
+			try {
+
 			const confirmation = await response.awaitMessageComponent({ filter: collectorFilter, time: 60_000 });
 
 			if (confirmation.customId === 'ach_button') {
@@ -67,5 +70,9 @@ module.exports = {
 			else if (confirmation.customId === 'games_button') {
 				await interaction.editReply({ content: 'Будет доступно уже совсем скоро)))', embeds: [], components: [] });
 			}
+		}
+		catch (e) {
+			await interaction.editReply({ embeds: [embed], components: [] });
+		}
 	},
 };

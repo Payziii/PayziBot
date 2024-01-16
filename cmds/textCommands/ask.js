@@ -3,16 +3,16 @@ const rsnchat = new RsnChat(process.env.RSN);
 
 exports.run = async (client, message, args) => {
 
-	try {
 	message.reply(`<a:loading:673777314584199169> | Ожидаем ответа...`).then(async (msg) => {
 
 	let text1 = args.join(' ');
-	let text = text1.replace('--gpt', '').replace('--gemini', '').replace('--llama', '')
+	let text = text1.replace('--gpt', '').replace('--gemini', '').replace('--llama', '').replace('--гемини', '').replace('--ллама', '').replace('--mixtral', '')
 
 	let model;
 
-	if(text1.endsWith('--llama')) model = 'llama'
-	else if(text1.endsWith('--gemini')) model = 'gemini'
+	if(text1.endsWith('--llama') || text1.endsWith('--ллама')) model = 'llama'
+	else if(text1.endsWith('--gemini') || text1.endsWith('--гемини')) model = 'gemini'
+	else if(text1.endsWith('--mixtral')) model = 'mixtral'
 	else model = 'gpt'
 
 	if (model === 'gpt') {
@@ -25,6 +25,14 @@ exports.run = async (client, message, args) => {
 		  });
 	  } else if (model === 'gemini') {
 		await rsnchat.gemini(text)
+		  .then(response => {
+			res = response.message
+		  }).catch(() => {
+			msg.edit('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
+			return
+		  });
+	  } else if (model === 'mixtral') {
+		await rsnchat.mixtral(text)
 		  .then(response => {
 			res = response.message
 		  }).catch(() => {
@@ -51,13 +59,10 @@ exports.run = async (client, message, args) => {
 			  msg.edit(res);
 
 			})
-			}catch(err) {
-				console.log(err)
-			}
 };
 exports.help = {
 	name: ',ask',
-	aliases: [',chatgpt4', 'gpt4', 'гпт4', ',гпт4', 'gpt4'],
+	aliases: [',chatgpt4', 'gpt4', 'гпт4', ',гпт4', 'gpt4', "гпт", ",гпт", "gpt", ",gpt"],
 	info: 'owner',
 	usage: '[Команда]',
 	perm: 'Developer',

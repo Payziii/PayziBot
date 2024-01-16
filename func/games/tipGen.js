@@ -1,7 +1,7 @@
 function Gen(str) {
     const chars = str.split('');
     
-    for (let i = chars.length; i >= 0; i--) {
+    for (let i = chars.length; i >= 1; i--) {
       const randomNumber = Math.random();
 
       if(chars[i] == " " || chars[i] == "-") continue;

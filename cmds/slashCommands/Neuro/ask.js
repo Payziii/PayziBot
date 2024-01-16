@@ -4,7 +4,7 @@ const RsnChat = require('rsnchat');
 const rsnchat = new RsnChat(process.env.RSN);
 
 module.exports = {
-  cooldown: 60,
+  cooldown: 45,
   data: new SlashCommandBuilder()
     .setName('ask')
     .setDescription('Задать вопрос нейросети')
@@ -20,7 +20,8 @@ module.exports = {
         .addChoices(
           { name: 'GPT', value: 'gpt' },
           { name: 'Gemini', value: 'gemini' },
-          { name: 'Llama', value: 'llama' }
+          { name: 'Llama', value: 'llama' },
+          { name: 'Mixtral', value: 'mixtral' }
         )
     ),
   async execute(interaction) {
@@ -43,6 +44,14 @@ module.exports = {
         });
     } else if (model === 'gemini') {
       await rsnchat.gemini(text)
+        .then(response => {
+          res = response.message
+        }).catch(() => {
+          interaction.editReply('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
+          return 
+        });
+    } else if (model === 'mixtral') {
+      await rsnchat.mixtral(text)
         .then(response => {
           res = response.message
         }).catch(() => {
