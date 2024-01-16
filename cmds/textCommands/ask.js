@@ -9,6 +9,7 @@ exports.run = async (client, message, args) => {
 	let text = text1.replace('--gpt', '').replace('--gemini', '').replace('--llama', '').replace('--гемини', '').replace('--ллама', '').replace('--mixtral', '')
 
 	let model;
+	let suc = true;
 
 	if(text1.endsWith('--llama') || text1.endsWith('--ллама')) model = 'llama'
 	else if(text1.endsWith('--gemini') || text1.endsWith('--гемини')) model = 'gemini'
@@ -21,7 +22,7 @@ exports.run = async (client, message, args) => {
 			res = response.message
 		  }).catch(() => {
 			msg.edit('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
-			return 
+			return suc = false;
 		  });
 	  } else if (model === 'gemini') {
 		await rsnchat.gemini(text)
@@ -29,7 +30,7 @@ exports.run = async (client, message, args) => {
 			res = response.message
 		  }).catch(() => {
 			msg.edit('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
-			return
+			return suc = false;
 		  });
 	  } else if (model === 'mixtral') {
 		await rsnchat.mixtral(text)
@@ -37,7 +38,7 @@ exports.run = async (client, message, args) => {
 			res = response.message
 		  }).catch(() => {
 			msg.edit('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
-			return
+			return suc = false;
 		  });
 	  } else {
 		await rsnchat.llama(text)
@@ -45,10 +46,11 @@ exports.run = async (client, message, args) => {
 			res = response.message
 		  }).catch(() => {
 			msg.edit('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
-			return
+			return suc = false;
 		  });
 	  }
-  
+
+	  if(!suc) return;
 	  if (!res) return msg.edit('<:no:1107254682100957224> | Ответ не был получен!');
 			  if (res.length > 2000) {
 				  let mess = res;
