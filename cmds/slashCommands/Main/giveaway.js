@@ -44,6 +44,15 @@ module.exports = {
 						.setName('айди')
 						.setDescription('ID сообщения/конкурса')
 						.setRequired(true))
+		).addSubcommand(subcommand =>
+			subcommand
+				.setName('end')
+				.setDescription('Закончить розыгрыш раньше времени')
+				.addStringOption((option) =>
+					option
+						.setName('айди')
+						.setDescription('ID сообщения/конкурса')
+						.setRequired(true))
 		),
 	async execute(interaction, guild) {
 		if (interaction.options.getSubcommand() === 'start') {
@@ -93,6 +102,21 @@ module.exports = {
 					console.log(err)
 					interaction.editReply(`<:no:1107254682100957224> | Неизвестная ошибка`)
 				});
+		}else if (interaction.options.getSubcommand() === 'end') {
+
+			id = interaction.options.getString('айди');
+
+			let _giveaway = await interaction.client.giveawaysManager.giveaways.find((g) => g.messageId === id && g.guildId === interaction.guild.id);
+			if (!_giveaway) return interaction.reply(`<:no:1107254682100957224> | Розыгрыш не найден!`);
+			if (_giveaway.ended) return interaction.reply(`<:no:1107254682100957224> | Этот розыгрыш уже завершен!`);
+
+			client.giveawaysManager.end(_giveaway.messageId)
+			.then(() => {
+				interaction.editReply(`<:Gift:1189196716373725235> | Розыгрыш успешно завершен`)
+			}).catch((err) => {
+				console.log(err)
+				interaction.editReply(`<:no:1107254682100957224> | Неизвестная ошибка`)
+			});
 		}
 	},
 };

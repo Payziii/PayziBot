@@ -15,10 +15,12 @@ const user = Schema({
 		city: { type: Number, default: 0 },
 		logo: { type: Number, default: 0 },
 		flag: { type: Number, default: 0 },
+		country: { type: Number, default: 0 },
 	},
 	ach: { type: Array, default: [] },
 	block: { type: Number, default: 0 },
 	bypassDelay: { type: Boolean, default: false },
+	imageGens: { type: Number, default: 0 },
 });
 
 module.exports =

@@ -32,7 +32,7 @@ module.exports = {
 				},
 				{
 				  name: "Игры",
-				  value: `Побед в "угадай...": **${user.games.game + user.games.city + user.games.logo + user.games.flag}**`,
+				  value: `Побед в "угадай...": **${user.games.game + user.games.city + user.games.logo + user.games.flag + user.games.country}**`,
 				  inline: false
 				},
 			  )
@@ -56,6 +56,12 @@ module.exports = {
 			.setDescription(text || "Отсутствуют")
 			.setColor(guild.colors.basic);
 
+			const game_embed = new EmbedBuilder()
+			.setTitle(`Игры ${_user.username}`)
+			.setThumbnail(`https://cdn.discordapp.com/avatars/${_user.id}/${_user.avatar}.webp?size=4096`)
+			.setDescription(`Угадано городов: **${user.games.city}**\nУгадано  игр: **${user.games.game}**\nУгадано логотипов: **${user.games.logo}**\nУгадано флагов: **${user.games.flag}**\nУгадано стран: **${user.games.country}**`)
+			.setColor(guild.colors.basic);
+
 			const response = await interaction.editReply({ embeds: [embed], components: [row] });
 
 			const collectorFilter = i => i.user.id === interaction.user.id;
@@ -68,7 +74,7 @@ module.exports = {
 				await interaction.editReply({ embeds: [ach_embed], components: [] });
 			}
 			else if (confirmation.customId === 'games_button') {
-				await interaction.editReply({ content: 'Будет доступно уже совсем скоро)))', embeds: [], components: [] });
+				await interaction.editReply({ embeds: [game_embed], components: [] });
 			}
 		}
 		catch (e) {
