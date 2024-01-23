@@ -32,9 +32,17 @@ async function CorrectFlag(id) {
 	user.save();
 }
 
+async function CorrectCountry(id) {
+	const user = await User.findOne({ userID: id });
+	if (!user) return;
+	user.games.country++;
+	user.save();
+}
+
 module.exports = {
 	CorrectGame,
 	CorrectCity,
 	CorrectLogo,
 	CorrectFlag,
+	CorrectCountry,
 };
