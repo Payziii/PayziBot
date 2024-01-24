@@ -35,6 +35,9 @@ async function CorrectFlag(id) {
 async function CorrectCountry(id) {
 	const user = await User.findOne({ userID: id });
 	if (!user) return;
+	if(user.games.city >= 110) {
+		CheckAch(10, id, channel)
+	}
 	user.games.country++;
 	user.save();
 }

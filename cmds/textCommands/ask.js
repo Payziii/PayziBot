@@ -6,7 +6,7 @@ exports.run = async (client, message, args) => {
 	message.reply(`<a:loading:673777314584199169> | Ожидаем ответа...`).then(async (msg) => {
 
 	let text1 = args.join(' ');
-	let text = text1.replace('--gpt', '').replace('--gemini', '').replace('--llama', '').replace('--гемини', '').replace('--ллама', '').replace('--mixtral', '')
+	let text = text1.replace('--gpt', '').replace('--gemini', '').replace('--llama', '').replace('--гемини', '').replace('--ллама', '').replace('--mixtral', '').replace('--codellama', '').replace('--cl', '')
 
 	let model;
 	let suc = true;
@@ -14,6 +14,7 @@ exports.run = async (client, message, args) => {
 	if(text1.endsWith('--llama') || text1.endsWith('--ллама')) model = 'llama'
 	else if(text1.endsWith('--gemini') || text1.endsWith('--гемини')) model = 'gemini'
 	else if(text1.endsWith('--mixtral')) model = 'mixtral'
+	else if(text1.endsWith('--codellama') || text1.endsWith('--cl')) model = 'codellama'
 	else model = 'gpt'
 
 	if (model === 'gpt') {
@@ -34,6 +35,14 @@ exports.run = async (client, message, args) => {
 		  });
 	  } else if (model === 'mixtral') {
 		await rsnchat.mixtral(text)
+		  .then(response => {
+			res = response.message
+		  }).catch(() => {
+			msg.edit('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
+			return suc = false;
+		  });
+	  } else if (model === 'codellama') {
+		await rsnchat.codellama(text)
 		  .then(response => {
 			res = response.message
 		  }).catch(() => {

@@ -21,6 +21,7 @@ module.exports = {
           { name: 'GPT', value: 'gpt' },
           { name: 'Gemini', value: 'gemini' },
           { name: 'Llama', value: 'llama' },
+          { name: 'CodeLlama', value: 'codellama' },
           { name: 'Mixtral', value: 'mixtral' }
         )
     ),
@@ -52,6 +53,14 @@ module.exports = {
         });
     } else if (model === 'mixtral') {
       await rsnchat.mixtral(text)
+        .then(response => {
+          res = response.message
+        }).catch(() => {
+          interaction.editReply('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
+          return 
+        });
+    } else if (model === 'codellama') {
+      await rsnchat.codellama(text)
         .then(response => {
           res = response.message
         }).catch(() => {

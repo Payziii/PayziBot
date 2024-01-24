@@ -6,6 +6,7 @@ const game = require('../../../games_src/game.json');
 const city = require('../../../games_src/city.json');
 const logo = require('../../../games_src/logo.json');
 const flag = require('../../../games_src/flag.json');
+const country = require('../../../games_src/country.json');
 
 module.exports = {
 	cooldown: 9,
@@ -27,7 +28,11 @@ module.exports = {
 		.addSubcommand(subcommand =>
 			subcommand
 				.setName('flag')
-				.setDescription('Угадай страну по флагу')),
+				.setDescription('Угадай страну по флагу'))
+		.addSubcommand(subcommand =>
+			subcommand
+				.setName('country')
+				.setDescription('Угадай страну по картинке и описанию')),
 	async execute(interaction, guild) {
 		await interaction.deferReply();
 		// GAME
@@ -195,6 +200,50 @@ module.exports = {
 								.setTitle('Угадай страну')
 								.setDescription(`Ответ: **${item.options[item.answer - 1]}**`)
 								.setImage(item.image)
+								.setColor(guild.colors.error);
+							interaction.followUp({ content: '**Победителей нет(**', embeds: [embed5] });
+						});
+				});
+			// COUNTRY
+			// COUNTRY
+			// COUNTRY
+		}
+		else if (interaction.options.getSubcommand() === 'country') {
+			const name = 'country';
+			const item = country[Math.floor(Math.random() * country.length)];
+			const image = item.image[Math.floor(Math.random() * item.image.length)];
+			const collectorFilter = response => {
+				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+			};
+			games.gameGiveAll(name, item.id);
+			const percent = await games.gameGetPercent(name, item.id);
+			let podsk = '';
+			if (percent < 30) podsk = '\nПодсказка: **' + Gen(item.answers[0]) + '**';
+			const embed = new EmbedBuilder()
+				.setTitle('Угадай страну')
+				.setDescription(`У вас есть **60 секунд** чтобы назвать страну по **описанию** и **картинке** с Google Maps.\n\nОписание: **${item.text}**${podsk}`)
+				.setImage(image)
+				.setFooter({ text: `Страну угадали ${percent}% пользователей` })
+				.setColor(guild.colors.basic);
+
+			interaction.editReply({ embeds: [embed], fetchReply: true })
+				.then(() => {
+					interaction.channel.awaitMessages({ filter: collectorFilter, max: 1, time: 60000, errors: ['time'] })
+						.then(collected => {
+							const embed1 = new EmbedBuilder()
+								.setTitle('Угадай страну')
+								.setDescription(`Ответ: **${item.answers[0]}**`)
+								.setImage(image)
+								.setColor(guild.colors.correct);
+							interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
+							give.CorrectFlag(collected.first().author.id);
+							games.gameGiveVerno(name, item.id);
+						})
+						.catch(() => {
+							const embed5 = new EmbedBuilder()
+								.setTitle('Угадай страну')
+								.setDescription(`Ответ: **${item.answers[0]}**`)
+								.setImage(image)
 								.setColor(guild.colors.error);
 							interaction.followUp({ content: '**Победителей нет(**', embeds: [embed5] });
 						});
