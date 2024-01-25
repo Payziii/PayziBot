@@ -20,7 +20,7 @@ const user = Schema({
 	ach: { type: Array, default: [] },
 	block: { type: Number, default: 0 },
 	bypassDelay: { type: Boolean, default: false },
-	imageGens: { type: Number, default: 0 },
+	imageGens: { type: Number, default: 10 },
 });
 
 module.exports =

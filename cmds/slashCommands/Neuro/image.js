@@ -17,7 +17,7 @@ module.exports = {
         ),
     async execute(interaction, guild, user) {
         await interaction.deferReply();
-        if (user.imageGens < 1) return interaction.editReply('<:no:1107254682100957224> | Ваши генерации закончились! Поднимите бота на [BotiCord](https://boticord.top/bot/payzibot) для получения 3-х генераций!\n\nКстати поднимать бота можно раз в 6 часов, а это 12 генераций в сутки :)')
+        if (user.imageGens < 1) return interaction.editReply('<:no:1107254682100957224> | Ваши генерации закончились! Поднимите бота на [BotiCord](https://boticord.top/bot/payzibot) для получения 15-ти генераций!\n\nКстати поднимать бота можно раз в 6 часов, а это 60 генераций в сутки :)')
 
         const text = interaction.options.getString('запрос');
 
