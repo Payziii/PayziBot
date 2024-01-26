@@ -236,7 +236,7 @@ module.exports = {
 								.setImage(image)
 								.setColor(guild.colors.correct);
 							interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
-							give.CorrectCountry(collected.first().author.id);
+							give.CorrectCountry(collected.first().author.id, interaction.channel);
 							games.gameGiveVerno(name, item.id);
 						})
 						.catch(() => {

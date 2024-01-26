@@ -12,7 +12,7 @@ async function CorrectCity(id, channel) {
 	const user = await User.findOne({ userID: id });
 	if (!user) return;
 	if(user.games.city >= 49) {
-		CheckAch(1, id, channel)
+		CheckAch(1, id, channel, user)
 	}
 	user.games.city++;
 	user.save();
@@ -32,11 +32,11 @@ async function CorrectFlag(id) {
 	user.save();
 }
 
-async function CorrectCountry(id) {
+async function CorrectCountry(id, channel) {
 	const user = await User.findOne({ userID: id });
 	if (!user) return;
 	if(user.games.country >= 110) {
-		CheckAch(10, id, channel)
+		CheckAch(10, id, channel, user)
 	}
 	user.games.country++;
 	user.save();
