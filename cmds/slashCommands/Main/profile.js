@@ -22,7 +22,7 @@ module.exports = {
 		const embed = new EmbedBuilder()
 			.setTitle(`${_user.username}`)
 			.setColor(guild.colors.basic)
-			.setDescription(`Блокировка: **${block[user.block].name}**`)
+			.setDescription(`Блокировка: **${block[user.block].name}**\nОсталось генераций картинок: **${user.imageGens}**`)
 			.setThumbnail(`https://cdn.discordapp.com/avatars/${_user.id}/${_user.avatar}.webp?size=4096`)
 			.addFields(
 				{
