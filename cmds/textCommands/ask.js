@@ -1,4 +1,4 @@
-const RsnChat = require('rsnchat');
+const { RsnChat } = require('rsnchat');
 const rsnchat = new RsnChat(process.env.RSN);
 
 exports.run = async (client, message, args) => {

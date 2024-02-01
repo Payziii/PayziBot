@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require("discord.js");
 const { CheckAch } = require('../../../func/games/giveAch.js');
 
-const RsnChat = require('rsnchat');
+const { RsnChat } = require('rsnchat');
 const rsnchat = new RsnChat(process.env.RSN);
 
 module.exports = {
