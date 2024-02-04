@@ -2,11 +2,6 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { Gen } = require('../../../func/games/tipGen.js');
 const give = require('../../../func/games/guessUserCorrect.js');
 const games = require('../../../func/games/guessCounting.js');
-const game = require('../../../games_src/game.json');
-const city = require('../../../games_src/city.json');
-const logo = require('../../../games_src/logo.json');
-const flag = require('../../../games_src/flag.json');
-const country = require('../../../games_src/country.json');
 
 module.exports = {
 	cooldown: 9,
@@ -27,10 +22,6 @@ module.exports = {
 				.setDescription('Угадай логотип'))
 		.addSubcommand(subcommand =>
 			subcommand
-				.setName('flag')
-				.setDescription('Угадай страну по флагу'))
-		.addSubcommand(subcommand =>
-			subcommand
 				.setName('country')
 				.setDescription('Угадай страну по картинке и описанию')),
 	async execute(interaction, guild) {
@@ -40,7 +31,8 @@ module.exports = {
 		// GAME
 		if (interaction.options.getSubcommand() === 'game') {
 			const name = 'game';
-			const item = game[Math.floor(Math.random() * game.length)];
+			const { item } = await require('node-fetch')(`http://api.fifty.su/v1/guess/game`).then(r => r.json())
+			console.log(item)
 			const collectorFilter = response => {
 				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 			};
@@ -83,7 +75,7 @@ module.exports = {
 		}
 		else if (interaction.options.getSubcommand() === 'city') {
 			const name = 'city';
-			const item = city[Math.floor(Math.random() * city.length)];
+			const { item } = await require('node-fetch')(`http://api.fifty.su/v1/guess/city`).then(r => r.json())
 			const collectorFilter = response => {
 				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 			};
@@ -126,7 +118,7 @@ module.exports = {
 		}
 		else if (interaction.options.getSubcommand() === 'logo') {
 			const name = 'logo';
-			const item = logo[Math.floor(Math.random() * logo.length)];
+			const { item } = await require('node-fetch')(`http://api.fifty.su/v1/guess/logo`).then(r => r.json())
 			const collectorFilter = response => {
 				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 			};
@@ -163,54 +155,13 @@ module.exports = {
 							interaction.followUp({ content: '**Победителей нет(**', embeds: [embed5] });
 						});
 				});
-			// FLAG
-			// FLAG
-			// FLAG
-		}
-		else if (interaction.options.getSubcommand() === 'flag') {
-			const name = 'flag';
-			const item = flag[Math.floor(Math.random() * flag.length)];
-			const collectorFilter = response => {
-				return item.answer.toString() === response.content.toLowerCase();
-			};
-			games.gameGiveAll(name, item.id);
-			const percent = await games.gameGetPercent(name, item.id);
-			const embed = new EmbedBuilder()
-				.setTitle('Угадай страну')
-				.setDescription(`У вас есть **10 секунд** чтобы ответить, флаг какой страны изображен на фото ниже. Варианты ответов указаны ниже:\n1. **${item.options[0]}**\n2. **${item.options[1]}**\n3. **${item.options[2]}**\n4. **${item.options[3]}**\n5. **${item.options[4]}**`)
-				.setImage(item.image)
-				.setFooter({ text: `Флаг угадали ${percent}% пользователей` })
-				.setColor(guild.colors.basic);
-
-			interaction.editReply({ embeds: [embed], fetchReply: true })
-				.then(() => {
-					interaction.channel.awaitMessages({ filter: collectorFilter, max: 1, time: 10000, errors: ['time'] })
-						.then(collected => {
-							const embed1 = new EmbedBuilder()
-								.setTitle('Угадай страну')
-								.setDescription(`Ответ: **${item.options[item.answer - 1]}**`)
-								.setImage(item.image)
-								.setColor(guild.colors.correct);
-							interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
-							give.CorrectFlag(collected.first().author.id);
-							games.gameGiveVerno(name, item.id);
-						})
-						.catch(() => {
-							const embed5 = new EmbedBuilder()
-								.setTitle('Угадай страну')
-								.setDescription(`Ответ: **${item.options[item.answer - 1]}**`)
-								.setImage(item.image)
-								.setColor(guild.colors.error);
-							interaction.followUp({ content: '**Победителей нет(**', embeds: [embed5] });
-						});
-				});
 			// COUNTRY
 			// COUNTRY
 			// COUNTRY
 		}
 		else if (interaction.options.getSubcommand() === 'country') {
 			const name = 'country';
-			const item = country[Math.floor(Math.random() * country.length)];
+			const { item } = await require('node-fetch')(`http://api.fifty.su/v1/guess/country`).then(r => r.json())
 			const image = item.image[Math.floor(Math.random() * item.image.length)];
 			const collectorFilter = response => {
 				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
