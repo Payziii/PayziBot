@@ -110,7 +110,7 @@ module.exports = {
 			if (!_giveaway) return interaction.reply(`<:no:1107254682100957224> | Розыгрыш не найден!`);
 			if (_giveaway.ended) return interaction.reply(`<:no:1107254682100957224> | Этот розыгрыш уже завершен!`);
 
-			client.giveawaysManager.end(_giveaway.messageId)
+			interaction.client.giveawaysManager.end(_giveaway.messageId)
 			.then(() => {
 				interaction.editReply(`<:Gift:1189196716373725235> | Розыгрыш успешно завершен`)
 			}).catch((err) => {

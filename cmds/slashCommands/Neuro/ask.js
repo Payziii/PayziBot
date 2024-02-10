@@ -40,7 +40,7 @@ module.exports = {
         .then(response => {
           res = response.message
         }).catch(() => {
-          interaction.editReply('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
+          interaction.editReply('<:no:1107254682100957224> | Что-то произошло. Повторите свой запрос чуть позже, либо измените его!')
           return
         });
     } else if (model === 'gemini') {
@@ -48,7 +48,7 @@ module.exports = {
         .then(response => {
           res = response.message
         }).catch(() => {
-          interaction.editReply('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
+          interaction.editReply('<:no:1107254682100957224> | Что-то произошло. Повторите свой запрос чуть позже, либо измените его!')
           return 
         });
     } else if (model === 'mixtral') {
@@ -56,7 +56,7 @@ module.exports = {
         .then(response => {
           res = response.message
         }).catch(() => {
-          interaction.editReply('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
+          interaction.editReply('<:no:1107254682100957224> | Что-то произошло. Повторите свой запрос чуть позже, либо измените его!')
           return 
         });
     } else if (model === 'codellama') {
@@ -64,7 +64,7 @@ module.exports = {
         .then(response => {
           res = response.message
         }).catch(() => {
-          interaction.editReply('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
+          interaction.editReply('<:no:1107254682100957224> | Что-то произошло. Повторите свой запрос чуть позже, либо измените его!')
           return 
         });
     } else {
@@ -72,7 +72,7 @@ module.exports = {
         .then(response => {
           res = response.message
         }).catch(() => {
-          interaction.editReply('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
+          interaction.editReply('<:no:1107254682100957224> | Что-то произошло. Повторите свой запрос чуть позже, либо измените его!')
           return 
         });
     }
@@ -80,8 +80,8 @@ module.exports = {
     if (!res) return interaction.editReply('<:no:1107254682100957224> | Ответ не был получен!');
 			if (res.length > 2000) {
 				let mess = res;
-				mess = mess.substring(0, 1997);
-				mess = mess + '...';
+				mess = mess.substring(0, 1900);
+				mess = mess + '...\n\nОтвет был обрезан из-за ограничений Discord! Полный текст доступен по кнопке ниже';
 				return interaction.editReply(mess);
 			}
 			interaction.editReply(res);
