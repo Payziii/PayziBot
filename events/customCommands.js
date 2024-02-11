@@ -5,7 +5,7 @@ const { CheckAch } = require('../func/games/giveAch.js');
 module.exports = {
 	name: Events.MessageCreate,
 	async execute(message) {
-		if(guild.id != '1106931587267969036') return;
+		if(message.guild.id != '1106931587267969036') return;
 		const guild = await Guild.findOne({ guildID: message.guild.id });
 		if (!guild) return;
 		if (guild.customCommands.size < 1) return;
