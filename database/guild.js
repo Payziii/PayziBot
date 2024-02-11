@@ -13,7 +13,6 @@ const guild = Schema({
 		channelID: { type: String, default: '-1' },
 		reqReacts: { type: Number, default: 1 },
 		customReact: { type: String, default: '⭐' },
-		botsCanReact: { type: Boolean, default: false },
 		data: { type: Map, default: [] },
 	},
 	neuro: {
@@ -21,12 +20,12 @@ const guild = Schema({
 	},
 	welcome: {
 		channelID: { type: String, default: '-1' },
-		welcomeText: { type: String, default: 'Hello, {user.mention}. Welcome to the {guild.name}' },
+		welcomeText: { type: String, default: 'Привет, {user.mention}. Добро пожаловать на {guild.name}' },
 		autoRoleID: { type: String, default: '-1' },
 	},
 	leave: {
 		channelID: { type: String, default: '-1' },
-		leaveText: { type: String, default: 'Oh no, {user.name} has left us' },
+		leaveText: { type: String, default: 'О нет, {user.name} покинул нас!' },
 	},
 	premium: {
 		status: { type: Boolean, default: false },

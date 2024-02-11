@@ -36,6 +36,7 @@ client.commands = new Collection();
 client.textCommands = new Collection();
 client.textAliases = new Collection();
 client.cooldowns = new Collection();
+client.autoreactChannels = [];
 client.cmdsUsed = 0;
 
 const eventsPath = path.join(__dirname, 'events');
