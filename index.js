@@ -85,6 +85,7 @@ client.on('ready', async () => {
 			const filePath = path.join(__dirname, cP, file);
 			console.log(`> Загружен: ${file.slice(0, -3)}`);
 			const command = require(filePath);
+			if('skip' in command) continue;
 			if ('data' in command && 'execute' in command) {
 				client.commands.set(command.data.name, command);
 			}

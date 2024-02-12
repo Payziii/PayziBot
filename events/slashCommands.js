@@ -2,7 +2,6 @@ const { Events, Collection } = require('discord.js');
 const Guild = require('../database/guild.js');
 const User = require('../database/user.js');
 const { channels } = require('../config.js');
-const { CheckAch } = require('../func/games/giveAch.js');
 
 module.exports = {
 	name: Events.InteractionCreate,
@@ -43,11 +42,6 @@ module.exports = {
 
 		if (!guild) return interaction.reply('<:no:1107254682100957224> | Напиши команду ещё раз!');
 		if (!user) return interaction.reply('<:no:1107254682100957224> | Напиши команду ещё раз!');
-
-		// Новогодняя ачивка (до 10 января)
-	if(interaction.createdTimestamp > 1704049199000 && interaction.createdTimestamp < 1704826800000) {
-		CheckAch(6, interaction.user.id, interaction.channel, user)
-	}
 
 		if(user.block >= 4) return; // Доступ запрещён
 
