@@ -5,9 +5,21 @@ module.exports = {
 	cooldown: 30,
 	data: new SlashCommandBuilder()
 		.setName('colorfield')
-		.setDescription('Цветовое поле'),
+		.setDescription('Цветовое поле')
+		.addStringOption((option) =>
+            option.setName('сложность')
+                .setDescription('Сложность игры')
+                .setRequired(false)
+                .addChoices(
+                    { name: 'Лёгкая', value: 8 },
+                    { name: 'Средняя', value: 13 },
+                    { name: 'Сложная', value: 18 }
+                )
+        ),
 	async execute(interaction, guild) {
 		await interaction.deferReply();
+
+		const diff = interaction.options.getString('сложность') || 13;
 
 		const Game = new Flood({
 			message: interaction,
@@ -16,7 +28,7 @@ module.exports = {
 				title: 'Цветовое поле',
 				color: guild.colors.basic,
 			},
-			difficulty: 13,
+			difficulty: diff,
 			timeoutTime: 60000,
 			buttonStyle: 'SECONDARY',
 			emojis: ['🟥', '🟦', '🟪', '🟩', '⬜'],

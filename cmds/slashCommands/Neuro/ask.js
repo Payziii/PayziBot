@@ -4,7 +4,7 @@ const { RsnChat } = require('rsnchat');
 const rsnchat = new RsnChat(process.env.RSN);
 
 module.exports = {
-  cooldown: 45,
+  cooldown: 30,
   data: new SlashCommandBuilder()
     .setName('ask')
     .setDescription('Задать вопрос нейросети')
@@ -33,7 +33,10 @@ module.exports = {
 
     let res;
 
-    interaction.editReply(`<a:loading:673777314584199169> | Ожидаем ответа...`)
+    let _tip = '';
+    let tip = Math.random();
+    if(tip < 0.1) _tip = '\nНапоминаем, что вы можете использовать команду `,ask (ваш запрос)` для быстрого получения ответа.\nПодробнее: https://docs.payzibot.ru/commands/neuro#ask'
+    interaction.editReply(`<a:loading:673777314584199169> | Ожидаем ответа...${_tip}`)
 
     if (model === 'gpt') {
       await rsnchat.gpt(text)
