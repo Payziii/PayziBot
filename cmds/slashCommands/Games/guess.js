@@ -32,7 +32,6 @@ module.exports = {
 		if (interaction.options.getSubcommand() === 'game') {
 			const name = 'game';
 			const { item } = await require('node-fetch')(`http://api.fifty.su/v1/guess/game`).then(r => r.json())
-			console.log(item)
 			const collectorFilter = response => {
 				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 			};
