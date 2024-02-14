@@ -1,9 +1,10 @@
 const { RsnChat } = require('rsnchat');
 const rsnchat = new RsnChat(process.env.RSN);
+const { emojis } = require('../../config.js');
 
 exports.run = async (client, message, args) => {
 
-	message.reply(`<a:loading:673777314584199169> | Ожидаем ответа...`).then(async (msg) => {
+	message.reply(`${emojis.loading} | Ожидаем ответа...`).then(async (msg) => {
 
 	let text1 = args.join(' ');
 	let text = text1.replace('--gpt', '').replace('--gemini', '').replace('--llama', '').replace('--гемини', '').replace('--ллама', '').replace('--mixtral', '').replace('--codellama', '').replace('--cl', '')
@@ -22,7 +23,7 @@ exports.run = async (client, message, args) => {
 		  .then(response => {
 			res = response.message
 		  }).catch(() => {
-			msg.edit('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
+			msg.edit(`${emojis.error} | Ошибка. Повторите свой запрос чуть позже, либо измените его!`)
 			return suc = false;
 		  });
 	  } else if (model === 'gemini') {
@@ -30,7 +31,7 @@ exports.run = async (client, message, args) => {
 		  .then(response => {
 			res = response.message
 		  }).catch(() => {
-			msg.edit('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
+			msg.edit(`${emojis.error} | Ошибка. Повторите свой запрос чуть позже, либо измените его!`)
 			return suc = false;
 		  });
 	  } else if (model === 'mixtral') {
@@ -38,7 +39,7 @@ exports.run = async (client, message, args) => {
 		  .then(response => {
 			res = response.message
 		  }).catch(() => {
-			msg.edit('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
+			msg.edit(`${emojis.error} | Ошибка. Повторите свой запрос чуть позже, либо измените его!`)
 			return suc = false;
 		  });
 	  } else if (model === 'codellama') {
@@ -46,7 +47,7 @@ exports.run = async (client, message, args) => {
 		  .then(response => {
 			res = response.message
 		  }).catch(() => {
-			msg.edit('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
+			msg.edit(`${emojis.error} | Ошибка. Повторите свой запрос чуть позже, либо измените его!`)
 			return suc = false;
 		  });
 	  } else {
@@ -54,13 +55,13 @@ exports.run = async (client, message, args) => {
 		  .then(response => {
 			res = response.message
 		  }).catch(() => {
-			msg.edit('<:no:1107254682100957224> | Ошибка. Повторите свой запрос чуть позже, либо измените его!')
+			msg.edit(`${emojis.error} | Ошибка. Повторите свой запрос чуть позже, либо измените его!`)
 			return suc = false;
 		  });
 	  }
 
 	  if(!suc) return;
-	  if (!res) return msg.edit('<:no:1107254682100957224> | Ответ не был получен!');
+	  if (!res) return msg.edit(`${emojis.error} | Ответ не был получен!`);
 			  if (res.length > 2000) {
 				  let mess = res;
 				  mess = mess.substring(0, 1997);

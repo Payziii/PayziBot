@@ -1,5 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const tr = require('googletrans').default;
+const { emojis } = require('../../../config.js');
 
 module.exports = {
 	cooldown: 3,
@@ -37,7 +38,7 @@ module.exports = {
 
 		tr(text, lang)
 			.then(function(result) {
-				if (result.text.length > 2000) return interaction.editReply(`<:no:1107254682100957224> | Текст перевода содержит слишком много символов. Его длина равна ${result.text.length} символов. Уменьшите длину до 2000 символов!`);
+				if (result.text.length > 2000) return interaction.editReply(`${emojis.error} | Текст перевода содержит слишком много символов. Его длина равна ${result.text.length} символов. Уменьшите длину до 2000 символов!`);
 
 				const embed = new EmbedBuilder()
 					.setColor(guild.colors.basic)
@@ -49,7 +50,7 @@ module.exports = {
 				interaction.editReply({ embeds: [embed] });
 			},
 			function(error) {
-				interaction.editReply(`<:no:1107254682100957224> | Ошибка: \`${error}\``);
+				interaction.editReply(`${emojis.error} | Ошибка: \`${error}\``);
 			});
 	},
 };

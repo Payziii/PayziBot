@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
+const { emojis } = require('../../../config.js');
 
 module.exports = {
 	skip: true,
@@ -32,7 +33,7 @@ module.exports = {
 
 		collector.on('collect', async (button) => {
 			await button.reply({ content: '1', ephemeral: true });
-			if(users.includes(button.user.id)) return await button.reply({ content: '<:no:1107254682100957224> | Вы уже участвуете в игре!', ephemeral: true });
+			if(users.includes(button.user.id)) return await button.reply({ content: `${emojis.error} | Вы уже участвуете в игре!`, ephemeral: true });
 			users.push(button.user.id)
 
 			if(users.length >= 2) collector.stop();

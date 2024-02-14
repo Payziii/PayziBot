@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { TicTacToe } = require('../../../func/discord-gamecord');
+const { emojis } = require('../../../config.js');
 
 module.exports = {
 	cooldown: 30,
@@ -15,8 +16,8 @@ module.exports = {
 		await interaction.deferReply();
 		const user = interaction.options.getUser('пользователь');
 
-		if (interaction.user.id == user.id) return interaction.editReply('<:no:1107254682100957224> | Вы не можете играть сами с собой!');
-		if (user.bot) return interaction.editReply('<:no:1107254682100957224> | Вы не можете играть с ботами!');
+		if (interaction.user.id == user.id) return interaction.editReply(`${emojis.error} | Вы не можете играть сами с собой!`);
+		if (user.bot) return interaction.editReply(`${emojis.error} | Вы не можете играть с ботами!`);
 
 		const Game = new TicTacToe({
 			message: interaction,

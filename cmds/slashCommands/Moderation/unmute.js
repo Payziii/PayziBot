@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
+const { emojis } = require('../../../config.js');
 
 module.exports = {
 	cooldown: 3,
@@ -21,25 +22,25 @@ module.exports = {
 		const user = interaction.options.getUser('пользователь');
 		const bot = await interaction.guild.members.me;
 
-		if (bot.permissions.has('ModerateMembers') == false) return interaction.reply('<:no:1107254682100957224> | У меня нет прав для размута пользователей');
+		if (bot.permissions.has('ModerateMembers') == false) return interaction.reply(`${emojis.error} | У меня нет прав для размута пользователей`);
 		let msg;
 		let reason = interaction.options.getString('причина') || 'Причина отсутствует';
 		let error = false;
 		switch (user.id) {
 		case interaction.guild.ownerId:
 			error = true;
-			msg = '<:no:1107254682100957224> | Мне кажется это владелец сервера. Или мне кажется?';
+			msg = `${emojis.error} | Это случаем не владелец сервера?`;
 			break;
 		case interaction.user.id:
 			error = true;
-			msg = '<:no:1107254682100957224> | Я думал ты не в муте, ну ок)';
+			msg = `${emojis.error} | А как ты это пишешь, если ты в муте?`;
 			break;
 		case bot.id:
 			error = true;
-			msg = '<:no:1107254682100957224> | А как я это пишу?';
+			msg = `${emojis.error} | А как я это пишу?`;
 			break;
 		default:
-			msg = `${user} был размучен. Причина: ${reason}`;
+			msg = `${emojis.success} ${user} был размучен. Причина: ${reason}`;
 		}
 		reason = interaction.user.username + ': ' + reason;
 		const member = await interaction.guild.members.cache.get(user.id);

@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
+const { emojis } = require('../../../config.js');
 
 module.exports = {
 	cooldown: 3,
@@ -36,7 +37,7 @@ module.exports = {
 		const user = interaction.options.getUser('пользователь');
 		const bot = await interaction.guild.members.me;
 
-		if (bot.permissions.has('ModerateMembers') == false) return interaction.reply('<:no:1107254682100957224> | У меня нет прав для мута пользователей');
+		if (bot.permissions.has('ModerateMembers') == false) return interaction.reply(`${emojis.error} | У меня нет прав для мута пользователей`);
 		let msg;
 		let reason = interaction.options.getString('причина') || 'Причина отсутствует';
 		const time = interaction.options.getInteger('время');
@@ -44,18 +45,18 @@ module.exports = {
 		switch (user.id) {
 		case interaction.guild.ownerId:
 			error = true;
-			msg = '<:no:1107254682100957224> | Мне кажется это владелец сервера. Или мне кажется?';
+			msg = `${emojis.error} | Мне кажется это владелец сервера. Или мне кажется?`;
 			break;
 		case interaction.user.id:
 			error = true;
-			msg = '<:no:1107254682100957224> | Я не хочу отправлять в мут таких людей';
+			msg = `${emojis.error} | Я не хочу отправлять в мут таких людей`;
 			break;
 		case bot.id:
 			error = true;
-			msg = '<:no:1107254682100957224> | А как я отвечу тебе после этого?';
+			msg = `${emojis.error} | А как я отвечу тебе после этого?`;
 			break;
 		default:
-			msg = `${user} получил мут. Причина: ${reason}`;
+			msg = `${emojis.success} ${user} получил мут. Причина: ${reason}`;
 		}
 		reason = interaction.user.username + ': ' + reason;
 		const member = await interaction.guild.members.cache.get(user.id);

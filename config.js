@@ -1,5 +1,5 @@
 module.exports = {
-	version: '1.1.6', // Версия бота для отображения в /stats
+	version: '1.2.0', // Версия бота для отображения в /stats
 	owners: ['439079453650321409', '867048292566302730', '1070585201719263262'], // ID администраторов для команд eval и shell
 	channels: {
 		serverLogs: '1137366763177267261', // ID канала с логами о серверах, куда добавлен бот
@@ -16,6 +16,7 @@ module.exports = {
 		members: '<:member:732128945365057546>',
 		channels: '<:channel:732125684259881052>',
 		success: '<:yes:1107254746336735312>',
-		timeout: '<:timeout_clock:1134453176091824250>'
+		timeout: '<:timeout_clock:1134453176091824250>',
+		announcement: '<:announcement:732128155195801641>'
 	}
 };

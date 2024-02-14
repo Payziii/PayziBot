@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require("discord.js");
+const { emojis } = require('../../../config.js');
 
 const { RsnChat } = require('rsnchat');
 const rsnchat = new RsnChat(process.env.RSN);
@@ -36,14 +37,14 @@ module.exports = {
     let _tip = '';
     let tip = Math.random();
     if(tip < 0.1) _tip = '\nНапоминаем, что вы можете использовать команду `,ask (ваш запрос)` для быстрого получения ответа.\nПодробнее: https://docs.payzibot.ru/commands/neuro#ask'
-    interaction.editReply(`<a:loading:673777314584199169> | Ожидаем ответа...${_tip}`)
+    interaction.editReply(`${emojis.loading} | Ожидаем ответа...${_tip}`)
 
     if (model === 'gpt') {
       await rsnchat.gpt(text)
         .then(response => {
           res = response.message
         }).catch(() => {
-          interaction.editReply('<:no:1107254682100957224> | Что-то произошло. Повторите свой запрос чуть позже, либо измените его!')
+          interaction.editReply(`${emojis.error} | Что-то произошло. Повторите свой запрос чуть позже, либо измените его!`)
           return
         });
     } else if (model === 'gemini') {
@@ -51,7 +52,7 @@ module.exports = {
         .then(response => {
           res = response.message
         }).catch(() => {
-          interaction.editReply('<:no:1107254682100957224> | Что-то произошло. Повторите свой запрос чуть позже, либо измените его!')
+          interaction.editReply(`${emojis.error} | Что-то произошло. Повторите свой запрос чуть позже, либо измените его!`)
           return 
         });
     } else if (model === 'mixtral') {
@@ -59,7 +60,7 @@ module.exports = {
         .then(response => {
           res = response.message
         }).catch(() => {
-          interaction.editReply('<:no:1107254682100957224> | Что-то произошло. Повторите свой запрос чуть позже, либо измените его!')
+          interaction.editReply(`${emojis.error} | Что-то произошло. Повторите свой запрос чуть позже, либо измените его!`)
           return 
         });
     } else if (model === 'codellama') {
@@ -67,7 +68,7 @@ module.exports = {
         .then(response => {
           res = response.message
         }).catch(() => {
-          interaction.editReply('<:no:1107254682100957224> | Что-то произошло. Повторите свой запрос чуть позже, либо измените его!')
+          interaction.editReply(`${emojis.error} | Что-то произошло. Повторите свой запрос чуть позже, либо измените его!`)
           return 
         });
     } else {
@@ -75,12 +76,12 @@ module.exports = {
         .then(response => {
           res = response.message
         }).catch(() => {
-          interaction.editReply('<:no:1107254682100957224> | Что-то произошло. Повторите свой запрос чуть позже, либо измените его!')
+          interaction.editReply(`${emojis.error} | Что-то произошло. Повторите свой запрос чуть позже, либо измените его!`)
           return 
         });
     }
 
-    if (!res) return interaction.editReply('<:no:1107254682100957224> | Ответ не был получен!');
+    if (!res) return interaction.editReply(`${emojis.error} | Ответ не был получен!`);
 			if (res.length > 2000) {
 				let mess = res;
 				mess = mess.substring(0, 1900);

@@ -2,13 +2,14 @@ const { Events, Collection } = require('discord.js');
 const Guild = require('../database/guild.js');
 const User = require('../database/user.js');
 const { channels } = require('../config.js');
+const { emojis } = require('../config.js');
 
 module.exports = {
 	name: Events.InteractionCreate,
 	async execute(interaction, client) {
 
 		if (!interaction.isChatInputCommand()) return;
-		if (interaction.channel === null) return interaction.reply('<:no:1107254682100957224> | Слэш-команды доступны только на серверах!');
+		if (interaction.channel === null) return interaction.reply(`${emojis.error} | Слэш-команды доступны только на серверах!`);
 
 		// Получаем пользователя и сервер из базы данных
 		let guild = await Guild.findOne({ guildID: interaction.guild.id });
@@ -20,7 +21,7 @@ module.exports = {
 				client.channels.cache
 					.get(channels.dbLogs)
 					.send(
-						`<:announcement:732128155195801641> | Сервер ${interaction.guild.name}(${interaction.guild.id
+						`${emojis.announcement} | Сервер ${interaction.guild.name}(${interaction.guild.id
 						}) успешно был добавлен в MongoDB`,
 					);
 				guild = await Guild.findOne({ guildID: interaction.guild.id });
@@ -33,20 +34,20 @@ module.exports = {
 				client.channels.cache
 					.get(channels.dbLogs)
 					.send(
-						`<:member:732128945365057546> | Пользователь ${interaction.user.username}(${interaction.user.id
+						`${emojis.members} | Пользователь ${interaction.user.username}(${interaction.user.id
 						}) успешно был добавлен в MongoDB. Первая команда \`${interaction.commandName}\``,
 					);
 				user = await User.findOne({ userID: interaction.user.id });
 			});
 		}
 
-		if (!guild) return interaction.reply('<:no:1107254682100957224> | Напиши команду ещё раз!');
-		if (!user) return interaction.reply('<:no:1107254682100957224> | Напиши команду ещё раз!');
+		if (!guild) return interaction.reply(`${emojis.error} | Напиши команду ещё раз!`);
+		if (!user) return interaction.reply(`${emojis.error} | Напиши команду ещё раз!`);
 
 		if(user.block >= 4) return; // Доступ запрещён
 
 		const cmd = interaction.client.commands.get(interaction.commandName); // Ищем команду
-		if (!cmd) return interaction.reply('<:no:1107254682100957224> | Команда не найдена. Как такое могло произойти?');
+		if (!cmd) return interaction.reply(`${emojis.error} | Команда не найдена. Как такое могло произойти?`);
 
 		// Задержки
 		const { cooldowns } = client;
@@ -65,7 +66,7 @@ module.exports = {
 			if (now < expirationTime && !user.bypassDelay) {
 				const expiredTimestamp = Math.round(expirationTime / 1000);
 				return interaction.reply({
-					content: `<:timeout_clock:1134453176091824250> | Сейчас вы не можете использовать команду \`${cmd.data.name}\`. Попробуйте снова <t:${expiredTimestamp}:R>.`,
+					content: `${emojis.timeout} | Сейчас вы не можете использовать команду \`${cmd.data.name}\`. Попробуйте снова <t:${expiredTimestamp}:R>.`,
 					ephemeral: true,
 				});
 			}
@@ -78,10 +79,10 @@ module.exports = {
 		}
 		catch (error) {
 			if (interaction.deferred === false) {
-				interaction.reply(`<:no:1107254682100957224> | Произошла ошибка!\n\`\`\`bash\n${error}\`\`\``);
+				interaction.reply(`${emojis.error} | Произошла ошибка!\n\`\`\`bash\n${error}\`\`\``);
 			}
 			else {
-				interaction.editReply(`<:no:1107254682100957224> | Произошла ошибка!\n\`\`\`bash\n${error}\`\`\``);
+				interaction.editReply(`${emojis.error} | Произошла ошибка!\n\`\`\`bash\n${error}\`\`\``);
 			}
 			console.log(error);
 		}

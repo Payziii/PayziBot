@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
+const { emojis } = require('../../../config.js');
 
 module.exports = {
 	cooldown: 3,
@@ -17,16 +18,16 @@ module.exports = {
 	async execute(interaction) {
 		await interaction.deferReply();
 		const bot = await interaction.guild.members.me;
-		if (bot.permissions.has('ManageChannels') == false) return interaction.editReply('<:no:1107254682100957224> | У меня нет прав для управления каналами');
+		if (bot.permissions.has('ManageChannels') == false) return interaction.editReply(`${emojis.error} | У меня нет прав для управления каналами`);
 		if (interaction.options.getSubcommand() === 'lock') {
 			interaction.channel.permissionOverwrites.edit(interaction.guild.roles.everyone, {
 				SendMessages: false,
 				ViewChannel: false,
 				ReadMessageHistory: false,
 			}).then(() => {
-				interaction.followUp(`Канал <#${interaction.channel.id}> закрыт по просьбе <@${interaction.user.id}> (${interaction.user.username})`);
+				interaction.followUp(`${emojis.success} Канал <#${interaction.channel.id}> закрыт по просьбе <@${interaction.user.id}> (${interaction.user.username})`);
 			}).catch(e => {
-				interaction.followUp(`<:no:1107254682100957224> | Ошибка: ${e}`);
+				interaction.followUp(`${emojis.error} | Ошибка: ${e}`);
 			});
 		}
 		else if (interaction.options.getSubcommand() === 'unlock') {
@@ -35,9 +36,9 @@ module.exports = {
 				ViewChannel: true,
 				ReadMessageHistory: true,
 			}).then(() => {
-				interaction.followUp(`Канал <#${interaction.channel.id}> открыт по просьбе <@${interaction.user.id}> (${interaction.user.username})`);
+				interaction.followUp(`${emojis.success} Канал <#${interaction.channel.id}> открыт по просьбе <@${interaction.user.id}> (${interaction.user.username})`);
 			}).catch(e => {
-				interaction.followUp(`<:no:1107254682100957224> | Ошибка: ${e}`);
+				interaction.followUp(`${emojis.error} | Ошибка: ${e}`);
 			});
 		}
 	},

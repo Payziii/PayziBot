@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder, ChannelType } = require('discord.js');
+const { emojis } = require('../../../config.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -15,15 +16,15 @@ module.exports = {
 		const embed = new EmbedBuilder()
 			.setColor(guild.colors.basic)
 			.setTitle(server.name)
-			.setDescription(`<:arrow:1140937463209152572> Владелец: **${server.members.cache.get(server.ownerId).user.username}**\n<:arrow:1140937463209152572> Сервер создан: <t:${(server.createdTimestamp / 1000).toFixed(0)}:D> (<t:${(server.createdTimestamp / 1000).toFixed(0)}:R>)\n<:arrow:1140937463209152572> Бустов: **${server.premiumSubscriptionCount}**`)
+			.setDescription(`${emojis.arrow} Владелец: **${server.members.cache.get(server.ownerId).user.username}**\n${emojis.arrow} Сервер создан: <t:${(server.createdTimestamp / 1000).toFixed(0)}:D> (<t:${(server.createdTimestamp / 1000).toFixed(0)}:R>)\n${emojis.arrow} Бустов: **${server.premiumSubscriptionCount}**`)
 			.addFields(
 				{
-					name: '<:member:732128945365057546> Участники',
+					name: `${emojis.members} Участники`,
 					value: `Люди: ${totalUsers}\nБоты: ${totalBots}`,
 					inline: true,
 				},
 				{
-					name: '<:channel:732125684259881052> Каналы',
+					name: `${emojis.channels}} Каналы`,
 					value: `Всего:  ${totalTextChannels + totalVoiceChannels}\nТекстовых: ${totalTextChannels}\nГолосовых: ${totalVoiceChannels}`,
 					inline: true,
 				},

@@ -2,6 +2,7 @@ const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRow
 const User = require('../../../database/user.js');
 const block = require('../../../games_src/profile/block.json');
 const ach = require('../../../games_src/profile/achievements.json');
+const { emojis } = require('../../../config.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -17,7 +18,7 @@ module.exports = {
 		let _user = interaction.options.getUser('пользователь') || interaction.user;
 
 		let user = await User.findOne({ userID: _user.id });
-		if (!user) return interaction.editReply('<:no:1107254682100957224> | Этот пользователь не использовал бота!');
+		if (!user) return interaction.editReply(`${emojis.error} | Этот пользователь не использовал бота!`);
 
 		const embed = new EmbedBuilder()
 			.setTitle(`${_user.username}`)

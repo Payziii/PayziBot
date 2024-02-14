@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, PermissionFlagsBits, ChannelType } = require("discord.js");
+const { emojis } = require('../../../config.js');
 
 module.exports = {
     cooldown: 15,
@@ -36,20 +37,20 @@ module.exports = {
     async execute(interaction, guild) {
       await interaction.deferReply();
       if (interaction.options.getSubcommand() === 'off') {
-        if(guild.starboard.channelID == '-1') return interaction.followUp(`<:no:1107254682100957224> | Звёздная доска и так выключена...`)
+        if(guild.starboard.channelID == '-1') return interaction.followUp(`${emojis.error} | Звёздная доска и так выключена...`)
         guild.starboard.channelID = '-1';
         guild.save()
-        interaction.followUp('Звёздная доска успешно выключена!')
+        interaction.followUp(`${emojis.success} Звёздная доска успешно выключена!`)
       }else if (interaction.options.getSubcommand() === 'channel-set') {
         channel = interaction.options.getChannel('канал')
         guild.starboard.channelID = channel.id;
         guild.save()
-        interaction.followUp(`Звёздная доска успешно включена в канале <#${channel.id}>`)
+        interaction.followUp(`${emojis.success} Звёздная доска успешно включена в канале <#${channel.id}>`)
       }else if (interaction.options.getSubcommand() === 'stars-needed') {
         count = interaction.options.getInteger('количество')
         guild.starboard.reqReacts = count;
         guild.save()
-        interaction.followUp(`Выбрано количество звёзд для попадания на звездную доску: \`${count}\``)
+        interaction.followUp(`${emojis.success} Выбрано количество звёзд для попадания на звездную доску: \`${count}\``)
       }
     },
 };

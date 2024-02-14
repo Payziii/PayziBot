@@ -1,6 +1,7 @@
 const { Events } = require('discord.js');
 const Guild = require('../database/guild.js');
 const User = require('../database/user.js');
+const { emojis } = require('../config.js');
 
 module.exports = {
 	name: Events.MessageCreate,
@@ -24,8 +25,8 @@ module.exports = {
 	let guild = await Guild.findOne({ guildID: message.guild.id });
 	let user = await User.findOne({ userID: message.author.id });
 
-	if (!guild) return message.reply('<:no:1107254682100957224> | Для начала используйте любую слэш-команду, например `/help`');
-	if (!user) return message.reply('<:no:1107254682100957224> | Для начала используйте любую слэш-команду, например `/help`');
+	if (!guild) return message.reply(`${emojis.error} | Для начала используйте любую слэш-команду, например \`/help\``);
+	if (!user) return message.reply(`${emojis.error} | Для начала используйте любую слэш-команду, например \`/help\``);
 
 	if(user.block >= 2) return; // При уровне блокировки 2 и выше ограничиваем доступ
 

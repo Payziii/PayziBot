@@ -6,7 +6,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('colorfield')
 		.setDescription('Цветовое поле')
-		.addStringOption((option) =>
+		.addNumberOption((option) =>
             option.setName('сложность')
                 .setDescription('Сложность игры')
                 .setRequired(false)
@@ -19,7 +19,7 @@ module.exports = {
 	async execute(interaction, guild) {
 		await interaction.deferReply();
 
-		const diff = interaction.options.getString('сложность') || 13;
+		const diff = interaction.options.getNumber('сложность') || 13;
 
 		const Game = new Flood({
 			message: interaction,

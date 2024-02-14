@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { emojis } = require('../../../config.js');
 
 module.exports = {
 	cooldown: 5,
@@ -17,12 +18,12 @@ module.exports = {
 
 		await require('node-fetch')(`http://api.weatherapi.com/v1/current.json?key=${process.env.WEATHER}&q=${encodeURIComponent(city)}&lang=ru`).then(r => r.json()).then(r => {
 			if(r.error) {
-				if(r.error.code == 1006) return interaction.editReply(`<:no:1107254682100957224> | Город не найден!`);
-				interaction.editReply(`<:no:1107254682100957224> | Ошибка получения данных: \`${r.error.message}\``);
+				if(r.error.code == 1006) return interaction.editReply(`${emojis.error} | Город не найден!`);
+				interaction.editReply(`${emojis.error} | Ошибка получения данных: \`${r.error.message}\``);
 			}
 			const embed = new EmbedBuilder()
 				.setTitle(r.location.name + ", " + r.location.country)
-				.setDescription(`<:arrow:1140937463209152572> ${r.current.condition.text}`)
+				.setDescription(`${emojis.arrow} ${r.current.condition.text}`)
 				.addFields(
 					{
 						name: 'Температура',
@@ -44,7 +45,7 @@ module.exports = {
 			interaction.editReply({ embeds: [embed] });
 		})
 			.catch(e => {
-				interaction.editReply(`<:no:1107254682100957224> | Ошибка: \`${e}\``);
+				interaction.editReply(`${emojis.error} | Ошибка: \`${e}\``);
 			});
 	},
 };

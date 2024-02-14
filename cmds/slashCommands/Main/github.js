@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
+const { emojis } = require('../../../config.js');
 
 module.exports = {
 	cooldown: 5,
@@ -35,11 +36,11 @@ module.exports = {
 			id = r.id;
 			avatar = r.avatar_url;
 		});
-		if (msg) return interaction.editReply('<:no:1107254682100957224> | Ничего не найдено!');
+		if (msg) return interaction.editReply(`${emojis.error} | Ничего не найдено!`);
 		const embed = new EmbedBuilder()
 			.setTitle(`Пользователь ${login}`)
 			.setURL(html_url)
-			.setDescription(`<:arrow:1140937463209152572> Публичных репозиториев: **${repos}**\n<:arrow:1140937463209152572> Подписчиков: **${fl}**\n<:arrow:1140937463209152572> Имя: **${name}**\n<:arrow:1140937463209152572> Биография: **${bio}**\n<:arrow:1140937463209152572> Сайт: **${blog}**`)
+			.setDescription(`${emojis.arrow} Публичных репозиториев: **${repos}**\n${emojis.arrow} Подписчиков: **${fl}**\n${emojis.arrow} Имя: **${name}**\n${emojis.arrow} Биография: **${bio}**\n${emojis.arrow} Сайт: **${blog}**`)
 			.setThumbnail(avatar)
 			.setColor(guild.colors.basic)
 			.setFooter({

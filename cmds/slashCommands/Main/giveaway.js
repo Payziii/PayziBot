@@ -3,6 +3,7 @@ const ms = require('../../../func/ms.js');
 const messages = require('../../../games_src/giveaways/messages.js');
 const giveaway = require('../../../database/giveaway.js');
 const { CheckAch } = require('../../../func/games/giveAch.js');
+const { emojis } = require('../../../config.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -64,10 +65,10 @@ module.exports = {
 
 			duration = ms(duration);
 
-			if(isNaN(duration)) return interaction.reply(`<:no:1107254682100957224> | Время - это число. Также можете использовать приставки "с", "м", "ч", "д". Например: 1д - розыгрыш будет создан на 1 день.`)
-			if(duration < 1000) return interaction.reply(`<:no:1107254682100957224> | Я не могу создать розыгрыш менее, чем на 1 секунду`)
+			if(isNaN(duration)) return interaction.reply(`${emojis.error} | Время - это число. Также можете использовать приставки "с", "м", "ч", "д". Например: 1д - розыгрыш будет создан на 1 день.`)
+			if(duration < 1000) return interaction.reply(`${emojis.error} | Я не могу создать розыгрыш менее, чем на 1 секунду`)
 
-			interaction.reply(`<a:loading:673777314584199169> | Создание розыгрыша`)
+			interaction.reply(`${emojis.loading} | Создание розыгрыша`)
 			interaction.client.giveawaysManager
 				.start(channel, {
 					duration: duration,
@@ -78,11 +79,11 @@ module.exports = {
 					embedColor: guild.colors.giveaway,
 					embedColorEnd: guild.colors.giveaway
 				}).then((data) => {
-					interaction.editReply(`<:Gift:1189196716373725235> | Розыгрыш начался. ID розыгрыша: \`${data.messageId}\` (сохраните его для выбора нового победителя или досрочного окончания)`)
+					interaction.editReply(`${emojis.gift} | Розыгрыш начался. ID розыгрыша: \`${data.messageId}\` (сохраните его для выбора нового победителя или досрочного окончания)`)
 					CheckAch(8, interaction.user.id, interaction.channel)
 				}).catch((err) => {
 					console.log(err)
-					interaction.editReply(`<:no:1107254682100957224> | Неизвестная ошибка`)
+					interaction.editReply(`${emojis.error} | Неизвестная ошибка`)
 				});
 
 		} else if (interaction.options.getSubcommand() === 'reroll') {
@@ -90,32 +91,32 @@ module.exports = {
 			id = interaction.options.getString('айди');
 
 			let _giveaway = await interaction.client.giveawaysManager.giveaways.find((g) => g.messageId === id && g.guildId === interaction.guild.id);
-			if (!_giveaway) return interaction.reply(`<:no:1107254682100957224> | Розыгрыш не найден!`);
+			if (!_giveaway) return interaction.reply(`${emojis.error} | Розыгрыш не найден!`);
 
-			interaction.reply(`<a:loading:673777314584199169> | Выбор новых победителей`)
+			interaction.reply(`${emojis.loading} | Выбор новых победителей`)
 			interaction.client.giveawaysManager
 				.reroll(id, {
 					messages: messages.reroll
 				}).then(() => {
-					interaction.editReply(`<:Gift:1189196716373725235> | Успешно выбраны новые победители`)
+					interaction.editReply(`${emojis.gift} | Успешно выбраны новые победители`)
 				}).catch((err) => {
 					console.log(err)
-					interaction.editReply(`<:no:1107254682100957224> | Неизвестная ошибка`)
+					interaction.editReply(`${emojis.error} | Неизвестная ошибка`)
 				});
 		}else if (interaction.options.getSubcommand() === 'end') {
 
 			id = interaction.options.getString('айди');
 
 			let _giveaway = await interaction.client.giveawaysManager.giveaways.find((g) => g.messageId === id && g.guildId === interaction.guild.id);
-			if (!_giveaway) return interaction.reply(`<:no:1107254682100957224> | Розыгрыш не найден!`);
-			if (_giveaway.ended) return interaction.reply(`<:no:1107254682100957224> | Этот розыгрыш уже завершен!`);
+			if (!_giveaway) return interaction.reply(`${emojis.error} | Розыгрыш не найден!`);
+			if (_giveaway.ended) return interaction.reply(`${emojis.error} | Этот розыгрыш уже завершен!`);
 
 			interaction.client.giveawaysManager.end(_giveaway.messageId)
 			.then(() => {
-				interaction.editReply(`<:Gift:1189196716373725235> | Розыгрыш успешно завершен`)
+				interaction.editReply(`${emojis.gift} | Розыгрыш успешно завершен`)
 			}).catch((err) => {
 				console.log(err)
-				interaction.editReply(`<:no:1107254682100957224> | Неизвестная ошибка`)
+				interaction.editReply(`${emojis.error} | Неизвестная ошибка`)
 			});
 		}
 	},

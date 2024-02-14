@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { emojis } = require('../../../config.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -59,7 +60,7 @@ module.exports = {
 			.setColor(guild.colors.basic)
 			.setTitle(`${status[member.presence?.status ?? 'offline']} ${user.username}`)
 			.setDescription(`${activity}
-            <:arrow:1140937463209152572> Значки: ${user.flags.toArray().map(flag => flags[flag]).filter(Boolean).join(' ')}`)
+            ${emojis.arrow} Значки: ${user.flags.toArray().map(flag => flags[flag]).filter(Boolean).join(' ')}`)
 			.setThumbnail(url)
 			.addFields(
 				{
