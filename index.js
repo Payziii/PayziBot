@@ -58,7 +58,7 @@ fs.readdir('./cmds/textCommands/', (err, files) => {
 
 	const jsfile = files.filter(f => f.split('.').pop() === 'js');
 	if (jsfile.length <= 0) {
-		return console.log('LOGS | Команды не найдены');
+		return console.log('LOGS | Commands not found');
 	}
 
 	jsfile.forEach((f) => {
@@ -83,24 +83,24 @@ client.on('ready', async () => {
 			.filter((file) => file.endsWith('js'));
 		for (const file of commandsFiles) {
 			const filePath = path.join(__dirname, cP, file);
-			console.log(`> Загружен: ${file.slice(0, -3)}`);
+			console.log(`> Loaded: ${file.slice(0, -3)}`);
 			const command = require(filePath);
 			if('skip' in command) continue;
 			if ('data' in command && 'execute' in command) {
 				client.commands.set(command.data.name, command);
 			}
 			else {
-				console.log(`❌ | ERROR | В ${filePath} нет "data" или "execute"`);
+				console.log(`❌ | ERROR | In ${filePath} not found "data" or "execute"`);
 			}
 		}
 	});
 
 	try {
-		console.log('⌛ | Обновление команд');
+		console.log('⌛ | Commands updating');
 		await client.application.commands.set(
 			client.commands.map((c) => c.data),
 		);
-		console.log('✅ | Обновление команд окончено. Бот успешно запущен!');
+		console.log('✅ | Commands updating is ended. Bot sucess  launch!');
 	}
 	catch (error) {
 		console.error(error);
