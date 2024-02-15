@@ -19,6 +19,8 @@ module.exports = {
 
 		boticord.on("notify", data => {
 			GiveReward(data.user)
+			client.channels.cache.get(channels.dbLogs)
+			.send(`${data.user} поднял бота!`)
 		})
 	},
 };
