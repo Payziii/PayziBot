@@ -2,7 +2,7 @@ const { EmbedBuilder } = require('discord.js');
 const randomWord = require('random-word');
 
 class hangman {
-    constructor(word = null, interaction, players, messages, displayWordOnGameOver, lives) {
+    constructor(word = null, interaction, players, messages, displayWordOnGameOver, lives, deleteMessage) {
         this.word = word || randomWord();
         this.startingLives = lives;
         this.lives = lives;
@@ -16,6 +16,7 @@ class hangman {
         this.players = players;
         this.messages = messages;
         this.displayWordOnGameOver = displayWordOnGameOver;
+        this.del = deleteMessage;
     }
 
     static hyphenString(n) {
@@ -109,7 +110,7 @@ class hangman {
 
                 //if (!m.content.match(new RegExp(`^[A-Za-zÀ-ú](?:.{0}|.{${this.word.length - 1}})$`))) return;
                 const c = m.content.toLowerCase();
-                m.delete();
+                if(this.del) m.delete();
                 if (m.content.length === this.word.length) { 
                     if (this.guessAll(c) === false) this.players = this.players.filter(p => p.id !== m.author.id); 
                 } 

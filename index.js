@@ -90,17 +90,17 @@ client.on('ready', async () => {
 				client.commands.set(command.data.name, command);
 			}
 			else {
-				console.log(`❌ | ERROR | In ${filePath} not found "data" or "execute"`);
+				console.log(`ERROR | In ${filePath} not found "data" or "execute"`);
 			}
 		}
 	});
 
 	try {
-		console.log('⌛ | Commands updating');
+		console.log('WAIT | Commands updating');
 		await client.application.commands.set(
 			client.commands.map((c) => c.data),
 		);
-		console.log('✅ | Commands updating is ended. Bot sucess  launch!');
+		console.log('SUCESS | Commands updating is ended. Bot sucess  launch!');
 	}
 	catch (error) {
 		console.error(error);

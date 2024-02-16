@@ -11,6 +11,7 @@ class HangmansManager {
         const messages = options.messages || defaultOptions;
         const displayWordOnGameOver = typeof options.displayWordOnGameOver === 'boolean' ? options.displayWordOnGameOver : true;
         const players = options.players || await this.#gatherPlayers(interaction, messages, options.filter ? options.filter : () => true);
+        const deleteMessage = options.del;
 
         if (players.length === 0) return interaction.editReply({ content: messages.createNoPlayers });
         if (gameType === 'custom' && players.length < 2) return interaction.editReply({ content: messages.customNotEnoughPlayers });
@@ -28,7 +29,7 @@ class HangmansManager {
         };
         
         await interaction.deleteReply();
-        const game = new Hangman(word, interaction, players, messages, displayWordOnGameOver, lives);
+        const game = new Hangman(word, interaction, players, messages, displayWordOnGameOver, lives, deleteMessage);
         await game.start();
         return { game, selector };
     };
@@ -41,7 +42,7 @@ class HangmansManager {
             const collector = interaction.channel.createMessageCollector({ gatherFilter, time: 10_000 });
             collector.on('collect', msg => { 
                 players.push(msg.author); 
-                msg.delete(); 
+                if(deleteMessage) msg.delete(); 
             });
             collector.on('end', async () => resolve(players) );
         });

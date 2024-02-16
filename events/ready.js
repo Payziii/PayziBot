@@ -7,7 +7,7 @@ module.exports = {
 	name: Events.ClientReady,
 	once: true,
 	execute(client) {
-		console.log(`🤖 | Bot: ${client.user.username}`);
+		console.log(`ONLINE | Bot: ${client.user.username}`);
 		client.channels.cache.get(channels.startLogs)
 			.send(`<:Bot:732119152755474444> | **${client.user.username}** запущен с **${client.guilds.cache.size}** серверами`)
 
