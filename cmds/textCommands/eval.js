@@ -20,8 +20,5 @@ exports.run = async (client, message, args, guild, user) => {
 exports.help = {
 	name: ',eval',
 	aliases: [',e', ',е', ',евал'],
-	info: 'owner',
-	usage: '[Команда]',
-	perm: 'Developer',
 	description: 'Выполнить код',
 };

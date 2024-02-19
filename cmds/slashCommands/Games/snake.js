@@ -21,13 +21,13 @@ module.exports = {
 				.setMaxValue(10)),
 	async execute(interaction, guild) {
 		await interaction.deferReply();
-		const v = interaction.options.getInteger('высота') || 10;
-		const z = interaction.options.getInteger('ширина') || 10;
+		const h = interaction.options.getInteger('высота') || 10;
+		const w = interaction.options.getInteger('ширина') || 10;
 		const Game = new Snake({
 			message: interaction,
 			isSlashGame: true,
-			height: v,
-			width: z,
+			height: h,
+			width: w,
 			embed: {
 				title: 'Змейка',
 				overTitle: 'Игра окончена',

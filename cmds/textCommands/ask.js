@@ -75,8 +75,5 @@ exports.run = async (client, message, args) => {
 exports.help = {
 	name: ',ask',
 	aliases: [',chatgpt4', 'gpt4', 'гпт4', ',гпт4', 'gpt4', "гпт", ",гпт", "gpt", ",gpt"],
-	info: 'owner',
-	usage: '[Команда]',
-	perm: 'Developer',
-	description: 'Выполнить код',
+	description: 'Генерация текста через нейросети',
 };

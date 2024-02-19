@@ -19,7 +19,7 @@ module.exports = {
 	async execute(interaction, guild) {
 		await interaction.deferReply();
 
-		const diff = interaction.options.getNumber('сложность') || 13;
+		const difficulty = interaction.options.getNumber('сложность') || 13;
 
 		const Game = new Flood({
 			message: interaction,
@@ -28,7 +28,7 @@ module.exports = {
 				title: 'Цветовое поле',
 				color: guild.colors.basic,
 			},
-			difficulty: diff,
+			difficulty: difficulty,
 			timeoutTime: 60000,
 			buttonStyle: 'SECONDARY',
 			emojis: ['🟥', '🟦', '🟪', '🟩', '⬜'],

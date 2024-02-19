@@ -41,8 +41,5 @@ exports.run = async (client, message, args, guild) => {
 exports.help = {
 	name: '!car',
 	aliases: [',car'],
-	info: 'custom command',
-	usage: '[Команда]',
-	perm: 'Only on a private server',
-	description: 'Guess the...',
+	description: 'Приватная команда для сервера по просьбе пользователя',
 };

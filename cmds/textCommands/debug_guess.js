@@ -27,8 +27,5 @@ sleep(100)
 exports.help = {
 	name: ',g-d',
 	aliases: [',gues-debug'],
-	info: 'owner',
-	usage: '[Команда]',
-	perm: 'Developer',
-	description: 'Выполнить код',
+	description: 'Инструмент для поиска картинок, которые не отображаются в играх',
 };
