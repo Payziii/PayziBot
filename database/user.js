@@ -18,6 +18,7 @@ const user = Schema({
 		country: { type: Number, default: 0 },
 	},
 	ach: { type: Array, default: [] },
+	bio: { type: String, default: 'Вы можете написать что-нибудь о себе, используя команду `/bio`' },
 	block: { type: Number, default: 0 },
 	bypassDelay: { type: Boolean, default: false },
 	imageGens: { type: Number, default: 10 },
