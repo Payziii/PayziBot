@@ -31,5 +31,6 @@ module.exports = {
 			.replace('{guild.boosts}', message.guild.premiumSubscriptionCount);
 		message.reply(answer);
 		CheckAch(5, message.author.id, message.channel)
+		client.cmdsUsed++;
 	},
 };

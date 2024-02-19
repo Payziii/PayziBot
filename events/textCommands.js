@@ -30,6 +30,8 @@ module.exports = {
 
 	if(user.block >= 2) return; // При уровне блокировки 2 и выше ограничиваем доступ
 
+	client.cmdsUsed++;
+	
 	cmd.run(client, message, args, guild, user); // Выполняем нашу команду
 	
 	},
