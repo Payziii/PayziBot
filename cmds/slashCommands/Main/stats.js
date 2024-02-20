@@ -2,7 +2,7 @@ const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRow
 const os = require('os');
 const time = require('payzi-time');
 const { version } = require('../../../config.js');
-const { info } = require('../../../changelog.js');
+const changelog = require('../../../changelog.js');
 const { CheckAch } = require('../../../func/games/giveAch.js');
 const { emojis } = require('../../../config.js');
 
@@ -64,7 +64,8 @@ module.exports = {
 			}
 			else if (confirmation.customId === 'change_button') {
 				CheckAch(7, interaction.user.id, interaction.channel)
-				await interaction.editReply({ content: info, embeds: [], components: [] });
+				const text = `# ${changelog.version}\n\n## Добавлено\n\n- ${changelog.added.join('\n- ')}\n\n## Изменено\n\n- ${changelog.changed.join('\n- ')}\n\n## Исправлено\n\n- ${changelog.fixed.join('\n- ')}`
+				await interaction.editReply({ content: text, embeds: [], components: [] });
 			}
 
 		}
