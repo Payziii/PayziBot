@@ -22,7 +22,7 @@ module.exports = {
 					.get(channels.dbLogs)
 					.send(
 						`${emojis.announcement} | Сервер ${interaction.guild.name}(${interaction.guild.id
-						}) успешно был добавлен в MongoDB. Всего серверов: ${Guild.count()}`,
+						}) успешно был добавлен в MongoDB`,
 					);
 				guild = await Guild.findOne({ guildID: interaction.guild.id });
 			});
@@ -35,7 +35,7 @@ module.exports = {
 					.get(channels.dbLogs)
 					.send(
 						`${emojis.members} | Пользователь ${interaction.user.username}(${interaction.user.id
-						}) успешно был добавлен в MongoDB. Первая команда \`${interaction.commandName}\`. Всего пользователей: ${User.count()}`,
+						}) успешно был добавлен в MongoDB. Первая команда \`${interaction.commandName}\``,
 					);
 				user = await User.findOne({ userID: interaction.user.id });
 			});

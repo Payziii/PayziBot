@@ -16,7 +16,7 @@ module.exports = {
 
     misses: 'Лишние',
     won: 'Вы выиграли!',
-    noplayersleft: 'No Players Left',
+    noplayersleft: 'Игроков не осталось',
     gameOver: 'Игра окончена!',
     gameOverMsg: 'Слово было: {word}'
 };
