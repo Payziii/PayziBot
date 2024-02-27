@@ -31,7 +31,7 @@ module.exports = {
 		// GAME
 		if (interaction.options.getSubcommand() === 'game') {
 			const name = 'game';
-			const { item } = await require('node-fetch')(`http://api.fifty.su/v1/guess/game`).then(r => r.json())
+			const { item } = await require('node-fetch')(`https://api.fifty.su/v1/guess/game`).then(r => r.json())
 			const collectorFilter = response => {
 				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 			};
@@ -74,7 +74,7 @@ module.exports = {
 		}
 		else if (interaction.options.getSubcommand() === 'city') {
 			const name = 'city';
-			const { item } = await require('node-fetch')(`http://api.fifty.su/v1/guess/city`).then(r => r.json())
+			const { item } = await require('node-fetch')(`https://api.fifty.su/v1/guess/city`).then(r => r.json())
 			const collectorFilter = response => {
 				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 			};
@@ -117,7 +117,7 @@ module.exports = {
 		}
 		else if (interaction.options.getSubcommand() === 'logo') {
 			const name = 'logo';
-			const { item } = await require('node-fetch')(`http://api.fifty.su/v1/guess/logo`).then(r => r.json())
+			const { item } = await require('node-fetch')(`https://api.fifty.su/v1/guess/logo`).then(r => r.json())
 			const collectorFilter = response => {
 				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 			};
@@ -160,7 +160,7 @@ module.exports = {
 		}
 		else if (interaction.options.getSubcommand() === 'country') {
 			const name = 'country';
-			const { item } = await require('node-fetch')(`http://api.fifty.su/v1/guess/country`).then(r => r.json())
+			const { item } = await require('node-fetch')(`https://api.fifty.su/v1/guess/country`).then(r => r.json())
 			const image = item.image[Math.floor(Math.random() * item.image.length)];
 			const collectorFilter = response => {
 				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
