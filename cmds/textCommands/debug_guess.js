@@ -1,6 +1,6 @@
 const { EmbedBuilder } = require('discord.js')
 
-exports.run = async (client, message, args, guild, user) => {
+exports.run = async (client, message, args) => {
 	return message.reply('g:battery:')
 	
 	function sleep(milliseconds) {

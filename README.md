@@ -6,7 +6,7 @@
 - Сервер поддержки: [Кликни](https://discord.gg/E7SFuVEB2Z)
 - Бот на мониторингах: [Boticord](https://boticord.top/bot/payzibot)
 
-Используя этот репозиторий для создания своего бота, вы должны указать где-либо ссылку на него
+Используя этот репозиторий для создания своего бота, вы должны где-либо указать ссылку на него, а также использовать следующую [лицензию](https://github.com/Payziii/PayziBot/blob/main/LICENSE)
 
 ## Установка и запуск
 
@@ -26,3 +26,4 @@
 - Идея некоторых функций от [korarar](https://github.com/korarar)
 - Небольшая помощь от [mrM0der](https://github.com/MrM0der)
 - Большинство игр сделаны с помощью [gamecord](https://github.com/aniket091/Gamecord)
+- Игры в `guess` реализованы с использованием [fiftyApi](https://docs.fifty.su)

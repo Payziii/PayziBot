@@ -9,7 +9,6 @@ const Giveaway = require('./database/giveaway.js');
 
 const client = new Client({
 	intents: [
-		GatewayIntentBits.GuildVoiceStates,
 		GatewayIntentBits.Guilds,
 		GatewayIntentBits.GuildMessages,
 		GatewayIntentBits.MessageContent,
@@ -71,7 +70,8 @@ fs.readdir('./cmds/textCommands/', (err, files) => {
 });
 
 process.on('uncaughtException', (err) => {
-	client.channels.cache.get(channels.errorLogs).send(`Ошибка: ${err}`);
+	console.log(err);
+	if(client) client.channels.cache.get(channels.errorLogs).send(`Ошибка: ${err}`);
 });
 
 client.on('ready', async () => {
