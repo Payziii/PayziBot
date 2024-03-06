@@ -5,7 +5,7 @@ module.exports = {
 	cooldown: 3,
 	data: new SlashCommandBuilder()
 		.setName('bio')
-		.setDescription('Установить о себе')
+		.setDescription('Установить информацию о себе')
 		.addStringOption((option) =>
 			option.setName('осебе')
 				.setDescription('Напишите что-то о себе')
