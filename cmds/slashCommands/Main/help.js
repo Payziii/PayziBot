@@ -15,7 +15,7 @@ module.exports = {
 				},
 				{
 					name: 'Модерация',
-					value: '`ban`, `kick`, `mute`, `unmute`, `channel`, `config`, `starboard`, `autoreact`, `clear`',
+					value: '`ban`, `kick`, `mute`, `unmute`, `channel`, `config`, `starboard`, `autoreact`, `clear`, `welcome`, `goodbye`',
 				},
 				{
 					name: 'Игры',
