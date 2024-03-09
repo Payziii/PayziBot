@@ -2,7 +2,6 @@ const { SlashCommandBuilder, PermissionFlagsBits, ChannelType, ModalBuilder, Tex
 const { emojis } = require('../../../config.js');
 
 module.exports = {
-  skip: true,
   cooldown: 15,
   data: new SlashCommandBuilder()
     .setName('welcome')

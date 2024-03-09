@@ -17,6 +17,11 @@ module.exports = {
 			guild.welcome.welcomeText = text;
 			guild.save();
 			interaction.reply(`${emojis.success} Приветственное сообщение успешно установлено!`)
+		}else if (interaction.customId === 'leave') {
+			const text = interaction.fields.getTextInputValue('text');
+			guild.leave.leaveText = text;
+			guild.save();
+			interaction.reply(`${emojis.success} Прощальное сообщение успешно установлено!`)
 		}
 	},
 };
