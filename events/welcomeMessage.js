@@ -20,8 +20,15 @@ module.exports = {
 			.replace('{guild.channelCount}', guild.channels.cache.size)
 			.replace('{guild.boosts}', guild.premiumSubscriptionCount));
 		if (g.welcome.autoRoleID == '-1') return;
-		if (guild.roles.cache.get(g.welcome.autoRoleID) == undefined) return;
-		member.roles.add(guild.roles.cache.get(g.welcome.autoRoleID)).then(() => {
+		const bot = interaction.guild.members.me;
+		const role = guild.roles.cache.get(g.welcome.autoRoleID)
+		if (role == undefined) return;
+		if (role.rawPosition >= bot.roles.highest.rawPosition) return;
+		if (bot.permissions.has('ManageRoles') == false) return;
+		if (role.tags?.botId) return;
+		if (role.tags?.premiumSubscriberRole) return;
+		if (role.tags?.integrationId || role.managed) return;
+		member.roles.add(role).then(() => {
 			return;
 		}).catch(() => {
 			return;

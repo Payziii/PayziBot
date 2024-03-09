@@ -35,7 +35,7 @@ module.exports = {
         )),
   async execute(interaction, guild) {
     if (interaction.options.getSubcommand() === 'off') {
-      if (guild.welcome.channelID == '-1' && guild.welcome.autoRoleID == '-1') return interaction.followUp(`${emojis.error} | Приветственное сообщение уже выключено`)
+      if (guild.welcome.channelID == '-1' && guild.welcome.autoRoleID == '-1') return interaction.reply(`${emojis.error} | Приветственное сообщение уже выключено`)
       guild.welcome.channelID = '-1';
       guild.welcome.autoRoleID = '-1';
       guild.save()
@@ -60,11 +60,20 @@ module.exports = {
       modal.addComponents(textRow);
 
       await interaction.showModal(modal);
-    } else if (interaction.options.getSubcommand() === 'stars-needed') {
-      count = interaction.options.getInteger('количество')
-      guild.starboard.reqReacts = count;
-      guild.save()
-      interaction.followUp(`${emojis.success} Выбрано количество звёзд для попадания на звездную доску: \`${count}\``)
+    } else if (interaction.options.getSubcommand() === 'autorole') {
+      role = interaction.options.getRole('роль');
+      bot = interaction.guild.members.me;
+
+      if(role.rawPosition >= bot.roles.highest.rawPosition) return interaction.reply(`${emojis.error} | Увы, я не смогу выдать роль, которая выше моей`)
+      if (bot.permissions.has('ManageRoles') == false) return interaction.reply(`${emojis.error} | У меня нет прав для выдачи ролей`);
+      if(role.tags?.botId) return interaction.reply(`${emojis.error} | Роль принадлежит боту <@${role.tags.botId}>`);
+      if(role.tags?.premiumSubscriberRole) return interaction.reply(`${emojis.error} | Я не смогу выдать роль бустера!`);
+      if(role.tags?.integrationId || role.managed) return interaction.reply(`${emojis.error} | Роль управляется интеграцией`);
+
+      guild.welcome.autoRoleID = role.id;
+      guild.save();
+
+      interaction.reply(`${emojis.success} Выбрана автороль по умолчанию: <@&${role.id}>`)
     }
   },
 };

@@ -16,7 +16,7 @@ module.exports = {
 			const text = interaction.fields.getTextInputValue('text');
 			guild.welcome.welcomeText = text;
 			guild.save();
-			interaction.reply(`${emojis.success} Приветственное сообщение успешно указано!`)
+			interaction.reply(`${emojis.success} Приветственное сообщение успешно установлено!`)
 		}
 	},
 };
