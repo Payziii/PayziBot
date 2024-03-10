@@ -100,7 +100,7 @@ client.on('ready', async () => {
 		await client.application.commands.set(
 			client.commands.map((c) => c.data),
 		);
-		console.log('SUCESS | Commands updating is ended. Bot sucess  launch!');
+		console.log('SUCCESS | Commands updating is ended. Bot success launch!');
 	}
 	catch (error) {
 		console.error(error);
