@@ -20,7 +20,7 @@ module.exports = {
 			.replace('{guild.channelCount}', guild.channels.cache.size)
 			.replace('{guild.boosts}', guild.premiumSubscriptionCount));
 		if (g.welcome.autoRoleID == '-1') return;
-		const bot = interaction.guild.members.me;
+		const bot = guild.members.me;
 		const role = guild.roles.cache.get(g.welcome.autoRoleID)
 		if (role == undefined) return;
 		if (role.rawPosition >= bot.roles.highest.rawPosition) return;
