@@ -113,6 +113,7 @@ module.exports = {
 			if (_giveaway.ended) return interaction.reply(`${emojis.error} | Этот розыгрыш уже завершен!`);
 			if(_giveaway.hostedBy != `<@${interaction.user.id}>`) return interaction.reply(`${emojis.error} | Не вы начали этот розыгрыш!`);
 
+			interaction.reply(`${emojis.loading} | Завершение розыгрыша`)
 			interaction.client.giveawaysManager.end(_giveaway.messageId)
 			.then(() => {
 				interaction.editReply(`${emojis.gift} | Розыгрыш успешно завершен`)
