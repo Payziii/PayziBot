@@ -43,7 +43,7 @@ module.exports = {
 		if (!guild) return interaction.reply(`${emojis.error} | Напиши команду ещё раз!`);
 		if (!user) return interaction.reply(`${emojis.error} | Напиши команду ещё раз!`);
 
-		if(user.block >= 4) return; // Доступ запрещён
+		if(user.block >= 4) return interaction.reply(`${emojis.error} | Вы получили блокировку своего аккаунта. Обратитесь на сервер поддержки для выяснения причины и дальнейших действий!`); // Доступ запрещён
 
 		const cmd = interaction.client.commands.get(interaction.commandName); // Ищем команду
 		if (!cmd) return interaction.reply(`${emojis.error} | Команда не найдена. Как такое могло произойти?`);
