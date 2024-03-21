@@ -71,7 +71,7 @@ fs.readdir('./cmds/textCommands/', (err, files) => {
 
 process.on('uncaughtException', (err) => {
 	console.log(err);
-	if(client) client.channels.cache.get(channels.errorLogs).send(`Ошибка: ${err}`);
+	if(client) client.channels.cache.get(channels.errorLogs).send(`Ошибка: \`\`\`js\n${err.stack}\`\`\``);
 });
 
 client.on('ready', async () => {

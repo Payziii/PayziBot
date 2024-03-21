@@ -1,3 +1,5 @@
+// Устаревшая команда. Будет переписана в скором времени
+
 const { SlashCommandBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder, PermissionFlagsBits } = require("discord.js");
 const EmbedFunc = require('../../../func/config/embeds.js');
 
