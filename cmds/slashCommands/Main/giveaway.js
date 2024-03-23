@@ -75,7 +75,7 @@ module.exports = {
 					winnerCount,
 					prize,
 					hostedBy: interaction.user,
-					messages: messages.start,
+					messages: messages.ru.start,
 					embedColor: guild.colors.giveaway,
 					embedColorEnd: guild.colors.giveaway
 				}).then((data) => {
@@ -97,7 +97,7 @@ module.exports = {
 			interaction.reply(`${emojis.loading} | Выбор новых победителей`)
 			interaction.client.giveawaysManager
 				.reroll(id, {
-					messages: messages.reroll
+					messages: messages.ru.reroll
 				}).then(() => {
 					interaction.editReply(`${emojis.gift} | Успешно выбраны новые победители`)
 				}).catch((err) => {
