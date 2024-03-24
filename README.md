@@ -4,7 +4,7 @@
 - Панель управления: Скоро
 - Документация: [Кликни](https://docs.payzibot.ru)
 - Сервер поддержки: [Кликни](https://discord.gg/E7SFuVEB2Z)
-- Бот на мониторингах: [Boticord](https://boticord.top/bot/payzibot)
+- Бот на мониторингах: [Boticord](https://boticord.top/bot/payzibot) [SD.C](https://bots.server-discord.com/576442351426207744)
 
 Используя этот репозиторий для создания своего бота, вы должны где-либо указать ссылку на него, а также использовать следующую [лицензию](https://github.com/Payziii/PayziBot/blob/main/LICENSE)
 
@@ -14,8 +14,8 @@
 2. Установите необходимые пакеты командой `npm i`
 3. Создайте файл .env и введите туда ваши данные: <img align="center" height="60" src="env.png">
 4. Измените [config.js](https://github.com/Payziii/PayziBot/blob/main/config.js)
-5. Запустите бота командой `npm start` или же `node index.js`
-6. Дождитесь вывода в консоль `SUCESS | Commands updating is ended. Bot sucess  launch!`, после чего можете спокойно использовать бота
+5. Запустите бота командой `npm run start` или же `node index.js`
+6. Дождитесь вывода в консоль `SUCCESS | Commands updating is ended. Bot success launch!`, после чего можете спокойно использовать бота
 
 ## Соавторы и использованные ресурсы
 
