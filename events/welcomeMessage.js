@@ -9,6 +9,7 @@ module.exports = {
 		if (!g) return;
 		if (g.welcome.channelID == '-1') return;
 		const channel = await client.channels.cache.get(g.welcome.channelID);
+		if(!channel) return;
 		if (channel.guild.id != guild.id) return;
 		channel.send(g.welcome.welcomeText
 			.replace('{user.mention}', member)

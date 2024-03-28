@@ -9,6 +9,7 @@ module.exports = {
 		if (!g) return;
 		if (g.leave.channelID == '-1') return;
 		const channel = await client.channels.cache.get(g.leave.channelID);
+		if(!channel) return;
 		if (channel.guild.id != guild.id) return;
 		channel.send(g.leave.leaveText
 			.replace('{user.mention}', member)

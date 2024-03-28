@@ -18,6 +18,6 @@ module.exports = {
 
 		user.bio = text.replaceAll('`', '\`');
 		await user.save();
-		interaction.editReply(`${emojis.success} Успешно изменено. Посмотреть изменения можно, использовав команду \`profile\``)
+		interaction.editReply(`${emojis.success} Успешно изменено. Изменения можно посмотреть выполнив команду \`/profile\``)
 	},
 };

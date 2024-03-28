@@ -70,6 +70,7 @@ module.exports = {
 
 		}
 		catch (e) {
+			if (e.message.includes('messageDelete')) return;
 			await interaction.editReply({ embeds: [embed], components: [] });
 		}
 	},
