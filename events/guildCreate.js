@@ -11,9 +11,12 @@ module.exports = {
 			.setFooter({
 				text: `ID: ${guild.id}`,
 			});
+			client.channels.cache.get(channels.serverLogs)
+			.send({ embeds: [embed] });
+			
 		if (guild.members.me.permissions.has('SendMessages')) {
-			const channel = await guild.channels.cache.find(channel => channel.isTextBased())
-
+			const channel = await guild.channels.cache.find(channel => channel.isTextBased() && channel.permissionFor(guild.members.me).has('SendMessages', 'ViewChannel', 'EmbedLinks'))
+			if(!channel) return;
 			const embed = new EmbedBuilder()
 				.setTitle("Спасибо, что добавили меня на сервер!")
 				.setDescription("Чтобы посмотреть список команд, введите: `/help`\n\nЕсли у вас возникли вопросы или появились проблемы, обратитесь на [сервер поддержки](https://discord.gg/E7SFuVEB2Z)\n\nПодробное описание команд и функций вы можете найти в [документации](https://docs.payzibot.ru/)")
@@ -24,7 +27,5 @@ module.exports = {
 
 			await channel.send({ embeds: [embed] });
 		}
-		client.channels.cache.get(channels.serverLogs)
-			.send({ embeds: [embed] });
 	},
 };

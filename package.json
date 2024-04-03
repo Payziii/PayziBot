@@ -9,20 +9,15 @@
   "author": "Payziii",
   "license": "GNU GENERAL PUBLIC LICENSE",
   "dependencies": {
-    "discord-gamecord": "^4.4.1",
     "discord-giveaways": "^6.0.1",
     "discord.js": "^14.13.0",
     "dotenv": "^16.3.1",
     "googletrans": "^1.0.2",
     "mongoose": "^7.4.2",
     "node-fetch": "^2.6.12",
-    "openai": "^3.3.0",
     "payzi-time": "^0.0.3",
-    "querystring": "^0.2.1",
-    "random-word": "^2.0.0",
     "rsnchat": "^3.0.6",
-    "tesseract.js": "^5.0.3",
-    "weather-js": "^2.0.0"
+    "tesseract.js": "^5.0.3"
   },
   "devDependencies": {
     "eslint": "^8.53.0"

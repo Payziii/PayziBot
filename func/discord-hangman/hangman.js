@@ -1,9 +1,8 @@
 const { EmbedBuilder } = require('discord.js');
-const randomWord = require('random-word');
 
 class hangman {
     constructor(word = null, interaction, players, messages, displayWordOnGameOver, lives, deleteMessage) {
-        this.word = word || randomWord();
+        this.word = word;
         this.startingLives = lives;
         this.lives = lives;
         this.progress = hangman.hyphenString(this.word.length);
