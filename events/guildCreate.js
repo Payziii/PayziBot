@@ -15,7 +15,7 @@ module.exports = {
 			.send({ embeds: [embed] });
 			
 		if (guild.members.me.permissions.has('SendMessages')) {
-			const channel = await guild.channels.cache.find(channel => channel.isTextBased() && channel.permissionFor(guild.members.me).has('SendMessages', 'ViewChannel', 'EmbedLinks'))
+			const channel = await guild.channels.cache.find(channel => channel.isTextBased() && channel.permissionsFor(guild.members.me).has('SendMessages', 'ViewChannel', 'EmbedLinks'))
 			if(!channel) return;
 			const embed = new EmbedBuilder()
 				.setTitle("Спасибо, что добавили меня на сервер!")
