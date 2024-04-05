@@ -92,6 +92,7 @@ module.exports = {
 
 			let _giveaway = await interaction.client.giveawaysManager.giveaways.find((g) => g.messageId === id && g.guildId === interaction.guild.id);
 			if (!_giveaway) return interaction.reply(`${emojis.error} | Розыгрыш не найден!`);
+			if (!_giveaway.ended) return interaction.reply(`${emojis.error} | Этот розыгрыш еще не завершен!`);
 			if(_giveaway.hostedBy != `<@${interaction.user.id}>`) return interaction.reply(`${emojis.error} | Не вы начали этот розыгрыш!`);
 
 			interaction.reply(`${emojis.loading} | Выбор новых победителей`)

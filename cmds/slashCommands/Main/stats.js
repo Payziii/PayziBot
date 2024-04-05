@@ -5,6 +5,7 @@ const { version } = require('../../../package.json');
 const changelog = require('../../../changelog.js');
 const { CheckAch } = require('../../../func/games/giveAch.js');
 const { emojis } = require('../../../config.js');
+const plural = require('../../../func/plural.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -21,7 +22,7 @@ module.exports = {
 		else bremya = `${uptime.days} д. ${uptime.hours} ч. ${uptime.minutes} м.`;
 		const embed = new EmbedBuilder()
 			.setTitle(`PayziBot ${version}`)
-			.setDescription(`${emojis.arrow} Бот работает: **${bremya}**\n${emojis.arrow} С момента включения использовано: **${client.cmdsUsed} команд**`)
+			.setDescription(`${emojis.arrow} Бот работает: **${bremya}**\n${emojis.arrow} С момента включения использовано: **${client.cmdsUsed} ${plural(client.cmdsUsed, "команда", "команды", "команд")}**`)
 			.addFields(
 				{
 					name: 'Статистика',
