@@ -19,8 +19,8 @@ module.exports = {
         .setDescription('Модель, которой вы задаёте вопрос')
         .setRequired(true)
         .addChoices(
-          { name: 'GPT', value: 'gpt' },
           { name: 'Gemini', value: 'gemini' },
+          { name: 'GPT (old)', value: 'gpt' },
           { name: 'Llama', value: 'llama' },
           { name: 'CodeLlama', value: 'codellama' },
           { name: 'Mixtral', value: 'mixtral' }
@@ -84,7 +84,7 @@ module.exports = {
     if (!res) return interaction.editReply(`${emojis.error} | Ответ не был получен!`);
 			if (res.length > 2000) {
 				let mess = res;
-				mess = mess.substring(0, 1900);
+				mess = mess.substring(0, 1940);
 				mess = mess + '...\n\nОтвет был обрезан из-за ограничений Discord!';
 				return interaction.editReply(mess);
 			}

@@ -68,6 +68,13 @@ module.exports = {
 			if(isNaN(duration)) return interaction.reply(`${emojis.error} | Время - это число. Также можете использовать приставки "с", "м", "ч", "д". Например: 1д - розыгрыш будет создан на 1 день.`)
 			if(duration < 1000) return interaction.reply(`${emojis.error} | Я не могу создать розыгрыш менее, чем на 1 секунду`)
 
+			let msgs = messages.ru.start;
+
+			if(prize.endsWith('--mru')) {
+				msgs = messages.mru.start;
+				prize = prize.replace('--mru', '');
+			}
+
 			interaction.reply(`${emojis.loading} | Создание розыгрыша`)
 			interaction.client.giveawaysManager
 				.start(channel, {
@@ -75,7 +82,7 @@ module.exports = {
 					winnerCount,
 					prize,
 					hostedBy: interaction.user,
-					messages: messages.ru.start,
+					messages: msgs,
 					embedColor: guild.colors.giveaway,
 					embedColorEnd: guild.colors.giveaway
 				}).then((data) => {
