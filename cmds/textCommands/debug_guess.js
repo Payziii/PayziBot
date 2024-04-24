@@ -1,31 +1,28 @@
-const { EmbedBuilder } = require('discord.js')
+const { EmbedBuilder } = require("discord.js");
 
 exports.run = async (client, message, args) => {
-	return message.reply('g:battery:')
-	
-	function sleep(milliseconds) {
-		const date = Date.now();
-		let currentDate = null;
-		do {
-		  currentDate = Date.now();
-		} while (currentDate - date < milliseconds);
-	  }
+  return message.reply("Команда отключена");
 
-	  const game = require('../../games_src/logo.json');
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
 
-	  for(i = 0; i <= game.length; i++) {
-		item = game[i];
+  const game = require("../../games_src/logo.json");
 
-		const embed = new EmbedBuilder()
-  .setDescription(`${item.id} - ${item.answers[0]}`)
-  .setImage(item.image);
+  for (i = 0; i <= game.length; i++) {
+    item = game[i];
 
-await message.reply({ embeds: [embed] });
-sleep(100)
-	  }
+    const embed = new EmbedBuilder()
+      .setDescription(`${item.id} - ${item.answers[0]}`)
+      .setImage(item.image);
+
+    await message.reply({ embeds: [embed] });
+    await sleep(100);
+  }
 };
 exports.help = {
-	name: ',g-d',
-	aliases: [',gues-debug'],
-	description: 'Инструмент для поиска картинок, которые не отображаются в играх',
+  name: ",g-d",
+  aliases: [",gues-debug"],
+  description:
+    "Инструмент для поиска картинок, которые не отображаются в играх",
 };
