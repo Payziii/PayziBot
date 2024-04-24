@@ -15,11 +15,11 @@ module.exports = {
 				},
 				{
 					name: 'Модерация',
-					value: '`ban`, `kick`, `mute`, `unmute`, `channel`, `config`, `starboard`, `autoreact`, `clear`, `welcome`, `goodbye`',
+					value: '`ban`, `kick`, `mute`, `unmute`, `channel`, `configuration`, `starboard`, `autoreact`, `clear`, `welcome`, `goodbye`',
 				},
 				{
 					name: 'Игры',
-					value: '`guess`, `profile`, `bio`, `minesweeper`, `typing`, `ttt`, `colorfield`, `hangman`, `snake`, `memory`',
+					value: '`guess`, `profile`, `bio`, `minesweeper`, `typing`, `ttt`, `colorfield`, `hangman`, `snake`, `memory`, `2048`',
 				},
 				{
 					name: 'Нейросети',

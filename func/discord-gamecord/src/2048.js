@@ -84,7 +84,7 @@ module.exports = class TwoZeroFourEight extends events {
     .setTitle(this.options.embed.title)
     .setColor(this.options.embed.color)
     .setImage('attachment://gameboard.png')
-    .addFields({ name: 'Current Score', value: this.score.toString() })
+    .addFields({ name: 'Текущий счет', value: this.score.toString() })
     .setFooter({ text: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) });
 
 
@@ -135,7 +135,7 @@ module.exports = class TwoZeroFourEight extends events {
       .setTitle(this.options.embed.title)
       .setColor(this.options.embed.color)
       .setImage('attachment://gameboard.png')
-      .addFields({ name: 'Current Score', value: this.score.toString() })
+      .addFields({ name: 'Текущий счет', value: this.score.toString() })
       .setFooter({ text: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) });
 
       return msg.edit({ embeds: [embed], files: [await this.getBoardImage()], attachments: [] });
@@ -157,7 +157,7 @@ module.exports = class TwoZeroFourEight extends events {
     .setTitle(this.options.embed.title)
     .setColor(this.options.embed.color)
     .setImage('attachment://gameboard.png')
-    .addFields({ name: 'Total Score', value: this.score.toString() })
+    .addFields({ name: 'Общий счет', value: this.score.toString() })
     .setFooter({ text: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) });
 
     return msg.edit({ embeds: [embed], components: disableButtons(msg.components), files: [await this.getBoardImage()], attachments: [] });
