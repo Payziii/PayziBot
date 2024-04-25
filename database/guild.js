@@ -42,6 +42,7 @@ const guild = Schema({
 		pinRate: { type: Number, default: 5 },
 		data: { type: Map, default: [] },
 	},
+	rr: { type: Map, default: [] },
 	customCommands: { type: Map, default: [] },
 });
 

@@ -29,7 +29,7 @@ module.exports = {
 		if (role.tags?.botId) return;
 		if (role.tags?.premiumSubscriberRole) return;
 		if (role.tags?.integrationId || role.managed) return;
-		member.roles.add(role).then(() => {
+		member.roles.add(role, "Автороль").then(() => {
 			return;
 		}).catch(() => {
 			return;
