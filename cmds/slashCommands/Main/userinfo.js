@@ -78,7 +78,7 @@ module.exports = {
 					value: `${member.roles.cache.filter(r => r.id !== r.guild.id).map(r => r).join(', ') || 'Отсутствуют'}`,
 				},
 			)
-			.setFooter({ text: `ID: ${user.id} ❄️` });
+			.setFooter({ text: `ID: ${user.id}` });
 		await interaction.reply({ embeds: [embed] });
 	},
 };
