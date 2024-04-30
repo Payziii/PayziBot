@@ -21,7 +21,6 @@ module.exports = {
             .addChannelTypes(ChannelType.GuildText)
             .setDescription('Канал, в котором будет работать автореакт')
             .setRequired(true)
-
         )
         .addStringOption((option) =>
           option
