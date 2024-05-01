@@ -45,19 +45,19 @@ module.exports = {
 				text: 'Сервис: WeatherApi 💖',
 			});
 
-		const fivedaysweather = new ButtonBuilder()
-			.setCustomId('fivedaysweather')
+		const threedaysweather = new ButtonBuilder()
+			.setCustomId('threedaysweather')
 			.setLabel('Погода на 3 дня')
 			.setStyle(ButtonStyle.Secondary);
 
-		const row = new ActionRowBuilder().addComponents(fivedaysweather);
+		const row = new ActionRowBuilder().addComponents(threedaysweather);
 
 		const response = await interaction.editReply({ embeds: [embed], components: [row] });
 		const collectorFilter = i => i.user.id === interaction.user.id;
 		try {
 			const confirmation = await response.awaitMessageComponent({ filter: collectorFilter, time: 60_000 });
 
-			if (confirmation.customId === 'fivedaysweather') {
+			if (confirmation.customId === 'threedaysweather') {
 				const wea = await weather.forecast(process.env.WEATHER, city, 5);
 				day2 = dayNames[new Date(wea[2].date_epoch*1000).getDay()]
 				const fdw = new EmbedBuilder()
