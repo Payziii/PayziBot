@@ -7,7 +7,6 @@ const { emojis } = require("../../../config.js");
 
 module.exports = {
   cooldown: 15,
-  skip: true,
   data: new SlashCommandBuilder()
     .setName("rolereact")
     .setDescription("Настройки ролей за реакции")
