@@ -125,7 +125,7 @@ module.exports = {
         });
 
       let arr = await guild.rr.get(id);
-      if (arr.length > 0) {
+      if (arr?.length > 0) {
         arr.push({
           role: role.id,
           emoji: react,
