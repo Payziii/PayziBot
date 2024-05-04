@@ -18,6 +18,7 @@ module.exports = {
 		boticord.connect();
 
 		boticord.on("notify", data => {
+			if(data.type != 'up_added') return;
 			GiveReward(data.user)
 			client.channels.cache.get(channels.dbLogs)
 			.send(`${data.user} поднял бота!`)
