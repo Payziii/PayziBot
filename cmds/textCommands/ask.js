@@ -11,12 +11,17 @@ exports.run = async (client, message, args) => {
 
 	let model;
 	let suc = true;
-
-	if(text1.endsWith('--llama') || text1.endsWith('--ллама')) model = 'llama'
+  //я тебя ненвижу
+	/*if(text1.endsWith('--llama') || text1.endsWith('--ллама')) model = 'llama'
 	else if(text1.endsWith('--gemini') || text1.endsWith('--гемини')) model = 'gemini'
 	else if(text1.endsWith('--mixtral')) model = 'mixtral'
 	else if(text1.endsWith('--codellama') || text1.endsWith('--cl')) model = 'codellama'
-	else model = 'gpt'
+	else model = 'gpt'*/
+  if(text1.endsWith("--llama")) model = "llama";
+  if(text1.endsWith("--mixtral")) model = "mixtral";
+  if(text1.endsWith("--codellama")) model = "codellama";
+  if(text1.endsWith("--gpt")) model = "gpt";
+  if(model == null) model = "gemini";
 
 	if (model === 'gpt') {
 		await rsnchat.gpt(text)
