@@ -20,7 +20,7 @@ module.exports = {
         .setRequired(true)
         .addChoices(
           { name: 'Gemini', value: 'gemini' },
-          { name: 'GPT (old)', value: 'gpt' },
+          { name: 'GPT 4', value: 'gpt' },
           { name: 'Llama', value: 'llama' },
           { name: 'CodeLlama', value: 'codellama' },
           { name: 'Mixtral', value: 'mixtral' }
@@ -40,7 +40,7 @@ module.exports = {
     interaction.editReply(`${emojis.loading} | Ожидаем ответа...${_tip}`)
 
     if (model === 'gpt') {
-      await rsnchat.gpt(text)
+      await rsnchat.gpt4(text)
         .then(response => {
           res = response.message
         }).catch(() => {

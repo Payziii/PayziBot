@@ -26,7 +26,7 @@ exports.run = async (client, message, args) => {
 
     if (model === "gpt") {
       await rsnchat
-        .gpt(text)
+        .gpt4(text)
         .then((response) => {
           res = response.message;
         })
