@@ -65,17 +65,17 @@ module.exports = {
 			.addFields(
 				{
 					name: 'Сегодня',
-					value: `${wea[0].day.condition.text}\n**${wea[0].day.maxtemp_c}°C** / **${wea[0].day.mintemp_c}°C**`,
+					value: `>>> ${wea[0].day.condition.text}\n**${wea[0].day.maxtemp_c}°C** / **${wea[0].day.mintemp_c}°C**`,
 					inline: true,
 				},
 				{
 					name: 'Завтра',
-					value: `${wea[1].day.condition.text}\n**${wea[1].day.maxtemp_c}°C** / **${wea[1].day.mintemp_c}°C**`,
+					value: `>>> ${wea[1].day.condition.text}\n**${wea[1].day.maxtemp_c}°C** / **${wea[1].day.mintemp_c}°C**`,
 					inline: true,
 				},
 				{
 					name: `${day2}`,
-					value: `${wea[2].day.condition.text}\n**${wea[2].day.maxtemp_c}°C** / **${wea[2].day.mintemp_c}°C**`,
+					value: `>>> ${wea[2].day.condition.text}\n**${wea[2].day.maxtemp_c}°C** / **${wea[2].day.mintemp_c}°C**`,
 					inline: false,
 				},
 			)

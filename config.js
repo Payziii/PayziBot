@@ -17,6 +17,8 @@ module.exports = {
 		channels: '<:channel:732125684259881052>',
 		success: '<:yes:1107254746336735312>',
 		timeout: '<:timeout_clock:1134453176091824250>',
-		announcement: '<:announcement:732128155195801641>'
+		announcement: '<:announcement:732128155195801641>',
+		github_star: '<:star:1238381503352803359>',
+		github_fork: '<:fork:1238381500748271677>'
 	}
 };

@@ -45,7 +45,7 @@ module.exports = {
 					.setTitle('Переводчик')
 					.setDescription(result.text || 'Текст отсутствует')
 					.setFooter({ text: `Сервис: Google Translate` })
-					.setThumbnail('https://cdn.discordapp.com/attachments/695277643360239616/772322213394120714/1492616968-18-google-translate-text-language-translation_83413.png');
+					.setThumbnail('https://upload.wikimedia.org/wikipedia/commons/d/db/Google_Translate_Icon.png');
 
 				interaction.editReply({ embeds: [embed] });
 			},

@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
 const { emojis } = require('../../../config.js');
+const plural = require('../../../func/plural.js');
 
 module.exports = {
 	cooldown: 5,
@@ -57,21 +58,24 @@ module.exports = {
 		const collectorFilter = i => i.user.id === interaction.user.id;
 		try {
 			const confirmation = await response.awaitMessageComponent({ filter: collectorFilter, time: 60_000 });
-			let desc;
+			let desc='';
 			await require('node-fetch')(`https://api.github.com/users/${query}/repos`).then(r => r.json()).then(r => {
-				if (r.length > 30) r = r.slice(0, 30);
-				desc = '**' + r.map(rp => rp.name).join('**, **') + '**';
-				if (desc == '****') desc = '**Отсутствуют**';
+				desc;
+				if(r.length>10) { length = 10 } else { length = r.length }
+				for(i=0; i< length; i++) {
+					if(i!=0) desc = desc+'\n'
+					desc = desc+`${i+1}. ${r[i].name}: ${r[i].stargazers_count} ${emojis.github_star} | ${r[i].forks_count} ${emojis.github_fork}`
+				}
+				// if (r.length > 30) r = r.slice(0, 30);
+				// desc = '**' + r.map(rp => rp.name).join('**, **') + '**';
+				// if (desc == '****') desc = '**Отсутствуют**';
 			});
 			const reps = new EmbedBuilder()
-				.setTitle(`Пользователь ${login}`)
+				.setTitle(`Репозитории ${login}`)
 				.setURL(html_url)
-				.setDescription('Репозитории: ' + desc)
+				.setDescription(desc || "**Репозитории отсутствуют**")
 				.setThumbnail(avatar)
-				.setColor(guild.colors.basic)
-				.setFooter({
-					text: `ID: ${id}`,
-				});
+				.setColor(guild.colors.basic);
 			await interaction.editReply({ embeds: [reps], components: [] });
 
 		}

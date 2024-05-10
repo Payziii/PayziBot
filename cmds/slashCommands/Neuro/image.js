@@ -40,7 +40,7 @@ module.exports = {
             user.imageGens--;
             await user.save();
             interaction.editReply({
-                content: '🖼️ Вот ваша замечательная картинка:',
+                content: `🖼️ Вот ваша замечательная картинка по запросу \`${text.replace('`', '\`')}\`:`,
                 files: [{ attachment: Buffer.from(image, 'base64'), name: 'image.png' }]
             })
             CheckAch(9, interaction.user.id, interaction.channel, user)

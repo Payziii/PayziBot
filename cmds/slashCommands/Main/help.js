@@ -15,18 +15,22 @@ module.exports = {
 				},
 				{
 					name: 'Модерация',
-					value: '`ban`, `kick`, `mute`, `unmute`, `channel`, `configuration`, `starboard`, `autoreact`, `clear`, `welcome`, `goodbye`, `rolereact`',
+					value: '`ban`, `kick`, `mute`, `unmute`, `channel`, `clear`',
 				},
 				{
-					name: 'Игры',
-					value: '`guess`, `profile`, `bio`, `minesweeper`, `typing`, `ttt`, `colorfield`, `hangman`, `snake`, `memory`, `2048`',
+					name: 'Настройка',
+					value: '`configuration`, `starboard`, `autoreact`, `welcome`, `goodbye`, `rolereact`',
+				},
+				{
+					name: 'Игры и профиль',
+					value: '`profile`, `bio`, `guess`, `minesweeper`, `ttt`, `colorfield`, `hangman`, `snake`, `memory`, `2048`',
 				},
 				{
 					name: 'Нейросети',
 					value: '`image`, `ask`',
 				},
 			)
-			.setThumbnail(`https://cdn.discordapp.com/icons/${interaction.guild.id}/${interaction.guild.icon}.webp`)
+			.setThumbnail(`https://cdn.discordapp.com/avatars/${interaction.client.user.id}/${interaction.client.user.avatar}.webp?size=4096`)
 			.setColor(guild.colors.basic)
 			.setFooter({
 				text: 'Больше информации на docs.payzibot.ru',

@@ -33,7 +33,7 @@ module.exports = {
 					value: `ОЗУ: \`${(process.memoryUsage().heapUsed / (1024 * 1024)).toFixed(0)} МБ\`/\`${(os.totalmem() / (1024 * 1024)).toFixed(0)} МБ\`\nWebSocket: \`${client.ws.ping}ms\`\nЦП: \`${os.cpus()[0].model}\``,
 				},
 			)
-			.setThumbnail('https://cdn.discordapp.com/avatars/732867965053042690/f3f976adc4cb628dd707a8f4203e1f5d.webp?size=4096')
+			.setThumbnail(`https://cdn.discordapp.com/avatars/${interaction.client.user.id}/${interaction.client.user.avatar}.webp?size=4096`)
 			.setColor(guild.colors.basic);
 		const links = new EmbedBuilder()
 			.setTitle('Ссылки')
@@ -42,7 +42,7 @@ module.exports = {
 			${emojis.arrow} [Документация](https://docs.payzibot.ru/)\n
 			${emojis.arrow} [Исходный код](https://github.com/Payziii/PayziBot/)\n\n
 			${emojis.arrow} [PayziBot на BotiCord](https://boticord.top/bot/payzibot)`)
-			.setThumbnail('https://cdn.discordapp.com/avatars/732867965053042690/f3f976adc4cb628dd707a8f4203e1f5d.webp?size=4096')
+			.setThumbnail(`https://cdn.discordapp.com/avatars/${interaction.client.user.id}/${interaction.client.user.avatar}.webp?size=4096`)
 			.setColor(guild.colors.basic);
 		const link_button = new ButtonBuilder()
 			.setCustomId('link_button')
