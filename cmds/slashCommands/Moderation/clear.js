@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
-const { emojis } = require('../../../config.js');
+const { emojis, channels } = require('../../../config.js');
 
 module.exports = {
 	cooldown: 5,
@@ -24,7 +24,8 @@ module.exports = {
 			.then(messages => {
 				interaction.channel.send(`${emojis.success} | Очищено **${messages.size} сообщений** за последние 2 недели пользователем ${interaction.user}`);
 			})
-			.catch(() => {
+			.catch((err) => {
+				client.channels.cache.get(channels.errorLogs).send(`Ошибка clear: \`\`\`js\n${err}\`\`\``);
 				interaction.editReply(`${emojis.error} | Непредвиденная ошибка?`);
 			});
 	},
