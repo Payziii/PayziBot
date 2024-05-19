@@ -17,6 +17,8 @@ const guild = Schema({
 	},
 	neuro: {
 		chatgpt: { type: Boolean, default: false },
+		auto: { type: Boolean, default: false },
+		channels: { type: Array, default: [] }
 	},
 	welcome: {
 		channelID: { type: String, default: '-1' },

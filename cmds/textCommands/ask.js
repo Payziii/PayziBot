@@ -20,7 +20,7 @@ exports.run = async (client, message, args) => {
 
     if (text1.endsWith("--llama")) model = "llama";
     else if (text1.endsWith("--mixtral")) model = "mixtral";
-    else if (text1.endsWith("--codellama")) model = "codellama";
+    else if (['--cl','--codellama'].some(char => text1.endsWith(char))) model = "codellama";
     else if (text1.endsWith("--gpt")) model = "gpt";
     else model = "gemini";
 
