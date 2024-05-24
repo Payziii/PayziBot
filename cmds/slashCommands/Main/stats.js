@@ -40,6 +40,7 @@ module.exports = {
 			.setDescription(`${emojis.arrow} [Сервер поддержки](https://discord.gg/E7SFuVEB2Z)\n
 			${emojis.arrow} [Добавить бота](https://discord.com/api/oauth2/authorize?client_id=576442351426207744&permissions=1411299798102&scope=bot)\n
 			${emojis.arrow} [Документация](https://docs.payzibot.ru/)\n
+			${emojis.arrow} [PayziBot в Telegram](https://t.me/Payzi_Bot)\n
 			${emojis.arrow} [Исходный код](https://github.com/Payziii/PayziBot/)\n\n
 			${emojis.arrow} [PayziBot на BotiCord](https://boticord.top/bot/payzibot)`)
 			.setThumbnail(`https://cdn.discordapp.com/avatars/${interaction.client.user.id}/${interaction.client.user.avatar}.webp?size=4096`)
