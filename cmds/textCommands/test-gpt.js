@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
 
   let answer = data.data.completion;
   if (answer.length > 2000) {
-    let mess = res;
+    let mess = answer;
     mess = mess.substring(0, 1997);
     mess = mess + "...";
     return message.reply(mess);
