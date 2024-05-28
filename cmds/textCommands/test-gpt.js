@@ -5,7 +5,7 @@ exports.run = async (client, message, args) => {
   const text = args.join(" ");
   const data = await gpt4(text);
   console.log(data)
-  if(!data.success) return message.reply('АШИПКА ААААААААААА');
+  if(!data.success) return message.reply(`${emojis.error} | Ошибка: \`${data.message}\``);
 
   let answer = data.data.completion;
   if (answer.length > 2000) {
@@ -18,7 +18,7 @@ exports.run = async (client, message, args) => {
   }
 };
 exports.help = {
-  name: "fuko",
+  name: "payzi",
   aliases: [],
   description: "Генерация текста через нейросети",
 };

@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
 		}
 };
 exports.help = {
-	name: ',bash',
-	aliases: [',shell', ',console', ',linux'],
+	name: ',shell',
+	aliases: [',bash'],
 	description: 'Выполнить команду через консоль',
 };

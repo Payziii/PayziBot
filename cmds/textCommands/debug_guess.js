@@ -22,7 +22,7 @@ exports.run = async (client, message, args) => {
 };
 exports.help = {
   name: ",g-d",
-  aliases: [",gues-debug"],
+  aliases: [",guess-debug"],
   description:
     "Инструмент для поиска картинок, которые не отображаются в играх",
 };

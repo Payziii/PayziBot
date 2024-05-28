@@ -19,6 +19,6 @@ exports.run = async (client, message, args) => {
 };
 exports.help = {
 	name: ',block',
-	aliases: [',b', ',б', ',блок'],
+	aliases: [',блок'],
 	description: 'Выдать уровень блокировки пользователю',
 };

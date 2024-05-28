@@ -102,12 +102,9 @@ exports.help = {
   aliases: [
     ",chatgpt4",
     "gpt4",
-    "гпт4",
     ",гпт4",
     "gpt4",
-    "гпт",
     ",гпт",
-    "gpt",
     ",gpt",
   ],
   description: "Генерация текста через нейросети",
