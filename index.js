@@ -22,7 +22,7 @@ const client = new Client({
 	],
 	presence: {
 		status: 'online',
-		activities: [{ name: '💚 docs.payzibot.ru', type: ActivityType.Custom }],
+		activities: [{ name: '🌳 payzibot.ru', type: ActivityType.Custom }],
 	},
 });
 
