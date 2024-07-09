@@ -26,4 +26,3 @@
 - Идея некоторых функций от [korarar](https://github.com/korarar)
 - Небольшая помощь от [mrM0der](https://github.com/MrM0der)
 - Большинство игр сделаны с помощью [gamecord](https://github.com/aniket091/Gamecord)
-- Игры в `guess` реализованы с использованием [fiftyApi](https://docs.fifty.su)

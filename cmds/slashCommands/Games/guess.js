@@ -2,6 +2,10 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { Gen } = require('../../../func/games/tipGen.js');
 const give = require('../../../func/games/guessUserCorrect.js');
 const games = require('../../../func/games/guessCounting.js');
+const game = require('../../../games_src/game.json');
+const city = require('../../../games_src/city.json');
+const logo = require('../../../games_src/logo.json');
+const country = require('../../../games_src/country.json');
 
 module.exports = {
 	cooldown: 9,
@@ -31,7 +35,7 @@ module.exports = {
 		// GAME
 		if (interaction.options.getSubcommand() === 'game') {
 			const name = 'game';
-			const { item } = await require('node-fetch')(`https://api.fifty.su/v1/guess/game`).then(r => r.json())
+			const item = game[Math.floor(Math.random() * game.length)];
 			const collectorFilter = response => {
 				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 			};
@@ -74,7 +78,7 @@ module.exports = {
 		}
 		else if (interaction.options.getSubcommand() === 'city') {
 			const name = 'city';
-			const { item } = await require('node-fetch')(`https://api.fifty.su/v1/guess/city`).then(r => r.json())
+			const item = city[Math.floor(Math.random() * city.length)];
 			const collectorFilter = response => {
 				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 			};
@@ -117,7 +121,7 @@ module.exports = {
 		}
 		else if (interaction.options.getSubcommand() === 'logo') {
 			const name = 'logo';
-			const { item } = await require('node-fetch')(`https://api.fifty.su/v1/guess/logo`).then(r => r.json())
+			const item = logo[Math.floor(Math.random() * logo.length)];
 			const collectorFilter = response => {
 				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 			};
@@ -160,7 +164,7 @@ module.exports = {
 		}
 		else if (interaction.options.getSubcommand() === 'country') {
 			const name = 'country';
-			const { item } = await require('node-fetch')(`https://api.fifty.su/v1/guess/country`).then(r => r.json())
+			const item = country[Math.floor(Math.random() * country.length)];
 			const image = item.image[Math.floor(Math.random() * item.image.length)];
 			const collectorFilter = response => {
 				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
