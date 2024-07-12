@@ -40,7 +40,7 @@ module.exports = {
 			msg = `${emojis.error} | Как я заблокирую самого себя?`;
 			break;
 		default:
-			msg = `${emojis.success} ${user} был заблокирован. Причина: ${reason}`;
+			msg = `${emojis.success} ${user} был заблокирован!\n-# Причина: ${reason}`;
 		}
 		reason = interaction.user.username + ': ' + reason;
 		const member = await interaction.guild.members.cache.get(user.id);

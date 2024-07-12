@@ -86,7 +86,7 @@ module.exports = {
 					embedColor: guild.colors.giveaway,
 					embedColorEnd: guild.colors.giveaway
 				}).then((data) => {
-					interaction.editReply(`${emojis.gift} | Розыгрыш начался. ID розыгрыша: \`${data.messageId}\` (сохраните его для выбора нового победителя или досрочного окончания)`)
+					interaction.editReply(`${emojis.gift} | Розыгрыш начался. ID розыгрыша: \`${data.messageId}\`\n-# Сохраните ID для выбора нового победителя или досрочного окончания`)
 					CheckAch(8, interaction.user.id, interaction.channel)
 				}).catch((err) => {
 					console.log(err)

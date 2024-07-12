@@ -40,7 +40,7 @@ module.exports = {
 			msg = `${emojis.error} | А может я не хочу выходить с этого прекрасного сервера!`;
 			break;
 		default:
-			msg = `${emojis.success} ${user} был выгнан с этого замечательного сервера. Причина: ${reason}`;
+			msg = `${emojis.success} ${user} был выгнан с этого замечательного сервера...\n-# Причина: ${reason}`;
 		}
 		reason = interaction.user.username + ': ' + reason;
 		const member = await interaction.guild.members.cache.get(user.id);

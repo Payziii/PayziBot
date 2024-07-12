@@ -85,7 +85,7 @@ module.exports = {
 			if (res.length > 2000) {
 				let mess = res;
 				mess = mess.substring(0, 1940);
-				mess = mess + '...\n\nОтвет был обрезан из-за ограничений Discord!';
+				mess = mess + '...\n\n-# Ответ был обрезан из-за ограничений Discord!';
 				return interaction.editReply(mess);
 			}
 			interaction.editReply(res);

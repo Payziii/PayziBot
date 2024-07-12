@@ -56,7 +56,7 @@ module.exports = {
 			msg = `${emojis.error} | А как я отвечу тебе после этого?`;
 			break;
 		default:
-			msg = `${emojis.success} ${user} получил мут. Причина: ${reason}`;
+			msg = `${emojis.success} ${user} получил мут.\n-# Причина: ${reason}`;
 		}
 		reason = interaction.user.username + ': ' + reason;
 		const member = await interaction.guild.members.cache.get(user.id);
