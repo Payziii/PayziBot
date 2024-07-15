@@ -90,8 +90,8 @@ exports.run = async (client, message, args) => {
     if (!res) return msg.edit(`${emojis.error} | Ответ не был получен!`);
     if (res.length > 2000) {
       let mess = res;
-      mess = mess.substring(0, 1997);
-      mess = mess + "...";
+      mess = mess.substring(0, 1930);
+      mess = mess + "...\n\n-# Ответ был обрезан из-за ограничений Discord!";
       return msg.edit(mess);
     }
     msg.edit(res);

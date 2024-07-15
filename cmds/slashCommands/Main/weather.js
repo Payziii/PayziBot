@@ -4,6 +4,7 @@ const weather = require('../../../func/weather.js');
 const dayNames = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
 
 module.exports = {
+	category: 'utility',
 	cooldown: 5,
 	data: new SlashCommandBuilder()
 		.setName('weather')

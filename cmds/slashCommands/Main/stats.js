@@ -8,6 +8,7 @@ const { emojis } = require('../../../config.js');
 const plural = require('../../../func/plural.js');
 
 module.exports = {
+	category: 'utility',
 	data: new SlashCommandBuilder()
 		.setName('stats')
 		.setDescription('Информация о боте'),

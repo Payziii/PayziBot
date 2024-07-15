@@ -8,6 +8,7 @@ const logo = require('../../../games_src/logo.json');
 const country = require('../../../games_src/country.json');
 
 module.exports = {
+	category: 'games',
 	cooldown: 9,
 	data: new SlashCommandBuilder()
 		.setName('guess')

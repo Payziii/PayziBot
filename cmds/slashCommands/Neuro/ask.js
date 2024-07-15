@@ -5,6 +5,7 @@ const { RsnChat } = require('rsnchat');
 const rsnchat = new RsnChat(process.env.RSN);
 
 module.exports = {
+  category: 'neuro',
   cooldown: 30,
   data: new SlashCommandBuilder()
     .setName('ask')
@@ -84,7 +85,7 @@ module.exports = {
     if (!res) return interaction.editReply(`${emojis.error} | Ответ не был получен!`);
 			if (res.length > 2000) {
 				let mess = res;
-				mess = mess.substring(0, 1940);
+				mess = mess.substring(0, 1930);
 				mess = mess + '...\n\n-# Ответ был обрезан из-за ограничений Discord!';
 				return interaction.editReply(mess);
 			}

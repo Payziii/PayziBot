@@ -2,6 +2,7 @@ const { SlashCommandBuilder, EmbedBuilder, ChannelType } = require('discord.js')
 const { emojis } = require('../../../config.js');
 
 module.exports = {
+	category: 'utility',
 	data: new SlashCommandBuilder()
 		.setName('serverinfo')
 		.setDescription('Получить информацию о сервере'),
@@ -24,7 +25,7 @@ module.exports = {
 					inline: true,
 				},
 				{
-					name: `${emojis.channels}} Каналы`,
+					name: `${emojis.channels} Каналы`,
 					value: `Всего:  ${totalTextChannels + totalVoiceChannels}\nТекстовых: ${totalTextChannels}\nГолосовых: ${totalVoiceChannels}`,
 					inline: true,
 				},

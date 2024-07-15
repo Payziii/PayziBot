@@ -3,6 +3,7 @@ const tr = require('googletrans').default;
 const { emojis } = require('../../../config.js');
 
 module.exports = {
+	category: 'utility',
 	cooldown: 3,
 	data: new SlashCommandBuilder()
 		.setName('translate')

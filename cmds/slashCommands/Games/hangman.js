@@ -3,6 +3,7 @@ const hangman = require('../../../func/discord-hangman');
 const words = require('../../../games_src/hangman.json');
 
 module.exports = {
+	category: 'games',
 	cooldown: 30,
 	data: new SlashCommandBuilder()
 		.setName('hangman')

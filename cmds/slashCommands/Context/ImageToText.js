@@ -4,6 +4,7 @@ const { CheckAch } = require('../../../func/games/giveAch.js');
 const { emojis } = require('../../../config.js');
 
 module.exports = {
+	category: '',
 	data: new ContextMenuCommandBuilder()
 		.setName('Фото в текст')
 		.setType(ApplicationCommandType.Message),

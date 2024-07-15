@@ -2,6 +2,7 @@ const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRow
 const { emojis } = require('../../../config.js');
 
 module.exports = {
+	category: 'games',
 	skip: true,
 	cooldown: 60,
 	data: new SlashCommandBuilder()

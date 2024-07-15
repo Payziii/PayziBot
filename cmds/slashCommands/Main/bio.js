@@ -2,6 +2,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { emojis } = require('../../../config.js');
 
 module.exports = {
+	category: 'games',
 	cooldown: 3,
 	data: new SlashCommandBuilder()
 		.setName('bio')

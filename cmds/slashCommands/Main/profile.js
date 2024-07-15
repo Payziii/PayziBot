@@ -5,6 +5,7 @@ const ach = require('../../../games_src/profile/achievements.json');
 const { emojis } = require('../../../config.js');
 
 module.exports = {
+	category: 'games',
 	data: new SlashCommandBuilder()
 		.setName('profile')
 		.setDescription('Профиль PayziBot')

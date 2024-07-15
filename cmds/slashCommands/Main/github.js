@@ -4,6 +4,7 @@ const { emojis } = require('../../../config.js');
 const plural = require('../../../func/plural.js');
 
 module.exports = {
+	category: 'utility',
 	cooldown: 5,
 	data: new SlashCommandBuilder()
 		.setName('github')

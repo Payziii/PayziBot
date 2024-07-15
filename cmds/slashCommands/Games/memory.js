@@ -2,6 +2,7 @@ const { SlashCommandBuilder } = require('discord.js');
 const { MatchPairs } = require('../../../func/discord-gamecord');
 
 module.exports = {
+	category: 'games',
 	cooldown: 30,
 	data: new SlashCommandBuilder()
 		.setName('memory')

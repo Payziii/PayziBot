@@ -2,6 +2,7 @@ const { SlashCommandBuilder, PermissionFlagsBits, ChannelType } = require("disco
 const { emojis } = require('../../../config.js');
 
 module.exports = {
+  category: 'settings',
     cooldown: 15,
     data: new SlashCommandBuilder()
         .setName('starboard')

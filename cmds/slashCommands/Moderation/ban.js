@@ -2,6 +2,7 @@ const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 const { emojis } = require('../../../config.js');
 
 module.exports = {
+	category: 'mod',
 	cooldown: 3,
 	data: new SlashCommandBuilder()
 		.setName('ban')

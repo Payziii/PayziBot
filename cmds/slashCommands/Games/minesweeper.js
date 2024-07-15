@@ -3,6 +3,7 @@ const { Minesweeper } = require('../../../func/discord-gamecord');
 const { CheckAch } = require('../../../func/games/giveAch.js');
 
 module.exports = {
+	category: 'games',
 	cooldown: 30,
 	data: new SlashCommandBuilder()
 		.setName('minesweeper')

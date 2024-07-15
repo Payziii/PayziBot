@@ -1,33 +1,36 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
+	category: 'utility',
 	data: new SlashCommandBuilder()
 		.setName('help')
 		.setDescription('Список команд'),
 	async execute(interaction, guild) {
+		await interaction.deferReply();
+		const client = interaction.client;
 		const embed = new EmbedBuilder()
 			.setTitle('Список доступных команд')
 			.setDescription('Бот использует слэш-команды. Для вызова команды введите `/команда`')
 			.addFields(
 				{
 					name: 'Утилиты',
-					value: '`help`, `avatar`, `userinfo`, `stats`, `translate`, `weather`, `github`, `serverinfo`',
+					value: `${Array.from(client.commands.filter(c => c.category === 'utility')).map(([key, value]) => `\`${key}\``).join(', ')}`,
 				},
 				{
 					name: 'Модерация',
-					value: '`ban`, `kick`, `mute`, `unmute`, `channel`, `clear`',
+					value: `${Array.from(client.commands.filter(c => c.category === 'mod')).map(([key, value]) => `\`${key}\``).join(', ')}`,
 				},
 				{
 					name: 'Настройка',
-					value: '`configuration`, `starboard`, `autoreact`, `welcome`, `goodbye`, `rolereact`',
+					value: `${Array.from(client.commands.filter(c => c.category === 'settings')).map(([key, value]) => `\`${key}\``).join(', ')}`,
 				},
 				{
 					name: 'Игры и профиль',
-					value: '`profile`, `bio`, `guess`, `minesweeper`, `ttt`, `colorfield`, `hangman`, `snake`, `memory`, `2048`',
+					value: `${Array.from(client.commands.filter(c => c.category === 'games')).map(([key, value]) => `\`${key}\``).join(', ')}`,
 				},
 				{
 					name: 'Нейросети',
-					value: '`image`, `ask`',
+					value: `${Array.from(client.commands.filter(c => c.category === 'neuro')).map(([key, value]) => `\`${key}\``).join(', ')}`,
 				},
 			)
 			.setThumbnail(`https://cdn.discordapp.com/avatars/${interaction.client.user.id}/${interaction.client.user.avatar}.webp?size=4096`)
@@ -35,6 +38,6 @@ module.exports = {
 			.setFooter({
 				text: 'Больше информации на docs.payzibot.ru',
 			});
-		await interaction.reply({ embeds: [embed] });
+		await interaction.editReply({ embeds: [embed] });
 	},
 };

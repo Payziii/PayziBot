@@ -6,6 +6,7 @@ const { CheckAch } = require('../../../func/games/giveAch.js');
 const { emojis } = require('../../../config.js');
 
 module.exports = {
+	category: 'settings',
 	data: new SlashCommandBuilder()
 		.setName('giveaway')
 		.setDescription('Управление розыгрышами')

@@ -6,6 +6,7 @@ const { RsnChat } = require('rsnchat');
 const rsnchat = new RsnChat(process.env.RSN);
 
 module.exports = {
+    category: 'neuro',
     cooldown: 60,
     data: new SlashCommandBuilder()
         .setName('image')
