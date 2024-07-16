@@ -106,6 +106,7 @@ module.exports = {
 			interaction.reply(`${emojis.loading} | Выбор новых победителей`)
 			interaction.client.giveawaysManager
 				.reroll(id, {
+					winnerCount: 1,
 					messages: messages.ru.reroll
 				}).then(() => {
 					interaction.editReply(`${emojis.gift} | Успешно выбраны новые победители`)
