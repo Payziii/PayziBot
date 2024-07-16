@@ -39,11 +39,6 @@ const guild = Schema({
 		channelID: { type: String, default: '-1' },
 		reacts: { type: Array, default: [] },
 	},
-	mediaRate: {
-		channelID: { type: String, default: '-1' },
-		pinRate: { type: Number, default: 5 },
-		data: { type: Map, default: [] },
-	},
 	rr: { type: Map, default: [] },
 	customCommands: { type: Map, default: [] },
 });
