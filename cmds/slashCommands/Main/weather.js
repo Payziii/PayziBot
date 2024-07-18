@@ -60,7 +60,27 @@ module.exports = {
 
 			if (confirmation.customId === 'threedaysweather') {
 				const wea = await weather.forecast(process.env.WEATHER, city, 5);
-				day2 = dayNames[new Date(wea[2].date_epoch*1000).getDay()]
+				data = wea
+				day2s = dayNames[new Date(wea[2].date_epoch*1000).getDay()]
+
+				day1 = new Date(data[0].date_epoch*1000)
+day1 = day1.toLocaleDateString('ru-RU', {
+  month: '2-digit',
+  day: '2-digit',
+})
+day2 = new Date(data[1].date_epoch*1000)
+day2 = day2.toLocaleDateString('ru-RU', {
+  month: '2-digit',
+  day: '2-digit',
+})
+day3 = new Date(data[2].date_epoch*1000)
+day3 = day3.toLocaleDateString('ru-RU', {
+  month: '2-digit',
+  day: '2-digit',
+})
+
+stringa = `https://quickchart.io/chart?c={type:%27line%27,data:{labels:[%27${day1}%2000:00%27,%2706:00%27,%2712:00%27,%2718:00%27,%27${day2}%2000:00%27,%2706:00%27,%2712:00%27,%2718:00%27,%27${day3}%2000:00%27,%2706:00%27,%2712:00%27,%2718:00%27],datasets:[{label:%27%D0%A2%D0%B5%D0%BC%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%27,data:[${data[0].hour[0].temp_c},${data[0].hour[6].temp_c},${data[0].hour[12].temp_c},${data[0].hour[18].temp_c},${data[1].hour[0].temp_c},${data[1].hour[6].temp_c},${data[1].hour[12].temp_c},${data[1].hour[18].temp_c},${data[2].hour[0].temp_c},${data[2].hour[6].temp_c},${data[2].hour[12].temp_c},${data[2].hour[18].temp_c}],fill:true,borderColor%3A%27rgba%2863%2C+204%2C+101%2C+1%29%27%2CbackgroundColor%3A%27rgba%2863%2C+204%2C+101%2C+0.3%29%27%7D]}}`
+
 				const fdw = new EmbedBuilder()
 			.setTitle(r.location.name + ", " + r.location.country)
 			.addFields(
@@ -75,13 +95,14 @@ module.exports = {
 					inline: true,
 				},
 				{
-					name: `${day2}`,
+					name: `${day2s}`,
 					value: `>>> ${wea[2].day.condition.text}\n**${wea[2].day.maxtemp_c}°C** / **${wea[2].day.mintemp_c}°C**`,
 					inline: false,
 				},
 			)
 			.setThumbnail("https:" + r.current.condition.icon)
 			.setColor(guild.colors.basic)
+			.setImage(stringa)
 			.setFooter({
 				text: 'Сервис: WeatherApi 💖',
 			});
