@@ -20,14 +20,19 @@ module.exports = {
 
 		let user = await User.findOne({ userID: _user.id });
 		if (!user) return interaction.editReply(`${emojis.error} | Этот пользователь не использовал бота!`);
-		let block_message = `\n${block[user.block].emoji} Блокировка: **${block[user.block].name}**`;
+		let block_message = `\n${block[user.block].emoji} Блокировка: **${block[user.block].name}**\n`;
 		if(user.block < 1) block_message = '';
 		const embed = new EmbedBuilder()
 			.setTitle(`${_user.username}`)
 			.setColor(guild.colors.basic)
-			.setDescription(`${user.bio}\n${block_message}\nОсталось генераций картинок: **${user.imageGens}**`)
+			.setDescription(`${user.bio}\n${block_message}Осталось генераций картинок: **${user.imageGens}**`)
 			.setThumbnail(`https://cdn.discordapp.com/avatars/${_user.id}/${_user.avatar}.webp?size=4096`)
 			.addFields(
+				{
+					name: "Уровень",
+					value: `На сервере отключена система уровней`,
+					inline: false
+				  },
 				{
 				  name: "Достижения",
 				  value: `Всего достижений: **${user.ach.length}**`,
