@@ -67,9 +67,6 @@ module.exports = {
 					if(i!=0) desc = desc+'\n'
 					desc = desc+`${i+1}. ${r[i].name}: ${r[i].stargazers_count} ${emojis.github_star} | ${r[i].forks_count} ${emojis.github_fork}`
 				}
-				// if (r.length > 30) r = r.slice(0, 30);
-				// desc = '**' + r.map(rp => rp.name).join('**, **') + '**';
-				// if (desc == '****') desc = '**Отсутствуют**';
 			});
 			const reps = new EmbedBuilder()
 				.setTitle(`Репозитории ${login}`)

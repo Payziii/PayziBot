@@ -52,7 +52,7 @@ module.exports = {
                 .then(response => {
                     AfterGen(response.image)
                 }).catch(() => {
-                    interaction.editReply(`${emojis.error} | Ошибка. Повторите свой запрос чуть позже, либо измените его!`)
+                    interaction.editReply(`${emojis.error} | Ошибка. Попробуйте позже или выберите другую модель`)
                     return
                 });
         } else if (model === 'kandinsky') {
@@ -60,7 +60,7 @@ module.exports = {
                 .then(response => {
                     AfterGen(response.image)
                 }).catch(() => {
-                    interaction.editReply(`${emojis.error} | Ошибка. Повторите свой запрос чуть позже, либо измените его!`)
+                    interaction.editReply(`${emojis.error} | Ошибка. Попробуйте позже или выберите другую модель`)
                     return
                 });
         } else {
@@ -68,7 +68,7 @@ module.exports = {
                 .then(response => {
                     AfterGen(response.image)
                 }).catch(() => {
-                    interaction.editReply(`${emojis.error} | Ошибка. Повторите свой запрос чуть позже, либо измените его!`)
+                    interaction.editReply(`${emojis.error} | Ошибка. Попробуйте позже или выберите другую модель`)
                     return
                 });
         }

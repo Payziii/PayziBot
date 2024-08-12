@@ -248,5 +248,15 @@
         "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/MasterCard_logo.png",
         "answers": ["MasterCard", "МастерКард"],
         "id": 50
+    },
+    {
+        "image": "https://sun9-72.userapi.com/impg/QoE86AZPYYykw8YXu0Egie-vDYU2zhvHuFC7tQ/dGQ2ma2cyuM.jpg?size=640x640&quality=95&sign=0d1a60e7a9c2b651069cb810a4d9b7a3&type=album",
+        "answers": ["Платформа", "Platforma"],
+        "id": 51
+    },
+    {
+        "image": "https://sun3-24.userapi.com/impg/eMERbXqeMtyLyngIwZ9d6Jeu3CNd263yLsQ8Qw/vQzZiB72l64.jpg?size=1000x1000&quality=95&sign=c925b316f1d23084c5c36a8009dc3580&type=album",
+        "answers": ["VK Видео", "ВК Видео", "VK Video"],
+        "id": 52
     }
 ]

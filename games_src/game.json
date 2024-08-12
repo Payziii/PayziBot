@@ -41,7 +41,7 @@
     },
     {
         "image": "http://all-cs.net.ru/_ld/44/98512202.jpg",
-        "answers": ["CS 1.6", "кс 1.6", "Контрл Страйк 1.6", "Counter Strike 1.6", "cs", "кс"],
+        "answers": ["CS 1.6", "кс 1.6", "Контр Страйк 1.6", "Counter Strike 1.6", "cs", "кс"],
         "id": 9
     },
     {
@@ -246,7 +246,7 @@
     },
     {
         "image": "https://se7en.ws/wp-content/uploads/2023/03/cs2-de_dust2_screenshot-05.jpg",
-        "answers": ["Counter Strike 2", "CS2", "Контрл Страйк 2", "кс2", "кс 2", "cs 2"],
+        "answers": ["Counter Strike 2", "CS2", "Контр Страйк 2", "кс2", "кс 2", "cs 2"],
         "id": 50
     },
     {
@@ -326,7 +326,7 @@
     },
     {
         "image": "http://s01.riotpixels.net/data/11/49/11492839-3abb-4e7d-9962-0a4b1dc4e30e.jpg.720p.jpg/screenshot.apex-legends.1280x720.2019-02-05.10.jpg",
-        "answers": ["Apex Legends", "Apex", "Апекс"],
+        "answers": ["Apex Legends", "Apex", "Апекс", "Апекс Ледженс", "Апекс Леджэнс", "Апекс Легенды"],
         "id": 66
     },
     {
@@ -341,7 +341,7 @@
     },
     {
         "image": "https://files.vgtimes.ru/gallery/main/608/1583034429_4860.jpeg",
-        "answers": ["League of Legends"],
+        "answers": ["League of Legends", "Лига легенд", "LoL", "ЛЛ", "ЛоЛ"],
         "id": 69
     },
     {
@@ -356,7 +356,7 @@
     },
     {
         "image": "https://files.vgtimes.ru/gallery/main/180811/1633324271_8917.jpeg",
-        "answers": ["Goose Goose Duck", "Гуси", "гусь"],
+        "answers": ["Goose Goose Duck", "Гуси", "гусь", "Гус гус дак", "Гусь гусь дак"],
         "id": 72
     },
     {
@@ -381,7 +381,7 @@
     },
     {
         "image": "https://files.vgtimes.ru/gallery/main/170901/1636053119_5362.jpeg",
-        "answers": ["Elden Ring", "Энден Ринг"],
+        "answers": ["Elden Ring", "Энден Ринг", "Элдэн Ринг"],
         "id": 77
     },
     {
@@ -396,7 +396,7 @@
     },
     {
         "image": "https://files.vgtimes.ru/gallery/main/15698/up-strider.jpg",
-        "answers": ["Garry's Mod", "Гарис мод"],
+        "answers": ["Garry's Mod", "Гарис мод", "гм"],
         "id": 80
     },
     {
@@ -406,7 +406,7 @@
     },
     {
         "image": "https://files.vgtimes.ru/gallery/main/138318/1581531025_5820.jpeg",
-        "answers": ["Hollow Knight"],
+        "answers": ["Hollow Knight", "Холлоу найт", "Холлов найт"],
         "id": 82
     },
     {
@@ -446,7 +446,7 @@
     },
     {
         "image": "https://files.vgtimes.ru/gallery/main/755/6499841452_1686078718_8423.jpeg",
-        "answers": ["Euro Truck Simulator 2", "Truck Simulator 2", "Евро Трак Симулятор 2", "Трак Симулятор 2"],
+        "answers": ["Euro Truck Simulator 2", "Truck Simulator 2", "Евро Трак Симулятор 2", "Трак Симулятор 2", "ETS 2", "ETS2"],
         "id": 90
     }
 ]
