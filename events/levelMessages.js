@@ -6,7 +6,7 @@ const { CheckAch } = require('../func/games/giveAch.js');
 module.exports = {
 	name: Events.MessageCreate,
 	async execute(message, client) {
-		return; // Не работает
+		if(message.guild.id != "1180508176907522129") return; // Не работает
 		if (message.author.bot) return; // Ботов не обслуживаем
 
 		const guild = await getLevelGuild(message.guild.id);
