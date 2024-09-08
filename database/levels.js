@@ -92,8 +92,8 @@ async function putLevelUser(guildID, user) {
 async function getLevelUserByGuild(guildID, userID) {
     const guild = await getLevelGuild(guildID);
     const { data } = guild;
-    const user = data.find(user => user.user === userID);
-    if(!user) return await setLevelUserByGuild(guildID, userID);
+    let user = data.find(user => user.user === userID);
+    if(!user) return user = await setLevelUserByGuild(guildID, userID);
 
     return user;
 }
