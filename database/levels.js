@@ -106,7 +106,7 @@ async function getLevelUserByGuild(guildID, userID) {
  */
 async function setLevelUserByGuild(guildID, userID) {
     let guild = await getLevelGuild(guildID);
-    const data = {user: userID, xp: 0, level: 0, lastMessage: 0 };
+    const data = {user: userID, xp: 0, level: 0, lastMessage: 1 };
     guild.data.push(data);
     levelsDB.put(guildID, guild);
 
