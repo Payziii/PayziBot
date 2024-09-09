@@ -119,5 +119,6 @@ module.exports = {
     getLevelGuild,
     setLevelGuildEnabled,
     putLevelUser,
-    getLevelUserByGuild
+    getLevelUserByGuild,
+setLevelUserByGuild
 }
