@@ -77,6 +77,7 @@ async function putLevelUser(guildID, user) {
     const { data } = guild;
     let u = data.find(us => us.user === user.user); 
     data[data.indexOf(u)] = user;
+    if(!u) data.push(user)
     guild.data = data;
     levelsDB.put(guildID, guild);
     
