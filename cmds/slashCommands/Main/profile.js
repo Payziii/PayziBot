@@ -27,7 +27,7 @@ module.exports = {
 		const g = await getLevelGuild(interaction.guild.id);
 		if(!g.enabled) lvlMess = 'На сервере отключена система уровней';
 		else {
-			const us = await getLevelUserByGuild(interaction.guild.id, interaction.user.id);
+			const us = await getLevelUserByGuild(interaction.guild.id, _user.id);
 			lvlMess = `Уровень: ${us.level}\nXP: ${us.xp}/${MathNextLevel(us.level, g.xp.koeff)}`
 		}
 		const embed = new EmbedBuilder()
