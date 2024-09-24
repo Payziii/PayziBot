@@ -3,6 +3,7 @@ const User = require('../../../database/user.js');
 const block = require('../../../games_src/profile/block.json');
 const ach = require('../../../games_src/profile/achievements.json');
 const { emojis } = require('../../../config.js');
+const { getLevelGuild, getLevelUserByGuild, MathNextLevel } = require('../../../database/levels.js');
 
 module.exports = {
 	category: 'games',
@@ -22,6 +23,13 @@ module.exports = {
 		if (!user) return interaction.editReply(`${emojis.error} | Этот пользователь не использовал бота!`);
 		let block_message = `\n${block[user.block].emoji} Блокировка: **${block[user.block].name}**\n`;
 		if(user.block < 1) block_message = '';
+		let lvlMess;
+		const g = await getLevelGuild(interaction.guild.id);
+		if(!g.enabled) lvlMess = 'На сервере отключена система уровней';
+		else {
+			const us = await getLevelUserByGuild(interaction.guild.id, interaction.user.id);
+			lvlMess = `Уровень: ${us.level}\nXP: ${us.xp}/${MathNextLevel(us.level, g.xp.koeff)}`
+		}
 		const embed = new EmbedBuilder()
 			.setTitle(`${_user.username}`)
 			.setColor(guild.colors.basic)
@@ -30,7 +38,7 @@ module.exports = {
 			.addFields(
 				{
 					name: "Уровень",
-					value: `На сервере отключена система уровней`,
+					value: `${lvlMess}`,
 					inline: false
 				  },
 				{
