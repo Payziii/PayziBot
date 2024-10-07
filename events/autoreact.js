@@ -14,6 +14,7 @@ module.exports = {
 
 			const channel = await client.channels.cache.get(guild.autoreact.channelID); // Получаем канал
 			if (!channel) return; // И возвращаем return, если его не существует
+			if (!channel.permissionsFor(message.guild.members.me).has(['AddReactions', 'ViewChannel'])) return; // Проверяем, есть ли у бота права
 
 			const reacts = await guild.autoreact.reacts; 
 			for (const reaction of reacts) { // Ставим реакции через цикл for

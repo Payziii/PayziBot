@@ -113,7 +113,7 @@ module.exports = {
             `${emojis.error}| Кажется вы используете эмодзи, которых нет на этом сервере...`
           );
       }
-
+      if (!channel.permissionsFor(interaction.guild.members.me).has(['AddReactions', 'ViewChannel'])) return interaction.followUp(`${emojis.error} | Мне нужны права "Установка реакций" в выбранном канале`)
       channel.messages
         .fetch(id)
         .then((message) => {

@@ -42,6 +42,9 @@ module.exports = {
       await interaction.reply(`${emojis.success} Приветственное сообщение было отключено!`)
     } else if (interaction.options.getSubcommand() === 'setup') {
       channel = interaction.options.getChannel('канал')
+
+      if (!channel.permissionsFor(interaction.guild.members.me).has(['SendMessages', 'ViewChannel'])) return interaction.reply(`${emojis.error} | Я не могу отправлять сообщения в выбранном канале...`)
+
       guild.welcome.channelID = channel.id;
       guild.save()
 

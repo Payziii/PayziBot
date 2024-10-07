@@ -33,7 +33,7 @@ module.exports = {
           channel.isTextBased() &&
           channel
             .permissionsFor(guild.members.me)
-            .has("SendMessages", "ViewChannel", "EmbedLinks")
+            .has(["SendMessages", "ViewChannel", "EmbedLinks"])
       );
       if (!channel) return;
 

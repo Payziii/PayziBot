@@ -68,6 +68,8 @@ module.exports = {
 
 			if(!channel.permissionsFor(interaction.user).has("SendMessages")) return interaction.reply(`${emojis.error} | Вы не можете создать розыгрыш, поскольку не имеете доступа к каналу, в котором пытаетесь его создать`)
 
+			if (!channel.permissionsFor(interaction.guild.members.me).has(['SendMessages', 'AddReactions', 'ViewChannel'])) return interaction.reply(`${emojis.error} | Я не могу отправлять сообщения и ставить реакции в выбранном канале...`)
+
 			if(isNaN(duration)) return interaction.reply(`${emojis.error} | Время - это число. Также можете использовать приставки "с", "м", "ч", "д". Например: 1д - розыгрыш будет создан на 1 день.`)
 			if(duration < 1000) return interaction.reply(`${emojis.error} | Я не могу создать розыгрыш менее, чем на 1 секунду`)
 
