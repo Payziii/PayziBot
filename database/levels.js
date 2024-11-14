@@ -10,7 +10,7 @@ let levelsDB = open({
 });
 
 function MathNextLevel(current, koeff) {
-    return 100*(current*1.7+1)*koeff;
+    return (100*(current*1.7+1)*koeff).toFixed(0);
 }
 
 /**
