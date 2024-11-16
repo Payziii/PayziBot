@@ -12,15 +12,16 @@ module.exports = {
 		.setDescription('Посмотреть список лидеров'),
 	async execute(interaction, guild) {
 		await interaction.deferReply();
+		const allowedMentions = { parse: ['users'], repliedUser: false };
 		const g = await getLevelGuild(interaction.guild.id);
-		let lvlMess;
+		let lvlMess = "";
 		if(!g.enabled) lvlMess = 'На сервере отключена система уровней';
 		const users = g.data;
 		users.sort((a, b) => b.xp - a.xp);
 		const top10Users = users.slice(0, 10);
 		top10Users.forEach((user, index) => {
-			lvlMess = lvlMess+`${index + 1}. Пользователь: <@${user.user}>, XP: ${user.xp}, Уровень: ${user.level}\n`;
+			lvlMess = lvlMess+`${index + 1}. <@${user.user}> — Уровень: **${user.level}** — XP: **${user.xp}**\n`;
 		  });
-		interaction.editReply(`${lvlMess}`)
+		interaction.editReply(`${lvlMess}`, { allowedMentions })
 	},
 };

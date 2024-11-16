@@ -20,7 +20,7 @@ function MathNextLevel(current, koeff) {
  */
 async function createLevelGuild(guildID) {
     await levelsDB.put(guildID, {
-        enabled: true,
+        enabled: false,
         interval: 60,
         xp: {
             min: 1,
