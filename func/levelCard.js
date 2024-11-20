@@ -1,5 +1,5 @@
-const { createCanvas, loadImage, registerFont } = require('@napi-rs/canvas')
-registerFont('../fonts/Montserrat-Medium.ttf', { family: "Montserrat", weight: '500' })
+const { createCanvas, loadImage } = require('@napi-rs/canvas')
+//registerFont('../fonts/Montserrat-Medium.ttf', { family: "Montserrat", weight: '500' })
 
 module.exports = async function create(nick, lvl, progress) {
 
