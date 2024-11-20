@@ -1,11 +1,12 @@
 const { createCanvas, loadImage } = require('@napi-rs/canvas')
 const fs = require('fs').promises;
+const path = require('path');
 const { request } = require('undici');
 
 //registerFont('../fonts/Montserrat-Medium.ttf', { family: "Montserrat", weight: '500' })
 
 module.exports = async function create(nick, lvl, progress, avatar) {
-    const fileBuffer = await fs.readFile('./img.png');
+    const fileBuffer = await fs.readFile(path.resolve(__dirname, 'img.png'));
     const arrayBuffer = fileBuffer.buffer.slice(fileBuffer.byteOffset, fileBuffer.byteOffset + fileBuffer.byteLength);
     const canvas = createCanvas(500, 200)
     const ctx = canvas.getContext('2d')
