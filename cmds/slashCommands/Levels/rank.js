@@ -1,4 +1,5 @@
-const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder, AttachmentBuilder } = require('discord.js');
+const create = require('../../../func/levelCard.js')
 const User = require('../../../database/user.js');
 const block = require('../../../games_src/profile/block.json');
 const ach = require('../../../games_src/profile/achievements.json');
@@ -28,6 +29,10 @@ module.exports = {
 			const us = await getLevelUserByGuild(interaction.guild.id, _user.id);
 			lvlMess = `Уровень: **${us.level}**\nXP: **${us.xp}**/**${MathNextLevel(us.level, g.xp.koeff)}**`
 		}
-		interaction.editReply(`${lvlMess}`)
+		prosh = MathNextLevel(us.level-1, g.xp.koeff)
+		if(prosh<0) prosh = 0 
+		prog = (us.xp - prosh)/(MathNextLevel(us.level, g.xp.koeff)-prosh)
+		const attachment = new AttachmentBuilder(await create(_user.username, us.level, prog), { name: 'profile-image.png' });
+		interaction.editReply(`${lvlMess}`, { files: [attachment] })
 	},
 };
