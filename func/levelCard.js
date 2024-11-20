@@ -6,7 +6,7 @@ module.exports = async function create(nick, lvl, progress, avatar) {
 
     const canvas = createCanvas(500, 200)
     const ctx = canvas.getContext('2d')
-    image = loadImage('./img.png')
+    image = await loadImage('./img.png')
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
     ctx.font = '500 30px Montserrat'
     const textWidth = ctx.measureText(nick).width;
@@ -14,7 +14,7 @@ module.exports = async function create(nick, lvl, progress, avatar) {
     ctx.fillText(`${lvl} LVL`, 380, 35)
     ctx.fillText(nick, 500 - textWidth - 10, 190)
     const ava = await request(avatar);
-    secondImage = loadImage(ava.body.arrayBuffer())
+    secondImage = await loadImage(ava.body.arrayBuffer())
     ctx.save();
     ctx.beginPath();
     ctx.arc(10 + 50, 10 + 50, 50, 0, Math.PI * 2, true);
