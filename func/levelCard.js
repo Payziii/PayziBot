@@ -13,8 +13,8 @@ module.exports = async function create(nick, lvl, progress, avatar) {
     ctx.fillStyle = "#d8dee9"
     ctx.fillText(`${lvl} LVL`, 380, 35)
     ctx.fillText(nick, 500 - textWidth - 10, 190)
-    const ava = await request(avatar);
-    secondImage = await loadImage(ava.body.arrayBuffer())
+    //const ava = await request(avatar);
+    secondImage = await loadImage(avatar)
     ctx.save();
     ctx.beginPath();
     ctx.arc(10 + 50, 10 + 50, 50, 0, Math.PI * 2, true);
