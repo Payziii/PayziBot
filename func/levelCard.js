@@ -89,6 +89,5 @@ module.exports = async function create(nick, lvl, progress, avatar) {
     ctx.quadraticCurveTo(progressX, progressY, progressX + cornerRadius, progressY);
     ctx.closePath();
     ctx.stroke();
-    img = await canvas.encode('png')
-    return img
+    return canvas
 }
