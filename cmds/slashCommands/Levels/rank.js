@@ -36,7 +36,11 @@ module.exports = {
 		avatar = _user.displayAvatarURL({ extension: 'jpg' })
 		canvas = await create(_user.username, us.level, prog, avatar)
 		img = await canvas.encode('png')
-		await fs.writeFile(join(__dirname, 'simple.png'), img)
+		fs.writeFile(join(__dirname, 'simple.png'), img, (err) => {
+			if (err) {
+				console.error('Error writing file:', err);
+				return;
+			}
 		interaction.editReply(`${lvlMess}`, { files: [{
 			attachment: join(__dirname, 'simple.png'),
 			name: 'example.png'
@@ -49,5 +53,6 @@ module.exports = {
 					console.log('File has been deleted');
 				}
 			})})
+		})
 	},
 };
