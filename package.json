@@ -19,7 +19,8 @@
     "node-fetch": "^2.6.12",
     "payzi-time": "^0.0.3",
     "rsnchat": "^4.0.1",
-    "tesseract.js": "^5.0.3"
+    "tesseract.js": "^5.0.3",
+    "undici": "^6.21.0"
   },
   "devDependencies": {
     "eslint": "^8.53.0"
