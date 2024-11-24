@@ -15,12 +15,12 @@ module.exports = {
         .setDescription('Посмотреть текущий уровень')
         .addUserOption((option) =>
             option
-                .setName('user') // Изменено имя опции
+                .setName('пользователь') 
                 .setDescription('Пользователь, чей уровень надо посмотреть')
         ),
     async execute(interaction, guild) {
         await interaction.deferReply();
-        let _user = interaction.options.getUser('user') || interaction.user; // Изменено имя опции
+        let _user = interaction.options.getUser('пользователь') || interaction.user; 
 
         let user = await User.findOne({ userID: _user.id });
         if (!user) return interaction.editReply(`${emojis.error} | Этот пользователь не использовал бота!`);
@@ -40,25 +40,21 @@ module.exports = {
         const filePath = join(__dirname, 'simple.png');
 
         try {
-            // Создание и запись данных в файл
             fs.writeFileSync(filePath, img);
-            console.log('File has been created:', filePath);
+            console.log('Файл ранга создан:', filePath);
 
-            // Проверка существования файла
             if (!fs.existsSync(filePath)) {
-                throw new Error('File does not exist after creation');
+                throw new Error('Файла не существует?');
             }
 
-            // Отправка файла в канал Discord
             const attachment = new AttachmentBuilder(filePath, { name: 'example.png' });
             await interaction.editReply({
                 content: `${lvlMess}`,
                 files: [attachment]
             });
 
-            // Удаление файла после успешной отправки
             fs.unlinkSync(filePath);
-            console.log('File has been deleted');
+            console.log('Файл удален');
         } catch (err) {
             console.error('Error:', err);
             interaction.editReply('Произошла ошибка при обработке запроса.');

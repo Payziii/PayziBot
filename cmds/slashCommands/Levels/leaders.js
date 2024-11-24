@@ -8,7 +8,7 @@ const { getLevelGuild, getLevelUserByGuild, MathNextLevel } = require('../../../
 module.exports = {
 	category: 'levels',
 	data: new SlashCommandBuilder()
-		.setName('levels')
+		.setName('leaders')
 		.setDescription('Посмотреть список лидеров'),
 	async execute(interaction, guild) {
 		await interaction.deferReply();

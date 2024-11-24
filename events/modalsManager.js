@@ -1,5 +1,6 @@
 const { Events, Collection } = require('discord.js');
 const Guild = require('../database/guild.js');
+const { setLevelGuildMessage } = require('../database/levels.js');
 const { emojis } = require('../config.js');
 
 module.exports = {
@@ -22,6 +23,10 @@ module.exports = {
 			guild.leave.leaveText = text;
 			guild.save();
 			interaction.reply(`${emojis.success} Прощальное сообщение успешно установлено!`)
+		}else if (interaction.customId === 'level') {
+			const text = interaction.fields.getTextInputValue('text');
+			await setLevelGuildMessage(interaction.guild.id, text)
+			interaction.reply(`${emojis.success} Сообщение о новом уровне успешно установлено!`)
 		}
 	},
 };
