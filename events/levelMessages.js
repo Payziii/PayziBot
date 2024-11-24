@@ -24,6 +24,7 @@ console.log(user)
 					.replace('{user.id}', message.author.id)
 					.replace('{guild.name}', message.guild.name)
 					.replace('{level}', user.level)
+					.replace('{xp}', user.xp)
 					)
 				}
 			}
