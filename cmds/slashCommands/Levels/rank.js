@@ -35,6 +35,7 @@ module.exports = {
 		canvas = await create(_user.username, us.level, prog, avatar)
 		img = await canvas.encode('png')
 		const attachment = new AttachmentBuilder(img, { name: 'profile-image.png' });
+		interaction.channel.send({files: [attachment]})
 		interaction.editReply(`${lvlMess}`, { files: [attachment] })
 	},
 };
