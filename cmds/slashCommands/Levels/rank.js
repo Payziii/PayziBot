@@ -4,7 +4,7 @@ const User = require('../../../database/user.js');
 const block = require('../../../games_src/profile/block.json');
 const ach = require('../../../games_src/profile/achievements.json');
 const { emojis } = require('../../../config.js');
-const fs = require('fs').promises;
+const fs = require('fs');
 const { join } = require('path')
 const { getLevelGuild, getLevelUserByGuild, MathNextLevel } = require('../../../database/levels.js');
 
@@ -36,12 +36,12 @@ module.exports = {
 		avatar = _user.displayAvatarURL({ extension: 'jpg' })
 		canvas = await create(_user.username, us.level, prog, avatar)
 		img = await canvas.encode('png')
-		await fs.writeFile(join(__dirname, 'simple.png'), img)
+		await fs.writeFileSync(join(__dirname, 'simple.png'), img)
 		interaction.editReply(`${lvlMess}`, { files: [{
 			attachment: join(__dirname, 'simple.png'),
 			name: 'example.png'
 		}] }).then(async () => {
 			// Удаление файла после успешной отправки
-			await fs.unlink(join(__dirname, 'simple.png'))})
+			await fs.unlinkSync(join(__dirname, 'simple.png'))})
 	},
 };
