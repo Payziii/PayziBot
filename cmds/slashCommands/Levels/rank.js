@@ -5,6 +5,7 @@ const block = require('../../../games_src/profile/block.json');
 const ach = require('../../../games_src/profile/achievements.json');
 const { emojis } = require('../../../config.js');
 const fs = require('fs');
+const { join } = require('path')
 const { getLevelGuild, getLevelUserByGuild, MathNextLevel } = require('../../../database/levels.js');
 
 module.exports = {
