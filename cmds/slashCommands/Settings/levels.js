@@ -30,20 +30,19 @@ module.exports = {
         .setName('message')
         .setDescription('Установить сообщение о новом уровне')),
   async execute(interaction, guild) {
-    await interaction.deferReply();
     const g = await getLevelGuild(interaction.guild.id);
 
     if (interaction.options.getSubcommand() === 'toggle') {
 
       await setLevelGuildEnabled(interaction.guild.id, !g.enabled)
-      interaction.followUp(`${emojis.success} Система уровней теперь **${!g.enabled ? 'включена' : 'выключена'}**!`)
+      interaction.reply(`${emojis.success} Система уровней теперь **${!g.enabled ? 'включена' : 'выключена'}**!`)
 
     } else if (interaction.options.getSubcommand() === 'channel-set') {
 
       channel = interaction.options.getChannel('канал')
-      cid = channel.id || "-1"
+      cid = channel?.id || "-1"
       await setLevelGuildChannel(interaction.guild.id, cid)
-      interaction.followUp(`${emojis.success} Оповещения о новом уровне будут приходить в ${cid != "-1" ? `канал <#${cid}>` : `канал, в котором пользователь написал сообщение`}`)
+      interaction.reply(`${emojis.success} Оповещения о новом уровне будут приходить в ${cid != "-1" ? `канал <#${cid}>` : `канал, в котором пользователь написал сообщение`}`)
 
     } else if (interaction.options.getSubcommand() === 'message') {
       const modal = new ModalBuilder()
