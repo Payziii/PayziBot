@@ -33,6 +33,7 @@ module.exports = {
 		prog = (us.xp - prosh)/(MathNextLevel(us.level, g.xp.koeff)-prosh)
 		avatar = _user.displayAvatarURL({ extension: 'jpg' })
 		canvas = await create(_user.username, us.level, prog, avatar)
+		console.log(canvas)
 		const attachment = new AttachmentBuilder(await canvas.encode('png'), { name: 'profile-image.png' });
 		interaction.editReply(`${lvlMess}`, { files: [attachment] })
 	},
