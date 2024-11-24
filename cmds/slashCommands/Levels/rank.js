@@ -15,12 +15,12 @@ module.exports = {
         .setDescription('Посмотреть текущий уровень')
         .addUserOption((option) =>
             option
-                .setName('пользователь')
+                .setName('user') // Изменено имя опции
                 .setDescription('Пользователь, чей уровень надо посмотреть')
         ),
     async execute(interaction, guild) {
         await interaction.deferReply();
-        let _user = interaction.options.getUser('пользователь') || interaction.user;
+        let _user = interaction.options.getUser('user') || interaction.user; // Изменено имя опции
 
         let user = await User.findOne({ userID: _user.id });
         if (!user) return interaction.editReply(`${emojis.error} | Этот пользователь не использовал бота!`);
@@ -42,13 +42,18 @@ module.exports = {
         try {
             // Создание и запись данных в файл
             fs.writeFileSync(filePath, img);
+            console.log('File has been created:', filePath);
+
+            // Проверка существования файла
+            if (!fs.existsSync(filePath)) {
+                throw new Error('File does not exist after creation');
+            }
 
             // Отправка файла в канал Discord
-            await interaction.editReply(`${lvlMess}`, {
-                files: [{
-                    attachment: filePath,
-                    name: 'example.png'
-                }]
+            const attachment = new AttachmentBuilder(filePath, { name: 'example.png' });
+            await interaction.editReply({
+                content: `${lvlMess}`,
+                files: [attachment]
             });
 
             // Удаление файла после успешной отправки

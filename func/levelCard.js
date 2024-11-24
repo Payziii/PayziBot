@@ -9,10 +9,11 @@ module.exports = async function create(nick, lvl, progress, avatar) {
     image = await loadImage('./img.png')
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
     ctx.font = '500 30px Montserrat'
-    const textWidth = ctx.measureText(nick).width;
+    const nickWidth = ctx.measureText(nick).width;
+    const lvlWidth = ctx.measureText(`${lvl} LVL`).width;
     ctx.fillStyle = "#d8dee9"
-    ctx.fillText(`${lvl} LVL`, 380, 35)
-    ctx.fillText(nick, 500 - textWidth - 10, 190)
+    ctx.fillText(`${lvl} LVL`, 500-lvlWidth-10, 35)
+    ctx.fillText(nick, 500 - nickWidth - 10, 190)
     //const ava = await request(avatar);
     secondImage = await loadImage(avatar)
     ctx.save();
