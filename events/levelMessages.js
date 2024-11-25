@@ -17,6 +17,7 @@ console.log(user)
 		const xpToAdd = randomIntFromInterval(guild.xp.min, guild.xp.max); // Получаем количество xp, необходимые для выдачи
 		if(MathNextLevel(user.level, guild.xp.koeff) <= user.xp+xpToAdd) {
 			user.level++;
+			if(user.level >= 100) CheckAch(12, message.author.id, message.channel)
 			if(guild.messageEnabled) {
 				if(guild.channelID === '-1') {
 					message.channel.send(guild.message.replace('{user.mention}', message.author)

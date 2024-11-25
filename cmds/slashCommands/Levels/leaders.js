@@ -24,7 +24,7 @@ module.exports = {
 			if(user.user == interaction.user.id) myPos = index+1;
 			lvlMess = lvlMess+`${index + 1}. <@${user.user}> — Уровень: **${user.level}** — XP: **${user.xp}**\n`;
 		  });
-		if(myPos != 0) lvlMess += `\n➡️ У Вас: ${myPos} место`
+		if(myPos != 0) lvlMess += `\n➡️ У Вас: **${myPos}** место`
 		interaction.editReply(`${lvlMess}`, { allowedMentions })
 	},
 };
