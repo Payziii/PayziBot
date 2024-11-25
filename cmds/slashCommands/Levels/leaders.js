@@ -19,9 +19,12 @@ module.exports = {
 		const users = g.data;
 		users.sort((a, b) => b.xp - a.xp);
 		const top10Users = users.slice(0, 10);
+		let myPos = 0;
 		top10Users.forEach((user, index) => {
+			if(user.user == interaction.user.id) myPos = index+1;
 			lvlMess = lvlMess+`${index + 1}. <@${user.user}> — Уровень: **${user.level}** — XP: **${user.xp}**\n`;
 		  });
+		if(myPos != 0) lvlMess += `\n➡️ У Вас: ${myPos} место`
 		interaction.editReply(`${lvlMess}`, { allowedMentions })
 	},
 };
