@@ -15,7 +15,18 @@ module.exports = {
 		.addSubcommand(subcommand =>
 			subcommand
 				.setName('unlock')
-				.setDescription('Открыть этот  канал для @everyone')),
+				.setDescription('Открыть этот  канал для @everyone')
+		)
+		.addSubcommand(subcommand =>
+			subcommand
+				.setName('topic')
+				.setDescription('Установить тему канала')
+				.addStringOption((option) =>
+					option.setName('тема')
+						.setDescription('тема канала')
+						.setMaxLength(128)
+						.setRequired(true))
+		),
 	async execute(interaction) {
 		await interaction.deferReply();
 		const bot = await interaction.guild.members.me;
@@ -38,6 +49,13 @@ module.exports = {
 				ReadMessageHistory: true,
 			}).then(() => {
 				interaction.followUp(`${emojis.success} Канал <#${interaction.channel.id}> открыт по просьбе <@${interaction.user.id}> (${interaction.user.username})`);
+			}).catch(e => {
+				interaction.followUp(`${emojis.error} | Ошибка: ${e}`);
+			});
+		} else if (interaction.options.getSubcommand() === 'topic') {
+			const text = interaction.options.getString('тема');
+			interaction.channel.edit({ topic: text }).then(() => {
+				interaction.followUp(`${emojis.success} В канале <#${interaction.channel.id}> установлена тема \`${text}\` по просьбе <@${interaction.user.id}> (${interaction.user.username})`);
 			}).catch(e => {
 				interaction.followUp(`${emojis.error} | Ошибка: ${e}`);
 			});

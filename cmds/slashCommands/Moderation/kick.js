@@ -6,17 +6,17 @@ module.exports = {
 	cooldown: 3,
 	data: new SlashCommandBuilder()
 		.setName('kick')
-		.setDescription('Кикнуть пользователя с сервера')
+		.setDescription('Исключить пользователя с сервера')
 		.addUserOption((option) =>
 			option
 				.setName('пользователь')
-				.setDescription('Пользователь, которого нужно кикнуть')
+				.setDescription('Пользователь, которого нужно исключить')
 				.setRequired(true),
 		)
 		.addStringOption((option) =>
 			option
 				.setName('причина')
-				.setDescription('Причина блокировки'),
+				.setDescription('Причина исключения'),
 		)
 		.setDefaultMemberPermissions(PermissionFlagsBits.KickMembers),
 	async execute(interaction) {
