@@ -1,6 +1,6 @@
 const { SlashCommandBuilder, PermissionFlagsBits, ChannelType, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder } = require("discord.js");
 const { emojis } = require('../../../config.js');
-const { setLevelGuildEnabled, getLevelGuild, setLevelGuildChannel, getLevelUserByGuild, putLevelUser } = require('../../../database/levels.js');
+const { setLevelGuildEnabled, getLevelGuild, setLevelGuildChannel, getLevelUserByGuild, putLevelUser, MathNextLevel } = require('../../../database/levels.js');
 
 module.exports = {
   category: 'settings',
