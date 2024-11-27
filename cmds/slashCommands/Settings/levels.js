@@ -1,6 +1,6 @@
 const { SlashCommandBuilder, PermissionFlagsBits, ChannelType, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder } = require("discord.js");
 const { emojis } = require('../../../config.js');
-const { setLevelGuildEnabled, getLevelGuild, setLevelGuildChannel } = require('../../../database/levels.js');
+const { setLevelGuildEnabled, getLevelGuild, setLevelGuildChannel, getLevelUserByGuild, putLevelUser } = require('../../../database/levels.js');
 
 module.exports = {
   category: 'settings',
@@ -28,7 +28,24 @@ module.exports = {
     .addSubcommand(subcommand =>
       subcommand
         .setName('message')
-        .setDescription('Установить сообщение о новом уровне')),
+        .setDescription('Установить сообщение о новом уровне'))
+    .addSubcommand(subcommand =>
+      subcommand
+        .setName('set-level')
+        .setDescription('Установить уровень определенному пользователю')
+        .addUserOption((option) =>
+          option
+            .setName('пользователь')
+            .setDescription('Пользователь, которому вы хотите установить уровень')
+            .setRequired(true)
+        )
+        .addIntegerOption((option) =>
+          option
+            .setName('уровень')
+            .setDescription('Уровень, который вы хотите установить')
+            .setMinValue(1)
+            .setMaxValue(1000)
+            .setRequired(true))),
   async execute(interaction, guild) {
     const g = await getLevelGuild(interaction.guild.id);
 
@@ -45,21 +62,38 @@ module.exports = {
       interaction.reply(`${emojis.success} Оповещения о новом уровне будут приходить в ${cid != "-1" ? `канал <#${cid}>` : `канал, в котором пользователь написал сообщение`}`)
 
     } else if (interaction.options.getSubcommand() === 'message') {
+
       const modal = new ModalBuilder()
-			.setCustomId('level')
-			.setTitle('Настройка сообщений о новом уровне');
+        .setCustomId('level')
+        .setTitle('Настройка сообщений о новом уровне');
 
       const text = new TextInputBuilder()
-			.setCustomId('text')
-			.setLabel("Введите текст, который будет выводиться")
-      .setMaxLength(1024)
-			.setStyle(TextInputStyle.Paragraph);
+        .setCustomId('text')
+        .setLabel("Введите текст, который будет выводиться")
+        .setMaxLength(1024)
+        .setStyle(TextInputStyle.Paragraph);
 
       const textRow = new ActionRowBuilder().addComponents(text);
 
       modal.addComponents(textRow);
 
       await interaction.showModal(modal);
+
+    } else if (interaction.options.getSubcommand() === 'set-level') {
+
+      const level = interaction.options.getInteger('уровень');
+      const _user = interaction.options.getUser('пользователь');
+
+      const user = await getLevelUserByGuild(interaction.guild.id, _user.id);
+      const xps = MathNextLevel(level, g.xp.koeff)
+
+      user.xp = xps
+      user.level = level
+
+      putLevelUser(interaction.guild.id, user)
+
+      interaction.reply(`${emojis.success} Пользователю <@${_user.id}> успешно установлен **${level}** уровень (${xps} XP)`)
+
     }
   },
 };
