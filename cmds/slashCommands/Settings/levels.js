@@ -87,7 +87,7 @@ module.exports = {
       const user = await getLevelUserByGuild(interaction.guild.id, _user.id);
       const xps = MathNextLevel(level-1, g.xp.koeff)
 
-      user.xp = xps
+      user.xp = parseInt(xps)
       user.level = level
 
       putLevelUser(interaction.guild.id, user)
