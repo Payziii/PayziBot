@@ -22,14 +22,21 @@ module.exports = {
         .setName("в")
         .setDescription("Валюта, курс в которой вы хотите посмотреть (пр. RUB)")
         .setRequired(true)
+    )
+    .addIntegerOption((option) =>
+      option
+        .setName('количество')
+        .setDescription('Количество монет')
+        .setMinValue(1)
     ),
   async execute(interaction, guild) {
     const from = interaction.options.getString("из");
     const to = interaction.options.getString("в");
+    const amount = interaction.options.getInteger("количество") || 1;
     await interaction.deferReply();
-    
-    await price.convert(process.env.PRICE, from.toUpperCase(), to, 1).then((r) => {
-      interaction.editReply(`${emojis.exchange} **1** ${r.from} = **${r.value.toFixed(2)}** ${r.to}`);
+
+    await price.convert(process.env.PRICE, from.toUpperCase(), to, amount).then((r) => {
+      interaction.editReply(`${emojis.exchange} **${r.amount}** ${r.from} = **${r.value.toFixed(2)}** ${r.to}`);
     }).catch(() => {
       interaction.editReply(`${emojis.error} | Произошла ошибка. Возможно, валюта не найдена`);
     })
