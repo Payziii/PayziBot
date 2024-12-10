@@ -7,6 +7,7 @@ const rsnchat = new RsnChat(process.env.RSN);
 
 module.exports = {
     category: 'neuro',
+    skip: true,
     cooldown: 60,
     data: new SlashCommandBuilder()
         .setName('image')
