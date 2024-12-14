@@ -59,6 +59,7 @@ module.exports = {
       channel = interaction.options.getChannel('канал')
       cid = channel?.id || "-1"
       await setLevelGuildChannel(interaction.guild.id, cid)
+      if (!channel.permissionsFor(interaction.guild.members.me).has(['SendMessages', 'ViewChannel'])) return interaction.reply(`${emojis.error} | Я не могу отправлять сообщения в выбранном канале...`)
       interaction.reply(`${emojis.success} Оповещения о новом уровне будут приходить в ${cid != "-1" ? `канал <#${cid}>` : `канал, в котором пользователь написал сообщение`}`)
 
     } else if (interaction.options.getSubcommand() === 'message') {
