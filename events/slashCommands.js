@@ -2,6 +2,7 @@ const { Events, Collection } = require('discord.js');
 const Guild = require('../database/guild.js');
 const User = require('../database/user.js');
 const { channels, emojis } = require('../config.js');
+const { CheckAch } = require('../func/games/giveAch.js');
 
 module.exports = {
 	name: Events.InteractionCreate,
@@ -42,6 +43,10 @@ module.exports = {
 
 		if (!guild) return interaction.reply(`${emojis.error} | Напиши команду ещё раз!`);
 		if (!user) return interaction.reply(`${emojis.error} | Напиши команду ещё раз!`);
+
+		// Новогодняя ачивка
+		date = new Date()
+		if((date.getMonth() == 11 && date.getDate() >= 25) || (date.getMonth() == 0 && date.getDate() <= 5)) CheckAch(13, interaction.user.id, interaction.channel, user)
 
 		if(user.block >= 4) return interaction.reply(`${emojis.error} | Вы получили блокировку своего аккаунта. Обратитесь на сервер поддержки для выяснения причины и дальнейших действий!`); // Доступ запрещён
 
