@@ -30,7 +30,7 @@ async function createLevelGuild(guildID) {
         channelID: "-1",
         messageEnabled: true,
         message: "🎉 Поздравляем, {user.mention}, вы достигли **{level}** уровня!",
-        roles: [],
+        roles: [], // {roleId, level}, {}
         data: [] // {user, xp, level, lastMessage}, {}
     })
 
@@ -128,6 +128,35 @@ async function getLevelUserByGuild(guildID, userID) {
 }
 
 /**
+ * Получение ID роли по уровню
+ * 
+ * @param {string} guildID 
+ * @param {integer} level 
+ */
+async function getRoleByLevelAndGuild(guildID, level) {
+    const guild = await getLevelGuild(guildID);
+    const { roles } = guild;
+    const sortedRoles = roles.sort((a, b) => a.level - b.level);
+
+    for (let role of sortedRoles) {
+        if (role.level === level) {
+            return role.roleId;
+        }
+    }
+
+    let closestRole = sortedRoles[0];
+    for (let role of sortedRoles) {
+        if (role.level <= level) {
+            closestRole = role;
+        } else {
+            break;
+        }
+    }
+
+    return closestRole.roleId;
+}
+
+/**
  * Добавление инфорамции о пользователе на сервере
  * 
  * @param {string} guildID 
@@ -151,5 +180,6 @@ module.exports = {
     setLevelGuildMessage,
     putLevelUser,
     getLevelUserByGuild,
-    setLevelUserByGuild
+    setLevelUserByGuild,
+    getRoleByLevelAndGuild
 }
