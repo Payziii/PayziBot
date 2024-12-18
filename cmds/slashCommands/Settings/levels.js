@@ -1,6 +1,6 @@
 const { SlashCommandBuilder, PermissionFlagsBits, ChannelType, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder } = require("discord.js");
 const { emojis } = require('../../../config.js');
-const { setLevelGuildEnabled, getLevelGuild, setLevelGuildChannel, getLevelUserByGuild, putLevelUser, MathNextLevel } = require('../../../database/levels.js');
+const { setLevelGuildEnabled, getLevelGuild, setLevelGuildChannel, getLevelUserByGuild, putLevelUser, MathNextLevel, addRoleLevel } = require('../../../database/levels.js');
 
 module.exports = {
   category: 'settings',
@@ -45,6 +45,23 @@ module.exports = {
             .setDescription('Уровень, который вы хотите установить')
             .setMinValue(1)
             .setMaxValue(1000)
+            .setRequired(true)))
+    .addSubcommand(subcommand =>
+      subcommand
+        .setName('add-role-level')
+        .setDescription('Создать новую роль за уровень')
+        .addRoleOption((option) =>
+          option
+            .setName('роль')
+            .setDescription('Роль, которая должна выдаваться пользователю по достижении уровня')
+            .setRequired(true)
+        )
+        .addIntegerOption((option) =>
+          option
+            .setName('уровень')
+            .setDescription('Уровень, за который  выдаётся роль')
+            .setMinValue(1)
+            .setMaxValue(1000)
             .setRequired(true))),
   async execute(interaction, guild) {
     const g = await getLevelGuild(interaction.guild.id);
@@ -86,7 +103,7 @@ module.exports = {
       const _user = interaction.options.getUser('пользователь');
 
       const user = await getLevelUserByGuild(interaction.guild.id, _user.id);
-      const xps = MathNextLevel(level-1, g.xp.koeff)
+      const xps = MathNextLevel(level - 1, g.xp.koeff)
 
       user.xp = parseInt(xps)
       user.level = level
@@ -94,6 +111,24 @@ module.exports = {
       putLevelUser(interaction.guild.id, user)
 
       interaction.reply(`${emojis.success} Пользователю <@${_user.id}> успешно установлен **${level}** уровень (${xps} XP)`)
+
+    } else if (interaction.options.getSubcommand() === 'add-role-level') {
+
+      const role = interaction.options.getRole('роль');
+      const level = interaction.options.getInteger('уровень');
+
+      bot = interaction.guild.members.me;
+
+      if(role.rawPosition >= bot.roles.highest.rawPosition) return interaction.reply(`${emojis.error} | Увы, я не смогу выдать роль, которая выше моей`)
+      if (bot.permissions.has('ManageRoles') == false) return interaction.reply(`${emojis.error} | У меня нет прав для выдачи ролей`);
+      if(role.tags?.botId) return interaction.reply(`${emojis.error} | Роль принадлежит боту <@${role.tags.botId}>`);
+      if(role.tags?.premiumSubscriberRole) return interaction.reply(`${emojis.error} | Я не смогу выдать роль бустера!`);
+      if(role.tags?.integrationId || role.managed) return interaction.reply(`${emojis.error} | Роль управляется интеграцией`);
+      if(role.id == interaction.guild.id) return interaction.reply(`${emojis.error} | Вы не можете установить роль everyone!`);
+
+      addRoleLevel(interaction.guild.id, role.id, level)
+
+      interaction.reply(`${emojis.success} С этого момента роль будет выдаваться всем пользователям, достигшим **${level}** уровня!`)
 
     }
   },
