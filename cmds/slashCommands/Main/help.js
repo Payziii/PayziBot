@@ -29,6 +29,10 @@ module.exports = {
 					value: `${Array.from(client.commands.filter(c => c.category === 'games')).map(([key, value]) => `\`${key}\``).join(', ')}`,
 				},
 				{
+					name: 'Система уровней',
+					value: `${Array.from(client.commands.filter(c => c.category === 'levels')).map(([key, value]) => `\`${key}\``).join(', ')}`,
+				},
+				{
 					name: 'Нейросети',
 					value: `${Array.from(client.commands.filter(c => c.category === 'neuro')).map(([key, value]) => `\`${key}\``).join(', ')}`,
 				},

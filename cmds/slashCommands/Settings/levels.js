@@ -4,7 +4,6 @@ const { setLevelGuildEnabled, getLevelGuild, setLevelGuildChannel, getLevelUserB
 
 module.exports = {
   category: 'settings',
-  //skip: true,
   cooldown: 15,
   data: new SlashCommandBuilder()
     .setName('levels')
