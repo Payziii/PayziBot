@@ -29,17 +29,17 @@ module.exports = {
       await minecraft.getServer(ip).then((r) => {
         if (r === 'error') return interaction.reply(`${emojis.error} | Произошла ошибка. Возможно, сервер не найден`);
         if (r.ip == "127.0.0.1") return interaction.reply(`${emojis.error} | Сервер выключен!`);
-        const playerList = r.players.list ? r.players.list.slice(0, 15).map(player => player.name).join(", ") : null;
+        const playerList = r?.players?.list ? r.players.list.slice(0, 15).map(player => player.name).join(", ") : "Не удалось получить список игроков";
 
         const embed = new EmbedBuilder()
-          .setTitle(r.hostname)
+          .setTitle(r?.hostname)
           .addFields(
-            { name: "IP", value: r.ip, inline: false },
-            { name: "Игроки", value: `**${r.players.online}**/**${r.players.max}**\n${playerList || "Не удалось получить список игроков"}`, inline: false },
-            { name: "Версия", value: r.version, inline: false }
+            { name: "IP", value: r?.ip, inline: false },
+            { name: "Игроки", value: `**${r?.players?.online}**/**${r?.players?.max}**\n${playerList || "Не удалось получить список игроков"}`, inline: false },
+            { name: "Версия", value: r?.version, inline: false }
           )
           .setColor(guild.colors.basic)
-          .setFooter({ text: r.software })
+          if(r?.software) embed.setFooter({ text: r.software })
           interaction.editReply({ embeds: [embed] });
       });
     }
