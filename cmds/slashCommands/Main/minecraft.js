@@ -27,8 +27,8 @@ module.exports = {
     if (interaction.options.getSubcommand() === 'server') {
       const ip = interaction.options.getString("адрес");
       await minecraft.getServer(ip).then((r) => {
-        if (r === 'error') return interaction.reply(`${emojis.error} | Произошла ошибка. Возможно, сервер не найден`);
-        if (r.ip == "127.0.0.1") return interaction.reply(`${emojis.error} | Сервер выключен!`);
+        if (r === 'error') return interaction.editReply(`${emojis.error} | Произошла ошибка. Возможно, сервер не найден`);
+        if (r?.ip == "127.0.0.1" || !r?.online) return interaction.editReply(`${emojis.error} | Сервер выключен!`);
         const playerList = r?.players?.list ? r.players.list.slice(0, 15).map(player => player.name).join(", ") : "Не удалось получить список игроков";
 
         const embed = new EmbedBuilder()
