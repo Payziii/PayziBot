@@ -1,7 +1,9 @@
 const { Events } = require('discord.js');
 const { channels } = require('../config.js');
 const BoticordService = require('../func/system/boticord.js');
+const dailyStatManager = require('../func/system/dailyStatManager.js');
 const { GiveReward } = require('../func/system/upAdded.js');
+const cron = require('node-cron');
 
 module.exports = {
 	name: Events.ClientReady,
@@ -24,6 +26,23 @@ module.exports = {
 			client.channels.cache.get(channels.dbLogs)
 			.send(`${data.user} поднял бота!`)
 			.catch(() => console.log(`ERROR | Failed to send bot boost message to log channel`))
+		})
+
+		const dailyStat = new dailyStatManager(client);
+		dailyStat.loadTodayStatToClient();
+		setInterval(() => {
+			dailyStat.updateDailyStat();
+		}, 15 * 60 * 1000);
+
+		cron.schedule('0 0 * * *', () => {
+			dailyStat.clearClientDailyStats();
+			dailyStat.generatePreviousDayStatFile();
+		});
+
+		dailyStat.on("statGenerated", (filePath) => {
+			client.channels.cache.get(channels.statLogs)
+			.send({files: [filePath]})
+			.catch(() => console.log(`ERROR | Failed to send daily stat to log channel`))
 		})
 	},
 };

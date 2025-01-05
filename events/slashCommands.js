@@ -76,6 +76,7 @@ module.exports = {
 		try {
 			await cmd.execute(interaction, guild, user); // Выполняем команду
 			client.cmdsUsed++;
+			client.cmdsDetailed.set(cmd.data.name, (client.cmdsDetailed.get(cmd.data.name) || 0) + 1);
 		}
 		catch (error) {
 			client.channels.cache.get(channels.errorLogs).send(`Ошибка в \`${cmd.data.name}\`: \`\`\`js\n${error.stack}\`\`\``);

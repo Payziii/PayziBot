@@ -16,14 +16,14 @@ module.exports = {
 		await interaction.deferReply();
 		const client = interaction.client;
 		const uptime = time(client.uptime);
-		let bremya;
-		if (uptime.minutes === 0 && uptime.hours === 0 && uptime.days === 0) bremya = `${uptime.seconds} сек.`;
-		else if (uptime.hours === 0 && uptime.days === 0) bremya = `${uptime.minutes} м. ${uptime.seconds} сек.`;
-		else if (uptime.days === 0) bremya = `${uptime.hours} ч. ${uptime.minutes} м.`;
-		else bremya = `${uptime.days} д. ${uptime.hours} ч. ${uptime.minutes} м.`;
+		const { days, hours, minutes, seconds } = uptime;
+		const bremya = days > 0 ? `${days} д. ${hours} ч. ${minutes} м.` :
+			hours > 0 ? `${hours} ч. ${minutes} м.` :
+				minutes > 0 ? `${minutes} м. ${seconds} сек.` :
+					`${seconds} сек.`;
 		const embed = new EmbedBuilder()
 			.setTitle(`PayziBot ${version}`)
-			.setDescription(`${emojis.arrow} Бот работает: **${bremya}**\n${emojis.arrow} С момента включения использовано: **${client.cmdsUsed} ${plural(client.cmdsUsed, "команда", "команды", "команд")}**`)
+			.setDescription(`${emojis.arrow} Бот работает: **${bremya}**\n${emojis.arrow} За день ${plural(client.cmdsUsed, "использована", "использовано", "использовано")} **${client.cmdsUsed} ${plural(client.cmdsUsed, "команда", "команды", "команд")}**`)
 			.addFields(
 				{
 					name: 'Статистика',

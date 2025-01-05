@@ -13,3 +13,6 @@ levels-db/
 
 # также
 .eslintrc.json
+
+# статистика за день
+stats/
