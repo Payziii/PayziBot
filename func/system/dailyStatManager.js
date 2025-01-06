@@ -22,7 +22,7 @@ class dailyStatManager extends EventEmitter {
             dailyStat = await DailyStat.findOne({ date: dateString });
         }
 
-        dailyStat.commands.all += this.client.cmdsUsed;
+        dailyStat.commands.all = this.client.cmdsUsed;
         dailyStat.commands.detailed = new Map(this.client.cmdsDetailed);
 
         await dailyStat.save();
