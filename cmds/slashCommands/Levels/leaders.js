@@ -25,6 +25,7 @@ module.exports = {
 			lvlMess = lvlMess+`${index + 1}. <@${user.user}> — Уровень: **${user.level}** — XP: **${user.xp}**\n`;
 		  });
 		if(myPos != 0) lvlMess += `\n➡️ У Вас: **${myPos}** место`
+		if(lvlMess.length < 1) lvlMess = 'Я искал, но никого не нашел...';
 		interaction.editReply(`${lvlMess}`, { allowedMentions })
 	},
 };
