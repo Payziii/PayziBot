@@ -8,25 +8,19 @@ exports.run = async (client, message, args) => {
     let text = text1
       .replace("--gpt", "")
       .replace("--gemini", "")
-      .replace("--llama", "")
-      .replace("--гемини", "")
-      .replace("--ллама", "")
-      .replace("--mixtral", "")
-      .replace("--codellama", "")
-      .replace("--cl", "");
+      .replace("--grok2mini", "")
+      .replace("--grok2", "")
 
     let model;
     let suc = true;
 
-    if (text1.endsWith("--llama")) model = "llama";
-    else if (text1.endsWith("--mixtral")) model = "mixtral";
-    else if (['--cl','--codellama'].some(char => text1.endsWith(char))) model = "codellama";
+    if (text1.endsWith("--grok2mini")) model = "grok-2-mini";
+    else if (text1.endsWith("--grok2")) model = "grok-2";
     else if (text1.endsWith("--gpt")) model = "gpt";
     else model = "gemini";
 
     if (model === "gpt") {
-      await rsnchat
-        .gpt4(text)
+      await rsnchat.chat(text, "gpt4")
         .then((response) => {
           res = response.message;
         })
@@ -37,8 +31,7 @@ exports.run = async (client, message, args) => {
           return (suc = false);
         });
     } else if (model === "gemini") {
-      await rsnchat
-        .gemini(text)
+      await rsnchat.chat(text, "gemini")
         .then((response) => {
           res = response.message;
         })
@@ -48,21 +41,8 @@ exports.run = async (client, message, args) => {
           );
           return (suc = false);
         });
-    } else if (model === "mixtral") {
-      await rsnchat
-        .mixtral(text)
-        .then((response) => {
-          res = response.message;
-        })
-        .catch(() => {
-          msg.edit(
-            `${emojis.error} | Ошибка. Повторите свой запрос чуть позже, либо измените его!`
-          );
-          return (suc = false);
-        });
-    } else if (model === "codellama") {
-      await rsnchat
-        .codellama(text)
+    } else if (model === "grok-2") {
+      await rsnchat.chat(text, "grok-2")
         .then((response) => {
           res = response.message;
         })
@@ -73,8 +53,7 @@ exports.run = async (client, message, args) => {
           return (suc = false);
         });
     } else {
-      await rsnchat
-        .llama(text)
+      await rsnchat.chat(text, "grok-2-mini")
         .then((response) => {
           res = response.message;
         })

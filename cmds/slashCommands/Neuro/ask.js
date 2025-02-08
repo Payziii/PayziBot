@@ -22,9 +22,8 @@ module.exports = {
         .addChoices(
           { name: 'Gemini', value: 'gemini' },
           { name: 'GPT 4', value: 'gpt' },
-          { name: 'Llama', value: 'llama' },
-          { name: 'CodeLlama', value: 'codellama' },
-          { name: 'Mixtral', value: 'mixtral' }
+          { name: 'Grok-2-mini', value: 'grok-2-mini' },
+          { name: 'Grok-2', value: 'grok-2' }
         )
     ),
   async execute(interaction) {
@@ -41,7 +40,7 @@ module.exports = {
     interaction.editReply(`${emojis.loading} | Ожидаем ответа...${_tip}`)
 
     if (model === 'gpt') {
-      await rsnchat.gpt4(text)
+      await rsnchat.chat(text, "gpt4")
         .then(response => {
           res = response.message
         }).catch(() => {
@@ -49,23 +48,15 @@ module.exports = {
           return
         });
     } else if (model === 'gemini') {
-      await rsnchat.gemini(text)
+      await rsnchat.chat(text, "gemini")
         .then(response => {
           res = response.message
         }).catch(() => {
           interaction.editReply(`${emojis.error} | Что-то произошло. Повторите свой запрос чуть позже, либо измените его!`)
           return 
         });
-    } else if (model === 'mixtral') {
-      await rsnchat.mixtral(text)
-        .then(response => {
-          res = response.message
-        }).catch(() => {
-          interaction.editReply(`${emojis.error} | Что-то произошло. Повторите свой запрос чуть позже, либо измените его!`)
-          return 
-        });
-    } else if (model === 'codellama') {
-      await rsnchat.codellama(text)
+    } else if (model === 'grok-2') {
+      await rsnchat.chat(text, "grok-2")
         .then(response => {
           res = response.message
         }).catch(() => {
@@ -73,7 +64,7 @@ module.exports = {
           return 
         });
     } else {
-      await rsnchat.llama(text)
+      await rsnchat.chat(text, "grok-2-mini")
         .then(response => {
           res = response.message
         }).catch(() => {
