@@ -117,7 +117,7 @@ async function putLevelUser(guildID, user) {
  * 
  * @param {string} guildID 
  */
-async function resetLevelUser(guildID, user) {
+async function resetLevelUser(guildID) {
     const guild = await getLevelGuild(guildID);
     guild.data = [];
     levelsDB.put(guildID, guild);
