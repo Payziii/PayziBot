@@ -12,7 +12,7 @@
 
 const { SlashCommandBuilder, PermissionFlagsBits, ChannelType, ModalBuilder, TextInputBuilder, TextInputStyle, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require("discord.js");
 const { emojis } = require('../../../config.js');
-const { setLevelGuildEnabled, getLevelGuild, setLevelGuildChannel, getLevelUserByGuild, putLevelUser, MathNextLevel, addRoleLevel } = require('../../../database/levels.js');
+const { setLevelGuildEnabled, resetLevelUser, getLevelGuild, setLevelGuildChannel, getLevelUserByGuild, putLevelUser, MathNextLevel, addRoleLevel } = require('../../../database/levels.js');
 
 module.exports = {
   category: 'settings',
@@ -91,6 +91,31 @@ module.exports = {
     } else if (interaction.options.getSubcommand() === 'reset') {
 
       interaction.reply(`${emojis.loading} Команда пока недоступна!`)
+      
+      const confirmButton = new ButtonBuilder()
+        .setCustomId('confirmReset')
+        .setLabel('Подтвердить')
+        .setStyle(ButtonStyle.Danger);
+
+      const actionRow = new ActionRowBuilder().addComponents(confirmButton);
+
+      await interaction.reply({
+        content: `${emojis.timeout} Вы уверены, что хотите обнулить уровни всех пользователей? Нажмите "Подтвердить" для подтверждения.`,
+        components: [actionRow],
+        ephemeral: true
+      });
+
+      const filter = i => i.customId === 'confirmReset' && i.user.id === interaction.user.id;
+
+      try {
+        const confirmation = await interaction.channel.awaitMessageComponent({ filter, time: 15000 });
+        
+        await resetLevelUser(interaction.guild.id)
+        await confirmation.update({ content: `${emojis.success} Уровни всех пользователей успешно обнулены!`, components: [] });
+        await interaction.channel.send(`${emojis.success} ${interaction.user.toString()} успешно обнулил уровни всех пользователей!`)
+      } catch {
+        await interaction.editReply({ content: `${emojis.error} Время ожидания истекло, операция отменена.`, components: [] });
+      }
 
     // channel-set - Установить канал для оповещений о новом уровне
     } else if (interaction.options.getSubcommand() === 'channel-set') {
