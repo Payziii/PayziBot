@@ -1,3 +1,12 @@
+/* Settings -> /starboard
+Настройка звездной доски
+Задержка: 15 секунд
+
+> off - Выключить звёздную доску
+> channel-set - Установить канал
+> stars-needed - Установить количество звёзд, необходимых для попадания на доску
+*/
+
 const { SlashCommandBuilder, PermissionFlagsBits, ChannelType } = require("discord.js");
 const { emojis } = require('../../../config.js');
 

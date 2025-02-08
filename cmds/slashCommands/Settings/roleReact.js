@@ -1,3 +1,11 @@
+/* Settings -> /rolereact
+Настройка системы ролей за реакции
+Задержка: 15 секунд
+
+> delete - Удалить роли за реакции с сообщения
+> set - Установить роли за реакции
+*/
+
 const {
   SlashCommandBuilder,
   PermissionFlagsBits,

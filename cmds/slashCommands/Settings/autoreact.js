@@ -1,3 +1,11 @@
+/* Settings -> /autoreact
+Настройка системы автореакта
+Задержка: 15 секунд
+
+> off - Выключить автореакт
+> set - Установить автореакт
+*/
+
 const { SlashCommandBuilder, PermissionFlagsBits, ChannelType } = require("discord.js");
 const { emojis } = require('../../../config.js');
 

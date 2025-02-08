@@ -1,4 +1,16 @@
-const { SlashCommandBuilder, PermissionFlagsBits, ChannelType, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder } = require("discord.js");
+/* Settings -> /levels
+Настройка системы уровней
+Задержка: 15 секунд
+
+> toggle - Включить/Выключить систему уровней
+> channel-set - Установить канал для оповещений о новом уровне
+> message - Установить сообщение о новом уровне
+> reset - Обнулить уровни всех пользователей
+> set-level - Установить уровень определенному пользователю
+> add-role-level - Создать новую роль за уровень
+*/
+
+const { SlashCommandBuilder, PermissionFlagsBits, ChannelType, ModalBuilder, TextInputBuilder, TextInputStyle, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require("discord.js");
 const { emojis } = require('../../../config.js');
 const { setLevelGuildEnabled, getLevelGuild, setLevelGuildChannel, getLevelUserByGuild, putLevelUser, MathNextLevel, addRoleLevel } = require('../../../database/levels.js');
 
@@ -69,15 +81,18 @@ module.exports = {
   async execute(interaction, guild) {
     const g = await getLevelGuild(interaction.guild.id);
 
+    // toggle - Включить/Выключить систему уровней
     if (interaction.options.getSubcommand() === 'toggle') {
 
       await setLevelGuildEnabled(interaction.guild.id, !g.enabled)
       interaction.reply(`${emojis.success} Система уровней теперь **${!g.enabled ? 'включена' : 'выключена'}**!`)
 
+    // reset - Обнулить уровни всех пользователей
     } else if (interaction.options.getSubcommand() === 'reset') {
 
       interaction.reply(`${emojis.loading} Команда пока недоступна!`)
 
+    // channel-set - Установить канал для оповещений о новом уровне
     } else if (interaction.options.getSubcommand() === 'channel-set') {
 
       channel = interaction.options.getChannel('канал')
@@ -86,6 +101,7 @@ module.exports = {
       if (!channel.permissionsFor(interaction.guild.members.me).has(['SendMessages', 'ViewChannel'])) return interaction.reply(`${emojis.error} | Я не могу отправлять сообщения в выбранном канале...`)
       interaction.reply(`${emojis.success} Оповещения о новом уровне будут приходить в ${cid != "-1" ? `канал <#${cid}>` : `канал, в котором пользователь написал сообщение`}`)
 
+    // message - Установить сообщение о новом уровне
     } else if (interaction.options.getSubcommand() === 'message') {
 
       const modal = new ModalBuilder()
@@ -104,6 +120,7 @@ module.exports = {
 
       await interaction.showModal(modal);
 
+    // set-level - Установить уровень определенному пользователю
     } else if (interaction.options.getSubcommand() === 'set-level') {
 
       const level = interaction.options.getInteger('уровень');
@@ -119,6 +136,7 @@ module.exports = {
 
       interaction.reply(`${emojis.success} Пользователю <@${_user.id}> успешно установлен **${level}** уровень (${xps} XP)`)
 
+    // add-role-level - Создать новую роль за уровень
     } else if (interaction.options.getSubcommand() === 'add-role-level') {
 
       const role = interaction.options.getRole('роль');

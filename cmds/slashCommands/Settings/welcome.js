@@ -1,3 +1,12 @@
+/* Settings -> /welcome
+Настройка системы приветственных сообщений
+Задержка: 15 секунд
+
+> off - Выключить приветственное сообщение и автороль
+> setup - Установить приветственное сообщение
+> autorole - Установить роль для выдачи новому пользователю
+*/
+
 const { SlashCommandBuilder, PermissionFlagsBits, ChannelType, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder } = require("discord.js");
 const { emojis } = require('../../../config.js');
 

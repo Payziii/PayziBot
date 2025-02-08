@@ -1,3 +1,10 @@
+/* Settings -> /configuration
+Конфигурация сервера
+Задержка: 15 секунд
+
+> color - Установка и изменение цвета эмбеда
+*/
+
 const {
   SlashCommandBuilder,
   PermissionFlagsBits,

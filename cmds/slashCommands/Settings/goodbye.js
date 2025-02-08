@@ -1,3 +1,11 @@
+/* Settings -> /goodbye
+Настройка системы прощальных сообщений
+Задержка: 15 секунд
+
+> off - Выключить прощальное сообщение
+> setup - Установить прощальное сообщение
+*/
+
 const { SlashCommandBuilder, PermissionFlagsBits, ChannelType, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder } = require("discord.js");
 const { emojis } = require('../../../config.js');
 
