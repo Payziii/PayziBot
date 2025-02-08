@@ -89,8 +89,6 @@ module.exports = {
 
     // reset - Обнулить уровни всех пользователей
     } else if (interaction.options.getSubcommand() === 'reset') {
-
-      interaction.reply(`${emojis.loading} Команда пока недоступна!`)
       
       const confirmButton = new ButtonBuilder()
         .setCustomId('confirmReset')
