@@ -113,6 +113,19 @@ async function putLevelUser(guildID, user) {
 }
 
 /**
+ * Очистить информацию о юзерах на сервере
+ * 
+ * @param {string} guildID 
+ */
+async function resetLevelUser(guildID, user) {
+    const guild = await getLevelGuild(guildID);
+    guild.data = [];
+    levelsDB.put(guildID, guild);
+
+    return true;
+}
+
+/**
  * Получение инфорамции о пользователе на сервере
  * 
  * @param {string} guildID 
@@ -204,6 +217,7 @@ module.exports = {
     setLevelGuildChannel,
     setLevelGuildMessage,
     putLevelUser,
+    resetLevelUser,
     getLevelUserByGuild,
     setLevelUserByGuild,
     getRoleByLevelAndGuild,

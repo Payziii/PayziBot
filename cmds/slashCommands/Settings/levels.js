@@ -30,6 +30,10 @@ module.exports = {
         .setDescription('Установить сообщение о новом уровне'))
     .addSubcommand(subcommand =>
       subcommand
+        .setName('reset')
+        .setDescription('Обнулить уровни всех пользователей'))
+    .addSubcommand(subcommand =>
+      subcommand
         .setName('set-level')
         .setDescription('Установить уровень определенному пользователю')
         .addUserOption((option) =>
@@ -69,6 +73,10 @@ module.exports = {
 
       await setLevelGuildEnabled(interaction.guild.id, !g.enabled)
       interaction.reply(`${emojis.success} Система уровней теперь **${!g.enabled ? 'включена' : 'выключена'}**!`)
+
+    } else if (interaction.options.getSubcommand() === 'reset') {
+
+      interaction.reply(`${emojis.loading} Команда пока недоступна!`)
 
     } else if (interaction.options.getSubcommand() === 'channel-set') {
 
@@ -118,12 +126,12 @@ module.exports = {
 
       bot = interaction.guild.members.me;
 
-      if(role.rawPosition >= bot.roles.highest.rawPosition) return interaction.reply(`${emojis.error} | Увы, я не смогу выдать роль, которая выше моей`)
+      if (role.rawPosition >= bot.roles.highest.rawPosition) return interaction.reply(`${emojis.error} | Увы, я не смогу выдать роль, которая выше моей`)
       if (bot.permissions.has('ManageRoles') == false) return interaction.reply(`${emojis.error} | У меня нет прав для выдачи ролей`);
-      if(role.tags?.botId) return interaction.reply(`${emojis.error} | Роль принадлежит боту <@${role.tags.botId}>`);
-      if(role.tags?.premiumSubscriberRole) return interaction.reply(`${emojis.error} | Я не смогу выдать роль бустера!`);
-      if(role.tags?.integrationId || role.managed) return interaction.reply(`${emojis.error} | Роль управляется интеграцией`);
-      if(role.id == interaction.guild.id) return interaction.reply(`${emojis.error} | Вы не можете установить роль everyone!`);
+      if (role.tags?.botId) return interaction.reply(`${emojis.error} | Роль принадлежит боту <@${role.tags.botId}>`);
+      if (role.tags?.premiumSubscriberRole) return interaction.reply(`${emojis.error} | Я не смогу выдать роль бустера!`);
+      if (role.tags?.integrationId || role.managed) return interaction.reply(`${emojis.error} | Роль управляется интеграцией`);
+      if (role.id == interaction.guild.id) return interaction.reply(`${emojis.error} | Вы не можете установить роль everyone!`);
 
       addRoleLevel(interaction.guild.id, role.id, level)
 
