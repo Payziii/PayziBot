@@ -15,7 +15,7 @@ module.exports = {
 		const allowedMentions = { parse: ['users'], repliedUser: false };
 		const g = await getLevelGuild(interaction.guild.id);
 		let lvlMess = "";
-		if(!g.enabled) lvlMess = 'На сервере отключена система уровней';
+		if(!g.enabled) return interaction.editReply('На сервере отключена система уровней', { allowedMentions });
 		const users = g.data;
 		users.sort((a, b) => b.xp - a.xp);
 		const top10Users = users.slice(0, 10);
