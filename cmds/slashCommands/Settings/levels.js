@@ -7,12 +7,13 @@
 > message - Установить сообщение о новом уровне
 > reset - Обнулить уровни всех пользователей
 > set-level - Установить уровень определенному пользователю
+> set-xp-range - Установить диапазон XP за сообщение
 > add-role-level - Создать новую роль за уровень
 */
 
 const { SlashCommandBuilder, PermissionFlagsBits, ChannelType, ModalBuilder, TextInputBuilder, TextInputStyle, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require("discord.js");
 const { emojis } = require('../../../config.js');
-const { setLevelGuildEnabled, resetLevelUser, getLevelGuild, setLevelGuildChannel, getLevelUserByGuild, putLevelUser, MathNextLevel, addRoleLevel } = require('../../../database/levels.js');
+const { setLevelGuildXp, setLevelGuildEnabled, resetLevelUser, getLevelGuild, setLevelGuildChannel, getLevelUserByGuild, putLevelUser, MathNextLevel, addRoleLevel } = require('../../../database/levels.js');
 
 module.exports = {
   category: 'settings',
@@ -77,6 +78,24 @@ module.exports = {
             .setDescription('Уровень, за который  выдаётся роль')
             .setMinValue(1)
             .setMaxValue(1000)
+            .setRequired(true)))
+    .addSubcommand(subcommand =>
+      subcommand
+        .setName('set-xp-range')
+        .setDescription('Установить диапазон XP за сообщение')
+        .addIntegerOption((option) =>
+          option
+            .setName('мин')
+            .setDescription('Минимальное количество XP за сообщение')
+            .setMinValue(1)
+            .setMaxValue(100)
+            .setRequired(true))
+        .addIntegerOption((option) =>
+          option
+            .setName('макс')
+            .setDescription('Максимальное количество XP за сообщение')
+            .setMinValue(1)
+            .setMaxValue(1000)
             .setRequired(true))),
   async execute(interaction, guild) {
     const g = await getLevelGuild(interaction.guild.id);
@@ -87,9 +106,9 @@ module.exports = {
       await setLevelGuildEnabled(interaction.guild.id, !g.enabled)
       interaction.reply(`${emojis.success} Система уровней теперь **${!g.enabled ? 'включена' : 'выключена'}**!`)
 
-    // reset - Обнулить уровни всех пользователей
+      // reset - Обнулить уровни всех пользователей
     } else if (interaction.options.getSubcommand() === 'reset') {
-      
+
       const confirmButton = new ButtonBuilder()
         .setCustomId('confirmReset')
         .setLabel('Подтвердить')
@@ -107,7 +126,7 @@ module.exports = {
 
       try {
         const confirmation = await interaction.channel.awaitMessageComponent({ filter, time: 15000 });
-        
+
         await resetLevelUser(interaction.guild.id)
         await confirmation.update({ content: `${emojis.success} Уровни всех пользователей успешно обнулены!`, components: [] });
         await interaction.channel.send(`${emojis.success} ${interaction.user.toString()} успешно обнулил уровни всех пользователей!`)
@@ -115,7 +134,7 @@ module.exports = {
         await interaction.editReply({ content: `${emojis.error} Время ожидания истекло, операция отменена.`, components: [] });
       }
 
-    // channel-set - Установить канал для оповещений о новом уровне
+      // channel-set - Установить канал для оповещений о новом уровне
     } else if (interaction.options.getSubcommand() === 'channel-set') {
 
       channel = interaction.options.getChannel('канал')
@@ -124,7 +143,7 @@ module.exports = {
       if (!channel.permissionsFor(interaction.guild.members.me).has(['SendMessages', 'ViewChannel'])) return interaction.reply(`${emojis.error} | Я не могу отправлять сообщения в выбранном канале...`)
       interaction.reply(`${emojis.success} Оповещения о новом уровне будут приходить в ${cid != "-1" ? `канал <#${cid}>` : `канал, в котором пользователь написал сообщение`}`)
 
-    // message - Установить сообщение о новом уровне
+      // message - Установить сообщение о новом уровне
     } else if (interaction.options.getSubcommand() === 'message') {
 
       const modal = new ModalBuilder()
@@ -143,7 +162,7 @@ module.exports = {
 
       await interaction.showModal(modal);
 
-    // set-level - Установить уровень определенному пользователю
+      // set-level - Установить уровень определенному пользователю
     } else if (interaction.options.getSubcommand() === 'set-level') {
 
       const level = interaction.options.getInteger('уровень');
@@ -159,7 +178,7 @@ module.exports = {
 
       interaction.reply(`${emojis.success} Пользователю <@${_user.id}> успешно установлен **${level}** уровень (${xps} XP)`)
 
-    // add-role-level - Создать новую роль за уровень
+      // add-role-level - Создать новую роль за уровень
     } else if (interaction.options.getSubcommand() === 'add-role-level') {
 
       const role = interaction.options.getRole('роль');
@@ -178,6 +197,15 @@ module.exports = {
 
       interaction.reply(`${emojis.success} С этого момента роль будет выдаваться всем пользователям, достигшим **${level}** уровня!`)
 
+      // set-xp-range - Установить диапазон XP для уровней
+    } else if (interaction.options.getSubcommand() === 'set-xp-range') {
+
+      const min = interaction.options.getInteger('мин');
+      const max = interaction.options.getInteger('макс');
+
+      setLevelGuildXp(interaction.guild.id, min, max);
+
+      interaction.reply(`${emojis.success} С этого момента за каждое сообщение пользователи будут получать от **${min}** до **${max}** XP!`)
     }
   },
 };

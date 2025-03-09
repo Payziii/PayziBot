@@ -1,6 +1,6 @@
 {
   "name": "payzibot",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "it's me!",
   "main": "index.js",
   "scripts": {

@@ -209,6 +209,23 @@ async function setLevelUserByGuild(guildID, userID) {
     return data;
 }
 
+/**
+ * Установить минимальное и максимальное значение xp за сообщение на сервере
+ * 
+ * @param {string} guildID 
+ * @param {number} min 
+ * @param {number} max 
+ */
+async function setLevelGuildXp(guildID, min, max) {
+    const guild = await getLevelGuild(guildID);
+    guild.xp.min = min;
+    guild.xp.max = max;
+    levelsDB.put(guildID, guild);
+
+    return true;
+}
+
+
 module.exports = {
     MathNextLevel,
     createLevelGuild,
@@ -221,5 +238,6 @@ module.exports = {
     getLevelUserByGuild,
     setLevelUserByGuild,
     getRoleByLevelAndGuild,
-    addRoleLevel
+    addRoleLevel,
+    setLevelGuildXp
 }
