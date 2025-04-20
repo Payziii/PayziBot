@@ -7,7 +7,6 @@ const rsnchat = new RsnChat(process.env.RSN);
 
 module.exports = {
     category: 'neuro',
-    skip: true,
     cooldown: 60,
     data: new SlashCommandBuilder()
         .setName('image')
@@ -21,11 +20,9 @@ module.exports = {
         .addStringOption((option) =>
             option.setName('модель')
                 .setDescription('Модель для генерации картинки')
-                .setRequired(true)
+                .setRequired(false) // ЗАМЕНИТЬ НА TRUE
                 .addChoices(
-                    { name: 'Sdxl', value: 'sdxl' },
-                    { name: 'Kandinsky', value: 'kandinsky' },
-                    { name: 'Absolutebeauty', value: 'absolutebeauty' }
+                    { name: 'Flux', value: 'flux' }
                 )
         ),
     async execute(interaction, guild, user) {
@@ -33,7 +30,7 @@ module.exports = {
         if (user.imageGens < 1) return interaction.editReply(`${emojis.error} | Ваши генерации закончились! Поднимите бота на [BotiCord](https://boticord.top/bot/payzibot) для получения 15-ти генераций!\n\nКстати поднимать бота можно раз в 6 часов, а это 60 генераций в сутки :)`)
 
         const negative = "blury, bad quality, nsfw";
-        const model = interaction.options.getString('модель');
+        const model = interaction.options.getString('модель') || 'flux';
         const text = interaction.options.getString('запрос');
 
         interaction.editReply(`${emojis.loading} | Генерируем картинку...`)
@@ -43,31 +40,15 @@ module.exports = {
             await user.save();
             interaction.editReply({
                 content: `🖼️ Вот ваша замечательная картинка!\n-# Запрос: ${text.replace('`', '\`')}`,
-                files: [{ attachment: Buffer.from(image, 'base64'), name: 'image.png' }]
+                files: [{ attachment: image, name: 'image.png' }]
             })
             CheckAch(9, interaction.user.id, interaction.channel, user)
         }
 
-        if (model === 'sdxl') {
-            await rsnchat.sdxl(text, negative)
+        if (model === 'flux') {
+            await rsnchat.image(text, 'flux')
                 .then(response => {
-                    AfterGen(response.image)
-                }).catch(() => {
-                    interaction.editReply(`${emojis.error} | Ошибка. Попробуйте позже или выберите другую модель`)
-                    return
-                });
-        } else if (model === 'kandinsky') {
-            await rsnchat.kandinsky(text, negative)
-                .then(response => {
-                    AfterGen(response.image)
-                }).catch(() => {
-                    interaction.editReply(`${emojis.error} | Ошибка. Попробуйте позже или выберите другую модель`)
-                    return
-                });
-        } else {
-            await rsnchat.absolutebeauty(text, negative)
-                .then(response => {
-                    AfterGen(response.image)
+                    AfterGen(response.image_url)
                 }).catch(() => {
                     interaction.editReply(`${emojis.error} | Ошибка. Попробуйте позже или выберите другую модель`)
                     return
