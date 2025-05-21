@@ -2,8 +2,6 @@ const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRow
 const os = require('os');
 const time = require('payzi-time');
 const { version } = require('../../../../package.json');
-const changelog = require('../../../changelog.js');
-const { CheckAch } = require('../../../func/games/giveAch.js');
 const { emojis } = require('../../../config.js');
 const plural = require('../../../func/plural.js');
 
@@ -45,12 +43,8 @@ module.exports = {
 			.setCustomId('link_button')
 			.setLabel('Ссылки')
 			.setStyle(ButtonStyle.Secondary);
-		const change_button = new ButtonBuilder()
-			.setCustomId('change_button')
-			.setLabel('Изменения')
-			.setStyle(ButtonStyle.Secondary);
 		const row = new ActionRowBuilder()
-			.addComponents(link_button, change_button);
+			.addComponents(link_button);
 
 		const response = await interaction.editReply({ embeds: [embed], components: [row] });
 		const collectorFilter = i => i.user.id === interaction.user.id;
@@ -59,11 +53,6 @@ module.exports = {
 
 			if (confirmation.customId === 'link_button') {
 				await interaction.editReply({ embeds: [links], components: [] });
-			}
-			else if (confirmation.customId === 'change_button') {
-				CheckAch(7, interaction.user.id, interaction.channel)
-				const text = `# ${changelog.version}\n\n## Добавлено\n\n- ${changelog.added.join('\n- ')}\n\n## Изменено\n\n- ${changelog.changed.join('\n- ')}\n\n## Исправлено\n\n- ${changelog.fixed.join('\n- ')}`
-				await interaction.editReply({ content: text, embeds: [], components: [] });
 			}
 
 		}
