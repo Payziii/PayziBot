@@ -3,7 +3,7 @@ const { CheckAch } = require('../../../func/games/giveAch.js');
 const { emojis } = require('../../../config.js');
 
 const { RsnChat } = require('rsnchat');
-const rsnchat = new RsnChat(process.env.RSN);
+const rsnchat = new RsnChat(process.env.RSN_API_KEY);
 
 module.exports = {
     category: 'neuro',

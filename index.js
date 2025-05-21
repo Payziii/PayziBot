@@ -27,7 +27,7 @@ const client = new Client({
 });
 
 mongoose.connect(
-	process.env.MONGO,
+	process.env.MONGO_URI,
 	{ useNewUrlParser: true, useUnifiedTopology: true },
 );
 
@@ -141,4 +141,4 @@ const manager = new GiveawayManagerWithOwnDatabase(client, {
 
 client.giveawaysManager = manager;
 
-client.login(process.env.TOKEN);
+client.login(process.env.DISCORD_BOT_TOKEN);

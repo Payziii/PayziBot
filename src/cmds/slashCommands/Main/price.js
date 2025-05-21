@@ -35,7 +35,7 @@ module.exports = {
     const amount = interaction.options.getInteger("количество") || 1;
     await interaction.deferReply();
 
-    await price.convert(process.env.PRICE, from.toUpperCase(), to, amount).then((r) => {
+    await price.convert(process.env.PRICE_API_KEY, from.toUpperCase(), to, amount).then((r) => {
       interaction.editReply(`${emojis.exchange} **${r.amount}** ${r.from} = **${r.value.toFixed(2)}** ${r.to}`);
     }).catch(() => {
       interaction.editReply(`${emojis.error} | Произошла ошибка. Возможно, валюта не найдена`);

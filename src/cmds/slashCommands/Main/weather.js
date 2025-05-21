@@ -33,7 +33,7 @@ module.exports = {
     const city = interaction.options.getString("город");
     await interaction.deferReply();
 
-    const r = await weather.current(process.env.WEATHER, city);
+    const r = await weather.current(process.env.WEATHER_API_KEY, city);
     if (r === "error")
       return interaction.editReply(`${emojis.error} | Неизвестная ошибка`);
     if (r.error) {
@@ -87,7 +87,7 @@ module.exports = {
       });
 
       if (confirmation.customId === "threedaysweather") {
-        const wea = await weather.forecast(process.env.WEATHER, city, 5);
+        const wea = await weather.forecast(process.env.WEATHER_API_KEY, city, 5);
         data = wea;
         day2s = dayNames[new Date(wea[2].date_epoch * 1000).getDay()];
 

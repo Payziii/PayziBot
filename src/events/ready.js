@@ -14,9 +14,9 @@ module.exports = {
 			.send(`<:Bot:732119152755474444> | **${client.user.username}** запущен с **${client.guilds.cache.size}** серверами`)
 			.catch(() => console.log(`ERROR | Failed to send a startup message to the log channel`))
 
-		if(!process.env.BOTICORD) return console.log('Boticord service is not loaded. Please add boticord token in .env file')
+		if(!process.env.BOTICORD_API_KEY) return console.log('Boticord service is not loaded. Please add boticord token in .env file')
 		
-		const boticord = new BoticordService(process.env.BOTICORD);
+		const boticord = new BoticordService(process.env.BOTICORD_API_KEY);
 
 		boticord.connect();
 

@@ -1,5 +1,5 @@
 const { RsnChat } = require("rsnchat");
-const rsnchat = new RsnChat(process.env.RSN);
+const rsnchat = new RsnChat(process.env.RSN_API_KEY);
 const { emojis } = require("../../config.js");
 
 exports.run = async (client, message, args) => {
