@@ -3,9 +3,9 @@ const { Client, GatewayIntentBits, Collection, ActivityType, Partials } = requir
 const fs = require('node:fs');
 const path = require('node:path');
 const mongoose = require('mongoose');
-const { channels } = require('./config.js');
+const { channels } = require('./src/config.js');
 
-const Giveaway = require('./database/giveaway.js');
+const Giveaway = require('./src/database/giveaway.js');
 
 const client = new Client({
 	intents: [
@@ -39,7 +39,7 @@ client.autoreactChannels = [];
 client.cmdsUsed = 0;
 client.cmdsDetailed = new Map();
 
-const eventsPath = path.join(__dirname, 'events');
+const eventsPath = path.join(__dirname, 'src', 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
 for (const file of eventFiles) {
@@ -53,7 +53,7 @@ for (const file of eventFiles) {
 	}
 }
 
-fs.readdir('./cmds/textCommands/', (err, files) => {
+fs.readdir('./src/cmds/textCommands/', (err, files) => {
 	if (err) console.log(err);
 
 	const jsfile = files.filter(f => f.split('.').pop() === 'js');
@@ -62,7 +62,7 @@ fs.readdir('./cmds/textCommands/', (err, files) => {
 	}
 
 	jsfile.forEach((f) => {
-		const pull = require(`./cmds/textCommands/${f}`);
+		const pull = require(`./src/cmds/textCommands/${f}`);
 		client.textCommands.set(pull.help.name, pull);
 		pull.help.aliases.forEach(alias => {
 			client.textAliases.set(alias, pull);
@@ -76,9 +76,9 @@ process.on('uncaughtException', (err) => {
 });
 
 client.on('ready', async () => {
-	const commandsPath = path.join(__dirname, 'cmds', 'slashCommands');
+	const commandsPath = path.join(__dirname, 'src', 'cmds', 'slashCommands');
 	fs.readdirSync(commandsPath).forEach((folder) => {
-		const cP = path.join('cmds', 'slashCommands', folder);
+		const cP = path.join('src', 'cmds', 'slashCommands', folder);
 		const commandsFiles = fs
 			.readdirSync(cP)
 			.filter((file) => file.endsWith('js'));

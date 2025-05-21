@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
 const os = require('os');
 const time = require('payzi-time');
-const { version } = require('../../../package.json');
+const { version } = require('../../../../package.json');
 const changelog = require('../../../changelog.js');
 const { CheckAch } = require('../../../func/games/giveAch.js');
 const { emojis } = require('../../../config.js');
