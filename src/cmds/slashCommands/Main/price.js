@@ -3,7 +3,7 @@ const {
   EmbedBuilder
 } = require("discord.js");
 const { emojis } = require("../../../config.js");
-const price = require("../../../func/price.js");
+const price = require("../../../func/apis/price.js");
 
 module.exports = {
   category: "utility",

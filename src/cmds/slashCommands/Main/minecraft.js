@@ -4,7 +4,7 @@ const {
   AttachmentBuilder
 } = require("discord.js");
 const { emojis } = require("../../../config.js");
-const minecraft = require("../../../func/minecraft.js");
+const minecraft = require("../../../func/apis/minecraft.js");
 
 module.exports = {
   category: "utility",

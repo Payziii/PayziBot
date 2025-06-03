@@ -6,7 +6,7 @@ const {
   ActionRowBuilder,
 } = require("discord.js");
 const { emojis } = require("../../../config.js");
-const weather = require("../../../func/weather.js");
+const weather = require("../../../func/apis/weather.js");
 const dayNames = [
   "Воскресенье",
   "Понедельник",
