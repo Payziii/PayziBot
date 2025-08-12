@@ -61,7 +61,7 @@ module.exports = async function create(nick, lvl, progress, avatar) {
     ctx.fill();
 
     // Рисование текущего прогресса
-    ctx.fillStyle = '#8fbcbb'; // Цвет прогресса
+    ctx.fillStyle = '#3fcc65'; // Цвет прогресса
     ctx.beginPath();
     ctx.moveTo(progressX + cornerRadius, progressY);
     ctx.lineTo(progressX + progressWidth * progressValue - cornerRadius, progressY);

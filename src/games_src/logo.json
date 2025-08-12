@@ -15,12 +15,12 @@
         "id": 3
     },
     {
-        "image": "http://www.ergunlerotomotiv.com.tr/resimler/KpnuDTJNv4.png",
+        "image": "https://di-uploads-pod3.dealerinspire.com/vindeversautohausofsylvania/uploads/2018/10/Audi-Logo-Banner.png",
         "answers": ["Audi", "Ауди"],
         "id": 4
     },
     {
-        "image": "https://lada-granta-fanclub.ru/wp-content/uploads/2023/06/lada_PNG124.png",
+        "image": "https://logos-world.net/wp-content/uploads/2021/10/Lada-Logo.png",
         "answers": ["Лада", "Lada"],
         "id": 5
     },
@@ -30,7 +30,7 @@
         "id": 6
     },
     {
-        "image": "https://projector-laser.ru/wp-content/uploads/2020/12/LG-Logo-1536x864.png",
+        "image": "https://images.icon-icons.com/2699/PNG/512/lg_logo_icon_170264.png",
         "answers": ["LG"],
         "id": 7
     },
@@ -45,7 +45,7 @@
         "id": 9
     },
     {
-        "image": "https://marcas-logos.net/wp-content/uploads/2019/12/Telegram-logo.png",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1200px-Telegram_2019_Logo.svg.png",
         "answers": ["Telegram", "Телеграм"],
         "id": 10
     },
@@ -80,7 +80,7 @@
         "id": 16
     },
     {
-        "image": "https://lk-rostelecom.ru/wp-content/uploads/2019/03/cropped-RT_logo-RGB.png",
+        "image": "https://www.rst-com.ru/wp-content/uploads/2017/09/mobile_app_logo.png",
         "answers": ["Ростелеком"],
         "id": 17
     },
@@ -105,7 +105,7 @@
         "id": 21
     },
     {
-        "image": "https://idgrup.com/wp-content/uploads/2015/10/Huawei-logo-sun.png",
+        "image": "https://tech-ish.com/wp-content/uploads/2014/08/Huawei-Logo.png",
         "answers": ["Huawei", "Хуавей", "Хуавэй"],
         "id": 22
     },
@@ -130,8 +130,8 @@
         "id": 26
     },
     {
-        "image": "https://dr1ver.ru/wp-content/uploads/2020/09/renault-logo-2015-2048x2048_cr.png",
-        "answers": ["Renault", "Ренаулт"],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Renault_2021.svg",
+        "answers": ["Renault", "Ренаулт", "Рено"],
         "id": 27
     },
     {

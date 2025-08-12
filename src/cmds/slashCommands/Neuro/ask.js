@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require("discord.js");
+const { CheckAch } = require('../../../func/games/giveAch.js');
 const { emojis } = require('../../../config.js');
 
 const { RsnChat } = require('rsnchat');
@@ -28,6 +29,8 @@ module.exports = {
     ),
   async execute(interaction) {
     await interaction.deferReply();
+
+    CheckAch(14, interaction.user.id, interaction.channel)
 
     const model = interaction.options.getString('модель');
     const text = interaction.options.getString('запрос');

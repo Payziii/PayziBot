@@ -44,7 +44,7 @@ module.exports = {
 				.addStringOption((option) =>
 					option
 						.setName('айди')
-						.setDescription('ID сообщения/конкурса')
+						.setDescription('ID сообщения/розыгрыша')
 						.setRequired(true))
 		).addSubcommand(subcommand =>
 			subcommand
@@ -53,7 +53,7 @@ module.exports = {
 				.addStringOption((option) =>
 					option
 						.setName('айди')
-						.setDescription('ID сообщения/конкурса')
+						.setDescription('ID сообщения/розыгрыша')
 						.setRequired(true))
 		),
 	async execute(interaction, guild) {
