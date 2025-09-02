@@ -12,7 +12,7 @@ class dailyStatManager extends EventEmitter {
     async updateDailyStat() {
         const date = new Date();
         const day = date.getDate();
-        const month = date.getMonth();
+        const month = date.getMonth()+1;
         const year = date.getFullYear();
         const dateString = `${day}.${month}.${year}`;
 
@@ -37,7 +37,7 @@ class dailyStatManager extends EventEmitter {
         const date = new Date();
         date.setDate(date.getDate() - 1);
         const day = date.getDate();
-        const month = date.getMonth();
+        const month = date.getMonth()+1;
         const year = date.getFullYear();
         const dateString = `${day}.${month}.${year}`;
 
@@ -60,7 +60,7 @@ class dailyStatManager extends EventEmitter {
     async loadTodayStatToClient() {
         const date = new Date();
         const day = date.getDate();
-        const month = date.getMonth();
+        const month = date.getMonth()+1;
         const year = date.getFullYear();
         const dateString = `${day}.${month}.${year}`;
 
