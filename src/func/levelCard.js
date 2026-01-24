@@ -6,7 +6,7 @@ module.exports = async function create(nick, lvl, progress, avatar) {
 
     const canvas = createCanvas(500, 200)
     const ctx = canvas.getContext('2d')
-    image = await loadImage('./img.png')
+    image = await loadImage('./src/images/rank-background.png')
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
     ctx.font = '500 30px Montserrat'
     const nickWidth = ctx.measureText(nick).width;
