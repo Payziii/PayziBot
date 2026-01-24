@@ -2,10 +2,10 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { Gen } = require('../../../func/games/tipGen.js');
 const give = require('../../../func/games/guessUserCorrect.js');
 const games = require('../../../func/games/guessCounting.js');
-const game = require('../../../games_src/game.json');
-const city = require('../../../games_src/city.json');
-const logo = require('../../../games_src/logo.json');
-const country = require('../../../games_src/country.json');
+const game = require('../../../games_src/guess/game.json');
+const city = require('../../../games_src/guess/city.json');
+const logo = require('../../../games_src/guess/logo.json');
+const country = require('../../../games_src/guess/country.json');
 
 module.exports = {
 	category: 'games',
