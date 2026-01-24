@@ -52,7 +52,11 @@ module.exports = {
           new StringSelectMenuOptionBuilder()
             .setLabel("Розыгрыш")
             .setDescription("Цвет розыгрыша")
-            .setValue("giveaway")
+            .setValue("giveaway"),
+          new StringSelectMenuOptionBuilder()
+            .setLabel("Достижение")
+            .setDescription("Цвет получения достижения")
+            .setValue("achievement")
         );
 
       const row = new ActionRowBuilder().addComponents(select);
@@ -104,6 +108,9 @@ module.exports = {
                       break;
                     case "giveaway":
                       guild.colors.giveaway = collected.first().content;
+                      break;
+                    case "achievement":
+                      guild.colors.achievement = collected.first().content;
                       break;
                   }
                   guild.save();

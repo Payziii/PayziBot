@@ -8,6 +8,7 @@ const guild = Schema({
 		correct: { type: String, default: '#008000' },
 		starboard: { type: String, default: '#cfc50d' },
 		giveaway: { type: String, default: '#9327e1' },
+		achievement: { type: String, default: '#7029f5' },
 	},
 	starboard: {
 		channelID: { type: String, default: '-1' },
