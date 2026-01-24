@@ -12,7 +12,7 @@
 
 1. Введите в консоль `git clone https://github.com/Payziii/PayziBot.git` для клонирования репозитория и `cd PayziBot` для перехода в папку с ботом
 2. Установите необходимые пакеты командой `npm i`
-3. Создайте файл .env и введите туда ваши данные: <img align="center" height="60" src="env.png">
+3. Создайте файл .env и введите туда ваши данные по [.env.example](./.env.example)
 4. Измените [config.js](./src/config.js)
 5. Запустите бота командой `npm run start` или же `node index.js`
 6. Дождитесь вывода в консоль `SUCCESS | Commands updating is ended. Bot success launch!`, после чего можете спокойно использовать бота
