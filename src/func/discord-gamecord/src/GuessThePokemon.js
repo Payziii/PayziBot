@@ -1,5 +1,4 @@
 const { EmbedBuilder, AttachmentBuilder } = require('discord.js');
-const fetch = require('node-fetch');
 const events = require('events');
 
 

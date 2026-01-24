@@ -1,7 +1,6 @@
 const { EmbedBuilder, ActionRowBuilder } = require('discord.js');
 const { decode, formatMessage, shuffleArray, disableButtons, ButtonBuilder } = require('../utils/utils');
 const difficulties = ['easy', 'medium', 'hard'];
-const fetch = require('node-fetch');
 const events = require('events');
 
 

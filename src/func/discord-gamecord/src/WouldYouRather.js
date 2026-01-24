@@ -1,6 +1,5 @@
 const { EmbedBuilder, ActionRowBuilder } = require('discord.js');
 const { formatMessage, ButtonBuilder } = require('../utils/utils');
-const fetch = require('node-fetch');
 const events = require('events');
 
 

@@ -23,7 +23,7 @@ module.exports = {
 		let bio = 'Отсутствует', name = 'Отсутствует', blog = 'Отсутствует';
 		let login, repos, html_url, id, avatar, fl, msg;
 
-		await require('node-fetch')(`https://api.github.com/users/${query}`).then(r => r.json()).then(r => {
+		await fetch(`https://api.github.com/users/${query}`).then(r => r.json()).then(r => {
 			if (r.message && r.message == 'Not Found') return msg = true;
 			if (r.bio) bio = r.bio;
 			if (r.name) name = r.name;
@@ -60,7 +60,7 @@ module.exports = {
 		try {
 			const confirmation = await response.awaitMessageComponent({ filter: collectorFilter, time: 60_000 });
 			let desc='';
-			await require('node-fetch')(`https://api.github.com/users/${query}/repos`).then(r => r.json()).then(r => {
+			await fetch(`https://api.github.com/users/${query}/repos`).then(r => r.json()).then(r => {
 				desc;
 				if(r.length>10) { length = 10 } else { length = r.length }
 				for(i=0; i< length; i++) {
