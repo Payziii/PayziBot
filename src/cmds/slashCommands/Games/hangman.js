@@ -8,11 +8,11 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('hangman')
 		.setDescription('Игра в виселицу'),
-	async execute(interaction) {
+	async execute(interaction, guild) {
 		let del = true;
 		const bot = await interaction.guild.members.me;
 		if (bot.permissions.has('ManageMessages') == false) del = false;
 		const item = words[Math.floor(Math.random() * words.length)];
-		await hangman.create(interaction, 'random', { word: item, players: [interaction.user], del: del });
+		await hangman.create(interaction, 'random', { word: item, players: [interaction.user], del: del, colors: guild.colors });
 	},
 };

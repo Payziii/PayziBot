@@ -12,6 +12,7 @@ class HangmansManager {
         const displayWordOnGameOver = typeof options.displayWordOnGameOver === 'boolean' ? options.displayWordOnGameOver : true;
         const players = options.players || await this.#gatherPlayers(interaction, messages, options.filter ? options.filter : () => true);
         const deleteMessage = options.del;
+        const colors = options.colors;
 
         if (players.length === 0) return interaction.editReply({ content: messages.createNoPlayers });
         if (gameType === 'custom' && players.length < 2) return interaction.editReply({ content: messages.customNotEnoughPlayers });
@@ -29,7 +30,7 @@ class HangmansManager {
         };
         
         await interaction.deleteReply();
-        const game = new Hangman(word, interaction, players, messages, displayWordOnGameOver, lives, deleteMessage);
+        const game = new Hangman(word, interaction, players, messages, displayWordOnGameOver, lives, deleteMessage, colors);
         await game.start();
         return { game, selector };
     };

@@ -1,7 +1,7 @@
 const { EmbedBuilder } = require('discord.js');
 
 class hangman {
-    constructor(word = null, interaction, players, messages, displayWordOnGameOver, lives, deleteMessage) {
+    constructor(word = null, interaction, players, messages, displayWordOnGameOver, lives, deleteMessage, colors) {
         this.word = word;
         this.startingLives = lives;
         this.lives = lives;
@@ -16,6 +16,7 @@ class hangman {
         this.messages = messages;
         this.displayWordOnGameOver = displayWordOnGameOver;
         this.del = deleteMessage;
+        this.colors = colors;
     }
 
     static hyphenString(n) {
@@ -36,7 +37,7 @@ class hangman {
         const embed = new EmbedBuilder()
             .setDescription('```\n' + this.getFigure() + '```')
             .addFields([{ name: 'Игроки', value: this.playerlist() }])
-            .setColor(this.gameOver ? (this.status === 'won' ? '#3fcc65' : '#3fcc65') : '#3fcc65');
+            .setColor(this.gameOver ? (this.status === 'won' ? this.colors.correct : this.colors.error) : this.colors.basic);
         
         if (this.message) await this.message.edit({ embeds: [embed] });
         else this.message = await this.interaction.channel.send({ embeds: [embed] });
