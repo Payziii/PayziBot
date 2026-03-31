@@ -6,7 +6,7 @@ module.exports = {
 	cooldown: 3,
 	data: new SlashCommandBuilder()
 		.setName('mute')
-		.setDescription('Выдать мут пользователю')
+		.setDescription('Заглушить пользователя')
 		.addUserOption((option) =>
 			option
 				.setName('пользователь')
@@ -15,7 +15,7 @@ module.exports = {
 		)
 		.addIntegerOption(option =>
 			option.setName('время')
-				.setDescription('Время мута')
+				.setDescription('Время ограничения')
 				.setRequired(true)
 				.addChoices(
 					{ name: '1 мин.', value: 60000 },
@@ -31,14 +31,14 @@ module.exports = {
 		.addStringOption((option) =>
 			option
 				.setName('причина')
-				.setDescription('Причина мута'),
+				.setDescription('Причина ограничения'),
 		)
 		.setDefaultMemberPermissions(PermissionFlagsBits.ModerateMembers),
 	async execute(interaction) {
 		const user = interaction.options.getUser('пользователь');
 		const bot = await interaction.guild.members.me;
 
-		if (bot.permissions.has('ModerateMembers') == false) return interaction.reply(`${emojis.error} | У меня нет прав для мута пользователей`);
+		if (bot.permissions.has('ModerateMembers') == false) return interaction.reply(`${emojis.error} | У меня нет прав для ограничения пользователей`);
 		let msg;
 		let reason = interaction.options.getString('причина') || 'Причина отсутствует';
 		const time = interaction.options.getInteger('время');
@@ -46,18 +46,18 @@ module.exports = {
 		switch (user.id) {
 		case interaction.guild.ownerId:
 			error = true;
-			msg = `${emojis.error} | Мне кажется это владелец сервера. Или мне кажется?`;
+			msg = `${emojis.error} | Я не могу заглушить владельца сервера`;
 			break;
 		case interaction.user.id:
 			error = true;
-			msg = `${emojis.error} | Я не хочу отправлять в мут таких людей`;
+			msg = `${emojis.error} | Я не буду заглушать вас`;
 			break;
 		case bot.id:
 			error = true;
-			msg = `${emojis.error} | А как я отвечу тебе после этого?`;
+			msg = `${emojis.error} | А как я отвечу после этого?`;
 			break;
 		default:
-			msg = `${emojis.success} ${user} получил мут.\n-# Причина: ${reason}`;
+			msg = `${emojis.success} ${user} получил ограничения на чат.\n-# Причина: ${reason}`;
 		}
 		reason = interaction.user.username + ': ' + reason;
 		const member = await interaction.guild.members.cache.get(user.id);

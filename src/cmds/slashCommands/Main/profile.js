@@ -13,7 +13,7 @@ module.exports = {
 		.addUserOption((option) =>
 			option
 				.setName('пользователь')
-				.setDescription('Пользователь, чей профиль надо посмотреть')
+				.setDescription('Пользователь, чей профиль вы смотрите')
 		),
 	async execute(interaction, guild) {
 		await interaction.deferReply();
@@ -48,7 +48,7 @@ module.exports = {
 				},
 				{
 				  name: "Игры",
-				  value: `Побед в "угадай...": **${user.games.game + user.games.city + user.games.logo + user.games.flag + user.games.country}**`,
+				  value: `Побед в "угадайте...": **${user.games.game + user.games.city + user.games.logo + user.games.flag + user.games.country}**`,
 				  inline: false
 				},
 			  )

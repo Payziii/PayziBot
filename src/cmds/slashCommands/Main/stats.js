@@ -21,14 +21,14 @@ module.exports = {
 					`${seconds} сек.`;
 		const embed = new EmbedBuilder()
 			.setTitle(`PayziBot ${version}`)
-			.setDescription(`${emojis.arrow} Бот работает: **${bremya}**\n${emojis.arrow} За день ${plural(client.cmdsUsed, "использована", "использовано", "использовано")} **${client.cmdsUsed} ${plural(client.cmdsUsed, "команда", "команды", "команд")}**`)
+			.setDescription(`${emojis.arrow} Время работы: **${bremya}**\n${emojis.arrow} За день ${plural(client.cmdsUsed, "использована", "использовано", "использовано")} **${client.cmdsUsed} ${plural(client.cmdsUsed, "команда", "команды", "команд")}**`)
 			.addFields(
 				{
 					name: 'Статистика',
 					value: `Серверов: **${client.guilds.cache.size}**\nКаналов: **${client.channels.cache.size}**\nПользователей: **${client.users.cache.size}**`,
 				},
 				{
-					name: 'Хостинг',
+					name: 'Сервер',
 					value: `ОЗУ: \`${(process.memoryUsage().heapUsed / (1024 * 1024)).toFixed(0)} МБ\`/\`${(os.totalmem() / (1024 * 1024)).toFixed(0)} МБ\`\nWebSocket: \`${client.ws.ping}ms\`\nЦП: \`${os.cpus()[0].model}\``,
 				},
 			)

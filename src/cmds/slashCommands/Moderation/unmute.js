@@ -6,24 +6,24 @@ module.exports = {
 	cooldown: 3,
 	data: new SlashCommandBuilder()
 		.setName('unmute')
-		.setDescription('Размутить пользователя')
+		.setDescription('Разглушить пользователя')
 		.addUserOption((option) =>
 			option
 				.setName('пользователь')
-				.setDescription('Пользователь, которого нужно размутить')
+				.setDescription('Пользователь, которого нужно разглушить')
 				.setRequired(true),
 		)
 		.addStringOption((option) =>
 			option
 				.setName('причина')
-				.setDescription('Причина размута'),
+				.setDescription('Причина снятия ограничений'),
 		)
 		.setDefaultMemberPermissions(PermissionFlagsBits.ModerateMembers),
 	async execute(interaction) {
 		const user = interaction.options.getUser('пользователь');
 		const bot = await interaction.guild.members.me;
 
-		if (bot.permissions.has('ModerateMembers') == false) return interaction.reply(`${emojis.error} | У меня нет прав для размута пользователей`);
+		if (bot.permissions.has('ModerateMembers') == false) return interaction.reply(`${emojis.error} | У меня нет прав для разглушения пользователей`);
 		let msg;
 		let reason = interaction.options.getString('причина') || 'Причина отсутствует';
 		let error = false;
@@ -41,7 +41,7 @@ module.exports = {
 			msg = `${emojis.error} | А как я это пишу?`;
 			break;
 		default:
-			msg = `${emojis.success} ${user} был размучен.\n-# Причина: ${reason}`;
+			msg = `${emojis.success} ${user} был разглушен.\n-# Причина: ${reason}`;
 		}
 		reason = interaction.user.username + ': ' + reason;
 		const member = await interaction.guild.members.cache.get(user.id);

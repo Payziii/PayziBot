@@ -14,21 +14,21 @@ module.exports = {
   cooldown: 15,
   data: new SlashCommandBuilder()
     .setName('autoreact')
-    .setDescription('Настройки автореакта')
+    .setDescription('Настройки автореактинга')
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
     .addSubcommand(subcommand =>
       subcommand
         .setName('off')
-        .setDescription('Выключить автореакт'))
+        .setDescription('Выключить автореактинг'))
     .addSubcommand(subcommand =>
       subcommand
         .setName('set')
-        .setDescription('Установить автореакт')
+        .setDescription('Установить автореактинг')
         .addChannelOption((option) =>
           option
             .setName('канал')
             .addChannelTypes(ChannelType.GuildText)
-            .setDescription('Канал, в котором будет работать автореакт')
+            .setDescription('Канал, в котором будет работать автореактинг')
             .setRequired(true)
         )
         .addStringOption((option) =>
@@ -40,11 +40,11 @@ module.exports = {
   async execute(interaction, guild) {
     await interaction.deferReply();
     if (interaction.options.getSubcommand() === 'off') {
-      if (guild.autoreact.channelID == '-1' && guild.autoreact.reacts.length == 0) return interaction.followUp(`${emojis.error} | Я думаю, автореакт и так выключен...`)
+      if (guild.autoreact.channelID == '-1' && guild.autoreact.reacts.length == 0) return interaction.followUp(`${emojis.error} | Я думаю, автореактинг и так выключен...`)
       guild.autoreact.channelID = '-1';
       guild.autoreact.reacts = [];
       guild.save()
-      interaction.followUp('Автореакт успешно выключен!')
+      interaction.followUp('Автореактинг успешно выключен!')
     } else if (interaction.options.getSubcommand() === 'set') {
       channel = interaction.options.getChannel('канал')
       text = interaction.options.getString('реакции')
@@ -52,7 +52,7 @@ module.exports = {
 
       if (!channel.permissionsFor(interaction.guild.members.me).has(['AddReactions', 'ViewChannel'])) return interaction.followUp(`${emojis.error} | Мне требуются права на установку реакций в выбранном канале!`)
 
-      if (reacts.length > 7) return interaction.followUp(`${emojis.error} | Серверам без **PayziBot Premium** разрешено добавлять до 7 реакций в автореакт. Повысьте этот лимит до 15 реакций, купив подписку`)
+      if (reacts.length > 7) return interaction.followUp(`${emojis.error} | Серверам без **PayziBot Premium** разрешено добавлять до 7 реакций в автореактинг. Повысьте этот лимит до 15 реакций, купив подписку`)
 
       for (reaction of reacts) {
         if (/\p{Emoji}/u.test(reaction) == false) return interaction.followUp(`${emojis.error} | Я думаю \`${reaction}\` не является эмодзи...`)
@@ -66,7 +66,7 @@ module.exports = {
       guild.autoreact.channelID = channel.id;
       guild.autoreact.reacts = reacts;
       guild.save()
-      interaction.followUp(`${emojis.success} Автореакт успешно включён в канале <#${channel.id}> с реакциями: ${reacts.join(', ')}`)
+      interaction.followUp(`${emojis.success} Автореактинг успешно включён в канале <#${channel.id}> с реакциями: ${reacts.join(', ')}`)
       index = interaction.client.autoreactChannels.indexOf(channel.id);
       if (interaction.client.autoreactChannels !== -1) {
         interaction.client.autoreactChannels.splice(index, 1);

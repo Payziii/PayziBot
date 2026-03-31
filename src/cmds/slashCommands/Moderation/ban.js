@@ -34,7 +34,7 @@ module.exports = {
 			break;
 		case interaction.user.id:
 			error = true;
-			msg = `${emojis.error} | Вы не можете заблокировать лучшего человека на этом сервере`;
+			msg = `${emojis.error} | Вы не можете заблокировать самого себя`;
 			break;
 		case bot.id:
 			error = true;

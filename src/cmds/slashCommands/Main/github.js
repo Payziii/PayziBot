@@ -12,7 +12,7 @@ module.exports = {
 		.addStringOption((option) =>
 			option
 				.setName('ник')
-				.setDescription('Ник пользователя на GitHub.')
+				.setDescription('Юзернейм пользователя на GitHub.')
 				.setRequired(true)
 				.setMaxLength(39),
 		),

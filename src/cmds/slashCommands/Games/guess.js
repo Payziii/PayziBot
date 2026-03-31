@@ -12,23 +12,23 @@ module.exports = {
 	cooldown: 9,
 	data: new SlashCommandBuilder()
 		.setName('guess')
-		.setDescription('Угадай что-то по картинке')
+		.setDescription('Угадайте что-то по картинке')
 		.addSubcommand(subcommand =>
 			subcommand
 				.setName('city')
-				.setDescription('Угадай город'))
+				.setDescription('Угадайте город'))
 		.addSubcommand(subcommand =>
 			subcommand
 				.setName('game')
-				.setDescription('Угадай игру'))
+				.setDescription('Угадайте игру'))
 		.addSubcommand(subcommand =>
 			subcommand
 				.setName('logo')
-				.setDescription('Угадай логотип'))
+				.setDescription('Угадайте логотип'))
 		.addSubcommand(subcommand =>
 			subcommand
 				.setName('country')
-				.setDescription('Угадай страну по картинке и описанию')),
+				.setDescription('Угадайте страну по картинке и описанию')),
 	async execute(interaction, guild) {
 		await interaction.deferReply();
 		// GAME

@@ -11,7 +11,7 @@ module.exports = {
 		.addIntegerOption((option) =>
 			option
 				.setName('количество')
-				.setDescription('Количество бомб на карте (1-23)')
+				.setDescription('Количество мин на карте (1-23)')
 				.setMinValue(1)
 				.setMaxValue(23)),
 	async execute(interaction, guild) {

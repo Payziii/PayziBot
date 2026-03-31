@@ -30,18 +30,18 @@ module.exports = {
 		switch (user.id) {
 		case interaction.guild.ownerId:
 			error = true;
-			msg = `${emojis.error} | Он не может выйти с сервера даже самостоятельно. Как я его выгоню?`;
+			msg = `${emojis.error} | Я не могу выгнать владельца сервера...`;
 			break;
 		case interaction.user.id:
 			error = true;
-			msg = `${emojis.error} | Не пробовал просто выйти с сервера?`;
+			msg = `${emojis.error} | Я не могу выгнать вас с сервера`;
 			break;
 		case bot.id:
 			error = true;
 			msg = `${emojis.error} | А может я не хочу выходить с этого прекрасного сервера!`;
 			break;
 		default:
-			msg = `${emojis.success} ${user} был выгнан с этого замечательного сервера...\n-# Причина: ${reason}`;
+			msg = `${emojis.success} ${user} был выгнан...\n-# Причина: ${reason}`;
 		}
 		reason = interaction.user.username + ': ' + reason;
 		const member = await interaction.guild.members.cache.get(user.id);

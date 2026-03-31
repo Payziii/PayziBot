@@ -9,7 +9,7 @@ module.exports = {
 		.setDescription('Установить информацию о себе')
 		.addStringOption((option) =>
 			option.setName('осебе')
-				.setDescription('Напишите что-то о себе')
+				.setDescription('Текст, отображаемый в вашем профиле')
 				.setMaxLength(64)
 				.setRequired(true),
 		),

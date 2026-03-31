@@ -10,7 +10,7 @@ module.exports = {
 		.setDescription('Переводчик')
 		.addStringOption((option) =>
 			option.setName('язык')
-				.setDescription('Язык, на который надо перевести')
+				.setDescription('Язык, на который надо перевести текст')
 				.setRequired(true)
 				.addChoices(
 					{ name: 'Английский', value: 'en' },

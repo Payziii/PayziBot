@@ -15,7 +15,7 @@ module.exports = {
 		.addSubcommand(subcommand =>
 			subcommand
 				.setName('unlock')
-				.setDescription('Открыть этот  канал для @everyone')
+				.setDescription('Открыть этот канал для @everyone')
 		)
 		.addSubcommand(subcommand =>
 			subcommand
@@ -30,7 +30,7 @@ module.exports = {
 	async execute(interaction) {
 		await interaction.deferReply();
 		const bot = await interaction.guild.members.me;
-		if (bot.permissions.has('ManageChannels') == false) return interaction.editReply(`${emojis.error} | У меня нет прав для управления каналами`);
+		if (bot.permissions.has('ManageChannels') == false) return interaction.editReply(`${emojis.error} | У меня нет прав для управления каналом`);
 		if (interaction.options.getSubcommand() === 'lock') {
 			interaction.channel.permissionOverwrites.edit(interaction.guild.roles.everyone, {
 				SendMessages: false,

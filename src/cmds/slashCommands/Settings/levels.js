@@ -75,7 +75,7 @@ module.exports = {
         .addIntegerOption((option) =>
           option
             .setName('уровень')
-            .setDescription('Уровень, за который  выдаётся роль')
+            .setDescription('Уровень, за который выдаётся роль')
             .setMinValue(1)
             .setMaxValue(1000)
             .setRequired(true)))
