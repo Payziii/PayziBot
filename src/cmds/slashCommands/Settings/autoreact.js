@@ -52,8 +52,6 @@ module.exports = {
 
       if (!channel.permissionsFor(interaction.guild.members.me).has(['AddReactions', 'ViewChannel'])) return interaction.followUp(`${emojis.error} | Мне требуются права на установку реакций в выбранном канале!`)
 
-      if (reacts.length > 7) return interaction.followUp(`${emojis.error} | Серверам без **PayziBot Premium** разрешено добавлять до 7 реакций в автореактинг. Повысьте этот лимит до 15 реакций, купив подписку`)
-
       for (reaction of reacts) {
         if (/\p{Emoji}/u.test(reaction) == false) return interaction.followUp(`${emojis.error} | Я думаю \`${reaction}\` не является эмодзи...`)
         if (reaction.includes('<')) {
