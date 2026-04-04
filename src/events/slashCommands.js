@@ -50,7 +50,7 @@ module.exports = {
 		if(user.block >= 4) return interaction.reply(`${emojis.error} | Вы получили блокировку своего аккаунта. Обратитесь на сервер поддержки для выяснения причины и дальнейших действий!`); // Доступ запрещён
 
 		const cmd = interaction.client.commands.get(interaction.commandName); // Ищем команду
-		if (!cmd) return interaction.reply(`${emojis.error} | Команда не найдена. Как такое могло произойти?`);
+		if (!cmd) return interaction.reply(`${emojis.error} | Команда не найдена. Возможно, она была удалена`);
 
 		// Задержки
 		const { cooldowns } = client;

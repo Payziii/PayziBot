@@ -45,8 +45,8 @@ module.exports = {
 			let podsk = '';
 			if (percent < 50) podsk = '\nПодсказка: **' + Gen(item.answers[0]) + '**';
 			const embed = new EmbedBuilder()
-				.setTitle('Угадай игру')
-				.setDescription(`У вас есть **30 секунд** чтобы ответить, какая игра изображена на картинке ниже${podsk}`)
+				.setTitle('Угадайте игру')
+				.setDescription(`У вас есть **30 секунд** чтобы угадать, какая игра изображена на картинке ниже${podsk}`)
 				.setImage(item.image)
 				.setFooter({ text: `Игру угадали ${percent}% пользователей` })
 				.setColor(guild.colors.basic);
@@ -56,7 +56,7 @@ module.exports = {
 					interaction.channel.awaitMessages({ filter: collectorFilter, max: 1, time: 30000, errors: ['time'] })
 						.then(collected => {
 							const embed1 = new EmbedBuilder()
-								.setTitle('Угадай игру')
+								.setTitle('Угадайте игру')
 								.setDescription(`Ответ: **${item.answers[0]}**`)
 								.setImage(item.image)
 								.setColor(guild.colors.correct);
@@ -66,7 +66,7 @@ module.exports = {
 						})
 						.catch(() => {
 							const embed5 = new EmbedBuilder()
-								.setTitle('Угадай игру')
+								.setTitle('Угадайте игру')
 								.setDescription(`Ответ: **${item.answers[0]}**`)
 								.setImage(item.image)
 								.setColor(guild.colors.error);
@@ -88,8 +88,8 @@ module.exports = {
 			let podsk = '';
 			if (percent < 50) podsk = '\nПодсказка: **' + Gen(item.answers[0]) + '**';
 			const embed = new EmbedBuilder()
-				.setTitle('Угадай город')
-				.setDescription(`У вас есть **30 секунд** чтобы ответить, какой город изображен на фото ниже\nСтрана: **${item.country}**${podsk}`)
+				.setTitle('Угадайте город')
+				.setDescription(`У вас есть **30 секунд** чтобы угадать, какой город изображен на фото ниже\nСтрана: **${item.country}**${podsk}`)
 				.setImage(item.image)
 				.setFooter({ text: `Город угадали ${percent}% пользователей` })
 				.setColor(guild.colors.basic);
@@ -99,7 +99,7 @@ module.exports = {
 					interaction.channel.awaitMessages({ filter: collectorFilter, max: 1, time: 30000, errors: ['time'] })
 						.then(collected => {
 							const embed1 = new EmbedBuilder()
-								.setTitle('Угадай город')
+								.setTitle('Угадайте город')
 								.setDescription(`Ответ: **${item.answers[0]}**\nСтрана: **${item.country}**`)
 								.setImage(item.image)
 								.setColor(guild.colors.correct);
@@ -109,7 +109,7 @@ module.exports = {
 						})
 						.catch(() => {
 							const embed5 = new EmbedBuilder()
-								.setTitle('Угадай город')
+								.setTitle('Угадайте город')
 								.setDescription(`Ответ: **${item.answers[0]}**\nСтрана: **${item.country}**`)
 								.setImage(item.image)
 								.setColor(guild.colors.error);
@@ -131,8 +131,8 @@ module.exports = {
 			let podsk = '';
 			if (percent < 50) podsk = '\nПодсказка: **' + Gen(item.answers[0]) + '**';
 			const embed = new EmbedBuilder()
-				.setTitle('Угадай логотип')
-				.setDescription(`У вас есть **10 секунд** чтобы ответить, чей логотип изображен на фото ниже${podsk}`)
+				.setTitle('Угадайте логотип')
+				.setDescription(`У вас есть **10 секунд** чтобы угадать, чей логотип изображен на фото ниже${podsk}`)
 				.setImage(item.image)
 				.setFooter({ text: `Логотип угадали ${percent}% пользователей` })
 				.setColor(guild.colors.basic);
@@ -142,7 +142,7 @@ module.exports = {
 					interaction.channel.awaitMessages({ filter: collectorFilter, max: 1, time: 10000, errors: ['time'] })
 						.then(collected => {
 							const embed1 = new EmbedBuilder()
-								.setTitle('Угадай логотип')
+								.setTitle('Угадайте логотип')
 								.setDescription(`Ответ: **${item.answers[0]}**`)
 								.setImage(item.image)
 								.setColor(guild.colors.correct);
@@ -152,7 +152,7 @@ module.exports = {
 						})
 						.catch(() => {
 							const embed5 = new EmbedBuilder()
-								.setTitle('Угадай логотип')
+								.setTitle('Угадайте логотип')
 								.setDescription(`Ответ: **${item.answers[0]}**`)
 								.setImage(item.image)
 								.setColor(guild.colors.error);
@@ -175,7 +175,7 @@ module.exports = {
 			let podsk = '';
 			if (percent < 30) podsk = '\nПодсказка: **' + Gen(item.answers[0]) + '**';
 			const embed = new EmbedBuilder()
-				.setTitle('Угадай страну')
+				.setTitle('Угадайте страну')
 				.setDescription(`У вас есть **60 секунд** чтобы назвать страну по **описанию** и **картинке** с Google Maps.\n\nОписание: **${item.text}**${podsk}`)
 				.setImage(image)
 				.setFooter({ text: `Страну угадали ${percent}% пользователей` })
@@ -186,7 +186,7 @@ module.exports = {
 					interaction.channel.awaitMessages({ filter: collectorFilter, max: 1, time: 60000, errors: ['time'] })
 						.then(collected => {
 							const embed1 = new EmbedBuilder()
-								.setTitle('Угадай страну')
+								.setTitle('Угадайте страну')
 								.setDescription(`Ответ: **${item.answers[0]}**`)
 								.setImage(image)
 								.setColor(guild.colors.correct);
@@ -196,7 +196,7 @@ module.exports = {
 						})
 						.catch(() => {
 							const embed5 = new EmbedBuilder()
-								.setTitle('Угадай страну')
+								.setTitle('Угадайте страну')
 								.setDescription(`Ответ: **${item.answers[0]}**`)
 								.setImage(image)
 								.setColor(guild.colors.error);
