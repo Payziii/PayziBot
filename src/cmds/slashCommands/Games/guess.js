@@ -61,7 +61,7 @@ module.exports = {
 								.setImage(item.image)
 								.setColor(guild.colors.correct);
 							interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
-							give.CorrectGame(collected.first().author.id);
+							give.Correct('game', collected.first().author.id);
 							games.gameGiveVerno(name, item.id);
 						})
 						.catch(() => {
@@ -104,7 +104,7 @@ module.exports = {
 								.setImage(item.image)
 								.setColor(guild.colors.correct);
 							interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
-							give.CorrectCity(collected.first().author.id, interaction.channel);
+							give.Correct('city', collected.first().author.id, interaction.channel);
 							games.gameGiveVerno(name, item.id);
 						})
 						.catch(() => {
@@ -147,7 +147,7 @@ module.exports = {
 								.setImage(item.image)
 								.setColor(guild.colors.correct);
 							interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
-							give.CorrectLogo(collected.first().author.id);
+							give.Correct('logo', collected.first().author.id);
 							games.gameGiveVerno(name, item.id);
 						})
 						.catch(() => {
@@ -191,7 +191,7 @@ module.exports = {
 								.setImage(image)
 								.setColor(guild.colors.correct);
 							interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
-							give.CorrectCountry(collected.first().author.id, interaction.channel);
+							give.Correct('country', collected.first().author.id, interaction.channel);
 							games.gameGiveVerno(name, item.id);
 						})
 						.catch(() => {

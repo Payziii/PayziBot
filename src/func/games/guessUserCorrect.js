@@ -1,51 +1,41 @@
 const User = require('../../database/user.js');
 const { CheckAch } = require('./giveAch.js');
 
-async function CorrectGame(id) {
-	const user = await User.findOne({ userID: id });
-	if (!user) return;
-	user.games.game++;
-	user.save();
-}
+async function Correct(game, id, channel) {
+    const user = await User.findOne({ userID: id });
+    if (!user) return;
 
-async function CorrectCity(id, channel) {
-	const user = await User.findOne({ userID: id });
-	if (!user) return;
-	if(user.games.city >= 49) {
-		CheckAch(1, id, channel, user)
-	}
-	user.games.city++;
-	user.save();
-}
+    switch (game) {
+        case 'game':
+            user.games.game++;
+            break;
 
-async function CorrectLogo(id) {
-	const user = await User.findOne({ userID: id });
-	if (!user) return;
-	user.games.logo++;
-	user.save();
-}
+        case 'city':
+            if (user.games.city >= 49) {
+                CheckAch(1, id, channel, user);
+            }
+            user.games.city++;
+            break;
 
-async function CorrectFlag(id) {
-	const user = await User.findOne({ userID: id });
-	if (!user) return;
-	user.games.flag++;
-	user.save();
-}
+        case 'logo':
+            user.games.logo++;
+            break;
 
-async function CorrectCountry(id, channel) {
-	const user = await User.findOne({ userID: id });
-	if (!user) return;
-	if(user.games.country >= 110) {
-		CheckAch(10, id, channel, user)
-	}
-	user.games.country++;
-	user.save();
+        case 'flag':
+            user.games.flag++;
+            break;
+
+        case 'country':
+            if (user.games.country >= 110) {
+                CheckAch(10, id, channel, user);
+            }
+            user.games.country++;
+            break;
+    }
+
+    await user.save();
 }
 
 module.exports = {
-	CorrectGame,
-	CorrectCity,
-	CorrectLogo,
-	CorrectFlag,
-	CorrectCountry,
+	Correct
 };
