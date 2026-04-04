@@ -75,11 +75,6 @@ module.exports = {
 
 			let msgs = messages.ru.start;
 
-			if(prize.endsWith('--mru')) {
-				msgs = messages.mru.start;
-				prize = prize.replace('--mru', '');
-			}
-
 			interaction.reply(`${emojis.loading} | Создание розыгрыша`)
 			interaction.client.giveawaysManager
 				.start(channel, {
