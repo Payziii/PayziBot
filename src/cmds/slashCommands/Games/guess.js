@@ -132,14 +132,14 @@ module.exports = {
 			if (percent < 50) podsk = '\nПодсказка: **' + Gen(item.answers[0]) + '**';
 			const embed = new EmbedBuilder()
 				.setTitle('Угадайте логотип')
-				.setDescription(`У вас есть **10 секунд** чтобы угадать, чей логотип изображен на фото ниже${podsk}`)
+				.setDescription(`У вас есть **15 секунд** чтобы угадать, чей логотип изображен на фото ниже${podsk}`)
 				.setImage(item.image)
 				.setFooter({ text: `Логотип угадали ${percent}% пользователей` })
 				.setColor(guild.colors.basic);
 
 			interaction.editReply({ embeds: [embed], fetchReply: true })
 				.then(() => {
-					interaction.channel.awaitMessages({ filter: collectorFilter, max: 1, time: 10000, errors: ['time'] })
+					interaction.channel.awaitMessages({ filter: collectorFilter, max: 1, time: 15000, errors: ['time'] })
 						.then(collected => {
 							const embed1 = new EmbedBuilder()
 								.setTitle('Угадайте логотип')
