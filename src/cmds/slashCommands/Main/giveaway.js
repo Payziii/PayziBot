@@ -36,6 +36,10 @@ module.exports = {
 						.setName('канал')
 						.addChannelTypes(ChannelType.GuildText)
 						.setDescription('Канал, в котором будет создан розыгрыш'))
+				.addStringOption((option) =>
+					option
+						.setName('реакция')
+						.setDescription('Реакция, которую необходимо нажать для участия'))
 		)
 		.addSubcommand(subcommand =>
 			subcommand
@@ -63,6 +67,7 @@ module.exports = {
 			duration = interaction.options.getString('время');
 			winnerCount = interaction.options.getInteger('победители');
 			prize = interaction.options.getString('приз');
+			react = interaction.options.getString('реакция') || "🎉";
 
 			duration = ms(duration);
 
@@ -72,8 +77,16 @@ module.exports = {
 
 			if(isNaN(duration)) return interaction.reply(`${emojis.error} | Время - это число. Также можете использовать приставки "с", "м", "ч", "д". Например: 1д - розыгрыш будет создан на 1 день.`)
 			if(duration < 1000) return interaction.reply(`${emojis.error} | Я не могу создать розыгрыш менее, чем на 1 секунду`)
+			
+			const isEmoji = /^(\p{Emoji_Presentation}|\p{Extended_Pictographic})/u.test(react);
+
+			if (!isEmoji) {
+				return interaction.reply(`${emojis.error} | Я думаю \`${react}\` не является эмодзи...`)
+			}
 
 			let msgs = messages.ru.start;
+
+			msgs.inviteToParticipate = `Нажмите ${react} для участия`,
 
 			interaction.reply(`${emojis.loading} | Создание розыгрыша`)
 			interaction.client.giveawaysManager
@@ -82,6 +95,7 @@ module.exports = {
 					winnerCount,
 					prize,
 					hostedBy: interaction.user,
+					reaction: react,
 					messages: msgs,
 					embedColor: guild.colors.giveaway,
 					embedColorEnd: guild.colors.giveaway
