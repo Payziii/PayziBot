@@ -53,8 +53,12 @@ module.exports = {
       if (!channel.permissionsFor(interaction.guild.members.me).has(['AddReactions', 'ViewChannel'])) return interaction.followUp(`${emojis.error} | Мне требуются права на установку реакций в выбранном канале!`)
 
       for (reaction of reacts) {
-        const isEmoji = /^(\p{Emoji_Presentation}|\p{Extended_Pictographic})/u.test(react);
-        if (!isEmoji) return interaction.followUp(`${emojis.error} | Я думаю \`${reaction}\` не является эмодзи...`)
+        const isUnicodeEmoji = /^(\p{Emoji_Presentation}|\p{Extended_Pictographic})/u.test(react);
+			  const isDiscordEmoji = /^<a?:\w+:\d+>$/.test(react);
+
+        if (!isUnicodeEmoji && !isDiscordEmoji) {
+          return interaction.followUp(`${emojis.error} | Я думаю \`${react}\` не является эмодзи...`)
+        }
         if (reaction.includes('<')) {
           reaction = reaction.split(':')
           reaction[2] = reaction[2].slice(0, -1)

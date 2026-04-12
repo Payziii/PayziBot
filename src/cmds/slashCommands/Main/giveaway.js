@@ -78,9 +78,10 @@ module.exports = {
 			if(isNaN(duration)) return interaction.reply(`${emojis.error} | Время - это число. Также можете использовать приставки "с", "м", "ч", "д". Например: 1д - розыгрыш будет создан на 1 день.`)
 			if(duration < 1000) return interaction.reply(`${emojis.error} | Я не могу создать розыгрыш менее, чем на 1 секунду`)
 			
-			const isEmoji = /^(\p{Emoji_Presentation}|\p{Extended_Pictographic})/u.test(react);
+			const isUnicodeEmoji = /^(\p{Emoji_Presentation}|\p{Extended_Pictographic})/u.test(react);
+			const isDiscordEmoji = /^<a?:\w+:\d+>$/.test(react);
 
-			if (!isEmoji) {
+			if (!isUnicodeEmoji && !isDiscordEmoji) {
 				return interaction.reply(`${emojis.error} | Я думаю \`${react}\` не является эмодзи...`)
 			}
 
