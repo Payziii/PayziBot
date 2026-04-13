@@ -3,7 +3,7 @@ module.exports = {
         start: {
             giveaway: "🎉 Розыгрыш начался 🎉",
             giveawayEnded: "🎉 Розыгрыш окончен 🎉",
-            inviteToParticipate: "Нажмите 🎉 для участия",
+            inviteToParticipate: "Нажмите {this.reaction} для участия",
             winMessage: "🎉 Поздравляем, {winners}! Вы выиграли **{this.prize}**!\nСсылка на розыгрыш: {this.messageURL}",
             drawing: "Окончание: {timestamp}",
             dropMessage: "Первый кто нажмёт 🎉",

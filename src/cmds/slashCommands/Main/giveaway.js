@@ -87,8 +87,6 @@ module.exports = {
 
 			let msgs = messages.ru.start;
 
-			msgs.inviteToParticipate = `Нажмите ${react} для участия`,
-
 			interaction.reply(`${emojis.loading} | Создание розыгрыша`)
 			interaction.client.giveawaysManager
 				.start(channel, {
