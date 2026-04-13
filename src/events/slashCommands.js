@@ -83,11 +83,11 @@ module.exports = {
 		}
 		catch (error) {
 			client.channels.cache.get(channels.errorLogs).send(`Ошибка в \`${cmd.data.name}\`: \`\`\`js\n${error.stack}\`\`\``);
-			if (interaction.deferred === false) {
-				interaction.reply(`${emojis.error} | Произошла ошибка!\n\`\`\`js\n${error}\`\`\``);
+			if (interaction.replied || interaction.deferred) {
+				interaction.editReply(`${emojis.error} | Произошла ошибка!\n\`\`\`js\n${error}\`\`\``);
 			}
 			else {
-				interaction.editReply(`${emojis.error} | Произошла ошибка!\n\`\`\`js\n${error}\`\`\``);
+				interaction.reply(`${emojis.error} | Произошла ошибка!\n\`\`\`js\n${error}\`\`\``);
 			}
 			console.log(error);
 		}

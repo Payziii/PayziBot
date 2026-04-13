@@ -87,7 +87,7 @@ module.exports = {
 
 			let msgs = messages.ru.start;
 
-			interaction.reply(`${emojis.loading} | Создание розыгрыша`)
+			await interaction.reply(`${emojis.loading} | Создание розыгрыша`)
 			interaction.client.giveawaysManager
 				.start(channel, {
 					duration: duration,
@@ -115,7 +115,7 @@ module.exports = {
 			if (!_giveaway.ended) return interaction.reply(`${emojis.error} | Этот розыгрыш еще не завершен!`);
 			if(_giveaway.hostedBy != `<@${interaction.user.id}>`) return interaction.reply(`${emojis.error} | Не вы начали этот розыгрыш!`);
 
-			interaction.reply(`${emojis.loading} | Выбор новых победителей`)
+			await interaction.reply(`${emojis.loading} | Выбор новых победителей`)
 			interaction.client.giveawaysManager
 				.reroll(id, {
 					winnerCount: 1,
@@ -135,7 +135,7 @@ module.exports = {
 			if (_giveaway.ended) return interaction.reply(`${emojis.error} | Этот розыгрыш уже завершен!`);
 			if(_giveaway.hostedBy != `<@${interaction.user.id}>`) return interaction.reply(`${emojis.error} | Не вы начали этот розыгрыш!`);
 
-			interaction.reply(`${emojis.loading} | Завершение розыгрыша`)
+			await interaction.reply(`${emojis.loading} | Завершение розыгрыша`)
 			interaction.client.giveawaysManager.end(_giveaway.messageId)
 			.then(() => {
 				interaction.editReply(`${emojis.gift} | Розыгрыш успешно завершен`)
