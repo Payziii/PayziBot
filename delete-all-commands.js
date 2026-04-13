@@ -5,5 +5,5 @@ const { REST, Routes } = require('discord.js');
 const rest = new REST().setToken(process.env.DISCORD_BOT_TOKEN);
 
 rest.put(Routes.applicationCommands('576442351426207744'), { body: [] })
-	.then(() => console.log('✅ | Все команды успешно удалены!'))
+	.then(() => console.log('SUCCESS | All commands successfully deleted!'))
 	.catch(console.error);
