@@ -9,17 +9,17 @@
   "author": "Payziii",
   "license": "GNU GENERAL PUBLIC LICENSE",
   "dependencies": {
-    "@napi-rs/canvas": "^0.1.62",
+    "@napi-rs/canvas": "^0.1.97",
     "discord-giveaways": "^6.0.1",
     "discord.js": "^14.15.3",
     "dotenv": "^16.3.1",
-    "googletrans": "^1.0.2",
+    "googletrans": "^1.0.28",
     "lmdb": "^3.0.12",
     "mongoose": "^7.4.2",
     "node-cron": "^3.0.3",
     "payzi-time": "^0.0.3",
     "rsnchat": "^5.0.0-beta.1",
-    "tesseract.js": "^5.0.3",
+    "tesseract.js": "^7.0.0",
     "undici": "^6.21.0"
   },
   "devDependencies": {
