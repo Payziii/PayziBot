@@ -1,5 +1,5 @@
 const { Events } = require('discord.js');
-const { getLevelGuild, getLevelUserByGuild, MathNextLevel, putLevelUser, getRoleByLevelAndGuild } = require('../database/levels.js');
+const { getLevelGuild, getLevelUserByGuild, MathNextLevel, putLevelUser, getRolesByLevelRange } = require('../database/levels.js');
 const { randomIntFromInterval } = require('../func/random.js');
 const { CheckAch } = require('../func/games/giveAch.js');
 
@@ -50,9 +50,11 @@ module.exports = {
 			}
 
 			if (guild.roles.length > 0) {
-				const roleId = await getRoleByLevelAndGuild(message.guild.id, user.level)
-				const role = message.guild.roles.cache.get(roleId)
-				giveRole(message, role, user.level)
+				const roleIds = await getRolesByLevelRange(message.guild.id, oldLevel, user.level);
+				for (const roleId of roleIds) {
+					const role = message.guild.roles.cache.get(roleId);
+					giveRole(message, role, user.level);
+				}
 			}
 		}
 		user.xp += xpToAdd;

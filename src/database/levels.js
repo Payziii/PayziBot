@@ -143,30 +143,18 @@ async function getLevelUserByGuild(guildID, userID) {
 /**
  * Получение ID роли по уровню
  * 
- * @param {string} guildID 
- * @param {integer} level 
+ * @param {string} guildID \
+ * @param {integer} oldLevel 
+ * @param {integer} newLevel 
  */
-async function getRoleByLevelAndGuild(guildID, level) {
+async function getRolesByLevelRange(guildID, oldLevel, newLevel) {
     const guild = await getLevelGuild(guildID);
     const { roles } = guild;
     const sortedRoles = roles.sort((a, b) => a.level - b.level);
-
-    for (let role of sortedRoles) {
-        if (role.level === level) {
-            return role.roleId;
-        }
-    }
-
-    let closestRole = sortedRoles[0];
-    for (let role of sortedRoles) {
-        if (role.level <= level) {
-            closestRole = role;
-        } else {
-            break;
-        }
-    }
-
-    return closestRole.roleId;
+    
+    return sortedRoles
+        .filter(role => role.level > oldLevel && role.level <= newLevel)
+        .map(role => role.roleId);
 }
 
 /**
@@ -237,7 +225,7 @@ module.exports = {
     resetLevelUser,
     getLevelUserByGuild,
     setLevelUserByGuild,
-    getRoleByLevelAndGuild,
+    getRolesByLevelRange,
     addRoleLevel,
     setLevelGuildXp
 }
