@@ -12,7 +12,6 @@ function giveRole(message, role, level) {
 	if (role.tags?.botId) return;
 	if (role.tags?.premiumSubscriberRole) return;
 	if (role.tags?.integrationId || role.managed) return;
-	console.log(2)
 	message.guild.members.cache.get(message.author.id).roles.add(role, `Роль за ${level} уровень`).then(() => {
 		return;
 	}).catch(() => {
@@ -28,10 +27,15 @@ module.exports = {
 		if (!guild.enabled) return; // Дальше только сервера с включенной лвл-системой
 		const user = await getLevelUserByGuild(message.guild.id, message.author.id);
 		if (message.createdTimestamp - user.lastMessage < guild.interval * 1000) return; // Проверяем, прошло ли нужное количество времени между сообщениями
-		console.log(user)
 		const xpToAdd = randomIntFromInterval(guild.xp.min, guild.xp.max); // Получаем количество xp, необходимые для выдачи
-		if (MathNextLevel(user.level, guild.xp.koeff) <= user.xp + xpToAdd) {
+
+		const oldLevel = user.level
+
+		while (MathNextLevel(user.level, guild.xp.koeff) <= user.xp + xpToAdd) {
 			user.level++;
+		}
+
+		if(user.level > oldLevel) {
 			if (user.level >= 100) CheckAch(12, message.author.id, message.channel)
 			if (guild.messageEnabled) {
 				if (guild.channelID === '-1') {
@@ -46,16 +50,13 @@ module.exports = {
 			}
 
 			if (guild.roles.length > 0) {
-				console.log(1)
 				const roleId = await getRoleByLevelAndGuild(message.guild.id, user.level)
 				const role = message.guild.roles.cache.get(roleId)
-				console.log(role)
 				giveRole(message, role, user.level)
 			}
 		}
 		user.xp += xpToAdd;
 		user.lastMessage = message.createdTimestamp;
-		console.log(user)
 		putLevelUser(message.guild.id, user)
 
 	}
