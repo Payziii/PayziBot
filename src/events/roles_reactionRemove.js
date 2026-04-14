@@ -37,7 +37,7 @@ module.exports = {
 		if (role.tags?.premiumSubscriberRole) return;
 		if (role.tags?.integrationId || role.managed) return;
 
-		// Выдача роли
+		// Снятие роли
 		member.roles.remove(role, `Роль за реакцию: ${react.message.id}`).then(() => {
 			return;
 		}).catch(() => {

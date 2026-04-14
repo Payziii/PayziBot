@@ -7,7 +7,7 @@ module.exports = {
 	name: Events.MessageCreate,
 	async execute(message, client) {
 
-	if (message.author.bot) return; // Ботов не обслуживаем
+	if (message.author.bot) return;
 
 	const msg = message.content;
 
@@ -17,7 +17,7 @@ module.exports = {
 		client.textCommands.get(command) ||
 		client.textCommands.find(
 			cm => cm.help.aliases && cm.help.aliases.includes(command),
-		); // Ищем команду
+		);
 
 	if (!cmd) return;
 
@@ -28,12 +28,14 @@ module.exports = {
 	if (!guild) return message.reply(`${emojis.error} | Для начала используйте любую слэш-команду, например \`/help\``);
 	if (!user) return message.reply(`${emojis.error} | Для начала используйте любую слэш-команду, например \`/help\``);
 
-	if(user.block >= 2) return; // При уровне блокировки 2 и выше ограничиваем доступ
+	// При уровне блокировки 2 и выше ограничиваем доступ
+	if(user.block >= 2) return;
 
 	client.cmdsUsed++;
 	client.cmdsDetailed.set(command, (client.cmdsDetailed.get(command) || 0) + 1);
 	
-	cmd.run(client, message, args, guild, user); // Выполняем нашу команду
+	// Выполнение команды
+	cmd.run(client, message, args, guild, user);
 	
 	},
 };

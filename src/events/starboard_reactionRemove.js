@@ -6,11 +6,18 @@ module.exports = {
 	async execute(react) {
 		if (react.message.partial) await react.message.fetch();
 		if (react.partial) await react.fetch();
+
+		// Поиск сервера в базе данных
 		const guild = await Guild.findOne({ guildID: react.message.guild.id });
 		if (!guild) return;
+
+		// Проверка на реакцию
 		const customReact = guild.starboard.customReact;
 		if (react.emoji.name != customReact) return;
+
 		if (guild.starboard.channelID == '-1') return;
+
+		// Удаление сообщения из звездной доски
 		if (react.count < guild.starboard.reqReacts) {
 			const msg = guild.starboard.data.get(react.message.id);
 			if (msg == undefined) return;
