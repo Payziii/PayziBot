@@ -75,7 +75,7 @@ process.on('uncaughtException', (err) => {
 	if(client) client.channels.cache.get(channels.errorLogs)?.send(`Ошибка: \`\`\`js\n${err.stack}\`\`\``);
 });
 
-client.on('ready', async () => {
+client.on('clientReady', async () => {
 	const commandsPath = path.join(__dirname, 'src', 'cmds', 'slashCommands');
 	fs.readdirSync(commandsPath).forEach((folder) => {
 		const cP = path.join('src', 'cmds', 'slashCommands', folder);
