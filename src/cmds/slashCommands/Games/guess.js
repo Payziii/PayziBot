@@ -1,208 +1,97 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { Gen } = require('../../../func/games/tipGen.js');
-const give = require('../../../func/games/guessUserCorrect.js');
 const games = require('../../../func/games/guessCounting.js');
-const game = require('../../../games_src/guess/game.json');
-const city = require('../../../games_src/guess/city.json');
-const logo = require('../../../games_src/guess/logo.json');
-const country = require('../../../games_src/guess/country.json');
+const give = require('../../../func/games/guessUserCorrect.js');
+const logo = require('../../../games_src/guess/logos.json');
 
 module.exports = {
-	category: 'games',
-	cooldown: 9,
-	data: new SlashCommandBuilder()
-		.setName('guess')
-		.setDescription('Угадайте что-то по картинке')
-		.addSubcommand(subcommand =>
-			subcommand
-				.setName('city')
-				.setDescription('Угадайте город'))
-		.addSubcommand(subcommand =>
-			subcommand
-				.setName('game')
-				.setDescription('Угадайте игру'))
-		.addSubcommand(subcommand =>
-			subcommand
-				.setName('logo')
-				.setDescription('Угадайте логотип'))
-		.addSubcommand(subcommand =>
-			subcommand
-				.setName('country')
-				.setDescription('Угадайте страну по картинке и описанию')),
-	async execute(interaction, guild) {
-		await interaction.deferReply();
-		// GAME
-		// GAME
-		// GAME
-		if (interaction.options.getSubcommand() === 'game') {
-			const name = 'game';
-			const item = game[Math.floor(Math.random() * game.length)];
-			const collectorFilter = response => {
-				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
-			};
-			games.gameGiveAll(name, item.id);
-			const percent = await games.gameGetPercent(name, item.id);
-			let podsk = '';
-			if (percent < 50) podsk = '\nПодсказка: **' + Gen(item.answers[0]) + '**';
-			const embed = new EmbedBuilder()
-				.setTitle('Угадайте игру')
-				.setDescription(`У вас есть **30 секунд** чтобы угадать, какая игра изображена на картинке ниже${podsk}`)
-				.setImage(item.image)
-				.setFooter({ text: `Игру угадали ${percent}% пользователей` })
-				.setColor(guild.colors.basic);
+    category: 'games',
+    cooldown: 9,
+    data: new SlashCommandBuilder()
+        .setName('guess')
+        .setDescription('Угадайте что-то по картинке')
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('logo')
+                .setDescription('Угадайте логотип')
+                .addStringOption(option =>
+                    option
+                        .setName('category')
+                        .setDescription('Категория логотипов')
+                        .setRequired(false)
+                        .addChoices(
+                            { name: 'AI', value: 'ai' },
+                            { name: 'Software', value: 'software' },
+                        )
+                )
+        ),
+    async execute(interaction, guild) {
+        await interaction.deferReply();
 
-			interaction.editReply({ embeds: [embed], fetchReply: true })
-				.then(() => {
-					interaction.channel.awaitMessages({ filter: collectorFilter, max: 1, time: 30000, errors: ['time'] })
-						.then(collected => {
-							const embed1 = new EmbedBuilder()
-								.setTitle('Угадайте игру')
-								.setDescription(`Ответ: **${item.answers[0]}**`)
-								.setImage(item.image)
-								.setColor(guild.colors.correct);
-							interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
-							give.Correct('game', collected.first().author.id);
-							games.gameGiveVerno(name, item.id);
-						})
-						.catch(() => {
-							const embed5 = new EmbedBuilder()
-								.setTitle('Угадайте игру')
-								.setDescription(`Ответ: **${item.answers[0]}**`)
-								.setImage(item.image)
-								.setColor(guild.colors.error);
-							interaction.followUp({ content: '**Победителей нет(**', embeds: [embed5] });
-						});
-				});
-			// CITY
-			// CITY
-			// CITY
-		}
-		else if (interaction.options.getSubcommand() === 'city') {
-			const name = 'city';
-			const item = city[Math.floor(Math.random() * city.length)];
-			const collectorFilter = response => {
-				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
-			};
-			games.gameGiveAll(name, item.id);
-			const percent = await games.gameGetPercent(name, item.id);
-			let podsk = '';
-			if (percent < 50) podsk = '\nПодсказка: **' + Gen(item.answers[0]) + '**';
-			const embed = new EmbedBuilder()
-				.setTitle('Угадайте город')
-				.setDescription(`У вас есть **30 секунд** чтобы угадать, какой город изображен на фото ниже\nСтрана: **${item.country}**${podsk}`)
-				.setImage(item.image)
-				.setFooter({ text: `Город угадали ${percent}% пользователей` })
-				.setColor(guild.colors.basic);
+        if (interaction.options.getSubcommand() === 'logo') {
+            const name = 'logo';
 
-			interaction.editReply({ embeds: [embed], fetchReply: true })
-				.then(() => {
-					interaction.channel.awaitMessages({ filter: collectorFilter, max: 1, time: 30000, errors: ['time'] })
-						.then(collected => {
-							const embed1 = new EmbedBuilder()
-								.setTitle('Угадайте город')
-								.setDescription(`Ответ: **${item.answers[0]}**\nСтрана: **${item.country}**`)
-								.setImage(item.image)
-								.setColor(guild.colors.correct);
-							interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
-							give.Correct('city', collected.first().author.id, interaction.channel);
-							games.gameGiveVerno(name, item.id);
-						})
-						.catch(() => {
-							const embed5 = new EmbedBuilder()
-								.setTitle('Угадайте город')
-								.setDescription(`Ответ: **${item.answers[0]}**\nСтрана: **${item.country}**`)
-								.setImage(item.image)
-								.setColor(guild.colors.error);
-							interaction.followUp({ content: '**Победителей нет(**', embeds: [embed5] });
-						});
-				});
-			// LOGO
-			// LOGO
-			// LOGO
-		}
-		else if (interaction.options.getSubcommand() === 'logo') {
-			const name = 'logo';
-			const item = logo[Math.floor(Math.random() * logo.length)];
-			const collectorFilter = response => {
-				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
-			};
-			games.gameGiveAll(name, item.id);
-			const percent = await games.gameGetPercent(name, item.id);
-			let podsk = '';
-			if (percent < 50) podsk = '\nПодсказка: **' + Gen(item.answers[0]) + '**';
-			const embed = new EmbedBuilder()
-				.setTitle('Угадайте логотип')
-				.setDescription(`У вас есть **15 секунд** чтобы угадать, чей логотип изображен на фото ниже${podsk}`)
-				.setImage(item.image)
-				.setFooter({ text: `Логотип угадали ${percent}% пользователей` })
-				.setColor(guild.colors.basic);
+            const category = interaction.options.getString('category');
+            const pool = category
+                ? logo.filter(entry => entry.category === category)
+                : logo;
 
-			interaction.editReply({ embeds: [embed], fetchReply: true })
-				.then(() => {
-					interaction.channel.awaitMessages({ filter: collectorFilter, max: 1, time: 15000, errors: ['time'] })
-						.then(collected => {
-							const embed1 = new EmbedBuilder()
-								.setTitle('Угадайте логотип')
-								.setDescription(`Ответ: **${item.answers[0]}**`)
-								.setImage(item.image)
-								.setColor(guild.colors.correct);
-							interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
-							give.Correct('logo', collected.first().author.id);
-							games.gameGiveVerno(name, item.id);
-						})
-						.catch(() => {
-							const embed5 = new EmbedBuilder()
-								.setTitle('Угадайте логотип')
-								.setDescription(`Ответ: **${item.answers[0]}**`)
-								.setImage(item.image)
-								.setColor(guild.colors.error);
-							interaction.followUp({ content: '**Победителей нет(**', embeds: [embed5] });
-						});
-				});
-			// COUNTRY
-			// COUNTRY
-			// COUNTRY
-		}
-		else if (interaction.options.getSubcommand() === 'country') {
-			const name = 'country';
-			const item = country[Math.floor(Math.random() * country.length)];
-			const image = item.image[Math.floor(Math.random() * item.image.length)];
-			const collectorFilter = response => {
-				return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
-			};
-			games.gameGiveAll(name, item.id);
-			const percent = await games.gameGetPercent(name, item.id);
-			let podsk = '';
-			if (percent < 30) podsk = '\nПодсказка: **' + Gen(item.answers[0]) + '**';
-			const embed = new EmbedBuilder()
-				.setTitle('Угадайте страну')
-				.setDescription(`У вас есть **60 секунд** чтобы назвать страну по **описанию** и **картинке** с Google Maps.\n\nОписание: **${item.text}**${podsk}`)
-				.setImage(image)
-				.setFooter({ text: `Страну угадали ${percent}% пользователей` })
-				.setColor(guild.colors.basic);
+            if (!pool.length) {
+                return interaction.editReply({ content: '❌ В этой категории нет логотипов.' });
+            }
 
-			interaction.editReply({ embeds: [embed], fetchReply: true })
-				.then(() => {
-					interaction.channel.awaitMessages({ filter: collectorFilter, max: 1, time: 60000, errors: ['time'] })
-						.then(collected => {
-							const embed1 = new EmbedBuilder()
-								.setTitle('Угадайте страну')
-								.setDescription(`Ответ: **${item.answers[0]}**`)
-								.setImage(image)
-								.setColor(guild.colors.correct);
-							interaction.followUp({ content: `Победитель:  **${collected.first().author}**`, embeds: [embed1] });
-							give.Correct('country', collected.first().author.id, interaction.channel);
-							games.gameGiveVerno(name, item.id);
-						})
-						.catch(() => {
-							const embed5 = new EmbedBuilder()
-								.setTitle('Угадайте страну')
-								.setDescription(`Ответ: **${item.answers[0]}**`)
-								.setImage(image)
-								.setColor(guild.colors.error);
-							interaction.followUp({ content: '**Победителей нет(**', embeds: [embed5] });
-						});
-				});
-		}
-	},
+            const item = pool[Math.floor(Math.random() * pool.length)];
+            const image = item.images[Math.floor(Math.random() * item.images.length)];
+
+            const collectorFilter = response => {
+                return item.answers.some(
+                    answer => answer.toLowerCase() === response.content.toLowerCase()
+                );
+            };
+
+            games.gameGiveAll(name, item.id);
+            const percent = await games.gameGetPercent(name, item.id);
+
+            let podsk = '';
+            if (percent < 50) podsk = '\nПодсказка: **' + Gen(item.answers[0]) + '**';
+
+            const categoryLabel = item.category ? ` (${item.category})` : '';
+
+            const embed = new EmbedBuilder()
+                .setTitle(`Угадайте логотип${categoryLabel}`)
+                .setDescription(`У вас есть **15 секунд** чтобы угадать, чей логотип изображен на фото ниже${podsk}`)
+                .setImage(image)
+                .setFooter({ text: `Логотип угадали ${percent}% пользователей` })
+                .setColor(guild.colors.basic);
+
+            interaction.editReply({ embeds: [embed], fetchReply: true })
+                .then(() => {
+                    interaction.channel
+                        .awaitMessages({ filter: collectorFilter, max: 1, time: 15000, errors: ['time'] })
+                        .then(collected => {
+                            const embed1 = new EmbedBuilder()
+                                .setTitle(`Угадайте логотип${categoryLabel}`)
+                                .setDescription(`Ответ: **${item.answers[0]}**`)
+                                .setImage(image)
+                                .setColor(guild.colors.correct);
+
+                            interaction.followUp({
+                                content: `Победитель: **${collected.first().author}**`,
+                                embeds: [embed1],
+                            });
+                            give.Correct('logo', collected.first().author.id);
+                            games.gameGiveVerno(name, item.id);
+                        })
+                        .catch(() => {
+                            const embed5 = new EmbedBuilder()
+                                .setTitle(`Угадайте логотип${categoryLabel}`)
+                                .setDescription(`Ответ: **${item.answers[0]}**`)
+                                .setImage(image)
+                                .setColor(guild.colors.error);
+
+                            interaction.followUp({ content: '**Победителей нет(**', embeds: [embed5] });
+                        });
+                });
+        }
+    },
 };

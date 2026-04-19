@@ -1,0 +1,374 @@
+[
+    {
+        "images": ["https://u.fifty.su/img/logos/2"],
+        "category": "ai",
+        "answers": ["Manus"],
+        "id": 1
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/1"],
+        "category": "ai",
+        "answers": ["OpenClaw"],
+        "id": 2
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/3"],
+        "category": "ai",
+        "answers": ["Midjourney"],
+        "id": 3
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/4"],
+        "category": "ai",
+        "answers": ["OpenRouter"],
+        "id": 4
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/5"],
+        "category": "ai",
+        "answers": ["Firebase Studio", "Firebase"],
+        "id": 5
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/6"],
+        "category": "ai",
+        "answers": ["Anthropic"],
+        "id": 6
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/7"],
+        "category": "ai",
+        "answers": ["Qwen"],
+        "id": 7
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/8"],
+        "category": "ai",
+        "answers": ["xAI", "Grok", "Грок"],
+        "id": 8
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/9"],
+        "category": "ai",
+        "answers": ["Gemini"],
+        "id": 9
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/10"],
+        "category": "ai",
+        "answers": ["DeepSeek"],
+        "id": 10
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/11"],
+        "category": "ai",
+        "answers": ["Claude"],
+        "id": 11
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/12"],
+        "category": "ai",
+        "answers": ["Mistral"],
+        "id": 12
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/13"],
+        "category": "ai",
+        "answers": ["Perplexity"],
+        "id": 13
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/14"],
+        "category": "ai",
+        "answers": ["OpenAI"],
+        "id": 14
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/15"],
+        "category": "ai",
+        "answers": ["Microsoft Copilot", "Copilot"],
+        "id": 15
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/16"],
+        "category": "ai",
+        "answers": ["Runway"],
+        "id": 16
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/17"],
+        "category": "software",
+        "answers": ["Firefox"],
+        "id": 17
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/18"],
+        "category": "software",
+        "answers": ["Zen Browser", "Zen"],
+        "id": 18
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/19"],
+        "category": "software",
+        "answers": ["Vivaldi"],
+        "id": 19
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/20"],
+        "category": "software",
+        "answers": ["Safari"],
+        "id": 20
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/21"],
+        "category": "software",
+        "answers": ["Edge"],
+        "id": 21
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/22"],
+        "category": "software",
+        "answers": ["Chromium"],
+        "id": 22
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/23"],
+        "category": "software",
+        "answers": ["Opera"],
+        "id": 23
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/24"],
+        "category": "software",
+        "answers": ["Opera GX"],
+        "id": 24
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/25"],
+        "category": "software",
+        "answers": ["DuckDuckGo"],
+        "id": 25
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/26"],
+        "category": "software",
+        "answers": ["Tor"],
+        "id": 26
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/27"],
+        "category": "software",
+        "answers": ["Chrome"],
+        "id": 27
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/28"],
+        "category": "software",
+        "answers": ["Yandex Browser"],
+        "id": 28
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/29"],
+        "category": "software",
+        "answers": ["TikTok"],
+        "id": 29
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/30"],
+        "category": "software",
+        "answers": ["Bluesky"],
+        "id": 30
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/31"],
+        "category": "software",
+        "answers": ["Reddit"],
+        "id": 31
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/32"],
+        "category": "software",
+        "answers": ["Pinterest"],
+        "id": 32
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/33"],
+        "category": "software",
+        "answers": ["VK"],
+        "id": 33
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/34"],
+        "category": "software",
+        "answers": ["X"],
+        "id": 34
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/35"],
+        "category": "software",
+        "answers": ["Telegram"],
+        "id": 35
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/36"],
+        "category": "software",
+        "answers": ["YouTube"],
+        "id": 36
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/37"],
+        "category": "software",
+        "answers": ["MAX"],
+        "id": 37
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/38"],
+        "category": "software",
+        "answers": ["RuTube"],
+        "id": 38
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/39"],
+        "category": "software",
+        "answers": ["GitHub"],
+        "id": 39
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/40"],
+        "category": "software",
+        "answers": ["OBS"],
+        "id": 40
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/41"],
+        "category": "software",
+        "answers": ["Android"],
+        "id": 41
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/42"],
+        "category": "software",
+        "answers": ["Epic Games"],
+        "id": 42
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/43"],
+        "category": "software",
+        "answers": ["Steam"],
+        "id": 43
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/44"],
+        "category": "software",
+        "answers": ["Xbox"],
+        "id": 44
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/45"],
+        "category": "software",
+        "answers": ["PlayStation"],
+        "id": 45
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/46"],
+        "category": "software",
+        "answers": ["Microsoft"],
+        "id": 46
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/47"],
+        "category": "software",
+        "answers": ["Apple"],
+        "id": 47
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/48"],
+        "category": "software",
+        "answers": ["Windows"],
+        "id": 48
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/49"],
+        "category": "software",
+        "answers": ["Google Play"],
+        "id": 49
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/50"],
+        "category": "software",
+        "answers": ["Discord"],
+        "id": 50
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/51"],
+        "category": "software",
+        "answers": ["Microsoft Office", "Office"],
+        "id": 51
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/52"],
+        "category": "software",
+        "answers": ["Microsoft Todo", "Todo"],
+        "id": 52
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/53"],
+        "category": "software",
+        "answers": ["Microsoft Outlook", "Outlook"],
+        "id": 53
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/54"],
+        "category": "software",
+        "answers": ["Microsoft Word", "Word"],
+        "id": 54
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/55"],
+        "category": "software",
+        "answers": ["Microsoft Teams", "Teams"],
+        "id": 55
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/56"],
+        "category": "software",
+        "answers": ["Microsoft PowerPoint", "PowerPoint"],
+        "id": 56
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/57"],
+        "category": "software",
+        "answers": ["Microsoft OneNote", "OneNote"],
+        "id": 57
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/58"],
+        "category": "software",
+        "answers": ["Microsoft OneDrive", "OneDrive"],
+        "id": 58
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/59"],
+        "category": "software",
+        "answers": ["Microsoft Excel", "Excel"],
+        "id": 59
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/60"],
+        "category": "software",
+        "answers": ["Microsoft Clipchamp", "Clipchamp"],
+        "id": 60
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/61"],
+        "category": "software",
+        "answers": ["Visual Studio"],
+        "id": 61
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/62"],
+        "category": "software",
+        "answers": ["Visual Studio Code"],
+        "id": 62
+    }
+]
