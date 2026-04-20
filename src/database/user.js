@@ -22,6 +22,7 @@ const user = Schema({
 	block: { type: Number, default: 0 },
 	bypassDelay: { type: Boolean, default: false },
 	imageGens: { type: Number, default: 10 },
+	boosts: { type: Number, default: 0 },
 });
 
 module.exports =
