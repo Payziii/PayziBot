@@ -466,5 +466,137 @@
         "category": "os",
         "answers": ["Xubuntu", "Хубунту", "Иксбунту"],
         "id": 78
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/79"],
+        "category": "auto",
+        "answers": ["ВАЗ", "Лада", "Lada", "VAZ", "АвтоВАЗ"],
+        "id": 79
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/80"],
+        "category": "auto",
+        "answers": ["ЗАЗ", "ZAZ"],
+        "id": 80
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/81"],
+        "category": "auto",
+        "answers": ["Москвич"],
+        "id": 81
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/82"],
+        "category": "auto",
+        "answers": ["Audi", "Ауди"],
+        "id": 82
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/83"],
+        "category": "auto",
+        "answers": ["Bentley", "Бентли", "Бэнтли"],
+        "id": 83
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/84"],
+        "category": "auto",
+        "answers": ["Cadillac", "Кадилак"],
+        "id": 84
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/85"],
+        "category": "auto",
+        "answers": ["Chevrolet", "Шевроле"],
+        "id": 85
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/86"],
+        "category": "auto",
+        "answers": ["Citroën", "Citroen", "Цитроен"],
+        "id": 86
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/87"],
+        "category": "auto",
+        "answers": ["Hyundai", "Хендай", "Хёндай"],
+        "id": 87
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/88"],
+        "category": "auto",
+        "answers": ["Lincoln", "Линкольн"],
+        "id": 88
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/89"],
+        "category": "auto",
+        "answers": ["Mitsubishi", "Митсубиши", "Митсубиси"],
+        "id": 89
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/90"],
+        "category": "auto",
+        "answers": ["Opel", "Опель"],
+        "id": 90
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/91"],
+        "category": "auto",
+        "answers": ["Renault", "Рено", "Ренаулт"],
+        "id": 91
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/92"],
+        "category": "auto",
+        "answers": ["Škoda", "Skoda", "Шкода", "Скода"],
+        "id": 92
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/93"],
+        "category": "auto",
+        "answers": ["Suzuki", "Сузуки"],
+        "id": 93
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/94"],
+        "category": "auto",
+        "answers": ["Subaru", "Субару"],
+        "id": 94
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/95"],
+        "category": "auto",
+        "answers": ["Тагаз", "Tagaz"],
+        "id": 95
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/96"],
+        "category": "auto",
+        "answers": ["Tesla", "Тесла"],
+        "id": 96
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/97"],
+        "category": "auto",
+        "answers": ["Toyota", "Тойота"],
+        "id": 97
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/98"],
+        "category": "auto",
+        "answers": ["Volkswagen", "Вольсфаген", "Вольсваген"],
+        "id": 98
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/99"],
+        "category": "auto",
+        "answers": ["Volvo", "Вольво"],
+        "id": 99
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/100"],
+        "category": "auto",
+        "answers": ["Mercedes-Benz", "Mercedes", "Мерседес", "Мерседес-Бенз", "Мерс"],
+        "id": 100
     }
 ]
