@@ -28,7 +28,6 @@ module.exports = {
         ),
     async execute(interaction, guild, user) {
         await interaction.deferReply();
-        if (user.imageGens < 1) return interaction.editReply(`${emojis.error} | Ваши генерации закончились! Поднимите бота на [BotiCord](https://boticord.top/bot/payzibot) для получения 15-ти генераций!\n\nКстати поднимать бота можно раз в 6 часов, а это 60 генераций в сутки :)`)
 
         const negative = "blury, bad quality, nsfw";
         const model = interaction.options.getString('модель') || 'flux';
@@ -37,8 +36,6 @@ module.exports = {
         interaction.editReply(`${emojis.loading} | Генерируем картинку...`)
 
         async function AfterGen(image) {
-            user.imageGens--;
-            await user.save();
             interaction.editReply({
                 content: `🖼️ Вот ваша замечательная картинка!\n-# Запрос: ${text.replace('`', '\`')}`,
                 files: [{ attachment: image, name: 'image.png' }]

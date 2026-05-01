@@ -33,7 +33,7 @@ module.exports = {
 		const embed = new EmbedBuilder()
 			.setTitle(`${_user.username}`)
 			.setColor(guild.colors.basic)
-			.setDescription(`${user.bio}\n${block_message}Осталось генераций картинок: **${user.imageGens}**`)
+			.setDescription(`${user.bio}\n${block_message}`)
 			.setThumbnail(`https://cdn.discordapp.com/avatars/${_user.id}/${_user.avatar}.webp?size=4096`)
 			.addFields(
 				{
