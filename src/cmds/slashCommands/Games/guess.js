@@ -20,8 +20,10 @@ module.exports = {
                         .setDescription('Категория логотипов')
                         .setRequired(false)
                         .addChoices(
-                            { name: 'AI', value: 'ai' },
-                            { name: 'Software', value: 'software' },
+                            { name: 'ИИ', value: 'ai' },
+                            { name: 'Программное обеспечение', value: 'software' },
+                            { name: 'ОС', value: 'os' },
+                            { name: 'Авто', value: 'auto' },
                         )
                 )
         ),
@@ -55,11 +57,11 @@ module.exports = {
             let podsk = '';
             if (percent < 50) podsk = '\nПодсказка: **' + Gen(item.answers[0]) + '**';
 
-            const categoryLabel = item.category ? ` (${item.category})` : '';
+            const categoryLabel = item.category ? `\`${item.category}\`` : '';
 
             const embed = new EmbedBuilder()
-                .setTitle(`Угадайте логотип${categoryLabel}`)
-                .setDescription(`У вас есть **15 секунд** чтобы угадать, чей логотип изображен на фото ниже${podsk}`)
+                .setTitle(`Угадайте логотип`)
+                .setDescription(`У вас есть **15 секунд** чтобы угадать, чей логотип в категории ${categoryLabel} изображен на фото ниже${podsk}`)
                 .setImage(image)
                 .setFooter({ text: `Логотип угадали ${percent}% пользователей` })
                 .setColor(guild.colors.basic);
@@ -70,7 +72,7 @@ module.exports = {
                         .awaitMessages({ filter: collectorFilter, max: 1, time: 15000, errors: ['time'] })
                         .then(collected => {
                             const embed1 = new EmbedBuilder()
-                                .setTitle(`Угадайте логотип${categoryLabel}`)
+                                .setTitle(`Угадайте логотип`)
                                 .setDescription(`Ответ: **${item.answers[0]}**`)
                                 .setImage(image)
                                 .setColor(guild.colors.correct);
@@ -84,12 +86,12 @@ module.exports = {
                         })
                         .catch(() => {
                             const embed5 = new EmbedBuilder()
-                                .setTitle(`Угадайте логотип${categoryLabel}`)
+                                .setTitle(`Угадайте логотип`)
                                 .setDescription(`Ответ: **${item.answers[0]}**`)
                                 .setImage(image)
                                 .setColor(guild.colors.error);
 
-                            interaction.followUp({ content: '**Победителей нет(**', embeds: [embed5] });
+                            interaction.followUp({ content: 'К сожалению, победителей нет...', embeds: [embed5] });
                         });
                 });
         }
