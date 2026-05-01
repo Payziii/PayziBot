@@ -7,7 +7,7 @@ exports.run = async (client, message, args) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
-  const game = require("../../games_src/guess/logo.json");
+  const game = require("../../games_src/guess/logos.json");
 
   for (i = 0; i <= game.length; i++) {
     item = game[i];
