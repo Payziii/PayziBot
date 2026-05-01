@@ -52,7 +52,7 @@ module.exports = {
     } else if (interaction.options.getSubcommand() === 'setup') {
       channel = interaction.options.getChannel('канал')
 
-      if (!channel.permissionsFor(interaction.guild.members.me).has(['SendMessages', 'ViewChannel'])) return interaction.reply(`${emojis.error} | Я не могу отправлять сообщения в выбранном канале...`)
+      if (!channel.permissionsFor(interaction.guild.members.me).has(['SendMessages', 'ViewChannel'])) return interaction.reply(`${emojis.error} | Для отправки приветственных сообщений мне необходимо иметь права \`Отправлять сообщения\` и \`Просматривать канал\` в выбранном канале!`)
 
       guild.welcome.channelID = channel.id;
       guild.save()
@@ -77,7 +77,7 @@ module.exports = {
       bot = interaction.guild.members.me;
 
       if(role.rawPosition >= bot.roles.highest.rawPosition) return interaction.reply(`${emojis.error} | Увы, я не смогу выдать роль, которая выше моей`)
-      if (bot.permissions.has('ManageRoles') == false) return interaction.reply(`${emojis.error} | У меня нет прав для выдачи ролей`);
+      if (bot.permissions.has('ManageRoles') == false) return interaction.reply(`${emojis.error} | Для установки автороли мне необходимо иметь право \`Управлять ролями\`!`);
       if(role.tags?.botId) return interaction.reply(`${emojis.error} | Роль принадлежит боту <@${role.tags.botId}>`);
       if(role.tags?.premiumSubscriberRole) return interaction.reply(`${emojis.error} | Я не смогу выдать роль бустера!`);
       if(role.tags?.integrationId || role.managed) return interaction.reply(`${emojis.error} | Роль управляется интеграцией`);

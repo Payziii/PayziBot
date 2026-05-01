@@ -53,7 +53,7 @@ module.exports = {
         interaction.followUp(`${emojis.success} Звёздная доска успешно выключена!`)
       }else if (interaction.options.getSubcommand() === 'channel-set') {
         channel = interaction.options.getChannel('канал')
-        if (!channel.permissionsFor(interaction.guild.members.me).has(['SendMessages', 'ViewChannel'])) return interaction.followUp(`${emojis.error} | Я не могу отправлять сообщения в выбранном канале...`)
+        if (!channel.permissionsFor(interaction.guild.members.me).has(['SendMessages', 'ViewChannel'])) return interaction.followUp(`${emojis.error} | Для отправки сообщений мне необходимо иметь права \`Отправлять сообщения\` и \`Просматривать канал\` в выбранном канале!`)
         guild.starboard.channelID = channel.id;
         guild.save()
         interaction.followUp(`${emojis.success} Звёздная доска успешно включена в канале <#${channel.id}>`)

@@ -30,7 +30,7 @@ module.exports = {
 	async execute(interaction) {
 		await interaction.deferReply();
 		const bot = await interaction.guild.members.me;
-		if (bot.permissions.has('ManageChannels') == false) return interaction.editReply(`${emojis.error} | У меня нет прав для управления каналом`);
+		if (bot.permissions.has('ManageChannels') == false) return interaction.editReply(`${emojis.error} | Для управления каналами мне необходимо иметь право \`Управлять каналами\`!`);
 		if (interaction.options.getSubcommand() === 'lock') {
 			interaction.channel.permissionOverwrites.edit(interaction.guild.roles.everyone, {
 				SendMessages: false,

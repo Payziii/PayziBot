@@ -18,7 +18,7 @@ module.exports = {
 	async execute(interaction) {
 		await interaction.deferReply();
 		const bot = await interaction.guild.members.me;
-		if (bot.permissions.has('ManageMessages') == false) return interaction.editReply(`${emojis.error} | У меня нет прав для того, чтобы очищать сообщения...`);
+		if (bot.permissions.has('ManageMessages') == false) return interaction.editReply(`${emojis.error} | Для очистки сообщений мне необходимо иметь право \`Управлять сообщениями\`!`);
 
 		const count = interaction.options.getInteger('количество');
 		interaction.channel.bulkDelete(count)

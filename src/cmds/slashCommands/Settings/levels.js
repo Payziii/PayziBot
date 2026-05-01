@@ -140,7 +140,7 @@ module.exports = {
       channel = interaction.options.getChannel('канал')
       cid = channel?.id || "-1"
       await setLevelGuildChannel(interaction.guild.id, cid)
-      if (!channel.permissionsFor(interaction.guild.members.me).has(['SendMessages', 'ViewChannel'])) return interaction.reply(`${emojis.error} | Я не могу отправлять сообщения в выбранном канале...`)
+      if (!channel.permissionsFor(interaction.guild.members.me).has(['SendMessages', 'ViewChannel'])) return interaction.reply(`${emojis.error} | Для отправки сообщений о новых уровнях мне необходимо иметь права \`Отправлять сообщения\` и \`Просматривать канал\` в выбранном канале!`)
       interaction.reply(`${emojis.success} Оповещения о новом уровне будут приходить в ${cid != "-1" ? `канал <#${cid}>` : `канал, в котором пользователь написал сообщение`}`)
 
       // message - Установить сообщение о новом уровне
@@ -187,7 +187,7 @@ module.exports = {
       bot = interaction.guild.members.me;
 
       if (role.rawPosition >= bot.roles.highest.rawPosition) return interaction.reply(`${emojis.error} | Увы, я не смогу выдать роль, которая выше моей`)
-      if (bot.permissions.has('ManageRoles') == false) return interaction.reply(`${emojis.error} | У меня нет прав для выдачи ролей`);
+      if (bot.permissions.has('ManageRoles') == false) return interaction.reply(`${emojis.error} | Для создания роли за уровень мне необходимо иметь право \`Управлять ролями\`!`);
       if (role.tags?.botId) return interaction.reply(`${emojis.error} | Роль принадлежит боту <@${role.tags.botId}>`);
       if (role.tags?.premiumSubscriberRole) return interaction.reply(`${emojis.error} | Я не смогу выдать роль бустера!`);
       if (role.tags?.integrationId || role.managed) return interaction.reply(`${emojis.error} | Роль управляется интеграцией`);

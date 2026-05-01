@@ -23,7 +23,7 @@ module.exports = {
 		const user = interaction.options.getUser('пользователь');
 		const bot = await interaction.guild.members.me;
 
-		if (bot.permissions.has('ModerateMembers') == false) return interaction.reply(`${emojis.error} | У меня нет прав для разглушения пользователей`);
+		if (bot.permissions.has('ModerateMembers') == false) return interaction.reply(`${emojis.error} | Для снятия ограничений пользователя мне необходимо иметь право \`Отправлять участников подумать о своём поведении\`!`);
 		let msg;
 		let reason = interaction.options.getString('причина') || 'Причина отсутствует';
 		let error = false;
