@@ -31,11 +31,11 @@ module.exports = {
 			if (mode === 'random') {
 				const randomReacts = [...reacts].sort(() => Math.random() - 0.5);
 				for (const reaction of randomReacts) {
-					message.react(reaction);
+					message.react(parseReaction(reaction));
 				}
 			} else {
 				for (const reaction of reacts) {
-					await message.react(reaction);
+					await message.react(parseReaction(reaction));
 				}
 			}
 		}
@@ -44,4 +44,10 @@ module.exports = {
 		}
 
 	},
+};
+
+const parseReaction = (reaction) => {
+    const match = reaction.match(/^<a?:(\w+):(\d+)>$/);
+    if (match) return `${match[1]}:${match[2]}`; 
+    return reaction; 
 };
