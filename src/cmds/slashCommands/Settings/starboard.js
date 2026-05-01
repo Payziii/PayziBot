@@ -43,7 +43,17 @@ module.exports = {
                 .setMinValue(1)
                 .setMaxValue(30)
                 .setRequired(true)
-        )),
+          ))
+        .addSubcommand(subcommand =>
+          subcommand
+            .setName('custom-react')
+            .setDescription('Установить кастомную реакцию для звёздной доски')
+            .addStringOption((option) =>
+              option
+                .setName('реакция')
+                .setDescription('Эмодзи, которое будет использоваться вместо звезды')
+                .setRequired(true)
+            )),
     async execute(interaction, guild) {
       await interaction.deferReply();
       if (interaction.options.getSubcommand() === 'off') {
@@ -62,6 +72,29 @@ module.exports = {
         guild.starboard.reqReacts = count;
         guild.save()
         interaction.followUp(`${emojis.success} Выбрано количество звёзд для попадания на звездную доску: \`${count}\``)
+      } else if (interaction.options.getSubcommand() === 'custom-react') {
+        const reaction = interaction.options.getString('реакция');
+
+        const isUnicodeEmoji = /^(\p{Emoji_Presentation}|\p{Extended_Pictographic})/u.test(reaction);
+        const isDiscordEmoji = /^<a?:\w+:\d+>$/.test(reaction);
+
+        if (!isUnicodeEmoji && !isDiscordEmoji) {
+          return interaction.followUp(`${emojis.error} | Я думаю \`${reaction}\` не является эмодзи...`);
+        }
+
+        if (reaction.includes('<')) {
+          const parts = reaction.split(':');
+          const emojiName = parts[1];
+          const emojiId = parts[2].slice(0, -1);
+          const emoji = interaction.guild.emojis.cache.find(e => e.name === emojiName);
+          if (!emoji || emoji.id != emojiId) {
+            return interaction.followUp(`${emojis.error} | Кажется вы используете эмодзи, которых нет на этом сервере...`);
+          }
+        }
+
+        guild.starboard.customReact = reaction;
+        guild.save();
+        interaction.followUp(`${emojis.success} Реакция для звёздной доски установлена: ${reaction}`);
       }
     },
 };

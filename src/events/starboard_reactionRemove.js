@@ -13,7 +13,15 @@ module.exports = {
 
 		// Проверка на реакцию
 		const customReact = guild.starboard.customReact;
-		if (react.emoji.name != customReact) return;
+		const isDiscordEmoji = /^<a?:\w+:\d+>$/.test(customReact);
+		let emojiMatches;
+		if (isDiscordEmoji) {
+			const emojiId = customReact.split(':')[2].slice(0, -1);
+			emojiMatches = react.emoji.id === emojiId;
+		} else {
+			emojiMatches = react.emoji.name === customReact;
+		}
+		if (!emojiMatches) return;
 
 		if (guild.starboard.channelID == '-1') return;
 
@@ -29,15 +37,7 @@ module.exports = {
 			guild.save();
 			return;
 		}
-		let reactMsg;
-		if (/\p{Emoji}/u.test(customReact) == false) {
-			if (react.message.guild.emojis.cache.find(emoji => emoji.name === customReact) == undefined) return;
-			const reactId = react.message.guild.emojis.cache.find(emoji => emoji.name === customReact).id;
-			reactMsg = `<:${customReact}:${reactId}>`;
-		}
-		else {
-			reactMsg = customReact;
-		}
+		const reactMsg = customReact;
 		const messageAttachment = react.message.attachments.size > 0 ? Array.from(react.message.attachments.values())[0].url : null;
 
 		const embed = new EmbedBuilder()

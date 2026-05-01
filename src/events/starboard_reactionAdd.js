@@ -10,7 +10,15 @@ module.exports = {
 		const guild = await Guild.findOne({ guildID: react.message.guild.id });
 		if (!guild) return;
 		const customReact = guild.starboard.customReact;
-		if (react.emoji.name != customReact) return;
+		const isDiscordEmoji = /^<a?:\w+:\d+>$/.test(customReact);
+		let emojiMatches;
+		if (isDiscordEmoji) {
+			const emojiId = customReact.split(':')[2].slice(0, -1);
+			emojiMatches = react.emoji.id === emojiId;
+		} else {
+			emojiMatches = react.emoji.name === customReact;
+		}
+		if (!emojiMatches) return;
 		if (guild.starboard.channelID == '-1') return;
 		if (react.count < guild.starboard.reqReacts) return;
 		const messageAttachment = react.message.attachments.size > 0 ? Array.from(react.message.attachments.values())[0].url : null;
@@ -25,15 +33,7 @@ module.exports = {
 		const content = react.message.content.replaceAll(' ', '');
 		if (content.length > 0) embed.setDescription(react.message.content || 'Пустое сообщение');
 		const msg = guild.starboard.data.get(react.message.id);
-		let reactMsg;
-		if (/\p{Emoji}/u.test(customReact) == false) {
-			if (react.message.guild.emojis.cache.find(emoji => emoji.name === customReact) == undefined) return;
-			const reactId = react.message.guild.emojis.cache.find(emoji => emoji.name === customReact).id;
-			reactMsg = `<:${customReact}:${reactId}>`;
-		}
-		else {
-			reactMsg = customReact;
-		}
+		const reactMsg = customReact;
 		if (msg == undefined) {
 			react.message.guild.channels.cache.get(guild.starboard.channelID).send({ content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
 				.then(message => {
