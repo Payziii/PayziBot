@@ -2,7 +2,7 @@
     {
         "images": ["https://u.fifty.su/img/logos/2"],
         "category": "ai",
-        "answers": ["Manus"],
+        "answers": ["Manus", "Манус"],
         "id": 1
     },
     {
@@ -14,13 +14,13 @@
     {
         "images": ["https://u.fifty.su/img/logos/3"],
         "category": "ai",
-        "answers": ["Midjourney"],
+        "answers": ["Midjourney", "Миджорни"],
         "id": 3
     },
     {
         "images": ["https://u.fifty.su/img/logos/4"],
         "category": "ai",
-        "answers": ["OpenRouter"],
+        "answers": ["OpenRouter", "Опенроутер"],
         "id": 4
     },
     {
@@ -38,7 +38,7 @@
     {
         "images": ["https://u.fifty.su/img/logos/7"],
         "category": "ai",
-        "answers": ["Qwen"],
+        "answers": ["Qwen", "QwenAI"],
         "id": 7
     },
     {
@@ -50,25 +50,25 @@
     {
         "images": ["https://u.fifty.su/img/logos/9"],
         "category": "ai",
-        "answers": ["Gemini"],
+        "answers": ["Gemini", "Джемини", "Гемини", "Google"],
         "id": 9
     },
     {
         "images": ["https://u.fifty.su/img/logos/10"],
         "category": "ai",
-        "answers": ["DeepSeek"],
+        "answers": ["DeepSeek", "Дипсик"],
         "id": 10
     },
     {
         "images": ["https://u.fifty.su/img/logos/11"],
         "category": "ai",
-        "answers": ["Claude"],
+        "answers": ["Claude", "Клауд", "Клод"],
         "id": 11
     },
     {
         "images": ["https://u.fifty.su/img/logos/12"],
         "category": "ai",
-        "answers": ["Mistral"],
+        "answers": ["Mistral", "Мистрал"],
         "id": 12
     },
     {
@@ -80,13 +80,13 @@
     {
         "images": ["https://u.fifty.su/img/logos/14"],
         "category": "ai",
-        "answers": ["OpenAI"],
+        "answers": ["OpenAI", "ChatGPT", "ЧатГПТ", "ОпенАИ"],
         "id": 14
     },
     {
         "images": ["https://u.fifty.su/img/logos/15"],
         "category": "ai",
-        "answers": ["Microsoft Copilot", "Copilot"],
+        "answers": ["Microsoft Copilot", "Copilot", "Копилот"],
         "id": 15
     },
     {
@@ -98,49 +98,49 @@
     {
         "images": ["https://u.fifty.su/img/logos/17"],
         "category": "software",
-        "answers": ["Firefox"],
+        "answers": ["Firefox", "Фаерфокс"],
         "id": 17
     },
     {
         "images": ["https://u.fifty.su/img/logos/18"],
         "category": "software",
-        "answers": ["Zen Browser", "Zen"],
+        "answers": ["Zen Browser", "Zen", "Зен"],
         "id": 18
     },
     {
         "images": ["https://u.fifty.su/img/logos/19"],
         "category": "software",
-        "answers": ["Vivaldi"],
+        "answers": ["Vivaldi", "Вивалди"],
         "id": 19
     },
     {
         "images": ["https://u.fifty.su/img/logos/20"],
         "category": "software",
-        "answers": ["Safari"],
+        "answers": ["Safari", "Сафари"],
         "id": 20
     },
     {
         "images": ["https://u.fifty.su/img/logos/21"],
         "category": "software",
-        "answers": ["Edge"],
+        "answers": ["Edge", "Эдж"],
         "id": 21
     },
     {
         "images": ["https://u.fifty.su/img/logos/22"],
         "category": "software",
-        "answers": ["Chromium"],
+        "answers": ["Chromium", "Хромиум"],
         "id": 22
     },
     {
         "images": ["https://u.fifty.su/img/logos/23"],
         "category": "software",
-        "answers": ["Opera"],
+        "answers": ["Opera", "Опера"],
         "id": 23
     },
     {
         "images": ["https://u.fifty.su/img/logos/24"],
         "category": "software",
-        "answers": ["Opera GX"],
+        "answers": ["Opera GX", "Опера ГХ"],
         "id": 24
     },
     {
@@ -152,25 +152,25 @@
     {
         "images": ["https://u.fifty.su/img/logos/26"],
         "category": "software",
-        "answers": ["Tor"],
+        "answers": ["Tor", "Тор"],
         "id": 26
     },
     {
         "images": ["https://u.fifty.su/img/logos/27"],
         "category": "software",
-        "answers": ["Chrome"],
+        "answers": ["Chrome", "Хром"],
         "id": 27
     },
     {
         "images": ["https://u.fifty.su/img/logos/28"],
         "category": "software",
-        "answers": ["Yandex Browser"],
+        "answers": ["Yandex Browser", "Яндекс бразуер", "Яндекс", "Yandex"],
         "id": 28
     },
     {
         "images": ["https://u.fifty.su/img/logos/29"],
         "category": "software",
-        "answers": ["TikTok"],
+        "answers": ["TikTok", "Тикток"],
         "id": 29
     },
     {
@@ -182,157 +182,157 @@
     {
         "images": ["https://u.fifty.su/img/logos/31"],
         "category": "software",
-        "answers": ["Reddit"],
+        "answers": ["Reddit", "Реддит"],
         "id": 31
     },
     {
         "images": ["https://u.fifty.su/img/logos/32"],
         "category": "software",
-        "answers": ["Pinterest"],
+        "answers": ["Pinterest", "Пин", "Пинтерест"],
         "id": 32
     },
     {
         "images": ["https://u.fifty.su/img/logos/33"],
         "category": "software",
-        "answers": ["VK"],
+        "answers": ["VK", "ВКонтакте", "ВК"],
         "id": 33
     },
     {
         "images": ["https://u.fifty.su/img/logos/34"],
         "category": "software",
-        "answers": ["X"],
+        "answers": ["X", "Х", "Twitter", "Твиттер"],
         "id": 34
     },
     {
         "images": ["https://u.fifty.su/img/logos/35"],
         "category": "software",
-        "answers": ["Telegram"],
+        "answers": ["Telegram", "Телеграм", "Telegramm", "Телеграмм"],
         "id": 35
     },
     {
         "images": ["https://u.fifty.su/img/logos/36"],
         "category": "software",
-        "answers": ["YouTube"],
+        "answers": ["YouTube", "Ютуб", "Ютюб"],
         "id": 36
     },
     {
         "images": ["https://u.fifty.su/img/logos/37"],
         "category": "software",
-        "answers": ["MAX"],
+        "answers": ["МАКС", "MAX"],
         "id": 37
     },
     {
         "images": ["https://u.fifty.su/img/logos/38"],
         "category": "software",
-        "answers": ["RuTube"],
+        "answers": ["RuTube", "Рутуб", "Рутюб"],
         "id": 38
     },
     {
         "images": ["https://u.fifty.su/img/logos/39"],
         "category": "software",
-        "answers": ["GitHub"],
+        "answers": ["GitHub", "Гитхаб"],
         "id": 39
     },
     {
         "images": ["https://u.fifty.su/img/logos/40"],
         "category": "software",
-        "answers": ["OBS"],
+        "answers": ["OBS", "ОБС"],
         "id": 40
     },
     {
         "images": ["https://u.fifty.su/img/logos/41"],
         "category": "software",
-        "answers": ["Android"],
+        "answers": ["Android", "Андроид"],
         "id": 41
     },
     {
         "images": ["https://u.fifty.su/img/logos/42"],
         "category": "software",
-        "answers": ["Epic Games"],
+        "answers": ["Epic Games", "Эпик Геймс"],
         "id": 42
     },
     {
         "images": ["https://u.fifty.su/img/logos/43"],
         "category": "software",
-        "answers": ["Steam"],
+        "answers": ["Steam", "Стим"],
         "id": 43
     },
     {
         "images": ["https://u.fifty.su/img/logos/44"],
         "category": "software",
-        "answers": ["Xbox"],
+        "answers": ["Xbox", "Хбокс"],
         "id": 44
     },
     {
         "images": ["https://u.fifty.su/img/logos/45"],
         "category": "software",
-        "answers": ["PlayStation"],
+        "answers": ["PlayStation", "PS", "Плейстэйшн"],
         "id": 45
     },
     {
         "images": ["https://u.fifty.su/img/logos/46"],
         "category": "software",
-        "answers": ["Microsoft"],
+        "answers": ["Microsoft", "Майкрософт"],
         "id": 46
     },
     {
         "images": ["https://u.fifty.su/img/logos/47"],
         "category": "software",
-        "answers": ["Apple"],
+        "answers": ["Apple", "Эппл"],
         "id": 47
     },
     {
         "images": ["https://u.fifty.su/img/logos/48"],
         "category": "software",
-        "answers": ["Windows"],
+        "answers": ["Windows", "Виндовс"],
         "id": 48
     },
     {
         "images": ["https://u.fifty.su/img/logos/49"],
         "category": "software",
-        "answers": ["Google Play"],
+        "answers": ["Google Play", "Гугл плей"],
         "id": 49
     },
     {
         "images": ["https://u.fifty.su/img/logos/50"],
         "category": "software",
-        "answers": ["Discord"],
+        "answers": ["Discord", "Дискорд"],
         "id": 50
     },
     {
         "images": ["https://u.fifty.su/img/logos/51"],
         "category": "software",
-        "answers": ["Microsoft Office", "Office"],
+        "answers": ["Microsoft Office", "Office", "Офис"],
         "id": 51
     },
     {
         "images": ["https://u.fifty.su/img/logos/52"],
         "category": "software",
-        "answers": ["Microsoft Todo", "Todo"],
+        "answers": ["Microsoft Todo", "Todo", "Туду"],
         "id": 52
     },
     {
         "images": ["https://u.fifty.su/img/logos/53"],
         "category": "software",
-        "answers": ["Microsoft Outlook", "Outlook"],
+        "answers": ["Microsoft Outlook", "Outlook", "Оутлук"],
         "id": 53
     },
     {
         "images": ["https://u.fifty.su/img/logos/54"],
         "category": "software",
-        "answers": ["Microsoft Word", "Word"],
+        "answers": ["Microsoft Word", "Word", "Ворд"],
         "id": 54
     },
     {
         "images": ["https://u.fifty.su/img/logos/55"],
         "category": "software",
-        "answers": ["Microsoft Teams", "Teams"],
+        "answers": ["Microsoft Teams", "Teams", "Тимс"],
         "id": 55
     },
     {
         "images": ["https://u.fifty.su/img/logos/56"],
         "category": "software",
-        "answers": ["Microsoft PowerPoint", "PowerPoint"],
+        "answers": ["Microsoft PowerPoint", "PowerPoint", "Паверпоинт", "Поверпоинт"],
         "id": 56
     },
     {
@@ -350,7 +350,7 @@
     {
         "images": ["https://u.fifty.su/img/logos/59"],
         "category": "software",
-        "answers": ["Microsoft Excel", "Excel"],
+        "answers": ["Microsoft Excel", "Excel", "Эксель"],
         "id": 59
     },
     {
@@ -362,13 +362,13 @@
     {
         "images": ["https://u.fifty.su/img/logos/61"],
         "category": "software",
-        "answers": ["Visual Studio"],
+        "answers": ["Visual Studio", "VS"],
         "id": 61
     },
     {
         "images": ["https://u.fifty.su/img/logos/62"],
         "category": "software",
-        "answers": ["Visual Studio Code"],
+        "answers": ["Visual Studio Code", "VSCode"],
         "id": 62
     }
 ]
