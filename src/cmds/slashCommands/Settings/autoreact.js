@@ -36,7 +36,17 @@ module.exports = {
             .setName('реакции')
             .setDescription('Реакции (через пробел), которые будут ставиться на сообщения')
             .setRequired(true)
-        )),
+        )
+        .addStringOption((option) =>
+          option
+            .setName('порядок')
+            .setDescription('Порядок простановки автореактинга')
+            .addChoices(
+              { name: 'Линейный', value: 'lineal' },
+              { name: 'Случайный', value: 'random' }
+            )
+        )
+    ),
   async execute(interaction, guild) {
     await interaction.deferReply();
     if (interaction.options.getSubcommand() === 'off') {
@@ -48,6 +58,7 @@ module.exports = {
     } else if (interaction.options.getSubcommand() === 'set') {
       channel = interaction.options.getChannel('канал')
       text = interaction.options.getString('реакции')
+      mode = interaction.options.getString('порядок') || 'lineal';
       reacts = text.split(' ');
 
       if(reacts.length > 20) return interaction.followUp(`${emojis.error} | Я не смогу поставить больше 20 реакций на сообщение!`);
@@ -70,8 +81,9 @@ module.exports = {
       }
       guild.autoreact.channelID = channel.id;
       guild.autoreact.reacts = reacts;
+      guild.autoreact.mode = mode;
       guild.save()
-      interaction.followUp(`${emojis.success} Автореактинг успешно включён в канале <#${channel.id}> с реакциями: ${reacts.join(', ')}`)
+      interaction.followUp(`${emojis.success} Автореактинг успешно включён в канале <#${channel.id}> в ${mode === 'lineal' ? 'линейном' : 'случайном'} порядке с реакциями: ${reacts.join(', ')}`)
       index = interaction.client.autoreactChannels.indexOf(channel.id);
       if (interaction.client.autoreactChannels !== -1) {
         interaction.client.autoreactChannels.splice(index, 1);

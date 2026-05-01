@@ -39,6 +39,7 @@ const guild = Schema({
 	autoreact: {
 		channelID: { type: String, default: '-1' },
 		reacts: { type: Array, default: [] },
+		mode: { type: String, default: 'lineal' },
 	},
 	rr: { type: Map, default: [] },
 	customCommands: { type: Map, default: [] },

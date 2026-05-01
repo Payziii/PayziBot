@@ -23,10 +23,20 @@ module.exports = {
 			// Проверка прав
 			if (!channel.permissionsFor(message.guild.members.me).has(['AddReactions', 'ViewChannel'])) return;
 
-			// Простановка реакций
+			// Получение порядка простановки и реакций
+			const mode = guild.autoreact.mode || 'lineal';
 			const reacts = await guild.autoreact.reacts; 
-			for (const reaction of reacts) {
-				message.react(reaction);
+
+			// Простановка реакций
+			if (mode === 'random') {
+				const randomReacts = [...reacts].sort(() => Math.random() - 0.5);
+				for (const reaction of randomReacts) {
+					message.react(reaction);
+				}
+			} else {
+				for (const reaction of reacts) {
+					await message.react(reaction);
+				}
 			}
 		}
 		catch (error) {
