@@ -50,6 +50,8 @@ module.exports = {
       text = interaction.options.getString('реакции')
       reacts = text.split(' ');
 
+      if(reacts.length > 20) return interaction.followUp(`${emojis.error} | Я не смогу поставить больше 20 реакций на сообщение!`);
+
       if (!channel.permissionsFor(interaction.guild.members.me).has(['AddReactions', 'ViewChannel'])) return interaction.followUp(`${emojis.error} | Мне требуются права на установку реакций в выбранном канале!`)
 
       for (reaction of reacts) {
