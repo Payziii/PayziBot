@@ -241,7 +241,7 @@
     },
     {
         "images": ["https://u.fifty.su/img/logos/41"],
-        "category": "software",
+        "category": "os",
         "answers": ["Android", "Андроид"],
         "id": 41
     },
@@ -283,7 +283,7 @@
     },
     {
         "images": ["https://u.fifty.su/img/logos/48"],
-        "category": "software",
+        "category": "os",
         "answers": ["Windows", "Виндовс"],
         "id": 48
     },
@@ -370,5 +370,101 @@
         "category": "software",
         "answers": ["Visual Studio Code", "VSCode"],
         "id": 62
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/63"],
+        "category": "os",
+        "answers": ["Arch", "Арч"],
+        "id": 63
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/64"],
+        "category": "os",
+        "answers": ["Archcraft", "Арчкрафт"],
+        "id": 64
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/65"],
+        "category": "os",
+        "answers": ["CachyOS", "Cachy", "Качи", "КачиОС", "Cachy OS"],
+        "id": 65
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/66"],
+        "category": "os",
+        "answers": ["CentOS", "Cebt", "Цент", "ЦентОС", "Cent OS"],
+        "id": 66
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/67"],
+        "category": "os",
+        "answers": ["Debian", "Дебиан"],
+        "id": 67
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/68"],
+        "category": "os",
+        "answers": ["Deepin", "Дипин"],
+        "id": 68
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/69"],
+        "category": "os",
+        "answers": ["Elementary OS", "Elementary", "Элементари", "Элементари ОС"],
+        "id": 69
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/70"],
+        "category": "os",
+        "answers": ["Fedora", "Федора"],
+        "id": 70
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/71"],
+        "category": "os",
+        "answers": ["Kali Linux", "Kali", "Кали Линукс", "Кали"],
+        "id": 71
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/72"],
+        "category": "os",
+        "answers": ["Kubuntu", "Кубунту"],
+        "id": 72
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/73"],
+        "category": "os",
+        "answers": ["Lubuntu", "Лубунту"],
+        "id": 73
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/74"],
+        "category": "os",
+        "answers": ["Manjaro", "Манжаро", "Манджаро"],
+        "id": 74
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/75"],
+        "category": "os",
+        "answers": ["NixOS", "Nix", "НиксОС", "Никс", "Nix OS"],
+        "id": 75
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/76"],
+        "category": "os",
+        "answers": ["Red Hat Enterprise Linux", "Red Hat Linux", "Red Hat", "Ред хат", "Ред хат линукс", "Рэд хат", "Рэд хат линукс"],
+        "id": 76
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/77"],
+        "category": "os",
+        "answers": ["Ubuntu", "Убунту"],
+        "id": 77
+    },
+    {
+        "images": ["https://u.fifty.su/img/logos/78"],
+        "category": "os",
+        "answers": ["Xubuntu", "Хубунту", "Иксбунту"],
+        "id": 78
     }
 ]
