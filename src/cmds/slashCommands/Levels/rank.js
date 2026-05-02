@@ -26,8 +26,7 @@ module.exports = {
         if (!user) return interaction.editReply(`${emojis.error} | К сожалению, пользователь \`${_user.username}\` не использовал бота!`);
         let lvlMess;
         const g = await getLevelGuild(interaction.guild.id);
-        if (!g.enabled) return interaction.editReply('На сервере отключена система уровней');
-
+        if (!g.enabled) return interaction.editReply(`${emojis.error} | На сервере отключена система уровней. Для включения используйте команду \`/levels toggle\``);
         const us = await getLevelUserByGuild(interaction.guild.id, _user.id);
         lvlMess = `Уровень: **${us.level}**\nXP: **${us.xp}**/**${MathNextLevel(us.level, g.xp.koeff)}**`;
         let prosh = MathNextLevel(us.level - 1, g.xp.koeff);

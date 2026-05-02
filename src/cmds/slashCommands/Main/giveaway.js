@@ -4,6 +4,7 @@ const messages = require('../../../games_src/giveaways/messages.js');
 const giveaway = require('../../../database/giveaway.js');
 const { CheckAch } = require('../../../func/games/giveAch.js');
 const { emojis } = require('../../../config.js');
+const { getLevelGuild, getLevelUserByGuild } = require('../../../database/levels.js');
 
 module.exports = {
 	category: 'settings',
@@ -40,6 +41,11 @@ module.exports = {
 					option
 						.setName('реакция')
 						.setDescription('Реакция, которую необходимо нажать для участия'))
+				.addIntegerOption((option) =>
+					option
+						.setName('мин_уровень')
+						.setDescription('Минимальный уровень для участия')
+						.setMinValue(1))
 		)
 		.addSubcommand(subcommand =>
 			subcommand
@@ -68,6 +74,7 @@ module.exports = {
 			winnerCount = interaction.options.getInteger('победители');
 			prize = interaction.options.getString('приз');
 			react = interaction.options.getString('реакция') || "🎉";
+			minLevel = interaction.options.getInteger('мин_уровень') || 0;
 
 			duration = ms(duration);
 
@@ -85,7 +92,13 @@ module.exports = {
 				return interaction.reply(`${emojis.error} | Я думаю \`${react}\` не является эмодзи...`)
 			}
 
-			let msgs = messages.ru.start;
+			let msgs = { ...messages.ru.start };
+
+			if (minLevel > 0) {
+				const g = await getLevelGuild(interaction.guild.id);
+				if(!g.enabled) return interaction.reply(`${emojis.error} | На сервере отключена система уровней. Для включения используйте команду \`/levels toggle\``);
+				msgs.inviteToParticipate += `\n⚠️ Требуется **${minLevel}** уровень для участия`;
+			}
 
 			await interaction.reply(`${emojis.loading} | Создание розыгрыша`)
 			interaction.client.giveawaysManager
@@ -97,7 +110,14 @@ module.exports = {
 					reaction: react,
 					messages: msgs,
 					embedColor: guild.colors.giveaway,
-					embedColorEnd: guild.colors.giveaway
+					embedColorEnd: guild.colors.giveaway,
+					extraData: { minLevel },
+					exemptMembers: async (member, giveaway) => {
+						if (!giveaway.extraData.minLevel) return false;
+						const us = await getLevelUserByGuild(member.guild.id, member.id);
+						if (!us) return true;
+						return us.level < giveaway.extraData.minLevel;
+					}
 				}).then((data) => {
 					interaction.editReply(`${emojis.gift} | Розыгрыш начался. ID розыгрыша: \`${data.messageId}\`\n-# Сохраните ID для выбора нового победителя или досрочного окончания`)
 					CheckAch(8, interaction.user.id, interaction.channel)
