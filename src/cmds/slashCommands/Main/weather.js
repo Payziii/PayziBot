@@ -35,12 +35,12 @@ module.exports = {
 
     const r = await weather.current(process.env.WEATHER_API_KEY, city);
     if (r === "error")
-      return interaction.editReply(`${emojis.error} | Неизвестная ошибка`);
+      return interaction.editReply(`${emojis.error} | Произошли технические неполадки, но мы уже работаем над их устранением!`);
     if (r.error) {
       if (r.error.code == 1006)
-        return interaction.editReply(`${emojis.error} | Город не найден!`);
+        return interaction.editReply(`${emojis.error} | К сожалению, город \`${city}\` не найден!`);
       interaction.editReply(
-        `${emojis.error} | Ошибка получения данных: \`${r.error.message}\``
+        `${emojis.error} | Произошли технические неполадки, но мы уже работаем над их устранением!`
       );
     }
     const embed = new EmbedBuilder()

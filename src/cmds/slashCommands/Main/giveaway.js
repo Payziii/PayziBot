@@ -141,7 +141,7 @@ module.exports = {
 				interaction.editReply(`${emojis.gift} | Розыгрыш успешно завершен`)
 			}).catch((err) => {
 				console.log(err)
-				interaction.editReply(`${emojis.error} | Неизвестная ошибка`)
+				interaction.editReply(`${emojis.error} | Произошли технические неполадки, но мы уже работаем над их устранением!`)
 			});
 		}
 	},

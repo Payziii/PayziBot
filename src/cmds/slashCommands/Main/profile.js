@@ -20,7 +20,7 @@ module.exports = {
 		let _user = interaction.options.getUser('пользователь') || interaction.user;
 
 		let user = await User.findOne({ userID: _user.id });
-		if (!user) return interaction.editReply(`${emojis.error} | Этот пользователь не использовал бота!`);
+		if (!user) return interaction.editReply(`${emojis.error} | К сожалению, пользователь \`${_user.username}\` не использовал бота!`);
 		let block_message = `\n${block[user.block].emoji} Блокировка: **${block[user.block].name}**\n`;
 		if(user.block < 1) block_message = '';
 		let lvlMess;

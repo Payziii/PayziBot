@@ -38,7 +38,7 @@ module.exports = {
             avatar = r.avatar_url;
         });
 
-        if (msg) return interaction.editReply(`${emojis.error} | Ничего не найдено!`);
+        if (msg) return interaction.editReply(`${emojis.error} | К сожалению, пользователь \`${query}\` не найден!`);
 
         const embed = new EmbedBuilder()
             .setTitle(`Пользователь ${login}`)

@@ -37,7 +37,7 @@ module.exports = {
     if (interaction.options.getSubcommand() === 'server') {
       const ip = interaction.options.getString("адрес");
       await minecraft.getServer(ip).then((r) => {
-        if (r === 'error') return interaction.editReply(`${emojis.error} | Произошла ошибка. Возможно, сервер не найден`);
+        if (r === 'error') return interaction.editReply(`${emojis.error} | Произошли технические неполадки, но мы уже работаем над их устранением!`);
         if (r?.ip == "127.0.0.1" || !r?.online) return interaction.editReply(`${emojis.error} | Сервер выключен!`);
         const playerList = r?.players?.list ? r.players.list.slice(0, 15).map(player => player.name).join(", ") : "Нет игроков";
 
@@ -56,9 +56,9 @@ module.exports = {
     }else if (interaction.options.getSubcommand() === 'player') {
       const name = interaction.options.getString("ник");
       await minecraft.getPlayer(name).then((r) => {
-        if (r === 'error') return interaction.editReply(`${emojis.error} | Произошла ошибка. Возможно, игрок не найден`);
+        if (r === 'error') return interaction.editReply(`${emojis.error} | Произошли технические неполадки, но мы уже работаем над их устранением!`);
         if (r?.code === "minecraft.invalid_username") return interaction.editReply(`${emojis.error} | Игрок не найден`);
-        if(r?.code != "player.found") return interaction.editReply(`${emojis.error} | Произошла ошибка. Код: ${r?.code}`);
+        if(r?.code != "player.found") return interaction.editReply(`${emojis.error} | Произошли технические неполадки, но мы уже работаем над их устранением!`);
         const embed = new EmbedBuilder()
           .setTitle(r?.data?.player?.username || "Неизвестный игрок")
           .setDescription(`UUID: \`${r?.data?.player?.id}\``)

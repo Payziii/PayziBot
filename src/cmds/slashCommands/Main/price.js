@@ -38,7 +38,7 @@ module.exports = {
     await price.convert(process.env.PRICE_API_KEY, from.toUpperCase(), to, amount).then((r) => {
       interaction.editReply(`${emojis.exchange} **${r.amount}** ${r.from} = **${r.value.toFixed(2)}** ${r.to}`);
     }).catch(() => {
-      interaction.editReply(`${emojis.error} | Произошла ошибка. Возможно, валюта не найдена`);
+      interaction.editReply(`${emojis.error} | Произошли технические неполадки, но мы уже работаем над их устранением!`);
     })
   },
 };

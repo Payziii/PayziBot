@@ -15,7 +15,7 @@ module.exports = {
 		const allowedMentions = { parse: ['users'], repliedUser: false };
 		const g = await getLevelGuild(interaction.guild.id);
 		let lvlMess = "";
-		if(!g.enabled) return interaction.editReply('На сервере отключена система уровней', { allowedMentions });
+		if(!g.enabled) return interaction.editReply('На сервере отключена система уровней. Для включения используйте команду `/levels toggle`', { allowedMentions });
 		const users = g.data;
 		users.sort((a, b) => b.xp - a.xp);
 		const top10Users = users.slice(0, 10);
@@ -25,7 +25,7 @@ module.exports = {
 			lvlMess = lvlMess+`${index + 1}. <@${user.user}> — Уровень: **${user.level}** — XP: **${user.xp}**\n`;
 		  });
 		if(myPos != 0) lvlMess += `\n➡️ У Вас: **${myPos}** место`
-		if(lvlMess.length < 1) lvlMess = 'Я искал, но никого не нашел...';
+		if(lvlMess.length < 1) lvlMess = 'Пока что нет данных для отображения лидеров!';
 		interaction.editReply(`${lvlMess}`, { allowedMentions })
 	},
 };
