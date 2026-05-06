@@ -113,6 +113,8 @@ module.exports = {
       // reset - Обнулить уровни всех пользователей
     } else if (interaction.options.getSubcommand() === 'reset') {
 
+			if(!g.enabled) return interaction.reply(`${emojis.error} | На сервере отключена система уровней. Для включения используйте команду \`/levels toggle\``);
+
       const confirmButton = new ButtonBuilder()
         .setCustomId('confirmReset')
         .setLabel('Подтвердить')
@@ -141,6 +143,8 @@ module.exports = {
       // channel-set - Установить канал для оповещений о новом уровне
     } else if (interaction.options.getSubcommand() === 'channel-set') {
 
+      if(!g.enabled) return interaction.reply(`${emojis.error} | На сервере отключена система уровней. Для включения используйте команду \`/levels toggle\``);
+
       channel = interaction.options.getChannel('канал')
       cid = channel?.id || "-1"
       await setLevelGuildChannel(interaction.guild.id, cid)
@@ -149,6 +153,8 @@ module.exports = {
 
       // message - Установить сообщение о новом уровне
     } else if (interaction.options.getSubcommand() === 'message') {
+
+      if(!g.enabled) return interaction.reply(`${emojis.error} | На сервере отключена система уровней. Для включения используйте команду \`/levels toggle\``);
 
       const modal = new ModalBuilder()
         .setCustomId('level')
@@ -169,6 +175,8 @@ module.exports = {
       // set-level - Установить уровень определенному пользователю
     } else if (interaction.options.getSubcommand() === 'set-level') {
 
+      if(!g.enabled) return interaction.reply(`${emojis.error} | На сервере отключена система уровней. Для включения используйте команду \`/levels toggle\``);
+
       const level = interaction.options.getInteger('уровень');
       const _user = interaction.options.getUser('пользователь');
 
@@ -184,6 +192,8 @@ module.exports = {
 
       // add-role-level - Создать новую роль за уровень
     } else if (interaction.options.getSubcommand() === 'add-role-level') {
+
+      if(!g.enabled) return interaction.reply(`${emojis.error} | На сервере отключена система уровней. Для включения используйте команду \`/levels toggle\``);
 
       const role = interaction.options.getRole('роль');
       const level = interaction.options.getInteger('уровень');
@@ -203,6 +213,8 @@ module.exports = {
 
       // set-xp-range - Установить диапазон XP для уровней
     } else if (interaction.options.getSubcommand() === 'set-xp-range') {
+
+      if(!g.enabled) return interaction.reply(`${emojis.error} | На сервере отключена система уровней. Для включения используйте команду \`/levels toggle\``);
 
       const min = interaction.options.getInteger('мин');
       const max = interaction.options.getInteger('макс');
