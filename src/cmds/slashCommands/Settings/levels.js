@@ -208,7 +208,7 @@ module.exports = {
       const max = interaction.options.getInteger('макс');
       const fix = interaction.options.getInteger('фикс');
 
-      if(fix && min || fix && max) return interaction.reply(`${emojis.error} | Вы не можете использовать фиксированное количество XP вместе с диапазоном! Пожалуйста, выберите что-то одно!`);
+      if(fix && min || fix && max) return interaction.reply(`${emojis.error} | Вы не можете использовать фиксированное количество XP вместе с диапазоном! Пожалуйста, выберите что-то одно!\тНапример, для установки 3 XP за уровень просто введите \`/levels set-xp-range фикс: 3\``);
 
       if(fix) {
         setLevelGuildXp(interaction.guild.id, fix, fix);

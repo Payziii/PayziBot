@@ -28,7 +28,7 @@ module.exports = {
         const g = await getLevelGuild(interaction.guild.id);
         if (!g.enabled) return interaction.editReply(`${emojis.error} | На сервере отключена система уровней. Для включения используйте команду \`/levels toggle\``);
         const us = await getLevelUserByGuild(interaction.guild.id, _user.id);
-        lvlMess = `Уровень: **${us.level}**\nXP: **${us.xp}**/**${MathNextLevel(us.level, g.xp.koeff)}**`;
+        lvlMess = `Уровень: **${us.level}**\nДо следующего уровня: **${us.xp}**/**${MathNextLevel(us.level, g.xp.koeff)}** XP`;
         let prosh = MathNextLevel(us.level - 1, g.xp.koeff);
         if (prosh < 0) prosh = 0;
         let prog = (us.xp - prosh) / (MathNextLevel(us.level, g.xp.koeff) - prosh);
