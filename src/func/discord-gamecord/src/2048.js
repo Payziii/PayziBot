@@ -1,4 +1,5 @@
 const { EmbedBuilder, ActionRowBuilder, AttachmentBuilder } = require('discord.js');
+const { createCanvas } = require('@napi-rs/canvas');
 const { disableButtons, formatMessage, move, oppDirection, ButtonBuilder } = require('../utils/utils');
 const chars = '0123456789abcdefghijklmnopqrstuvwxyz';
 const events = require('events');
@@ -65,8 +66,85 @@ module.exports = class TwoZeroFourEight extends events {
   }
 
   async getBoardImage() {
-    const url = 'https://api.gamecord.xyz/2048?board=' + this.gameBoard.map(c => chars[c]).join('');
-    return await new AttachmentBuilder(url, { name: 'gameboard.png' });
+      const cellSize = 100;
+      const gap = 14;                  
+      const boardPadding = 28;
+
+      const boardSize = 4 * cellSize + 3 * gap;           
+      const canvasWidth = boardSize + boardPadding * 2;
+      const canvasHeight = boardSize + boardPadding * 2 + 70; 
+
+      const canvas = createCanvas(canvasWidth, canvasHeight);
+      const ctx = canvas.getContext('2d');
+
+      const boardX = boardPadding;
+      const boardY = boardPadding;
+
+      ctx.fillStyle = '#1e1e22';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#bbada0';
+      ctx.beginPath();
+      ctx.roundRect(boardX - 12, boardY - 12, boardSize + 24, boardSize + 24, 26);
+      ctx.fill();
+
+      const tileColors = {
+          0: '#cdc1b4',
+          1: '#eee4da',  
+          2: '#ede0c8',  
+          3: '#f2b179',   
+          4: '#f59563',  
+          5: '#f67c5f',   
+          6: '#f65e3b',  
+          7: '#edcf72',  
+          8: '#edcc61',  
+          9: '#9c0',     
+          10: '#33b679',  
+          11: '#0f9',     
+          12: '#6cb',
+          13: '#9c6',
+          14: '#c6c',
+      };
+
+      for (let y = 0; y < 4; y++) {
+          for (let x = 0; x < 4; x++) {
+              const value = this.gameBoard[y * 4 + x];
+              const num = value === 0 ? 0 : (1 << value);
+
+              const xPos = boardX + x * (cellSize + gap);
+              const yPos = boardY + y * (cellSize + gap);
+
+              if (value === 0) {
+                  ctx.fillStyle = '#cdc1b4';
+                  ctx.beginPath();
+                  ctx.roundRect(xPos, yPos, cellSize, cellSize, 14);
+                  ctx.fill();
+                  continue;
+              }
+
+              ctx.fillStyle = tileColors[value] || '#3c3a32';
+              ctx.beginPath();
+              ctx.roundRect(xPos, yPos, cellSize, cellSize, 14);
+              ctx.fill();
+
+              ctx.shadowBlur = 0;
+              ctx.shadowOffsetY = 0;
+
+              const textColor = value <= 2 ? '#776e65' : '#f9f6f2';
+              ctx.fillStyle = textColor;
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+
+              const fontSize = num >= 10000 ? 34 : num >= 1000 ? 42 : 54;
+              ctx.font = `bold ${fontSize}px Arial, sans-serif`;
+
+              ctx.fillText(num.toString(), xPos + cellSize/2, yPos + cellSize/2 + 4);
+          }
+      }
+
+      return new AttachmentBuilder(canvas.toBuffer('image/png'), { 
+          name: 'gameboard.png' 
+      });
   }
 
 
