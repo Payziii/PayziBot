@@ -7,7 +7,7 @@ const gamesData = require('../../../games_src/guess/games.json');
 
 module.exports = {
     category: 'games',
-    cooldown: 9,
+    cooldown: 5,
     data: new SlashCommandBuilder()
         .setName('guess')
         .setDescription('Угадайте что-то по картинке')

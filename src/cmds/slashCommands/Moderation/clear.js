@@ -3,7 +3,7 @@ const { emojis, channels } = require('../../../config.js');
 
 module.exports = {
 	category: 'mod',
-	cooldown: 5,
+	cooldown: 3,
 	data: new SlashCommandBuilder()
 		.setName('clear')
 		.setDescription('Очистить сообщения в канале')

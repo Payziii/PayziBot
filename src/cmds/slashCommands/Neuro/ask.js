@@ -7,7 +7,7 @@ const rsnchat = new RsnChat(process.env.RSN_API_KEY);
 
 module.exports = {
   category: 'neuro',
-  cooldown: 30,
+  cooldown: 10,
   skip: true,
   data: new SlashCommandBuilder()
     .setName('ask')

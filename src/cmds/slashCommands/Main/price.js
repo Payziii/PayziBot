@@ -7,7 +7,7 @@ const price = require("../../../func/apis/price.js");
 
 module.exports = {
   category: "utility",
-  cooldown: 5,
+  cooldown: 1,
   data: new SlashCommandBuilder()
     .setName("exchange")
     .setDescription("Курс валют")

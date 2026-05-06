@@ -4,7 +4,7 @@ const words = require('../../../games_src/hangman.json');
 
 module.exports = {
 	category: 'games',
-	cooldown: 30,
+	cooldown: 15,
 	data: new SlashCommandBuilder()
 		.setName('hangman')
 		.setDescription('Игра в виселицу'),

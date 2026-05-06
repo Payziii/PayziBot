@@ -17,7 +17,7 @@ const { setLevelGuildXp, setLevelGuildEnabled, resetLevelUser, getLevelGuild, se
 
 module.exports = {
   category: 'settings',
-  cooldown: 15,
+  cooldown: 7,
   data: new SlashCommandBuilder()
     .setName('levels')
     .setDescription('Настройки системы уровней')

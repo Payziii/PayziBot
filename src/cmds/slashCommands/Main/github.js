@@ -5,7 +5,7 @@ const plural = require('../../../func/plural.js');
 
 module.exports = {
     category: 'utility',
-    cooldown: 5,
+    cooldown: 1,
     data: new SlashCommandBuilder()
         .setName('github')
         .setDescription('Посмотреть пользователя на GitHub')

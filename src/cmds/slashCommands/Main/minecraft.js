@@ -8,7 +8,7 @@ const minecraft = require("../../../func/apis/minecraft.js");
 
 module.exports = {
   category: "utility",
-  cooldown: 5,
+  cooldown: 1,
   data: new SlashCommandBuilder()
     .setName("minecraft")
     .setDescription("Информация о игроке или сервере")

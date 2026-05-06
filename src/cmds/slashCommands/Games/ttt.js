@@ -4,7 +4,7 @@ const { emojis } = require('../../../config.js');
 
 module.exports = {
 	category: 'games',
-	cooldown: 30,
+	cooldown: 15,
 	data: new SlashCommandBuilder()
 		.setName('ttt')
 		.setDescription('Крестики-Нолики')

@@ -3,7 +3,7 @@ const { Flood } = require('../../../func/discord-gamecord');
 
 module.exports = {
 	category: 'games',
-	cooldown: 30,
+	cooldown: 15,
 	data: new SlashCommandBuilder()
 		.setName('colorfield')
 		.setDescription('Цветовое поле')

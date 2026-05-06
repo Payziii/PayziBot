@@ -4,7 +4,7 @@ const words = require('../../../games_src/words.json');
 
 module.exports = {
     category: 'games',
-    cooldown: 60,
+    cooldown: 45,
     data: new SlashCommandBuilder()
         .setName('longwords')
         .setDescription('Игра в "Длинное слово"'),

@@ -3,7 +3,7 @@ const { emojis } = require('../../../config.js');
 
 module.exports = {
 	category: 'games',
-	cooldown: 3,
+	cooldown: 1,
 	data: new SlashCommandBuilder()
 		.setName('bio')
 		.setDescription('Установить информацию о себе')

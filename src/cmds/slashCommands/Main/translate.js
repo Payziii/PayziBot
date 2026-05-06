@@ -4,7 +4,7 @@ const { emojis } = require('../../../config.js');
 
 module.exports = {
 	category: 'utility',
-	cooldown: 3,
+	cooldown: 1,
 	data: new SlashCommandBuilder()
 		.setName('translate')
 		.setDescription('Переводчик')

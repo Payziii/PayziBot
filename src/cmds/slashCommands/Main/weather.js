@@ -19,7 +19,7 @@ const dayNames = [
 
 module.exports = {
   category: "utility",
-  cooldown: 5,
+  cooldown: 1,
   data: new SlashCommandBuilder()
     .setName("weather")
     .setDescription("Узнать погоду")

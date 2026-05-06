@@ -5,7 +5,7 @@ const { emojis } = require('../../../config.js');
 
 module.exports = {
     category: 'games',
-    cooldown: 60,
+    cooldown: 45,
     skip: true,
     data: new SlashCommandBuilder()
         .setName('mafia')

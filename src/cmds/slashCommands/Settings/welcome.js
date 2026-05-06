@@ -12,7 +12,7 @@ const { emojis } = require('../../../config.js');
 
 module.exports = {
   category: 'settings',
-  cooldown: 15,
+  cooldown: 7,
   data: new SlashCommandBuilder()
     .setName('welcome')
     .setDescription('Настройки приветственного сообщения')

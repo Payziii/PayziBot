@@ -7,7 +7,7 @@ const games = new Map();
 
 module.exports = {
 	category: 'games',
-	cooldown: 60,
+	cooldown: 15,
 	data: new SlashCommandBuilder()
 		.setName('wordle')
 		.setDescription('Игра, в которой требуется угадать 5-ти буквенное слово'),

@@ -4,7 +4,7 @@ const { CheckAch } = require('../../../func/games/giveAch.js');
 
 module.exports = {
 	category: 'games',
-	cooldown: 30,
+	cooldown: 15,
 	data: new SlashCommandBuilder()
 		.setName('2048')
 		.setDescription('Игра 2048'),
