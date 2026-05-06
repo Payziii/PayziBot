@@ -58,7 +58,8 @@ class hangman {
         }
         else livesString = '❤️'.repeat(this.lives) + '🖤'.repeat(this.startingLives - this.lives);
 
-        return `
+        return `${!this.gameOver ? this.messages.description : ''}
+
      +---+
      |   |      ${this.progress}
      ${this.lives < 6 ? '0' : ' '}   |

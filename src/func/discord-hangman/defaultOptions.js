@@ -14,9 +14,10 @@ module.exports = {
     invalidWord: 'Thats not a valid word. No spaces, at least 3 characters.',
     tooManyInvalidsWords: 'Sorry, too many invalid words, try again next game. You are disqualified.',
 
-    misses: 'Лишние',
+    misses: 'Лишние буквы',
     won: 'Вы выиграли!',
     noplayersleft: 'Игроков не осталось',
     gameOver: 'Игра окончена!',
-    gameOverMsg: 'Слово было: {word}'
+    gameOverMsg: 'Слово было: {word}',
+    description: 'Введите букву или слово целиком!'
 };
