@@ -122,7 +122,7 @@ module.exports = {
           );
       }
       if (!channel.permissionsFor(interaction.guild.members.me).has(['AddReactions', 'ViewChannel'])) return interaction.followUp(`${emojis.error} | Для добавления реакций мне необходимо иметь права \`Добавлять реакции\` и \`Просматривать канал\` в выбранном канале!`)
-      channel.messages
+      await channel.messages
         .fetch(id)
         .then((message) => {
           message.react(react);
