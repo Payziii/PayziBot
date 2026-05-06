@@ -92,19 +92,12 @@ module.exports = {
       // Проверяем роль и права
       const bot = interaction.guild.members.me;
       if (role == undefined) return interaction.followUp("Роли не существует?");
-      if (role.rawPosition >= bot.roles.highest.rawPosition)
-        return interaction.followUp(
-          "Я не смогу выдать эту роль, поскольку она выше моей роли"
-        );
-      if (bot.permissions.has("ManageRoles") == false)
-        return interaction.followUp(
-          "У меня нет прав на управление ролями для выдачи ролей"
-        );
+      if (role.rawPosition >= bot.roles.highest.rawPosition) return interaction.followUp("Я не смогу выдать эту роль, поскольку она выше моей роли");
+      if (bot.permissions.has("ManageRoles") == false) return interaction.followUp("У меня нет прав на управление ролями для выдачи ролей");
       if (role.tags?.botId) return interaction.followUp("Это роль бота");
-      if (role.tags?.premiumSubscriberRole)
-        return interaction.followUp("Это роль бустера, ее нельзя выдать");
-      if (role.tags?.integrationId || role.managed)
-        return interaction.followUp("Данная роль управляется интеграцией");
+      if (role.tags?.premiumSubscriberRole) return interaction.followUp("Это роль бустера, ее нельзя выдать");
+      if (role.tags?.integrationId || role.managed) return interaction.followUp("Данная роль управляется интеграцией");
+      if(role.id == interaction.guild.id) return interaction.reply(`${emojis.error} | Вы не можете установить роль everyone!`);
 
       if (/\p{Emoji}/u.test(react) == false)
         return interaction.followUp(
