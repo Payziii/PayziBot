@@ -22,6 +22,7 @@ module.exports = {
 			idle: '<:idle:674463345927258152>',
 		};
 		const member = await interaction.guild.members.cache.get(user.id);
+		if(!member) return interaction.reply(`${emojis.error} | Пользователь не найден на сервере!`);
 		let activity;
 		if (!member.presence) {
 			activity = 'None';
