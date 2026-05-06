@@ -88,15 +88,19 @@ module.exports = {
             .setName('мин')
             .setDescription('Минимальное количество XP за сообщение')
             .setMinValue(1)
-            .setMaxValue(100)
-            .setRequired(true))
+            .setMaxValue(1000))
         .addIntegerOption((option) =>
           option
             .setName('макс')
             .setDescription('Максимальное количество XP за сообщение')
             .setMinValue(1)
-            .setMaxValue(1000)
-            .setRequired(true))),
+            .setMaxValue(1000))
+        .addIntegerOption((option) =>
+          option
+            .setName('фикс')
+            .setDescription('Фиксированное количество XP за сообщение')
+            .setMinValue(1)
+            .setMaxValue(1000))),
   async execute(interaction, guild) {
     const g = await getLevelGuild(interaction.guild.id);
 
@@ -202,6 +206,18 @@ module.exports = {
 
       const min = interaction.options.getInteger('мин');
       const max = interaction.options.getInteger('макс');
+      const fix = interaction.options.getInteger('фикс');
+
+      if(fix && min || fix && max) return interaction.reply(`${emojis.error} | Вы не можете использовать фиксированное количество XP вместе с диапазоном! Пожалуйста, выберите что-то одно!`);
+
+      if(fix) {
+        setLevelGuildXp(interaction.guild.id, fix, fix);
+        return interaction.reply(`${emojis.success} С этого момента за каждое сообщение пользователи будут получать **${fix}** XP!`)
+      }
+
+      if(!min || !max) return interaction.reply(`${emojis.error} | Пожалуйста, укажите и минимальное, и максимальное количество XP!`);
+      if(min > max) return interaction.reply(`${emojis.error} | Минимальное количество XP не может быть больше максимального!`);
+      if(max < min) return interaction.reply(`${emojis.error} | Максимальное количество XP не может быть меньше минимального!`);
 
       setLevelGuildXp(interaction.guild.id, min, max);
 
