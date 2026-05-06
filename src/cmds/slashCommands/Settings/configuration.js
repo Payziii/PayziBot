@@ -92,38 +92,40 @@ module.exports = {
                 errors: ["time"],
               })
               .then((collected) => {
-                if (/^#[0-9A-F]{6}$/i.test(collected.first().content)) {
+                let clr = collected.first().content;
+                if(!clr.startsWith("#")) clr = `#${clr}`;
+                if (/^#[0-9A-F]{6}$/i.test(clr)) {
                   switch (selection) {
                     case "basic":
-                      guild.colors.basic = collected.first().content;
+                      guild.colors.basic = clr;
                       break;
                     case "error":
-                      guild.colors.error = collected.first().content;
+                      guild.colors.error = clr;
                       break;
                     case "correct":
-                      guild.colors.correct = collected.first().content;
+                      guild.colors.correct = clr;
                       break;
                     case "starboard":
-                      guild.colors.starboard = collected.first().content;
+                      guild.colors.starboard = clr;
                       break;
                     case "giveaway":
-                      guild.colors.giveaway = collected.first().content;
+                      guild.colors.giveaway = clr;
                       break;
                     case "achievement":
-                      guild.colors.achievement = collected.first().content;
+                      guild.colors.achievement = clr;
                       break;
                   }
                   guild.save();
                   interaction.editReply(
                     `Для эмбеда типа \`${selection}\` установлен цвет \`${
-                      collected.first().content
+                      clr
                     }\``
                   );
                   return;
                 }
                 interaction.editReply(
                   `${emojis.error} | Цвет \`${
-                    collected.first().content
+                    clr
                   }\` не найден!`
                 );
               })
