@@ -3,6 +3,7 @@ const rsnchat = new RsnChat(process.env.RSN_API_KEY);
 const { emojis } = require("../../config.js");
 
 exports.run = async (client, message, args) => {
+  return;
   message.reply(`${emojis.loading} | Ожидаем ответа...`).then(async (msg) => {
     let text1 = args.join(" ");
     let text = text1
