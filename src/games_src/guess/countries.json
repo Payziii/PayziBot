@@ -1,0 +1,29 @@
+[
+    {
+        "images": ["https://u.fifty.su/img/countries/1", "https://u.fifty.su/img/countries/2", "https://u.fifty.su/img/countries/3"],
+        "answers": ["Австралия"],
+        "facts": [
+            "6-е место в мире по площади",
+            "В стране левостороннее движение"
+        ],
+        "id": 1
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/4", "https://u.fifty.su/img/countries/5", "https://u.fifty.su/img/countries/6"],
+        "answers": ["Австрия"],
+        "facts": [
+            "Европейская страна с населением более 8 миллионов человек",
+            "Леса занимают около 47% территории страны"
+        ],
+        "id": 2
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/7"],
+        "answers": ["Азербайджан"],
+        "facts": [
+            "До 1991 года входила в состав СССР",
+            "Население страны составляет около 10 миллионов человек"
+        ],
+        "id": 3
+    }
+]
