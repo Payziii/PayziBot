@@ -59,7 +59,7 @@ module.exports = {
 				.catch(e => console.log(e));
 		}
 		else {
-			react.message.guild.channels.cache.get(guild.starboard.channelID).messages.cache.get(msg).edit({ content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
+			react.message.guild.channels.cache.get(guild.starboard.channelID).messages.edit(msg, { content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
 				.catch(e => console.log(e));
 		}
 	},
