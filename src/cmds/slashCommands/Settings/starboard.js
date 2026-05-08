@@ -63,10 +63,12 @@ module.exports = {
         interaction.followUp(`${emojis.success} Звёздная доска успешно выключена!`)
       }else if (interaction.options.getSubcommand() === 'channel-set') {
         channel = interaction.options.getChannel('канал')
+        let warning = '';
         if (!channel.permissionsFor(interaction.guild.members.me).has(['SendMessages', 'ViewChannel'])) return interaction.followUp(`${emojis.error} | Для отправки сообщений мне необходимо иметь права \`Отправлять сообщения\` и \`Просматривать канал\` в выбранном канале!`)
+        if(!channel.nsfw) warning = '\n\nУчтите, что в выбранный канал не будут отправляться сообщения из NSFW каналов, потому что он не помечен как NSFW.';
         guild.starboard.channelID = channel.id;
         guild.save()
-        interaction.followUp(`${emojis.success} Звёздная доска успешно включена в канале <#${channel.id}>`)
+        interaction.followUp(`${emojis.success} Звёздная доска успешно включена в канале <#${channel.id}>${warning}`)
       }else if (interaction.options.getSubcommand() === 'stars-needed') {
         count = interaction.options.getInteger('количество')
         guild.starboard.reqReacts = count;

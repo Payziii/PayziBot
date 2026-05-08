@@ -34,8 +34,10 @@ module.exports = {
 		if (content.length > 0) embed.setDescription(react.message.content || 'Пустое сообщение');
 		const msg = guild.starboard.data.get(react.message.id);
 		const reactMsg = customReact;
+		const channel = react.message.guild.channels.cache.get(guild.starboard.channelID);
 		if (msg == undefined) {
-			react.message.guild.channels.cache.get(guild.starboard.channelID).send({ content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
+			if(react.message.channel.nsfw && !channel.nsfw) return;
+			channel.send({ content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
 				.then(message => {
 					guild.starboard.data.set(react.message.id, message.id);
 					guild.save();
@@ -44,7 +46,7 @@ module.exports = {
 				.catch(e => console.log(e));
 		}
 		else {
-			react.message.guild.channels.cache.get(guild.starboard.channelID).messages.edit(msg, { content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
+			channel.messages.edit(msg, { content: `${reactMsg} **${react.count}:** ${react.message.url}`, embeds: [embed] })
 				.catch(e => console.log(e));
 		}
 	},
