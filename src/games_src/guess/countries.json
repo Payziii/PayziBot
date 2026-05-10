@@ -124,5 +124,77 @@
             "В 1966 году провозгласил независимость от Великобритании"
         ],
         "id": 14
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/25"],
+        "answers": ["Бахрейн"],
+        "facts": [
+            "Население: почти 2 миллиона человек",
+            "Часовой пояс GMT+3"
+        ],
+        "id": 15
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/26", "https://u.fifty.su/img/countries/27", "https://u.fifty.su/img/countries/28"],
+        "answers": ["Беларусь"],
+        "facts": [
+            "Русский язык - один из официальных языков страны",
+            "Население страны составляет около 9 миллионов человек"
+        ],
+        "id": 16
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/29"],
+        "answers": ["Белиз"],
+        "facts": [
+            "Восточное побережье страны омывается Карибским морем",
+            "22 966 км² - площадь страны"
+        ],
+        "id": 17
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/30", "https://u.fifty.su/img/countries/31"],
+        "answers": ["Бельгия"],
+        "facts": [
+            "Член НАТО и ЕС",
+            "Флаг состоит из трех вертикальных полос"
+        ],
+        "id": 18
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/32"],
+        "answers": ["Бенин"],
+        "facts": [
+            "В административном отношении делится на 12 департаментов",
+            "Французский - официальный язык страны"
+        ],
+        "id": 19
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/33", "https://u.fifty.su/img/countries/34"],
+        "answers": ["Болгария"],
+        "facts": [
+            "Страна делится на 28 областей",
+            "+359 - телефонный код страны"
+        ],
+        "id": 20
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/35", "https://u.fifty.su/img/countries/36"],
+        "answers": ["Боливия"],
+        "facts": [
+            "Страна имеет 37 официальных государственных языков",
+            "Площадь этой страны составляет 1 098 581 км²"
+        ],
+        "id": 21
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/37", "https://u.fifty.su/img/countries/38"],
+        "answers": ["Босния и Герцеговина"],
+        "facts": [
+            "Население страны - чуть более 3 миллионов человек",
+            "Член ООН с 1992 года"
+        ],
+        "id": 22
     }
 ]
