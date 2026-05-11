@@ -65,7 +65,10 @@ module.exports = {
 		const row = new ActionRowBuilder()
 			.addComponents(ach_button, games_button);
 
-			let text = ach.filter(x => user.ach.includes(x.id)).map(x => `${x.badge} | ${x.name}`).join("\n");
+			let text = user.ach.map(id => {
+				const achievement = ach.find(x => x.id === id);
+				return achievement ? `${achievement.badge} | ${achievement.name}` : '';
+			}).join("\n");
 			const ach_embed = new EmbedBuilder()
 			.setTitle(`Достижения ${_user.username}`)
 			.setThumbnail(`https://cdn.discordapp.com/avatars/${_user.id}/${_user.avatar}.webp?size=4096`)
