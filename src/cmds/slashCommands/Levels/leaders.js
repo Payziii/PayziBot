@@ -38,7 +38,7 @@ module.exports = {
 		}
 
 		top10.forEach((user, index) => {
-			lvlMess += `${index + 1}. <@${user.user}> — Уровень: **${user.level}** — XP: **${user.xp}**\n`;
+			lvlMess += `${index == 0 ? '🥇' : index == 1 ? '🥈' : index == 2 ? '🥉' : `${index + 1}. `} <@${user.user}> — Уровень: **${user.level}** — XP: **${user.xp}**\n`;
 		});
 
 		if (top10.length === 0) {
