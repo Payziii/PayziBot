@@ -53,7 +53,7 @@ module.exports = {
 
 		Game.on('gameOver', result => {
 			if(result.score >= 50) {
-				CheckAch(2, interaction.user.id, interaction.channel)
+				CheckAch(2, interaction.user.id, interaction.channel, guild)
 			}
 		  });
 	},

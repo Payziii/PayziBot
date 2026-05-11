@@ -33,7 +33,7 @@ module.exports = {
 			.replace('{guild.channelCount}', message.guild.channels.cache.size)
 			.replace('{guild.boosts}', message.guild.premiumSubscriptionCount);
 		message.reply(answer);
-		CheckAch(5, message.author.id, message.channel)
+		CheckAch(5, message.author.id, message.channel, guild)
 		client.cmdsUsed++;
 	},
 };

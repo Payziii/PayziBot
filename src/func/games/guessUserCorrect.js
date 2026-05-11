@@ -1,8 +1,10 @@
 const User = require('../../database/user.js');
+const Guild = require('../../database/guild.js');
 const { CheckAch } = require('./giveAch.js');
 
 async function Correct(game, id, channel) {
     const user = await User.findOne({ userID: id });
+    const guild = await Guild.findOne({ guildID: channel.guild.id });
     if (!user) return;
 
     switch (game) {
@@ -12,7 +14,7 @@ async function Correct(game, id, channel) {
 
         case 'city':
             if (user.games.city >= 49) {
-                CheckAch(1, id, channel, user);
+                CheckAch(1, id, channel, guild, user);
             }
             user.games.city++;
             break;
@@ -27,7 +29,7 @@ async function Correct(game, id, channel) {
 
         case 'country':
             if (user.games.country >= 110) {
-                CheckAch(10, id, channel, user);
+                CheckAch(10, id, channel, guild, user);
             }
             user.games.country++;
             break;

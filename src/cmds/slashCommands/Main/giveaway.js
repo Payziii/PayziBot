@@ -120,7 +120,7 @@ module.exports = {
 					}
 				}).then((data) => {
 					interaction.editReply(`${emojis.gift} | Розыгрыш начался. ID розыгрыша: \`${data.messageId}\`\n-# Сохраните ID для выбора нового победителя или досрочного окончания`)
-					CheckAch(8, interaction.user.id, interaction.channel)
+					CheckAch(8, interaction.user.id, interaction.channel, guild)
 				}).catch((err) => {
 					console.log(err)
 					interaction.editReply(`${emojis.error} | Неизвестная ошибка`)

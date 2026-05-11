@@ -28,10 +28,10 @@ module.exports = {
           { name: 'Grok-2', value: 'grok-2' }
         )
     ),
-  async execute(interaction) {
+  async execute(interaction, guild) {
     await interaction.deferReply();
 
-    CheckAch(14, interaction.user.id, interaction.channel)
+    CheckAch(14, interaction.user.id, interaction.channel, guild)
 
     const model = interaction.options.getString('модель');
     const text = interaction.options.getString('запрос');

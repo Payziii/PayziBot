@@ -45,7 +45,7 @@ module.exports = {
 		if (!user) return interaction.reply(`${emojis.error} | Напиши команду ещё раз!`);
 
 		// date = new Date()
-		// if((date.getMonth() == 11 && date.getDate() >= 25) || (date.getMonth() == 0 && date.getDate() <= 5)) CheckAch(15, interaction.user.id, interaction.channel, user)
+		// if((date.getMonth() == 11 && date.getDate() >= 25) || (date.getMonth() == 0 && date.getDate() <= 5)) CheckAch(15, interaction.user.id, interaction.channel, guild, user)
 
 		if(user.block >= 4) return interaction.reply(`${emojis.error} | Вы получили блокировку своего аккаунта. Обратитесь на сервер поддержки для выяснения причины и дальнейших действий!`); // Доступ запрещён
 

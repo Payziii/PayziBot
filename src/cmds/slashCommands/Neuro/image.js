@@ -40,7 +40,7 @@ module.exports = {
                 content: `🖼️ Вот ваша замечательная картинка!\n-# Запрос: ${text.replace('`', '\`')}`,
                 files: [{ attachment: image, name: 'image.png' }]
             })
-            CheckAch(9, interaction.user.id, interaction.channel, user)
+            CheckAch(9, interaction.user.id, interaction.channel, guild, user)
         }
 
         if (model === 'flux') {

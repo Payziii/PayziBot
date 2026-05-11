@@ -41,7 +41,7 @@ module.exports = {
 				.then(message => {
 					guild.starboard.data.set(react.message.id, message.id);
 					guild.save();
-					CheckAch(4, react.message.author.id, react.message.channel)
+					CheckAch(4, react.message.author.id, react.message.channel, guild)
 				})
 				.catch(e => console.log(e));
 		}

@@ -39,7 +39,7 @@ module.exports = {
 
 		Game.on('gameOver', result => {
 			if(result.result == 'win') {
-				CheckAch(0, interaction.user.id, interaction.channel)
+				CheckAch(0, interaction.user.id, interaction.channel, guild)
 			}
 		  });
 	},

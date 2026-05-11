@@ -33,7 +33,7 @@ module.exports = {
 
 		Game.on('gameOver', result => {
 			if(result.score >= 2048) {
-				CheckAch(11, interaction.user.id, interaction.channel)
+				CheckAch(11, interaction.user.id, interaction.channel, guild)
 			}
 		  });
 	},

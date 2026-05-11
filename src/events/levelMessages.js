@@ -2,6 +2,7 @@ const { Events } = require('discord.js');
 const { getLevelGuild, getLevelUserByGuild, MathNextLevel, putLevelUser, getRolesByLevelRange } = require('../database/levels.js');
 const { randomIntFromInterval } = require('../func/random.js');
 const { CheckAch } = require('../func/games/giveAch.js');
+const Guild = require('../database/guild.js');
 
 function giveRole(message, role, level) {
 	if (role == undefined) return;
@@ -23,6 +24,8 @@ module.exports = {
 	async execute(message, client) {
 		if (message.author.bot) return; // Ботов не обслуживаем
 
+		const g = await Guild.findOne({ guildID: message.guild.id });
+
 		const guild = await getLevelGuild(message.guild.id);
 		if (!guild.enabled) return; // Дальше только сервера с включенной лвл-системой
 		const user = await getLevelUserByGuild(message.guild.id, message.author.id);
@@ -36,7 +39,7 @@ module.exports = {
 		}
 
 		if(user.level > oldLevel) {
-			if (user.level >= 100) CheckAch(12, message.author.id, message.channel)
+			if (user.level >= 100) CheckAch(12, message.author.id, message.channel, g)
 			if (guild.messageEnabled) {
 				if (guild.channelID === '-1') {
 					message.channel.send(guild.message.replace('{user.mention}', message.author)
