@@ -4,6 +4,7 @@ const games = require('../../../func/games/guessCounting.js');
 const give = require('../../../func/games/guessUserCorrect.js');
 const logo = require('../../../games_src/guess/logos.json');
 const gamesData = require('../../../games_src/guess/games.json');
+const countriesData = require('../../../games_src/guess/countries.json');
 
 module.exports = {
     category: 'games',
@@ -32,6 +33,11 @@ module.exports = {
             subcommand
                 .setName('game')
                 .setDescription('Угадайте игру по скриншоту')
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('country')
+                .setDescription('Угадайте страну по фото и факту')
         ),
     async execute(interaction, guild) {
         await interaction.deferReply();
@@ -148,6 +154,62 @@ module.exports = {
                         .catch(() => {
                             const embed5 = new EmbedBuilder()
                                 .setTitle(`Угадайте игру`)
+                                .setDescription(`Ответ: **${item.answers[0]}**`)
+                                .setImage(image)
+                                .setColor(guild.colors.error);
+
+                            interaction.followUp({ content: 'К сожалению, победителей нет...', embeds: [embed5] });
+                        });
+                });
+        }
+
+        if (interaction.options.getSubcommand() === 'country') {
+            const name = 'country';
+
+            const item = countriesData[Math.floor(Math.random() * countriesData.length)];
+            const image = item.images[Math.floor(Math.random() * item.images.length)];
+            const fact = item.facts[Math.floor(Math.random() * item.facts.length)];
+
+            const collectorFilter = response => {
+                return item.answers.some(
+                    answer => answer.toLowerCase() === response.content.toLowerCase()
+                );
+            };
+
+            games.gameGiveAll(name, item.id);
+            const percent = await games.gameGetPercent(name, item.id);
+
+            let podsk = '';
+            if (percent < 50) podsk = '\nПодсказка: **' + Gen(item.answers[0]) + '**';
+
+            const embed = new EmbedBuilder()
+                .setTitle('Угадайте страну')
+                .setDescription(`У вас есть **30 секунд** чтобы угадать страну по фото из Google-карт и факту ниже\n📌 Факт: *${fact}*${podsk}`)
+                .setImage(image)
+                .setFooter({ text: `Страну угадали ${percent}% пользователей` })
+                .setColor(guild.colors.basic);
+
+            interaction.editReply({ embeds: [embed], fetchReply: true })
+                .then(() => {
+                    interaction.channel
+                        .awaitMessages({ filter: collectorFilter, max: 1, time: 30000, errors: ['time'] })
+                        .then(collected => {
+                            const embed1 = new EmbedBuilder()
+                                .setTitle('Угадайте страну')
+                                .setDescription(`Ответ: **${item.answers[0]}**`)
+                                .setImage(image)
+                                .setColor(guild.colors.correct);
+                                
+                            interaction.followUp({
+                                content: `Победитель: **${collected.first().author}**`,
+                                embeds: [embed1],
+                            });
+                            give.Correct('country', collected.first().author.id);
+                            games.gameGiveVerno(name, item.id);
+                        })
+                        .catch(() => {
+                            const embed5 = new EmbedBuilder()
+                                .setTitle('Угадайте страну')
                                 .setDescription(`Ответ: **${item.answers[0]}**`)
                                 .setImage(image)
                                 .setColor(guild.colors.error);
