@@ -1,5 +1,6 @@
 require('dotenv').config();
 const { Client, GatewayIntentBits, Collection, ActivityType, Partials } = require('discord.js');
+const { GiveawaysManager } = require('discord-giveaways');
 const fs = require('node:fs');
 const path = require('node:path');
 const mongoose = require('mongoose');
@@ -108,7 +109,6 @@ client.on('ready', async () => {
 	}
 });
 
-const { GiveawaysManager } = require('discord-giveaways');
 const GiveawayManagerWithOwnDatabase = class extends GiveawaysManager {
 	async getAllGiveaways() {
 		return await Giveaway.find().lean().exec();
