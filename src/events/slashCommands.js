@@ -59,7 +59,7 @@ module.exports = {
 		}
 		const now = Date.now();
 		let coef = 1;
-		if(user.block >= 3) coef = 2;
+		if(user.block >= 3) coef = 3;
 		const timestamps = cooldowns.get(cmd.data.name);
 		const cooldownAmount = (cmd.cooldown ?? 1) * 1000*coef;
 
