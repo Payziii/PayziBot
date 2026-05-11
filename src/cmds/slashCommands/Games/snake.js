@@ -20,7 +20,7 @@ module.exports = {
 				.setDescription('Высота поля (5-10)')
 				.setMinValue(5)
 				.setMaxValue(10)),
-	async execute(interaction, guild) {
+	async execute(interaction, guild, user) {
 		await interaction.deferReply();
 		const h = interaction.options.getInteger('высота') || 10;
 		const w = interaction.options.getInteger('ширина') || 10;
@@ -53,7 +53,7 @@ module.exports = {
 
 		Game.on('gameOver', result => {
 			if(result.score >= 50) {
-				CheckAch(2, interaction.user.id, interaction.channel, guild)
+				CheckAch(2, interaction.user.id, interaction.channel, guild, user)
 			}
 		  });
 	},

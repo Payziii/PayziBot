@@ -14,7 +14,7 @@ module.exports = {
 				.setDescription('Количество мин на карте (1-23)')
 				.setMinValue(1)
 				.setMaxValue(23)),
-	async execute(interaction, guild) {
+	async execute(interaction, guild, user) {
 		await interaction.deferReply();
 		let count = interaction.options.getInteger('количество');
 		if (count == null) count = 5;
@@ -39,7 +39,7 @@ module.exports = {
 
 		Game.on('gameOver', result => {
 			if(result.result == 'win') {
-				CheckAch(0, interaction.user.id, interaction.channel, guild)
+				CheckAch(0, interaction.user.id, interaction.channel, guild, user)
 			}
 		  });
 	},

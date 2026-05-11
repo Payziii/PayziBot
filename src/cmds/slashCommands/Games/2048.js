@@ -8,7 +8,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('2048')
 		.setDescription('Игра 2048'),
-	async execute(interaction, guild) {
+	async execute(interaction, guild, user) {
 		await interaction.deferReply();
 
 		const Game = new TwoZeroFourEight({
@@ -33,7 +33,7 @@ module.exports = {
 
 		Game.on('gameOver', result => {
 			if(result.score >= 2048) {
-				CheckAch(11, interaction.user.id, interaction.channel, guild)
+				CheckAch(11, interaction.user.id, interaction.channel, guild, user)
 			}
 		  });
 	},
