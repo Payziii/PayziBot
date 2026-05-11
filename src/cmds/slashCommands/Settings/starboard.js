@@ -64,7 +64,7 @@ module.exports = {
       }else if (interaction.options.getSubcommand() === 'channel-set') {
         channel = interaction.options.getChannel('канал')
         let warning = '';
-        if (!channel.permissionsFor(interaction.guild.members.me).has(['SendMessages', 'ViewChannel'])) return interaction.followUp(`${emojis.error} | Для отправки сообщений мне необходимо иметь права \`Отправлять сообщения\` и \`Просматривать канал\` в выбранном канале!`)
+        if (!channel.permissionsFor(interaction.guild.members.me).has(['SendMessages', 'ViewChannel', 'EmbedLinks'])) return interaction.followUp(`${emojis.error} | Для отправки сообщений мне необходимо иметь права \`Отправлять сообщения\`, \`Встраивать ссылки\` и \`Просматривать канал\` в выбранном канале!`)
         if(!channel.nsfw) warning = '\n\nУчтите, что в выбранный канал не будут отправляться сообщения из NSFW каналов, потому что он не помечен как NSFW.';
         guild.starboard.channelID = channel.id;
         guild.save()
