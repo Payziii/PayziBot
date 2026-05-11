@@ -412,5 +412,41 @@
             "Член ЕС, НАТО и ООН"
         ],
         "id": 46
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/74", "https://u.fifty.su/img/countries/75"],
+        "answers": ["Грузия"],
+        "facts": [
+            "9 апреля 1991 года вышла из состава СССР",
+            "UTC+4 - часовой пояс страны"
+        ],
+        "id": 47
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/76", "https://u.fifty.su/img/countries/77"],
+        "answers": ["Дания"],
+        "facts": [
+            "5 962 689 человек - население страны",
+            "67 км - протяженность границы с Германией"
+        ],
+        "id": 48
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/78", "https://u.fifty.su/img/countries/79"],
+        "answers": ["Египет"],
+        "facts": [
+            "Арабский - официальный язык страны",
+            "Омывается на севере Средиземным морем"
+        ],
+        "id": 49
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/80", "https://u.fifty.su/img/countries/81"],
+        "answers": ["Израиль"],
+        "facts": [
+            "Государственный язык — иврит",
+            "На севере граничит с Ливаном"
+        ],
+        "id": 50
     }
 ]
