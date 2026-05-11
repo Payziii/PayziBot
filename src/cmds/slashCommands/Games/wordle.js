@@ -1,5 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
 const { emojis } = require('../../../config.js');
+const { CheckAch } = require('../../../func/games/giveAch.js');
 
 const words = require('../../../games_src/wordle.json');
 
@@ -11,7 +12,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('wordle')
 		.setDescription('Игра, в которой требуется угадать 5-ти буквенное слово'),
-	async execute(interaction, guild) {
+	async execute(interaction, guild, user) {
 		await interaction.deferReply();
 
 		const gameState = {
@@ -85,6 +86,7 @@ module.exports = {
 
 			if (guess === game.word) {
 				gameWon(interaction, game, response, guild);
+				CheckAch(16, interaction.user.id, interaction.channel, guild, user);
 				games.delete(interaction.channelId);
 				messageCollector.stop();
 				collector.stop();
