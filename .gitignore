@@ -4,15 +4,15 @@ node_modules/
 # env
 .env
 
-# данные для нейросети
+# данные для OCR
 eng.traineddata
 rus.traineddata
 
-# данные уровней
+# база данных уровней
 levels-db/
 
-# также
+# конфигурация ESLint
 .eslintrc.json
 
-# статистика за день
+# ежедневная статистика
 stats/
