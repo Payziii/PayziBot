@@ -1,7 +1,10 @@
 const {
   SlashCommandBuilder,
   EmbedBuilder,
-  AttachmentBuilder
+  AttachmentBuilder,
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
 } = require("discord.js");
 const { emojis } = require("../../../config.js");
 const minecraft = require("../../../func/apis/minecraft.js");
@@ -29,7 +32,7 @@ module.exports = {
         .addStringOption((option) =>
           option
             .setName("ник")
-            .setDescription("Никнейм игрока")
+            .setDescription("Никнейм игрока или его UUID")
             .setRequired(true)
         )),
   async execute(interaction, guild) {
@@ -62,12 +65,16 @@ module.exports = {
         const embed = new EmbedBuilder()
           .setTitle(r?.data?.player?.username || "Неизвестный игрок")
           .setDescription(`UUID: \`${r?.data?.player?.id}\``)
-          .addFields(
-            { name: "Скин", value: `[Скачать](${r?.data?.player?.skin_texture})`, inline: true },
-          )
           .setThumbnail(r?.data?.player?.avatar)
           .setColor(guild.colors.basic)
-        interaction.editReply({ embeds: [embed] });
+        
+        const skin = new ButtonBuilder()
+        .setLabel("Скачать скин")
+        .setURL(r?.data?.player?.skin_texture)
+        .setStyle(ButtonStyle.Link);
+
+        const row = new ActionRowBuilder().addComponents(skin);
+        interaction.editReply({ embeds: [embed], components: [row] });
       });
     }
   },
