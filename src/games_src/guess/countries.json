@@ -196,5 +196,221 @@
             "Член ООН с 1992 года"
         ],
         "id": 22
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/39", "https://u.fifty.su/img/countries/40"],
+        "answers": ["Ботсвана"],
+        "facts": [
+            "Чуть больше 500 тысяч км² - площадь страны",
+            "В стране используется валюта - пула"
+        ],
+        "id": 23
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/41", "https://u.fifty.su/img/countries/42"],
+        "answers": ["Бразилия"],
+        "facts": [
+            "Состоит в БРИКС",
+            "7 сентября 1822 года провозгласила независимость от Португалии"
+        ],
+        "id": 24
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/43"],
+        "answers": ["Бруней"],
+        "facts": [
+            "1 января 1984 года провозгласил независимость от Великобритании",
+            "В течение всего года сохраняется экваториальный, жаркий и влажный климат"
+        ],
+        "id": 25
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/44"],
+        "answers": ["Буркина-Фасо"],
+        "facts": [
+            "Население страны около 20 миллионов человек",
+            "Столица страны - Уагадугу"
+        ],
+        "id": 26
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/45"],
+        "answers": ["Бурунди"],
+        "facts": [
+            "1 июля 1962 года получила независимость от Бельгии",
+            "Не имеет выхода к морю"
+        ],
+        "id": 27
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/46"],
+        "answers": ["Бутан"],
+        "facts": [
+            "Граничит с Китаем",
+            "Дзонг-кэ - официальный язык страны"
+        ],
+        "id": 28
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/47", "https://u.fifty.su/img/countries/48"],
+        "answers": ["Вануату"],
+        "facts": [
+            ".vu - домен верхнего уровня страны",
+            "Площадь суши составляет 12 190 км²"
+        ],
+        "id": 29
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/49", "https://u.fifty.su/img/countries/50", "https://u.fifty.su/img/countries/51"],
+        "answers": ["Великобритания"],
+        "facts": [
+            "Английский - официальный язык страны",
+            "В стране левостороннее движение"
+        ],
+        "id": 30
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/52", "https://u.fifty.su/img/countries/53"],
+        "answers": ["Венгрия"],
+        "facts": [
+            "Член ЕС с 2004 года",
+            "Имеет сухопутную границу с Украиной"
+        ],
+        "id": 31
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/54"],
+        "answers": ["Венесуэла"],
+        "facts": [
+            "916 445 км² - площадь страны",
+            "Омывается Карибским морем и Атлантическим океаном на севере"
+        ],
+        "id": 32
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/55"],
+        "answers": ["Восточный Тимор"],
+        "facts": [
+            "Столица - Дили",
+            "14 874 км² - площадь страны"
+        ],
+        "id": 33
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/56", "https://u.fifty.su/img/countries/57"],
+        "answers": ["Вьетнам"],
+        "facts": [
+            "2 июля 1976 было объединено из 2 других государств",
+            "UTC+7 - часовой пояс страны"
+        ],
+        "id": 34
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/58"],
+        "answers": ["Габон"],
+        "facts": [
+            "Французский - официальный язык страны",
+            "UTC+1 - часовой пояс страны"
+        ],
+        "id": 35
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/59"],
+        "answers": ["Гаити"],
+        "facts": [
+            "Французский - один из официальных языков страны",
+            ".ht - домен верхнего уровня страны"
+        ],
+        "id": 36
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/60"],
+        "answers": ["Гайана"],
+        "facts": [
+            "63,822 млрд долларов США - ВВП страны",
+            "В стране левостороннее движение"
+        ],
+        "id": 37
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/61"],
+        "answers": ["Гамбия"],
+        "facts": [
+            "Омывается Атлантическим океаном на западе",
+            "Является самым маленьким государством на этом континенте"
+        ],
+        "id": 38
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/62"],
+        "answers": ["Гана"],
+        "facts": [
+            "Столица — Аккра",
+            "Расположена в субэкваториальном поясе"
+        ],
+        "id": 39
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/63"],
+        "answers": ["Гватемала"],
+        "facts": [
+            "Испанский - официальный язык страны",
+            "UTC-6 - часовой пояс страны"
+        ],
+        "id": 40
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/64"],
+        "answers": ["Гвинея"],
+        "facts": [
+            "Государство в Западной Африке",
+            "UTC±0 - часовой пояс страны"
+        ],
+        "id": 41
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/65"],
+        "answers": ["Гвинея-Бисау"],
+        "facts": [
+            "Государство в Западной Африке",
+            "UTC±0 - часовой пояс страны"
+        ],
+        "id": 42
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/66", "https://u.fifty.su/img/countries/67", "https://u.fifty.su/img/countries/68"],
+        "answers": ["Германия"],
+        "facts": [
+            "Немецкий - официальный язык страны",
+            "Член НАТО, ЕС и G7"
+        ],
+        "id": 43
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/69"],
+        "answers": ["Гондурас"],
+        "facts": [
+            "Тегусигальпа - столица страны",
+            "Расположена в центральной части Центральной Америки"
+        ],
+        "id": 44
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/70"],
+        "answers": ["Гренада"],
+        "facts": [
+            "7 февраля 1974 года получила независимость от Великобритании",
+            "Английский - официальный язык страны"
+        ],
+        "id": 45
+    },
+    {
+        "images": ["https://u.fifty.su/img/countries/71", "https://u.fifty.su/img/countries/72", "https://u.fifty.su/img/countries/73"],
+        "answers": ["Греция"],
+        "facts": [
+            "Подразделяется на 13 периферий",
+            "Член ЕС, НАТО и ООН"
+        ],
+        "id": 46
     }
 ]
