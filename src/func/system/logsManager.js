@@ -2,7 +2,6 @@ const { channels } = require('../../config.js');
 
 class logsManager {
     constructor(client) {
-        super();
         this.client = client;
     }
 
