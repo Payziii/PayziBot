@@ -1,5 +1,6 @@
 const { Events } = require('discord.js');
 const Guild = require('../database/guild.js');
+const { replaceVars } = require('../func/system/variables.js');
 
 module.exports = {
 	name: Events.GuildMemberRemove,
@@ -16,14 +17,6 @@ module.exports = {
 		if (channel.guild.id != guild.id) return;
 
 		// Отправка сообщения
-		channel.send(g.leave.leaveText
-			.replace('{user.mention}', member)
-			.replace('{user.name}', member.user.username)
-			.replace('{user.id}', member.id)
-			.replace('{guild.name}', guild.name)
-			.replace('{guild.memberCount}', guild.members.cache.filter(c => c.user.bot == false).size)
-			.replace('{guild.botCount}', guild.members.cache.filter(c => c.user.bot == true).size)
-			.replace('{guild.channelCount}', guild.channels.cache.size)
-			.replace('{guild.boosts}', guild.premiumSubscriptionCount));
+		channel.send(replaceVars(g.leave.leaveText, { guild, member }));
 	},
 };
