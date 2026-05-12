@@ -1,6 +1,6 @@
 const { Events } = require('discord.js');
 const { getLevelGuild, getLevelUserByGuild, MathNextLevel, putLevelUser, getRolesByLevelRange } = require('../database/levels.js');
-const { randomIntFromInterval } = require('../func/random.js');
+const { randomInt } = require('crypto');
 const { CheckAch } = require('../func/games/giveAch.js');
 const Guild = require('../database/guild.js');
 
@@ -30,7 +30,7 @@ module.exports = {
 		if (!guild.enabled) return; // Дальше только сервера с включенной лвл-системой
 		const user = await getLevelUserByGuild(message.guild.id, message.author.id);
 		if (message.createdTimestamp - user.lastMessage < guild.interval * 1000) return; // Проверяем, прошло ли нужное количество времени между сообщениями
-		const xpToAdd = randomIntFromInterval(guild.xp.min, guild.xp.max); // Получаем количество xp, необходимые для выдачи
+		const xpToAdd = guild.xp.min == guild.xp.max ? guild.xp.min : randomInt(guild.xp.min, guild.xp.max); // Получаем количество xp, необходимые для выдачи
 
 		const oldLevel = user.level
 
