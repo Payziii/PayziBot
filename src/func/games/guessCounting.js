@@ -20,7 +20,7 @@ async function gameGiveVerno(name, id) {
 		if (!game) return;
 	}
 
-	game.verno++;
+	game.correct++;
 	game.save();
 }
 
@@ -32,7 +32,7 @@ async function gameGetPercent(name, id) {
 		if (!game) return;
 	}
 
-	const a = await game.verno;
+	const a = await game.correct;
 	let b = await game.all;
 	b = b != 0 ? b : 1;
 	const c = (a / b * 100).toFixed(0);
