@@ -28,6 +28,12 @@ class logsManager {
         .send(message)
         .catch(() => console.log(`ERROR | Failed to send a database log to the log channel`))
     }
+
+    async sendErrorLog(error, interaction) {
+        this.client.channels.cache.get(channels.errorLogs)
+        .send(`Ошибка в ${interaction.commandName}:\n\`\`\`js\n${error.stack}\`\`\``)
+        .catch(() => console.log(`ERROR | Failed to send an error log to the log channel`))
+    }
 }
 
 module.exports = logsManager;

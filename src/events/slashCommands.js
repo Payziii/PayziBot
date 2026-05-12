@@ -72,14 +72,13 @@ module.exports = {
 			client.cmdsDetailed.set(cmd.data.name, (client.cmdsDetailed.get(cmd.data.name) || 0) + 1);
 		}
 		catch (error) {
-			client.channels.cache.get(channels.errorLogs).send(`Ошибка в \`${cmd.data.name}\`: \`\`\`js\n${error.stack}\`\`\``);
+			client.logsManager.sendErrorLog(error, interaction);
 			if (interaction.replied || interaction.deferred) {
-				interaction.editReply(`${emojis.error} | Произошла ошибка!\n\`\`\`js\n${error}\`\`\``);
+				interaction.editReply(`${emojis.error} | Произошли технические неполадки, но мы уже работаем над их устранением!`);
 			}
 			else {
-				interaction.reply(`${emojis.error} | Произошла ошибка!\n\`\`\`js\n${error}\`\`\``);
+				interaction.reply(`${emojis.error} |  Произошли технические неполадки, но мы уже работаем над их устранением!`);
 			}
-			console.log(error);
 		}
 	},
 };
