@@ -2,6 +2,7 @@
 const { inspect } = require('util');
 const config = require('../../config.js');
 const levelsDB = require('../../database/levels.js');
+let depth = 0;
 
 exports.run = async (client, message, args, guild, user) => {
 	const author = message.author.id;
@@ -15,7 +16,7 @@ exports.run = async (client, message, args, guild, user) => {
 		res = error;
 	}
 	await message.reply(
-		`\`\`\`js\n${inspect(res, { depth: 0 }).slice(0, 1900)}\n\`\`\``,
+		`\`\`\`js\n${inspect(res, { depth }).slice(0, 1900)}\n\`\`\``,
 	);
 };
 exports.help = {
