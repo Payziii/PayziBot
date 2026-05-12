@@ -12,7 +12,7 @@ async function gameGiveAll(name, id) {
 	game.save();
 }
 
-async function gameGiveVerno(name, id) {
+async function gameGiveCorrect(name, id) {
 	let game = await Game.findOne({ name: name, id: id });
 	if (!game) {
 		await Game.create({ name: name, id: id });
@@ -41,6 +41,6 @@ async function gameGetPercent(name, id) {
 
 module.exports = {
 	gameGiveAll,
-	gameGiveVerno,
+	gameGiveCorrect,
 	gameGetPercent,
 };

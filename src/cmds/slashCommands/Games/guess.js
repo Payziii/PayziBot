@@ -94,7 +94,7 @@ module.exports = {
                                 embeds: [embed1],
                             });
                             give.Correct('logo', collected.first().author.id);
-                            games.gameGiveVerno(name, item.id);
+                            games.gameGiveCorrect(name, item.id);
                         })
                         .catch(() => {
                             const embed5 = new EmbedBuilder()
@@ -149,7 +149,7 @@ module.exports = {
                                 embeds: [embed1],
                             });
                             give.Correct('game', collected.first().author.id);
-                            games.gameGiveVerno(name, item.id);
+                            games.gameGiveCorrect(name, item.id);
                         })
                         .catch(() => {
                             const embed5 = new EmbedBuilder()
@@ -205,7 +205,7 @@ module.exports = {
                                 embeds: [embed1],
                             });
                             give.Correct('country', collected.first().author.id);
-                            games.gameGiveVerno(name, item.id);
+                            games.gameGiveCorrect(name, item.id);
                         })
                         .catch(() => {
                             const embed5 = new EmbedBuilder()
