@@ -2,6 +2,7 @@ const { Events } = require('discord.js');
 const { channels } = require('../config.js');
 const BoticordService = require('../func/system/boticord.js');
 const dailyStatManager = require('../func/system/dailyStatManager.js');
+const logsManager = require('../func/system/logsManager.js');
 const { GiveReward } = require('../func/system/upAdded.js');
 const cron = require('node-cron');
 
@@ -10,6 +11,7 @@ module.exports = {
 	once: true,
 	execute(client) {
 		console.log(`ONLINE | Bot: ${client.user.username}`);
+		client.logsManager = new logsManager(client);
 		client.channels.cache.get(channels.startLogs)
 			.send(`<:Bot:732119152755474444> | **${client.user.username}** запущен с **${client.guilds.cache.size}** серверами`)
 			.catch(() => console.log(`ERROR | Failed to send a startup message to the log channel`))
@@ -30,9 +32,10 @@ module.exports = {
 
 		const dailyStat = new dailyStatManager(client);
 		dailyStat.loadTodayStatToClient();
-		setInterval(() => {
+
+		cron.schedule('*/15 * * * *', () => {
 			dailyStat.updateDailyStat();
-		}, 15 * 60 * 1000);
+		});
 
 		cron.schedule('0 0 * * *', () => {
 			dailyStat.clearClientDailyStats();
