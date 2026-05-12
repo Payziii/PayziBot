@@ -12,9 +12,7 @@ module.exports = {
 	execute(client) {
 		console.log(`ONLINE | Bot: ${client.user.username}`);
 		client.logsManager = new logsManager(client);
-		client.channels.cache.get(channels.startLogs)
-			.send(`<:Bot:732119152755474444> | **${client.user.username}** запущен с **${client.guilds.cache.size}** серверами`)
-			.catch(() => console.log(`ERROR | Failed to send a startup message to the log channel`))
+		client.logsManager.sendStartupMessage();
 
 		if(!process.env.BOTICORD_API_KEY) return console.log('Boticord service is not loaded. Please add boticord token in .env file')
 		
@@ -43,9 +41,7 @@ module.exports = {
 		});
 
 		dailyStat.on("statGenerated", (filePath) => {
-			client.channels.cache.get(channels.statLogs)
-			.send({files: [filePath]})
-			.catch(() => console.log(`ERROR | Failed to send daily stat to log channel`))
+			client.logsManager.sendDailyStat(filePath);
 		})
 	},
 };

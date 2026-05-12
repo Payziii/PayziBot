@@ -18,12 +18,7 @@ module.exports = {
 		// Если сервера нет, создаем
 		if (!guild) {
 			await Guild.create({ guildID: interaction.guild.id }).then(async () => {
-				client.channels.cache
-					.get(channels.dbLogs)
-					.send(
-						`${emojis.announcement} | Сервер ${interaction.guild.name}(${interaction.guild.id
-						}) успешно был добавлен в MongoDB`,
-					);
+				client.logsManager.sendDbLog(`${emojis.announcement} | Сервер ${interaction.guild.name}(${interaction.guild.id}) успешно был добавлен в MongoDB`);
 				guild = await Guild.findOne({ guildID: interaction.guild.id });
 			});
 		}
@@ -31,12 +26,7 @@ module.exports = {
 		// Также и с юзером
 		if (!user) {
 			await User.create({ userID: interaction.user.id }).then(async () => {
-				client.channels.cache
-					.get(channels.dbLogs)
-					.send(
-						`${emojis.members} | Пользователь ${interaction.user.username}(${interaction.user.id
-						}) успешно был добавлен в MongoDB. Первая команда \`${interaction.commandName}\``,
-					);
+				client.logsManager.sendDbLog(`${emojis.members} | Пользователь ${interaction.user.username}(${interaction.user.id}) успешно был добавлен в MongoDB. Первая команда \`${interaction.commandName}\``);
 				user = await User.findOne({ userID: interaction.user.id });
 			});
 		}
