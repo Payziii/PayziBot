@@ -1,6 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
 const os = require('os');
-const time = require('payzi-time');
 const { version } = require('../../../../package.json');
 const { emojis } = require('../../../config.js');
 const plural = require('../../../func/plural.js');
@@ -13,15 +12,9 @@ module.exports = {
 	async execute(interaction, guild) {
 		await interaction.deferReply();
 		const client = interaction.client;
-		const uptime = time(client.uptime);
-		const { days, hours, minutes, seconds } = uptime;
-		const bremya = days > 0 ? `${days} д. ${hours} ч. ${minutes} м.` :
-			hours > 0 ? `${hours} ч. ${minutes} м.` :
-				minutes > 0 ? `${minutes} м. ${seconds} сек.` :
-					`${seconds} сек.`;
 		const embed = new EmbedBuilder()
 			.setTitle(`PayziBot ${version}`)
-			.setDescription(`${emojis.arrow} Время работы: **${bremya}**\n${emojis.arrow} За день ${plural(client.cmdsUsed, "использована", "использовано", "использовано")} **${client.cmdsUsed} ${plural(client.cmdsUsed, "команда", "команды", "команд")}**`)
+			.setDescription(`${emojis.arrow} Бот запущен <t:${(new Date()/1000).toFixed(0) - (client.uptime/1000).toFixed(0)}:R>\n${emojis.arrow} За день ${plural(client.cmdsUsed, "использована", "использовано", "использовано")} **${client.cmdsUsed} ${plural(client.cmdsUsed, "команда", "команды", "команд")}**`)
 			.addFields(
 				{
 					name: 'Статистика',
