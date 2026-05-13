@@ -28,37 +28,32 @@ module.exports = {
 					value: `Серверов: **${client.guilds.cache.size}**\nКаналов: **${client.channels.cache.size}**\nПользователей: **${client.users.cache.size}**`,
 				},
 				{
-					name: 'Сервер',
-					value: `ОЗУ: \`${(process.memoryUsage().heapUsed / (1024 * 1024)).toFixed(0)} МБ\`/\`${(os.totalmem() / (1024 * 1024)).toFixed(0)} МБ\`\nWebSocket: \`${client.ws.ping}ms\`\nЦП: \`${os.cpus()[0].model}\``,
+					name: 'Система',
+					value: `CPU: \`${os.cpus()[0].model}\`\nRAM: \`${(process.memoryUsage().heapUsed / (1024 * 1024)).toFixed(0)} МБ\`/\`${(os.totalmem() / (1024 * 1024)).toFixed(0)} МБ\`\nWebSocket: \`${client.ws.ping}ms\``,
 				},
 			)
 			.setThumbnail(`https://cdn.discordapp.com/avatars/${interaction.client.user.id}/${interaction.client.user.avatar}.webp?size=4096`)
 			.setColor(guild.colors.basic);
-		const links = new EmbedBuilder()
-			.setTitle('Ссылки')
-			.setDescription(`${emojis.arrow} [Сервер поддержки](https://discord.gg/E7SFuVEB2Z)\n${emojis.arrow} [Добавить бота](https://discord.com/api/oauth2/authorize?client_id=576442351426207744&permissions=1411299798102&scope=bot)\n${emojis.arrow} [Документация](https://docs.payzibot.ru/)\n${emojis.arrow} [Исходный код](https://github.com/Payziii/PayziBot/)\n\n${emojis.arrow} [PayziBot на BotiCord](https://boticord.top/bot/payzibot)`)
-			.setThumbnail(`https://cdn.discordapp.com/avatars/${interaction.client.user.id}/${interaction.client.user.avatar}.webp?size=4096`)
-			.setColor(guild.colors.basic);
 		const link_button = new ButtonBuilder()
-			.setCustomId('link_button')
-			.setLabel('Ссылки')
-			.setStyle(ButtonStyle.Secondary);
+			.setLabel("Сервер поддержки")
+			.setURL("https://discord.gg/E7SFuVEB2Z")
+			.setStyle(ButtonStyle.Link);
+		const link_button2 = new ButtonBuilder()
+			.setLabel("Добавить бота")
+			.setURL("https://discord.com/api/oauth2/authorize?client_id=576442351426207744&permissions=1411299798102&scope=bot")
+			.setStyle(ButtonStyle.Link);
+		const link_button3 = new ButtonBuilder()
+			.setLabel("Сайт")
+			.setURL("https://payzibot.ru/")
+			.setStyle(ButtonStyle.Link);
+		const link_button4 = new ButtonBuilder()
+			.setLabel("Исходный код")
+			.setURL("https://github.com/Payziii/PayziBot/")
+			.setStyle(ButtonStyle.Link);
+		
 		const row = new ActionRowBuilder()
-			.addComponents(link_button);
+			.addComponents(link_button, link_button2, link_button3, link_button4);
 
-		const response = await interaction.editReply({ embeds: [embed], components: [row] });
-		const collectorFilter = i => i.user.id === interaction.user.id;
-		try {
-			const confirmation = await response.awaitMessageComponent({ filter: collectorFilter, time: 60_000 });
-
-			if (confirmation.customId === 'link_button') {
-				await interaction.editReply({ embeds: [links], components: [] });
-			}
-
-		}
-		catch (e) {
-			if (e.message.includes('messageDelete')) return;
-			await interaction.editReply({ embeds: [embed], components: [] });
-		}
+		await interaction.editReply({ embeds: [embed], components: [row] });
 	},
 };
