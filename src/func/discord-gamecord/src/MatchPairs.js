@@ -109,16 +109,25 @@ module.exports = class MatchPairs extends events {
   gameOver(msg, result) {
     const MatchPairsGame = { player: this.message.author, tilesTurned: this.tilesTurned, remainingPairs: this.remainingPairs };
     const GameOverMessage = result ? this.options.winMessage : this.options.loseMessage;
-    this.emit('gameOver', { result: (result ? 'win' : 'lose'), ...MatchPairsGame });
+    this.emit('gameOver', { result: (result ? 'win' : 'lose'), time: this.getGameOverTime(true), ...MatchPairsGame });
 
 
     const embed = new EmbedBuilder()
     .setColor(this.options.embed.color)
     .setTitle(this.options.embed.title)
-    .setDescription(GameOverMessage.replace('{tilesTurned}', this.tilesTurned))
+    .setDescription(GameOverMessage.replace('{tilesTurned}', this.tilesTurned).replace('{time}', this.getGameOverTime()))
     .setAuthor({ name: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) });
 
     return msg.edit({ embeds: [embed], components: disableButtons(this.components) });
+  }
+
+  getGameOverTime(isRawMinutes = false) {
+    const ms = this.message.editedTimestamp ? (this.message.editedTimestamp - this.message.createdTimestamp) : (Date.now() - this.message.createdTimestamp);
+    let min = Math.floor(ms / 60000);
+    let sec = Math.floor((ms % 60000) / 1000);
+    let mil = ms % 1000;
+    if(isRawMinutes) return Math.floor(ms / 60000);
+    return `${min} мин ${sec} сек ${mil} мс`
   }
 
 

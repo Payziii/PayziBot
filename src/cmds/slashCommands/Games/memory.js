@@ -20,7 +20,7 @@ module.exports = {
 			},
 			timeoutTime: 60000,
 			emojis: ['❄️', '🎁', '🔗', '🔋', '🔥', '🍏', '💳', '💎', '🍓', '🎨', '🍍', '⛄', '🎩', '⭐', '🚀', '💚'],
-			winMessage: 'Вы выиграли!',
+			winMessage: 'Вы нашли все пары за {time}!',
 			loseMessage: 'Вы проиграли. Как жаль...',
 			playerOnlyMessage: 'Это игра пользователя {player}.',
 		});
