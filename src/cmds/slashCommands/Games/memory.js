@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { MatchPairs } = require('../../../func/discord-gamecord');
+const { CheckAch } = require('../../../func/games/giveAch.js');
 
 module.exports = {
 	category: 'games',
@@ -7,7 +8,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('memory')
 		.setDescription('Найдите пары'),
-	async execute(interaction, guild) {
+	async execute(interaction, guild, user) {
 		await interaction.deferReply();
 
 		const Game = new MatchPairs({
@@ -21,10 +22,16 @@ module.exports = {
 			timeoutTime: 60000,
 			emojis: ['❄️', '🎁', '🔗', '🔋', '🔥', '🍏', '💳', '💎', '🍓', '🎨', '🍍', '⛄', '🎩', '⭐', '🚀', '💚'],
 			winMessage: 'Вы нашли все пары за {time}!',
-			loseMessage: 'Вы проиграли. Как жаль...',
+			loseMessage: 'К сожалению, время вышло. Вы не смогли найти все пары.',
 			playerOnlyMessage: 'Это игра пользователя {player}.',
 		});
 
 		Game.startGame();
+
+		Game.on('gameOver', result => {
+			if(result.time < 2) {
+				CheckAch(17, interaction.user.id, interaction.channel, guild, user)
+			}
+		  });
 	},
 };
