@@ -70,6 +70,8 @@ module.exports = {
                 page++;
             }
 
+            allRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+
             const PER_PAGE = 10;
             const totalPages = Math.max(1, Math.ceil(allRepos.length / PER_PAGE));
             let currentPage = 0;
