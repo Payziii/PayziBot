@@ -14,7 +14,10 @@ module.exports = {
 		),
 	async execute(interaction, guild) {
 		const user = interaction.options.getUser('пользователь') || interaction.user;
-		const url = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.webp?size=4096`;
+		const bannerUrl = await interaction.client.users.fetch(user.id, { force: true }).then((user) => {
+			return user.bannerURL({ size: 1024, dynamic: true });
+		})
+		const avatarUrl = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.webp?size=4096`;
 		const status = {
 			offline: '<:offline:674463290755252277>',
 			online: '<:online:674463345625268225>',
@@ -63,7 +66,7 @@ module.exports = {
 			.setTitle(`${status[member.presence?.status ?? 'offline']} ${user.username}`)
 			.setDescription(`${activity}
             ${emojis.arrow} Значки: ${user.flags.toArray().map(flag => flags[flag]).filter(Boolean).join(' ')}`)
-			.setThumbnail(url)
+			.setThumbnail(avatarUrl)
 			.addFields(
 				{
 					name: 'Дата регистрации',
@@ -81,6 +84,7 @@ module.exports = {
 				},
 			)
 			.setFooter({ text: `ID: ${user.id}` });
+			if(bannerUrl) embed.setImage(bannerUrl);
 		await interaction.reply({ embeds: [embed] });
 	},
 };
