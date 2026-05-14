@@ -43,6 +43,7 @@ const guild = Schema({
 	},
 	rr: { type: Map, default: [] },
 	customCommands: { type: Map, default: [] },
+	autoPublishingChannels: { type: Array, default: [] },
 });
 
 module.exports = model('Guild', guild);
