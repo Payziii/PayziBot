@@ -19,6 +19,10 @@ module.exports = {
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
         .addSubcommand(subcommand =>
           subcommand
+              .setName('overview')
+              .setDescription('Просмотр настроек звёздной доски'))
+        .addSubcommand(subcommand =>
+          subcommand
               .setName('off')
               .setDescription('Выключить звёздную доску'))
       .addSubcommand(subcommand =>
@@ -56,7 +60,10 @@ module.exports = {
             )),
     async execute(interaction, guild) {
       await interaction.deferReply();
-      if (interaction.options.getSubcommand() === 'off') {
+      if (interaction.options.getSubcommand() === 'overview') {
+        if(guild.starboard.channelID == '-1') return interaction.followUp(`${emojis.error} | Звёздная доска выключена!`);
+        interaction.followUp(`${emojis.success} | Звёздная доска **включена** в канале <#${guild.starboard.channelID}>\nДля публикации сообщения требуется поставить **${guild.starboard.reqReacts} ${guild.starboard.customReact}**`)
+      } else if (interaction.options.getSubcommand() === 'off') {
         if(guild.starboard.channelID == '-1') return interaction.followUp(`${emojis.error} | Звёздная доска и так выключена...`)
         guild.starboard.channelID = '-1';
         guild.save()
