@@ -18,6 +18,10 @@ module.exports = {
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
     .addSubcommand(subcommand =>
       subcommand
+        .setName('overview')
+        .setDescription('Просмотр настроек автореактинга'))
+    .addSubcommand(subcommand =>
+      subcommand
         .setName('off')
         .setDescription('Выключить автореактинг'))
     .addSubcommand(subcommand =>
@@ -49,12 +53,15 @@ module.exports = {
     ),
   async execute(interaction, guild) {
     await interaction.deferReply();
-    if (interaction.options.getSubcommand() === 'off') {
+    if(interaction.options.getSubcommand() === 'overview') {
+      if(guild.autoreact.channelID == '-1' && guild.autoreact.reacts.length == 0) return interaction.followUp(`${emojis.error} | Автореактинг выключен!`);
+      interaction.followUp(`${emojis.success} | Автореактинг **включён** в канале <#${guild.autoreact.channelID}> в ${guild.autoreact.mode === 'lineal' ? 'линейном' : 'случайном'} порядке с реакциями: ${guild.autoreact.reacts.join(', ')}`)
+    } else if (interaction.options.getSubcommand() === 'off') {
       if (guild.autoreact.channelID == '-1' && guild.autoreact.reacts.length == 0) return interaction.followUp(`${emojis.error} | Я думаю, автореактинг и так выключен...`)
       guild.autoreact.channelID = '-1';
       guild.autoreact.reacts = [];
       guild.save()
-      interaction.followUp('Автореактинг успешно выключен!')
+      interaction.followUp(`${emojis.success} Автореактинг успешно выключен!`)
     } else if (interaction.options.getSubcommand() === 'set') {
       channel = interaction.options.getChannel('канал')
       text = interaction.options.getString('реакции')
@@ -76,7 +83,7 @@ module.exports = {
           reaction = reaction.split(':')
           reaction[2] = reaction[2].slice(0, -1)
           let emoji = await interaction.guild.emojis.cache.find(emoji => emoji.name === reaction[1]);
-          if (!emoji || emoji.id != reaction[2]) return interaction.followUp(`${emojis.error}| Кажется вы используете эмодзи, которых нет на этом сервере...`)
+          if (!emoji || emoji.id != reaction[2]) return interaction.followUp(`${emojis.error} | Кажется вы используете эмодзи, которых нет на этом сервере...`)
         }
       }
       guild.autoreact.channelID = channel.id;
