@@ -24,19 +24,25 @@ module.exports = {
 
         let user = await User.findOne({ userID: _user.id });
         if (!user) return interaction.editReply(`${emojis.error} | К сожалению, пользователь \`${_user.username}\` не использовал бота!`);
-        let lvlMess;
+
         const g = await getLevelGuild(interaction.guild.id);
         if (!g.enabled) return interaction.editReply(`${emojis.error} | На сервере отключена система уровней. Для включения используйте команду \`/levels toggle\``);
+
         const us = await getLevelUserByGuild(interaction.guild.id, _user.id);
-        lvlMess = `Уровень: **${us.level}**\nДо следующего уровня: **${us.xp}**/**${MathNextLevel(us.level, g.xp.koeff)}** XP`;
+
         let prosh = MathNextLevel(us.level - 1, g.xp.koeff);
         if (prosh < 0) prosh = 0;
-        let prog = (us.xp - prosh) / (MathNextLevel(us.level, g.xp.koeff) - prosh);
-        let avatar = _user.displayAvatarURL({ extension: 'jpg' });
-        let canvas = await create(_user.username, us.level, prog, avatar);
-        let img = await canvas.encode('png');
+        const progress = (us.xp - prosh) / (MathNextLevel(us.level, g.xp.koeff) - prosh);
+        const nextLevel = MathNextLevel(us.level, g.xp.koeff);
+
+        const users = [...g.data].sort((a, b) => b.level - a.level || b.xp - a.xp);
+        const userPosition = users.findIndex(u => u.user === interaction.user.id) + 1;
+
+        const avatar = _user.displayAvatarURL({ extension: 'jpg' });
+        const canvas = await create(_user.username, us.level, progress, avatar, userPosition, us.xp, nextLevel);
+        const img = await canvas.encode('png');
         await interaction.editReply({
-            content: `${lvlMess}`,
+            content: `Уровень: **${us.level}**\nДо следующего уровня: **${us.xp}**/**${nextLevel}** XP`,
             files: [{attachment: img, name:"rank.png"}]
         });
     },
