@@ -24,6 +24,10 @@ module.exports = {
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
     .addSubcommand(subcommand =>
       subcommand
+        .setName('overview')
+        .setDescription('Просмотр настроек системы уровней'))
+    .addSubcommand(subcommand =>
+      subcommand
         .setName('toggle')
         .setDescription('Включить/Выключить систему уровней'))
     .addSubcommand(subcommand =>
@@ -115,8 +119,14 @@ module.exports = {
   async execute(interaction, guild) {
     const g = await getLevelGuild(interaction.guild.id);
 
+    // overview - Просмотр настроек системы уровней
+    if (interaction.options.getSubcommand() === 'overview') {
+      
+      if(!g.enabled) return interaction.reply(`${emojis.error} | На сервере отключена система уровней. Для включения используйте команду \`/levels toggle\``);
+      interaction.reply(`${emojis.success} | Система уровней **включена**!\n\nИнтервал между начислением опыта: **${g.interval}** секунд\nДиапазон XP за сообщение: от **${g.xp.min}** до **${g.xp.max}** XP\nКанал для оповещений о новом уровне: ${g.channelID != "-1" ? `<#${g.channelID}>` : "**не установлен** (оповещения отправляются в канал, где было отправлено сообщение)"}\nСообщение о новом уровне: \`\`\`${g.message}\`\`\`\nРоли за уровни:\n${g.roles.length > 0 ? g.roles.map(r => `<@&${r.roleId}> (**${r.level}** уровень)`).join(',\n') : "нет ролей"}`)
+
     // toggle - Включить/Выключить систему уровней
-    if (interaction.options.getSubcommand() === 'toggle') {
+  } else if (interaction.options.getSubcommand() === 'toggle') {
 
       await setLevelGuildEnabled(interaction.guild.id, !g.enabled)
       interaction.reply(`${emojis.success} Система уровней теперь **${!g.enabled ? 'включена' : 'выключена'}**!`)
