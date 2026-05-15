@@ -18,6 +18,10 @@ module.exports = {
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
     .addSubcommand(subcommand =>
       subcommand
+        .setName('overview')
+        .setDescription('Просмотр настроек приветственного сообщения'))
+    .addSubcommand(subcommand =>
+      subcommand
         .setName('off')
         .setDescription('Выключить прощальное сообщение'))
     .addSubcommand(subcommand =>
@@ -32,7 +36,13 @@ module.exports = {
             .setRequired(true)
         )),
   async execute(interaction, guild) {
-    if (interaction.options.getSubcommand() === 'off') {
+    if(interaction.options.getSubcommand() === 'overview') {
+      if (guild.leave.channelID == '-1') return interaction.reply(`${emojis.error} | Прощальное сообщение выключено`)
+      interaction.reply({
+        content: `${emojis.success} | Прощальное сообщение **включено**!\n\nКанал: <#${guild.leave.channelID}>\nТекст прощального сообщения: \`\`\`${guild.leave.leaveText}\`\`\``
+      })
+    }
+    else if (interaction.options.getSubcommand() === 'off') {
       if (guild.leave.channelID == '-1') return interaction.reply(`${emojis.error} | Прощальное сообщение уже выключено`)
       guild.leave.channelID = '-1';
       guild.save()
