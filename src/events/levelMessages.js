@@ -49,7 +49,7 @@ module.exports = {
 						.replace('{level}', user.level)
 						.replace('{xp}', user.xp)
 					)
-				}else{
+				}else {
 					const channel = message.guild.channels.cache.get(guild.channelID);
 					if (!channel) return;
 					if (!channel.permissionsFor(message.guild.members.me).has(['SendMessages', 'ViewChannel'])) return;
