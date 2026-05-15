@@ -93,6 +93,19 @@ async function setLevelGuildMessage(guildID, message) {
 
     return true;
 }
+/**
+ * Установить интервал между начислением опыта
+ * 
+ * @param {string} guildID 
+ * @param {number} interval
+ */
+async function setLevelGuildInterval(guildID, interval) {
+    const guild = await getLevelGuild(guildID);
+    guild.interval = interval;
+    levelsDB.put(guildID, guild);
+
+    return true;
+}
 
 /**
  * Обновить информацию о юзере
@@ -221,6 +234,7 @@ module.exports = {
     setLevelGuildEnabled,
     setLevelGuildChannel,
     setLevelGuildMessage,
+    setLevelGuildInterval,
     putLevelUser,
     resetLevelUser,
     getLevelUserByGuild,

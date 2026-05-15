@@ -13,7 +13,7 @@
 
 const { SlashCommandBuilder, PermissionFlagsBits, ChannelType, ModalBuilder, TextInputBuilder, TextInputStyle, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require("discord.js");
 const { emojis } = require('../../../config.js');
-const { setLevelGuildXp, setLevelGuildEnabled, resetLevelUser, getLevelGuild, setLevelGuildChannel, getLevelUserByGuild, putLevelUser, MathNextLevel, addRoleLevel } = require('../../../database/levels.js');
+const { setLevelGuildXp, setLevelGuildEnabled, resetLevelUser, getLevelGuild, setLevelGuildChannel, getLevelUserByGuild, putLevelUser, MathNextLevel, addRoleLevel, setLevelGuildInterval } = require('../../../database/levels.js');
 
 module.exports = {
   category: 'settings',
@@ -61,6 +61,17 @@ module.exports = {
             .setDescription('Уровень, который вы хотите установить')
             .setMinValue(1)
             .setMaxValue(1000)
+            .setRequired(true)))
+    .addSubcommand(subcommand =>
+      subcommand
+        .setName('set-interval')
+        .setDescription('Установить интервал между начислением опыта')
+        .addIntegerOption((option) =>
+          option
+            .setName('интервал')
+            .setDescription('Интервал между начислением опыта (в секундах)')
+            .setMinValue(1)
+            .setMaxValue(3600)
             .setRequired(true)))
     .addSubcommand(subcommand =>
       subcommand
@@ -186,9 +197,20 @@ module.exports = {
       user.xp = parseInt(xps)
       user.level = level
 
-      putLevelUser(interaction.guild.id, user)
+      await putLevelUser(interaction.guild.id, user)
 
       interaction.reply(`${emojis.success} Пользователю <@${_user.id}> успешно установлен **${level}** уровень (${xps} XP)`)
+
+      // set-interval - Установить интервал между начислением опыта
+    } else if (interaction.options.getSubcommand() === 'set-interval') {
+
+      if(!g.enabled) return interaction.reply(`${emojis.error} | На сервере отключена система уровней. Для включения используйте команду \`/levels toggle\``);
+
+      const interval = interaction.options.getInteger('интервал');
+
+      await setLevelGuildInterval(interaction.guild.id, interval);
+
+      interaction.reply(`${emojis.success} Интервал между начислением опыта установлен на **${interval}** секунд!`)
 
       // add-role-level - Создать новую роль за уровень
     } else if (interaction.options.getSubcommand() === 'add-role-level') {
@@ -207,7 +229,7 @@ module.exports = {
       if (role.tags?.integrationId || role.managed) return interaction.reply(`${emojis.error} | Роль управляется интеграцией`);
       if (role.id == interaction.guild.id) return interaction.reply(`${emojis.error} | Вы не можете установить роль everyone!`);
 
-      addRoleLevel(interaction.guild.id, role.id, level)
+      await addRoleLevel(interaction.guild.id, role.id, level)
 
       interaction.reply(`${emojis.success} С этого момента роль будет выдаваться всем пользователям, достигшим **${level}** уровня!`)
 
@@ -223,7 +245,7 @@ module.exports = {
       if(fix && min || fix && max) return interaction.reply(`${emojis.error} | Вы не можете использовать фиксированное количество XP вместе с диапазоном! Пожалуйста, выберите что-то одно!\тНапример, для установки 3 XP за уровень просто введите \`/levels set-xp-range фикс: 3\``);
 
       if(fix) {
-        setLevelGuildXp(interaction.guild.id, fix, fix);
+        await setLevelGuildXp(interaction.guild.id, fix, fix);
         return interaction.reply(`${emojis.success} С этого момента за каждое сообщение пользователи будут получать **${fix}** XP!`)
       }
 
@@ -231,7 +253,7 @@ module.exports = {
       if(min > max) return interaction.reply(`${emojis.error} | Минимальное количество XP не может быть больше максимального!`);
       if(max < min) return interaction.reply(`${emojis.error} | Максимальное количество XP не может быть меньше минимального!`);
 
-      setLevelGuildXp(interaction.guild.id, min, max);
+      await setLevelGuildXp(interaction.guild.id, min, max);
 
       interaction.reply(`${emojis.success} С этого момента за каждое сообщение пользователи будут получать от **${min}** до **${max}** XP!`)
     }
