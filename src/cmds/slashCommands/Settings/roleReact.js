@@ -20,6 +20,10 @@ module.exports = {
     .setName("rolereact")
     .setDescription("Настройки ролей за реакции")
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
+    .addSubcommand(subcommand =>
+      subcommand
+        .setName('overview')
+        .setDescription('Просмотр настроек ролей за реакции'))
     .addSubcommand((subcommand) =>
       subcommand
         .setName("delete")
@@ -63,24 +67,43 @@ module.exports = {
     ),
   async execute(interaction, guild) {
     await interaction.deferReply();
+    // Подкоманда: Просмотр настроек РзР
+    if (interaction.options.getSubcommand() === 'overview') {
+      if(guild.rr.size < 1) return interaction.followUp(`${emojis.error} | На этом сервере не установлены роли за реакции!`);
+      
+      const text = [...guild.rr.entries()]
+        .map(([messageId, reactions]) => {
+          return reactions.map(r => {
+            return r.channelID ? `https://discord.com/channels/${interaction.guild.id}/${r.channelID}/${messageId}: <@&${r.role}> за ${r.emoji}`
+            : `\`${messageId}\`: <@&${r.role}> за ${r.emoji}`;
+          }).join('\n');
+        })
+        .join('\n');
+
+      interaction.followUp({
+        content: `${emojis.success} | На этом сервере установлены роли за реакции на следующих сообщениях:\n\n${text}\n\nФормат вывода:\n\`ID сообщения или ссылка\`: <роль> за <реакция>`,
+        allowedMentions: {
+          parse: []
+        }
+      });
     // Подкоманда: Удаление РзР
-    if (interaction.options.getSubcommand() === "delete") {
+    } else if (interaction.options.getSubcommand() === "delete") {
       id = interaction.options.getString("id");
 
       if (guild.rr.size < 1)
         return interaction.followUp(
-          "Но у вас же не установлены роли за реакции..."
+          `${emojis.error} | На сервере не установлены роли за реакции!`
         );
       rr = guild.rr.get(id);
       if (!rr)
         return interaction.followUp(
-          "На этом сообщении не установлены роли за реакции!"
+          `${emojis.error} | На этом сообщении не установлены роли за реакции!`
         );
 
       guild.rr.delete(id);
       guild.save();
       interaction.followUp(
-        "Роли за реакции успешно удалены с этого сообщения!"
+        `${emojis.success} Роли за реакции успешно удалены с этого сообщения!`
       );
       // Подкоманда: Установка РзР
     } else if (interaction.options.getSubcommand() === "set") {
@@ -131,6 +154,7 @@ module.exports = {
         arr.push({
           role: role.id,
           emoji: react,
+          channelID: channel.id
         });
         guild.rr.delete(id);
         guild.rr.set(id, arr);
@@ -141,6 +165,7 @@ module.exports = {
         arr.push({
           role: role.id,
           emoji: react,
+          channelID: channel.id
         });
         guild.rr.set(id, arr);
         guild.save();
