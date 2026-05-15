@@ -49,6 +49,17 @@ module.exports = {
 						.replace('{level}', user.level)
 						.replace('{xp}', user.xp)
 					)
+				}else{
+					const channel = message.guild.channels.cache.get(guild.channelID);
+					if (!channel) return;
+					if (!channel.permissionsFor(message.guild.members.me).has(['SendMessages', 'ViewChannel'])) return;
+					channel.send(guild.message.replace('{user.mention}', message.author)
+						.replace('{user.name}', message.author.username)
+						.replace('{user.id}', message.author.id)
+						.replace('{guild.name}', message.guild.name)
+						.replace('{level}', user.level)
+						.replace('{xp}', user.xp)
+					)
 				}
 			}
 
