@@ -19,6 +19,10 @@ module.exports = {
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
     .addSubcommand(subcommand =>
       subcommand
+        .setName('overview')
+        .setDescription('Просмотр настроек приветственного сообщения'))
+    .addSubcommand(subcommand =>
+      subcommand
         .setName('off')
         .setDescription('Выключить приветственное сообщение и автороль'))
     .addSubcommand(subcommand =>
@@ -43,7 +47,16 @@ module.exports = {
             .setRequired(true)
         )),
   async execute(interaction, guild) {
-    if (interaction.options.getSubcommand() === 'off') {
+    if(interaction.options.getSubcommand() === 'overview') {
+      if (guild.welcome.channelID == '-1') return interaction.reply(`${emojis.error} | Приветственное сообщение выключено`)
+      interaction.reply({
+        content: `${emojis.success} | Приветственное сообщение **включено**!\n\nКанал: <#${guild.welcome.channelID}>\nАвтороль: ${guild.welcome.autoRoleID == '-1' ? "**не задана**" : `<@&${guild.welcome.autoRoleID}>`}\nТекст приветствия: \`\`\`${guild.welcome.welcomeText}\`\`\``,
+        allowedMentions: {
+          parse: []
+        }
+      })
+    }
+    else if (interaction.options.getSubcommand() === 'off') {
       if (guild.welcome.channelID == '-1' && guild.welcome.autoRoleID == '-1') return interaction.reply(`${emojis.error} | Приветственное сообщение уже выключено`)
       guild.welcome.channelID = '-1';
       guild.welcome.autoRoleID = '-1';
