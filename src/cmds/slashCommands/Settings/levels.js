@@ -167,10 +167,14 @@ module.exports = {
       if(!g.enabled) return interaction.reply(`${emojis.error} | На сервере отключена система уровней. Для включения используйте команду \`/levels toggle\``);
 
       channel = interaction.options.getChannel('канал')
-      cid = channel?.id || "-1"
-      await setLevelGuildChannel(interaction.guild.id, cid)
+
+      if(!channel) {
+        await setLevelGuildChannel(interaction.guild.id, "-1")
+        return interaction.reply(`${emojis.success} Оповещения о новом уровне теперь будут приходить в канал, в котором пользователь написал сообщение!`)
+      }
+      await setLevelGuildChannel(interaction.guild.id, channel.id)
       if (!channel.permissionsFor(interaction.guild.members.me).has(['SendMessages', 'ViewChannel'])) return interaction.reply(`${emojis.error} | Для отправки сообщений о новых уровнях мне необходимо иметь права \`Отправлять сообщения\` и \`Просматривать канал\` в выбранном канале!`)
-      interaction.reply(`${emojis.success} Оповещения о новом уровне будут приходить в ${cid != "-1" ? `канал <#${cid}>` : `канал, в котором пользователь написал сообщение`}`)
+      interaction.reply(`${emojis.success} Оповещения о новом уровне будут приходить в канал <#${channel.id}>`)
 
       // message - Установить сообщение о новом уровне
     } else if (interaction.options.getSubcommand() === 'message') {
