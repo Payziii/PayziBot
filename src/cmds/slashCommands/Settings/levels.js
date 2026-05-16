@@ -123,7 +123,7 @@ module.exports = {
     if (interaction.options.getSubcommand() === 'overview') {
       
       if(!g.enabled) return interaction.reply(`${emojis.error} | На сервере отключена система уровней. Для включения используйте команду \`/levels toggle\``);
-      interaction.reply(`${emojis.success} | Система уровней **включена**!\n\nИнтервал между начислением опыта: **${g.interval}** секунд\nДиапазон XP за сообщение: от **${g.xp.min}** до **${g.xp.max}** XP\nКанал для оповещений о новом уровне: ${g.channelID != "-1" ? `<#${g.channelID}>` : "**не установлен** (оповещения отправляются в канал, где было отправлено сообщение)"}\nСообщение о новом уровне: \`\`\`${g.message}\`\`\`\nРоли за уровни:\n${g.roles.length > 0 ? g.roles.map(r => `<@&${r.roleId}> (**${r.level}** уровень)`).join(',\n') : "нет ролей"}`)
+      interaction.reply(`${emojis.success} | Система уровней **включена**!\n\nИнтервал между начислением опыта: **${g.interval}** секунд\nДиапазон XP за сообщение: от **${g.xp.min}** до **${g.xp.max}** XP\nКанал для оповещений о новом уровне: ${g.channelID != "-1" ? `<#${g.channelID}>` : "**в канал сообщения**"}\nСообщение о новом уровне: \`\`\`${g.message}\`\`\`\nРоли за уровни:\n${g.roles.length > 0 ? g.roles.map(r => `<@&${r.roleId}> (**${r.level}** уровень)`).join(',\n') : "нет ролей"}`)
 
     // toggle - Включить/Выключить систему уровней
   } else if (interaction.options.getSubcommand() === 'toggle') {
