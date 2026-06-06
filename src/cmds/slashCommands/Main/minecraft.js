@@ -65,7 +65,7 @@ module.exports = {
         const embed = new EmbedBuilder()
           .setTitle(r?.data?.player?.username || "Неизвестный игрок")
           .setDescription(`UUID: \`${r?.data?.player?.id}\``)
-          .setThumbnail(r?.data?.player?.avatar)
+          .setThumbnail(`https://nmsr.nickac.dev/bust/${r?.data?.player?.id}`)
           .setColor(guild.colors.basic)
         
         const skin = new ButtonBuilder()
