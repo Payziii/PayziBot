@@ -17,6 +17,15 @@ const dayNames = [
   "Суббота",
 ];
 
+const airQuality = {
+  1: "Хорошее",
+  2: "Удовлетворительное",
+  3: "Вредное для чувствительных групп",
+  4: "Вредное",
+  5: "Очень вредное",
+  6: "Опасное"
+}
+
 module.exports = {
   category: "utility",
   cooldown: 1,
@@ -56,9 +65,8 @@ module.exports = {
           name: "Прочее",
           value: `Влажность: **${r.current.humidity}%**\nВетер: **${(
             r.current.wind_kph / 3.6
-          ).toFixed(1)} м/с**\nДавление: **${
-            r.current.pressure_mb
-          } мм рт. ст.**`,
+          ).toFixed(1)} м/с**\nДавление: **${r.current.pressure_mb
+            } мм рт. ст.**\nВероятность осадков: **${r.current.chance_of_rain || r.current.chance_of_snow || 0} %**\nКачество воздуха: **${airQuality[r.current.air_quality["us-epa-index"]]}**`,
           inline: false,
         }
       )

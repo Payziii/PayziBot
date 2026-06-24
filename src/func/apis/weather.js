@@ -1,6 +1,6 @@
 async function current(key, city) {
     let answer;
-    await fetch(`http://api.weatherapi.com/v1/current.json?key=${key}&q=${encodeURIComponent(city)}&lang=ru`).then(r => r.json()).then(r => {
+    await fetch(`http://api.weatherapi.com/v1/current.json?key=${key}&q=${encodeURIComponent(city)}&lang=ru&aqi=yes`).then(r => r.json()).then(r => {
         answer = r;
     }).catch(e => {
         console.log(e);
