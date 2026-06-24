@@ -7,6 +7,8 @@ const {
 } = require("discord.js");
 const { emojis } = require("../../../config.js");
 const weather = require("../../../func/apis/weather.js");
+const { CheckAch } = require('../../../func/games/giveAch.js');
+
 const dayNames = [
   "Воскресенье",
   "Понедельник",
@@ -75,6 +77,10 @@ module.exports = {
       .setFooter({
         text: "Сервис: WeatherApi 💖",
       });
+
+    if (r.current.air_quality["us-epa-index"] >= 2) {
+      CheckAch(18, interaction.user.id, interaction.channel, guild, user)
+    }
 
     const threedaysweather = new ButtonBuilder()
       .setCustomId("threedaysweather")
