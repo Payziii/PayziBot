@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { Flood } = require('../../../func/discord-gamecord');
+const { recordGameEnd } = require('../../../func/games/gameStats.js');
 
 module.exports = {
 	category: 'games',
@@ -39,5 +40,9 @@ module.exports = {
 		});
 
 		Game.startGame();
+
+		Game.on('gameOver', async result => {
+			await recordGameEnd(interaction.user.id, 'flood', { result: result.result });
+		});
 	},
 };

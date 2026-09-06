@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { MatchPairs } = require('../../../func/discord-gamecord');
 const { GiveAchievement } = require('../../../func/games/giveAch.js');
+const { recordGameEnd } = require('../../../func/games/gameStats.js');
 
 module.exports = {
 	category: 'games',
@@ -28,7 +29,10 @@ module.exports = {
 
 		Game.startGame();
 
-		Game.on('gameOver', result => {
+		Game.on('gameOver', async result => {
+			if(result.result === 'win') {
+				await recordGameEnd(interaction.user.id, 'memory', { result: result.result });
+			}
 			if(result.time < 2) {
 				GiveAchievement(17, interaction.user.id, interaction.channel, guild, user)
 			}

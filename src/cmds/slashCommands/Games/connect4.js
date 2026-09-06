@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { Connect4 } = require('../../../func/discord-gamecord');
 const { emojis } = require('../../../config.js');
+const { recordGameEnd } = require('../../../func/games/gameStats.js');
 
 module.exports = {
 	category: 'games',
@@ -47,5 +48,20 @@ module.exports = {
 		});
 
 		Game.startGame();
+
+		Game.on('gameOver', async result => {
+			console.log(result)
+			if (result.winner && result.winner === interaction.user.id) {
+				await recordGameEnd(interaction.user.id, 'connect4', { result: 'win' });
+				await recordGameEnd(user.id, 'connect4', { result: 'loss' });
+			} else if (result.winner && result.winner === user.id) {
+				await recordGameEnd(interaction.user.id, 'connect4', { result: 'loss' });
+				await recordGameEnd(user.id, 'connect4', { result: 'win' });
+			}
+			else {
+				await recordGameEnd(interaction.user.id, 'connect4', { result: 'draw' });
+				await recordGameEnd(user.id, 'connect4', { result: 'draw' });
+			}
+		});
 	},
 };

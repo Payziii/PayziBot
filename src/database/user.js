@@ -7,15 +7,23 @@ const premiumSchema = Schema({
 	hours: { type: Number, default: 0 },
 });
 
+const gameStatSchema = Schema({
+	wins: { type: Number, default: 0 },
+	losses: { type: Number, default: 0 },
+	draws: { type: Number, default: 0 },
+	played: { type: Number, default: 0 },
+	bestScore: { type: Number, default: 0 },
+	rating: { type: Number, default: 0 },
+	lastPlayed: { type: Date, default: Date.now },
+}, { _id: false });
+
 const user = Schema({
 	userID: String,
 	premium: { type: premiumSchema, default: null },
-	games: {
-		game: { type: Number, default: 0 },
-		city: { type: Number, default: 0 },
-		logo: { type: Number, default: 0 },
-		flag: { type: Number, default: 0 },
-		country: { type: Number, default: 0 },
+	stats: {
+		type: Map,
+		of: gameStatSchema,
+		default: {},
 	},
 	ach: { type: Array, default: [] },
 	bio: { type: String, default: 'Вы можете написать что-нибудь о себе, используя команду `/bio`' },

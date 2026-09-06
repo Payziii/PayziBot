@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { TwoZeroFourEight } = require('../../../func/discord-gamecord');
 const { GiveAchievement } = require('../../../func/games/giveAch.js');
+const { recordGameEnd } = require('../../../func/games/gameStats.js');
 
 module.exports = {
 	category: 'games',
@@ -23,18 +24,20 @@ module.exports = {
 				down: '⬇️',
 				left: '⬅️',
 				right: '➡️',
-			  },
-			  timeoutTime: 60000,
-			  buttonStyle: 'PRIMARY',
-			  playerOnlyMessage: 'Эта игра предназначена для {player}'
+			},
+			timeoutTime: 60000,
+			buttonStyle: 'PRIMARY',
+			playerOnlyMessage: 'Эта игра предназначена для {player}'
 		});
 
 		Game.startGame();
 
-		Game.on('gameOver', result => {
-			if(result.score >= 2048) {
-				GiveAchievement(11, interaction.user.id, interaction.channel, guild, user)
+		Game.on('gameOver', async result => {
+			await recordGameEnd(interaction.user.id, '2048', { score: result.score });
+
+			if (result.score >= 2048) {
+				GiveAchievement(11, interaction.user.id, interaction.channel, guild, user);
 			}
-		  });
+		});
 	},
 };

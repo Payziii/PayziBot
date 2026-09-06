@@ -2,6 +2,7 @@
 const { inspect } = require('util');
 const config = require('../../config.js');
 const levelsDB = require('../../database/levels.js');
+const { getStats } = require('../../func/games/gameStats.js');
 let depth = 0;
 
 exports.run = async (client, message, args, guild, user) => {
